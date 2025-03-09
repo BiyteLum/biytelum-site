@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact BiyteLüm - Secure digital privacy consultations.">
+    <title>Contact BiyteLüm</title>
+
+    <!-- Import Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { 
+            background-color: #121212; 
+            color: #A7FF9E; 
+            font-family: 'Inter', sans-serif;
+            text-align: center; 
+            padding: 20px; 
+        }
+
+        h1, h2 { 
+            font-family: 'Orbitron', sans-serif; 
+            text-transform: uppercase;
+        }
+
+        p { 
+            max-width: 800px; 
+            margin: auto; 
+            text-align: center; 
+        }
+
+        a { 
+            color: #A7FF9E; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        .cta-button {
+            background-color: #A7FF9E;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 3px 3px #0d0d0d;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background-color: #66ff99;
+            box-shadow: 0px 0px 15px #00ff99;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        input, textarea {
+            background-color: #333;
+            color: #A7FF9E;
+            border: 1px solid #A7FF9E;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #A7FF9E;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #66ff99;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px #00ff99;
+        }
+
+        .pgp-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 15px;
+            border: 2px solid #A7FF9E;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+        }
+
+        .pgp-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            text-align: left;
+            overflow: auto;
+            max-height: 200px;
+            border: 1px solid #A7FF9E;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contact BiyteLüm</h1>
+    <p>Have questions about digital privacy? Reach out securely.</p>
+
+    <div class="section">
+        <h2>Email Us</h2>
+        <p><a href="mailto:biytelum@protonmail.com">biytelum@protonmail.com</a></p>
+    </div>
+
+    <div class="pgp-container">
+        <h2>PGP Public Key</h2>
+        <p>🔒 Copy the key below or <a href="publickey-biytelum.asc" download>download the PGP Key</a> for encryption.</p>
+        <pre>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+mQINBGfNDX4BEADHOrevSaQzdTnyTPiNd4d0wKHdRRmAKTCF3lxHw87xdS51BDr+
+hWIpDSZSXcrhKl8JPquJ1anB1WSA/3FaiPR572WtTK0q2SYfM6Km12IHG7Njvi2D
+ZmmD9t8rnEHjtWgYaU7H1RwuIWYoIzh4uHEbmiCMaQBJgqv4VMg4C8FcBIAD1Hdl
+td90u4Lhl2vAs5eVqcwR4dN4mQcUmtgtAea8q7DIiOGHHOC/aJbCr0e6p2MFV2ba
+yOOQhEq6TKyjKXdLtWC81qfZZQu6vatpFxsmbpjymkT5IStYtVvXInFCWJbns0Gu
+RBQPnL6mifWzYyq6XGJNq5FYrFqUV5bMv2tla31bqC9L09Xy1QDJP0g9OYbB2367
+hNLr4iDVDNBOzmvLhV8phNUbFVD527PuVjIG6v9cto3mBwhOzGjg6nHXZy3Nw7HA
+7nwXquCN5KxGZHz0cFzxUtNE/Jt5myC8jnT4fKqW8zFvBLli/pOehFpxsMfUEVYh
+UbkjivWPpG8A/Lve/A1tvepngelbjsJqpneebz/pv1rte7chLM9ZVjqkloq4QMQF
+FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
+9FYxWFsPGH/JOTtpj27PhwNEM/At6OTxL1hrCpogA+xIP9JGTJC/XcXO7QARAQAB
+-----END PGP PUBLIC KEY BLOCK-----
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Send a Secure Message</h2>
+        <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <p><a href="index.html" class="cta-button">← Back to Home</a></p>
+
+</body>
+</html>
