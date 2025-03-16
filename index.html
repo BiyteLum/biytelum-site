@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiyteLüm | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #A7FF9E;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hamburger Menu Styling */
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            color: #A7FF9E;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 15px;
+            text-align: left;
+            width: 100%;
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #A7FF9E;
+            text-decoration: none;
+            margin: 10px 15px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 768px) {
+            .menu-button {
+                display: block;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                left: 0;
+                padding: 10px 0;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+        }
+
+        /* Main Header */
+        .header {
+            margin-top: 80px;
+            font-size: 3em;
+            text-shadow: 0px 0px 10px #A7FF9E, 0px 0px 20px #00FF99;
+        }
+
+        .subheader {
+            font-size: 1.5em;
+            margin-top: 10px;
+            text-shadow: 0px 0px 5px #A7FF9E;
+        }
+
+        /* Sections */
+        .section {
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            border: 2px solid #A7FF9E;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px #A7FF9E;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-container">
+        <button class="menu-button" onclick="toggleMenu()">☰ MENU</button>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="consultation.html">Consultation</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="data-removal.html">Data Removal</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+    </div>
+
+    <!-- Logo & Slogan -->
+    <h1 class="header">BIYTELÜM</h1>
+    <p class="subheader">Your Data. Your Rules. Reclaim Your Digital Identity.</p>
+
+    <!-- Sections -->
+    <div class="section">
+        <h2>Who We Are</h2>
+        <p>BiyteLüm is a privacy-first consultancy dedicated to helping individuals and businesses regain control over their digital footprint. In an era of mass surveillance and data exploitation, we believe in protecting your online presence, preserving your sovereignty, and restoring your digital autonomy.</p>
+    </div>
+
+    <div class="section">
+        <h2>Industry-Certified</h2>
+        <p>Our team holds CIPP/E & CIPM certifications, ensuring compliance with GDPR and international data protection laws. With experience in homeland security, national intelligence, and cybersecurity, we provide expert guidance on data privacy.</p>
+    </div>
+
+    <div class="section">
+        <h2>Erase Your Data Now</h2>
+        <p>We specialize in data removal services that help erase your personal information from databases and people search sites. Take back control of your digital identity today.</p>
+        <a href="data-removal.html" class="cta-button">Get Started</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 BiyteLüm. All Rights Reserved.</p>
+    </div>
+
+    <!-- JavaScript for Menu -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
