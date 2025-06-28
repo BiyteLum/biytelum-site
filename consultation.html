@@ -108,6 +108,11 @@
             letter-spacing: 0.1em;
         }
         
+        .nav-links a.active {
+            color: #A7FF9E;
+            border-bottom: 1px solid #A7FF9E;
+        }
+        
         /* Mobile Menu */
         .mobile-menu {
             display: none;
@@ -167,11 +172,12 @@
             position: relative;
             z-index: 10;
             padding-top: 6rem;
-            min-height: 100vh;
+            min-height: calc(100vh - 2.5rem);
             max-width: 1000px;
             margin: 0 auto;
             padding-left: 2rem;
             padding-right: 2rem;
+            padding-bottom: 2.5rem;
         }
         
         /* Header */
@@ -181,9 +187,16 @@
         }
         
         .page-title {
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
             margin-bottom: 0.5rem;
+        }
+        
+        .title-line {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
             color: #A7FF9E;
             text-shadow: 
                 0 0 20px #A7FF9E,
@@ -191,6 +204,7 @@
                 0 0 60px #A7FF9E;
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
+            line-height: 0.9;
         }
         
         .page-subtitle {
@@ -271,7 +285,7 @@
             margin-bottom: 1rem;
         }
         
-        .card-content ol {
+        .card-content ul {
             color: rgba(167, 255, 158, 0.8);
             padding-left: 1.5rem;
             margin-bottom: 1rem;
@@ -494,7 +508,7 @@
             background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(167, 255, 158, 0.3);
-            padding: 0.75rem 2rem;
+            padding: 0.25rem 2rem;
             z-index: 100;
         }
         
@@ -505,7 +519,7 @@
             justify-content: space-between;
             align-items: center;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
         
         .status-left {
@@ -516,6 +530,58 @@
         
         .status-right {
             color: rgba(167, 255, 158, 0.5);
+        }
+        
+        .status-right a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .status-right a:hover {
+            color: #A7FF9E;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .timeline-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 2rem 1rem;
+            }
+            
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .content-card, .process-timeline, .cta-section {
+                padding: 1.5rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -536,7 +602,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="services.html">SERVICES</a></li>
-                <li><a href="consultation.html">CONSULTATION</a></li>
+                <li><a href="consultation.html" class="active">CONSULTATION</a></li>
                 <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="data-removal.html">DATA_REMOVAL</a></li>
                 <li><a href="resources.html">RESOURCES</a></li>
@@ -566,7 +632,10 @@
     <main>
         <!-- Header -->
         <div class="page-header">
-            <h1 class="page-title">CONSULTATION_PROTOCOL</h1>
+            <h1 class="page-title">
+                <span class="title-line">CONSULTATION</span>
+                <span class="title-line">PROTOCOL</span>
+            </h1>
             <div class="page-subtitle">PRIVACY_ASSESSMENT_SYSTEM</div>
             <p class="page-description">Our <span class="highlight">privacy consultation sessions</span> are designed to assess your current digital footprint and provide <span class="highlight">tailored privacy solutions</span> based on advanced threat analysis.</p>
         </div>
@@ -666,7 +735,7 @@
                 <span>CERTIFIED: CIPP/E</span>
             </div>
             <div class="status-right">
-                © 2025 BiyteLüm.sys | Consultation Protocol v3.1.4
+                © 2025 BiyteLüm.sys | <a href="index.html">RETURN_HOME</a>
             </div>
         </div>
     </div>
@@ -704,6 +773,16 @@
             const scrolled = window.pageYOffset;
             const grid = document.querySelector('.bg-grid');
             grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
         });
     </script>
 </body>
