@@ -464,11 +464,20 @@
         
         .hero-cta h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             color: #A7FF9E;
             margin-bottom: 1rem;
             text-transform: uppercase;
             text-shadow: 0 0 15px #A7FF9E;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            line-height: 0.9;
+        }
+        
+        .hero-cta h2 .cta-line {
+            display: block;
         }
         
         .hero-cta p {
@@ -729,7 +738,11 @@
         
         <!-- Call to Action -->
         <div class="hero-cta">
-            <h2>INITIATE_DATA_ERASURE</h2>
+            <h2>
+                <span class="cta-line">INITIATE</span>
+                <span class="cta-line">DATA</span>
+                <span class="cta-line">ERASURE</span>
+            </h2>
             <p>Ready to reclaim your digital sovereignty? Book a consultation to start your data removal process and disappear from the digital surveillance grid.</p>
             <a href="consultation.html" class="cta-button cta-primary">
                 CLAIM_CONSULTATION
