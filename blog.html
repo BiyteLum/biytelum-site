@@ -184,15 +184,24 @@
         }
         
         .page-header h1 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
             margin-bottom: 1rem;
+        }
+        
+        .title-line {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
             color: #A7FF9E;
             text-shadow: 
                 0 0 20px #A7FF9E,
                 0 0 40px #00FF99,
                 0 0 60px #A7FF9E;
             font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            line-height: 0.9;
         }
         
         .page-subtitle {
@@ -469,7 +478,10 @@
     <main>
         <!-- Page Header -->
         <section class="page-header">
-            <h1>DIGITAL_INTELLIGENCE</h1>
+            <h1>
+                <span class="title-line">DIGITAL</span>
+                <span class="title-line">INTELLIGENCE</span>
+            </h1>
             <p class="page-subtitle">Privacy insights, data protection strategies, and digital sovereignty guides</p>
         </section>
         
@@ -498,8 +510,6 @@
                     <span>→</span>
                 </a>
             </article>
-            
-
         </section>
     </main>
     
