@@ -4,141 +4,770 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BiyteLüm - Transparent pricing for data privacy, identity lockdown, and digital sovereignty.">
-    <title>BiyteLüm | Pricing</title>
-
-    <!-- Import Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+    <title>Pricing | BiyteLüm - Digital Privacy Services</title>
     <style>
-        body { 
-            background-color: #121212; 
-            color: #A7FF9E; 
-            font-family: 'Inter', sans-serif;
-            text-align: center; 
-            padding: 20px; 
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        h1, h2 { 
-            font-family: 'Orbitron', sans-serif; 
+        
+        body {
+            min-height: 100vh;
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: #A7FF9E;
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: #A7FF9E;
+            opacity: 0.3;
+            box-shadow: 0 0 10px #A7FF9E;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: #A7FF9E;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-links a:hover {
+            color: #A7FF9E;
+            letter-spacing: 0.1em;
+        }
+        
+        .nav-links a.active {
+            color: #A7FF9E;
+            border-bottom: 1px solid #A7FF9E;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            color: #A7FF9E;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu:hover {
+            border-color: rgba(167, 255, 158, 0.6);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: #A7FF9E;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav a:hover {
+            color: #00FF99;
+            padding-left: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            nav { position: relative; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #A7FF9E;
+            text-shadow: 
+                0 0 20px #A7FF9E,
+                0 0 40px #00FF99,
+                0 0 60px #A7FF9E;
+            font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
         }
-
-        p { 
-            max-width: 800px; 
-            margin: auto; 
-            text-align: center; 
+        
+        .page-subtitle {
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+            color: rgba(167, 255, 158, 0.8);
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
-
-        a { 
-            color: #A7FF9E; 
-            text-decoration: none; 
-            font-weight: bold; 
+        
+        /* Pricing Grid */
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-
-        .cta-button {
-            background-color: #A7FF9E;
-            color: black;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .pricing-card:hover::before {
+            left: 100%;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #A7FF9E;
+            transform: scale(1.02);
+        }
+        
+        .pricing-card.featured::after {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -1px;
+            right: 2rem;
+            background: #A7FF9E;
+            color: #000;
+            padding: 0.5rem 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
             font-weight: bold;
-            margin-top: 20px;
-            box-shadow: 3px 3px #0d0d0d;
-            transition: transform 0.2s, background-color 0.2s;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
         }
-
-        .cta-button:hover {
-            transform: scale(1.1);
-            background-color: #66ff99;
-            box-shadow: 0px 0px 15px #00ff99;
-        }
-
-        .section {
-            margin: 40px auto;
+        
+        .card-header {
             text-align: center;
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #1a1a1a;
-            border: 1px solid #A7FF9E;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+            padding-bottom: 1.5rem;
         }
-
-        .highlight { 
-            color: #00FF00; 
-            font-size: 1.2em; 
-            display: inline-block; 
+        
+        .card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: #A7FF9E;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .card-price {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 2rem;
+            color: #00FF99;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00FF99;
+        }
+        
+        .card-description {
+            color: rgba(167, 255, 158, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-list li {
+            color: rgba(167, 255, 158, 0.8);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .feature-list li::before {
+            content: '✔️';
+            color: #A7FF9E;
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 1rem 2rem;
+            border: 2px solid #A7FF9E;
+            background: transparent;
+            color: #A7FF9E;
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            color: #000;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #A7FF9E;
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .process-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #A7FF9E;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #A7FF9E;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .process-step {
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            border-color: rgba(167, 255, 158, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .step-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: #00FF99;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-text {
+            color: rgba(167, 255, 158, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Highlight spans */
+        .highlight {
+            color: #00FF99;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00FF99;
+        }
+        
+        /* Single column sections */
+        .single-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: #A7FF9E;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #A7FF9E;
+        }
+        
+        .section-content {
+            color: rgba(167, 255, 158, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            padding: 0.25rem 2rem;
+            z-index: 100;
+        }
+        
+        .status-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 2rem;
+            color: rgba(167, 255, 158, 0.7);
+        }
+        
+        .status-right {
+            color: rgba(167, 255, 158, 0.5);
+        }
+        
+        .status-right a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .status-right a:hover {
+            color: #A7FF9E;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .pricing-card {
+                padding: 1.5rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .pricing-container {
+                padding: 0 1rem;
+            }
+            
+            .single-section, .process-section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Transparent Pricing</h1>
-    <p>Our pricing is simple, upfront, and designed to provide full control over your digital privacy. Choose a package or add-ons based on your needs.</p>
-
-    <div class="section">
-        <h2>Consultation (Required Before Any Service)</h2>
-        <h3><strong>30-Minute Privacy Consultation</strong> - <span class="highlight"></span></h3>
-        <p>We assess your data exposure, privacy risks, and online presence. Includes a live audit of data broker sites, social media, and search engine results.</p>
-        <p><strong>Note:</strong> If you purchase a service, the consultation fee is credited toward your total.</p>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span>▶</span>
+                <span>BiyteLüm.sys</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="consultation.html">CONSULTATION</a></li>
+                <li><a href="pricing.html" class="active">PRICING</a></li>
+                <li><a href="data-removal.html">DATA_REMOVAL</a></li>
+                <li><a href="resources.html">RESOURCES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="privacy.html">PRIVACY</a></li>
+                <li><a href="terms.html">TERMS</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html">01. HOME</a>
+            <a href="services.html">02. SERVICES</a>
+            <a href="consultation.html">03. CONSULTATION</a>
+            <a href="pricing.html">04. PRICING</a>
+            <a href="data-removal.html">05. DATA_REMOVAL</a>
+            <a href="resources.html">06. RESOURCES</a>
+            <a href="contact.html">07. CONTACT</a>
+            <a href="privacy.html">08. PRIVACY</a>
+            <a href="terms.html">09. TERMS</a>
+            <a href="blog.html">10. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Transparent Pricing</h1>
+            <p class="page-subtitle">Our pricing is simple, upfront, and designed to provide full control over your digital privacy. Choose a package or add-ons based on your needs.</p>
+        </section>
+        
+        <div class="pricing-container">
+            <!-- Consultation Section -->
+            <div class="single-section">
+                <h2 class="section-title">Consultation (Required Before Any Service)</h2>
+                <div class="section-content">
+                    <h3><strong>30-Minute Privacy Consultation</strong> - <span class="highlight"></span></h3>
+                    <p>We assess your data exposure, privacy risks, and online presence. Includes a live audit of data broker sites, social media, and search engine results.</p>
+                    <p><strong>Note:</strong> If you purchase a service, the consultation fee is credited toward your total.</p>
+                </div>
+                <a href="consultation.html" class="cta-button">Schedule Consultation</a>
+            </div>
+            
+            <!-- Main Pricing Grid -->
+            <div class="pricing-grid">
+                <!-- Full Privacy Reset -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Full Privacy Reset</h3>
+                        <div class="card-price"></div>
+                    </div>
+                    <p class="card-description">Our most comprehensive data removal service, targeting major data brokers and personal exposure across the internet.</p>
+                    <ul class="feature-list">
+                        <li>Removal from <strong>30+ data broker sites</strong> (Whitepages, Spokeo, MyLife, etc.)</li>
+                        <li><strong>Google/Bing de-indexing</strong> to remove searchable links</li>
+                        <li><strong>Social Media Privacy Audit</strong> for LinkedIn, Facebook, Instagram, and more</li>
+                        <li><strong>Old Account Deletions</strong> for up to 5 inactive online accounts</li>
+                        <li>Final report summarizing completed removals & next steps</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button">Get Started</a>
+                </div>
+                
+                <!-- Identity Lockdown -->
+                <div class="pricing-card featured">
+                    <div class="card-header">
+                        <h3 class="card-title">Identity Lockdown</h3>
+                        <div class="card-price"></div>
+                    </div>
+                    <p class="card-description">For individuals facing heightened privacy risks such as doxxing, harassment, or professional exposure.</p>
+                    <ul class="feature-list">
+                        <li>Everything in <strong>Full Privacy Reset</strong> package</li>
+                        <li><strong>Advanced Google/Bing de-indexing</strong> for harder-to-remove content</li>
+                        <li><strong>Deep web search</strong> for exposed credentials</li>
+                        <li><strong>Social media lockdown service</strong> full privacy optimization for profiles</li>
+                        <li><strong>Quarterly monitoring</strong> for 6 months</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button">Secure Identity</a>
+                </div>
+            </div>
+            
+            <!-- Add-On Services -->
+            <div class="single-section">
+                <h2 class="section-title">Add-On Services</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Social Media Lockdown</h3>
+                            <div class="card-price"></div>
+                        </div>
+                        <p class="card-description">Full privacy overhaul for LinkedIn, Instagram, Facebook, and other accounts.</p>
+                        <a href="contact.html" class="cta-button">Add Service</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Breach Scan</h3>
+                            <div class="card-price"></div>
+                        </div>
+                        <p class="card-description">Check up to 3 email addresses for exposure in data breaches. Includes a security report with recommended actions.</p>
+                        <a href="contact.html" class="cta-button">Add Service</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Privacy Education Session</h3>
+                            <div class="card-price"></div>
+                        </div>
+                        <p class="card-description">1-hour private session covering VPNs, two-factor authentication, and social media privacy best practices.</p>
+                        <a href="contact.html" class="cta-button">Add Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- How It Works -->
+            <div class="process-section">
+                <h2 class="process-title">How It Works</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">STEP 1</div>
+                        <div class="step-text">Book a consultation & privacy audit <span class="highlight"></span></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">STEP 2</div>
+                        <div class="step-text">Choose a package & sign the service agreement</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">STEP 3</div>
+                        <div class="step-text">We begin data removal & social media lockdown</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">STEP 4</div>
+                        <div class="step-text">Final report with completed removals & security recommendations</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Pricing File -->
+            <div class="single-section">
+                <h2 class="section-title">Detailed Pricing File</h2>
+                <div class="section-content">
+                    <p>A <strong>comprehensive pricing breakdown</strong> is available for download. This document explains our <strong>full-service structure</strong>, pricing tiers, and customization options.</p>
+                </div>
+                <a href="BiyteLum_Pricing_Document.pdf" class="cta-button" download>Download Pricing File</a>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="single-section">
+                <h2 class="section-title">Ready to Secure Your Digital Presence?</h2>
+                <div class="section-content">
+                    <p>Take the first step toward reclaiming your <strong>privacy and security</strong>.</p>
+                </div>
+                <a href="contact.html" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-content">
+            <div class="status-left">
+                <span>⚡ STATUS: PRICING</span>
+                <span>PACKAGES: 2</span>
+                <span>ENCRYPTION: ACTIVE</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys | <a href="index.html">RETURN_HOME</a>
+            </div>
+        </div>
     </div>
-
-    <div class="section">
-        <h2>Full Data Removal Packages</h2>
-
-        <h3><strong>Full Privacy Reset</strong> - <span class="highlight"></span></h3>
-        <p>Our most comprehensive data removal service, targeting major data brokers and personal exposure across the internet.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li>✔️ Removal from <strong>30+ data broker sites</strong> (Whitepages, Spokeo, MyLife, etc.)</li>
-            <li>✔️ <strong>Google/Bing de-indexing</strong> to remove searchable links</li>
-            <li>✔️ <strong>Social Media Privacy Audit</strong> for LinkedIn, Facebook, Instagram, and more</li>
-            <li>✔️ <strong>Old Account Deletions</strong> for up to 5 inactive online accounts</li>
-            <li>✔️ Final report summarizing completed removals & next steps</li>
-        </ul>
-
-        <h3><strong>Identity Lockdown</strong> - <span class="highlight"></span></h3>
-        <p>For individuals facing heightened privacy risks such as doxxing, harassment, or professional exposure.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li>✔️ Everything in <strong>Full Privacy Reset</strong> package</li>
-            <li>✔️ <strong>Advanced Google/Bing de-indexing</strong> for harder-to-remove content</li>
-            <li>✔️ <strong>Deep web search</strong> for exposed credentials</li>
-            <li>✔️ <strong>Social media lockdown service</strong> full privacy optimization for profiles</li>
-            <li>✔️ <strong>Quarterly monitoring</strong> for 6 months</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Add-On Services</h2>
-
-        <h3><strong>Social Media Lockdown</strong> - <span class="highlight"></span></h3>
-        <p>Full privacy overhaul for LinkedIn, Instagram, Facebook, and other accounts.</p>
-
-        <h3><strong>Data Breach Scan</strong> - <span class="highlight"></span></h3>
-        <p>Check up to 3 email addresses for exposure in data breaches. Includes a security report with recommended actions.</p>
-
-        <h3><strong>Online Privacy Education (One-on-One Session)</strong> - <span class="highlight"></span></h3>
-        <p>1-hour private session covering VPNs, two-factor authentication, and social media privacy best practices.</p>
-    </div>
-
-    <div class="section">
-        <h2>How It Works</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li>✔️ <strong>Step 1:</strong> Book a consultation & privacy audit <span class="highlight"></span></li>
-            <li>✔️ <strong>Step 2:</strong> Choose a package & sign the service agreement</li>
-            <li>✔️ <strong>Step 3:</strong> We begin data removal & social media lockdown</li>
-            <li>✔️ <strong>Step 4:</strong> Final report with completed removals & security recommendations</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Detailed Pricing File</h2>
-        <p>A <strong>comprehensive pricing breakdown</strong> is available for download. This document explains our <strong>full-service structure</strong>, pricing tiers, and customization options.</p>
-        <a href="BiyteLum_Pricing_Document.pdf" class="cta-button" download>Download Pricing File</a>
-    </div>
-
-    <div class="section">
-        <h2>Ready to Secure Your Digital Presence?</h2>
-        <p>Take the first step toward reclaiming your <strong>privacy and security</strong>.</p>
-        <a href="contact.html" class="cta-button">Contact Us</a>
-    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = `${2 + Math.random() * 4}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('show');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+        
+        // Parallax effect for background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
