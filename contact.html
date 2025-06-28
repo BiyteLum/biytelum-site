@@ -532,6 +532,28 @@
             line-height: 1.4;
         }
         
+        /* Success/Error Messages */
+        .form-message {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .form-success {
+            background: rgba(167, 255, 158, 0.1);
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            color: #A7FF9E;
+        }
+        
+        .form-error {
+            background: rgba(255, 99, 99, 0.1);
+            border: 1px solid rgba(255, 99, 99, 0.3);
+            color: #ff6363;
+        }
+        
         /* Status Bar */
         .status-bar {
             position: fixed;
@@ -687,6 +709,21 @@
             </div>
         </div>
         
+        <!-- Setup Instructions -->
+        <div class="content-card" style="margin: 2rem 0;">
+            <div class="card-header">
+                <div class="card-icon">✅</div>
+                <div class="card-title">Form Active & Ready</div>
+            </div>
+            <div class="card-content">
+                <p><strong>Contact form is now live and connected!</strong></p>
+                <p>✅ Messages will be sent directly to: <strong>biytelum@protonmail.com</strong></p>
+                <p>✅ Form submissions are processed securely by Formspree</p>
+                <p>✅ You'll receive email notifications for each contact request</p>
+                <p><em>Test the form below to ensure everything works correctly.</em></p>
+            </div>
+        </div>
+        
         <!-- PGP Key Section -->
         <div class="pgp-container">
             <h2>🔒 PGP_PUBLIC_KEY</h2>
@@ -703,118 +740,4 @@ hNLr4iDVDNBOzmvLhV8phNUbFVD527PuVjIG6v9cto3mBwhOzGjg6nHXZy3Nw7HA
 7nwXquCN5KxGZHz0cFzxUtNE/Jt5myC8jnT4fKqW8zFvBLli/pOehFpxsMfUEVYh
 UbkjivWPpG8A/Lve/A1tvepngelbjsJqpneebz/pv1rte7chLM9ZVjqkloq4QMQF
 FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
-9FYxWFsPGH/JOTtpj27PhwNEM/At6OTxL1hrCpogA+xIP9JGTJC/XcXO7QARAQAB
------END PGP PUBLIC KEY BLOCK-----
-            </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <div class="card-header">
-                <div class="card-icon">📡</div>
-                <div class="card-title">SECURE_MESSAGE_TRANSMISSION</div>
-            </div>
-            <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
-                <div class="form-group">
-                    <label for="name">OPERATOR_DESIGNATION:</label>
-                    <input type="text" name="name" id="name" required placeholder="Enter your identifier">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">CONTACT_FREQUENCY:</label>
-                    <input type="email" name="email" id="email" required placeholder="your.email@domain.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">MESSAGE_PAYLOAD:</label>
-                    <textarea name="message" id="message" required placeholder="Enter your secure message..."></textarea>
-                </div>
-                
-                <button type="submit" class="cta-button cta-primary">
-                    TRANSMIT_MESSAGE
-                    <span>→</span>
-                </button>
-            </form>
-        </div>
-        
-        <a href="index.html" class="back-button">
-            ← RETURN_TO_BASE
-        </a>
-    </main>
-    
-    <!-- Status Bar -->
-    <div class="status-bar">
-        <div class="status-content">
-            <div class="status-left">
-                <span>🔐 ENCRYPTION_STATUS: ACTIVE</span>
-                <span>CHANNEL: SECURED</span>
-                <span>RESPONSE_TIME: 24-48H</span>
-            </div>
-            <div class="status-right">
-                © 2025 BiyteLüm.sys | <a href="index.html">RETURN_HOME</a>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for (let i = 0; i < 15; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.width = `${2 + Math.random() * 4}px`;
-                particle.style.height = particle.style.width;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 4}s`;
-                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
-                container.appendChild(particle);
-            }
-        }
-        
-        // Copy PGP Key function
-        function copyPGPKey() {
-            const pgpKey = document.querySelector('.pgp-key').textContent;
-            navigator.clipboard.writeText(pgpKey.replace('COPY', '').trim()).then(() => {
-                const button = document.querySelector('.copy-button');
-                const originalText = button.textContent;
-                button.textContent = 'COPIED!';
-                button.style.background = 'rgba(167, 255, 158, 0.3)';
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'rgba(167, 255, 158, 0.1)';
-                }, 2000);
-            });
-        }
-        
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('show');
-        }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-        });
-        
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const grid = document.querySelector('.bg-grid');
-            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileNav.classList.remove('show');
-            }
-        });
-    </script>
-</body>
-</html>
+9FYxWFsPGH/JOTtp
