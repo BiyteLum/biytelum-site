@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BiyteLüm - Reclaim Your Digital Identity</title>
+    <title>BiyteLüm - Reclaim Your Digital Identity | Privacy Consultancy GDPR CIPP/E</title>
+    <meta name="description" content="Privacy-first consultancy helping individuals and businesses regain control of their digital footprint. CIPP/E & CIPM certified. Data removal services available.">
+    <meta name="keywords" content="privacy consultancy, data protection, GDPR, digital identity, data removal, cybersecurity">
+    <link rel="canonical" href="https://biytelum.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="BiyteLüm - Reclaim Your Digital Identity">
+    <meta property="og:description" content="Privacy-first consultancy dedicated to digital sovereignty and data protection">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
         
         * {
             margin: 0;
@@ -15,14 +37,32 @@
         
         body {
             min-height: 100vh;
-            background: #0a0a0a;
+            background: var(--dark-bg);
             background-image: 
                 radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
                 radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
                 linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
-            color: #A7FF9E;
+            color: var(--primary-green);
             font-family: 'Orbitron', 'Arial', sans-serif;
             overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Skip to content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
         }
         
         /* Background Grid */
@@ -38,15 +78,16 @@
                 linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: 1;
+            will-change: transform;
         }
         
         /* Floating Particles */
         .particle {
             position: fixed;
             border-radius: 50%;
-            background: #A7FF9E;
+            background: var(--primary-green);
             opacity: 0.3;
-            box-shadow: 0 0 10px #A7FF9E;
+            box-shadow: 0 0 10px var(--primary-green);
             animation: float 4s ease-in-out infinite;
             pointer-events: none;
             z-index: 2;
@@ -57,15 +98,28 @@
             50% { transform: translateY(-20px) rotate(180deg); }
         }
         
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .particle,
+            .bg-grid {
+                animation: none;
+                transform: none !important;
+            }
+            
+            .content-card::before {
+                transition: none;
+            }
+        }
+        
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+            border-bottom: 1px solid var(--border-color);
             z-index: 100;
             padding: 1rem 2rem;
         }
@@ -84,7 +138,8 @@
             gap: 0.5rem;
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
-            color: #A7FF9E;
+            color: var(--primary-green);
+            text-decoration: none;
         }
         
         .nav-links {
@@ -94,38 +149,44 @@
         }
         
         .nav-links a {
-            color: rgba(167, 255, 158, 0.7);
+            color: var(--text-secondary);
             text-decoration: none;
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.75rem;
             transition: all 0.3s ease;
             letter-spacing: 0.05em;
+            position: relative;
         }
         
-        .nav-links a:hover {
-            color: #A7FF9E;
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-green);
             letter-spacing: 0.1em;
+            outline: none;
         }
         
         .nav-links a.active {
-            color: #A7FF9E;
-            border-bottom: 1px solid #A7FF9E;
+            color: var(--primary-green);
+            border-bottom: 1px solid var(--primary-green);
         }
         
         /* Mobile Menu */
         .mobile-menu {
             display: none;
             background: transparent;
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            color: #A7FF9E;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
             padding: 0.5rem;
             cursor: pointer;
             border-radius: 4px;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
         
-        .mobile-menu:hover {
+        .mobile-menu:hover,
+        .mobile-menu:focus {
             border-color: rgba(167, 255, 158, 0.6);
+            outline: none;
         }
         
         .mobile-nav {
@@ -136,7 +197,7 @@
             right: 0;
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            border-top: 1px solid var(--border-color);
             padding: 1rem 2rem;
         }
         
@@ -146,7 +207,7 @@
         
         .mobile-nav a {
             display: block;
-            color: #A7FF9E;
+            color: var(--primary-green);
             text-decoration: none;
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
@@ -155,15 +216,16 @@
             transition: all 0.3s ease;
         }
         
-        .mobile-nav a:hover {
-            color: #00FF99;
+        .mobile-nav a:hover,
+        .mobile-nav a:focus {
+            color: var(--accent-green);
             padding-left: 1rem;
+            outline: none;
         }
         
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu { display: block; }
-            nav { position: relative; }
         }
         
         /* Main Content */
@@ -187,11 +249,11 @@
             font-size: clamp(2rem, 8vw, 6rem);
             font-weight: 900;
             margin-bottom: 1rem;
-            color: #A7FF9E;
+            color: var(--primary-green);
             text-shadow: 
-                0 0 20px #A7FF9E,
-                0 0 40px #00FF99,
-                0 0 60px #A7FF9E;
+                0 0 20px var(--primary-green),
+                0 0 40px var(--accent-green),
+                0 0 60px var(--primary-green);
             font-family: 'Orbitron', sans-serif;
         }
         
@@ -199,14 +261,17 @@
             font-size: clamp(1rem, 4vw, 2.5rem);
             font-family: 'Share Tech Mono', monospace;
             margin-bottom: 1rem;
-            text-shadow: 0 0 10px #A7FF9E;
+            text-shadow: 0 0 10px var(--primary-green);
         }
         
         .subtitle {
             font-size: clamp(0.8rem, 2vw, 1.2rem);
-            color: rgba(167, 255, 158, 0.8);
+            color: var(--text-secondary);
             margin-bottom: 2rem;
             font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-button {
@@ -214,19 +279,23 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2rem;
-            border: 2px solid #A7FF9E;
+            border: 2px solid var(--primary-green);
             background: transparent;
-            color: #A7FF9E;
+            color: var(--primary-green);
             font-family: 'Share Tech Mono', monospace;
             font-weight: bold;
             text-decoration: none;
             transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
+            border-radius: 4px;
         }
         
-        .cta-button:hover {
+        .cta-button:hover,
+        .cta-button:focus {
             color: #000;
+            outline: none;
+            transform: translateY(-2px);
         }
         
         .cta-button::before {
@@ -236,12 +305,13 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: #A7FF9E;
+            background: var(--primary-green);
             transition: left 0.5s ease;
             z-index: -1;
         }
         
-        .cta-button:hover::before {
+        .cta-button:hover::before,
+        .cta-button:focus::before {
             left: 0;
         }
         
@@ -256,8 +326,8 @@
         }
         
         .content-card {
-            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
-            border: 1px solid rgba(167, 255, 158, 0.2);
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 2rem;
             transition: all 0.3s ease;
@@ -265,7 +335,8 @@
             overflow: hidden;
         }
         
-        .content-card:hover {
+        .content-card:hover,
+        .content-card:focus-within {
             transform: translateY(-5px);
             border-color: rgba(167, 255, 158, 0.6);
             box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
@@ -296,19 +367,20 @@
         .card-icon {
             width: 3rem;
             height: 3rem;
-            border: 1px solid rgba(167, 255, 158, 0.3);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
         
         .card-title {
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
             font-weight: bold;
-            color: #A7FF9E;
+            color: var(--primary-green);
         }
         
         .card-subtitle {
@@ -318,7 +390,7 @@
         
         .card-description {
             line-height: 1.6;
-            color: rgba(167, 255, 158, 0.7);
+            color: var(--text-secondary);
             margin-bottom: 1rem;
         }
         
@@ -329,7 +401,7 @@
             padding: 0.75rem 1.5rem;
             border: 1px solid rgba(167, 255, 158, 0.6);
             background: transparent;
-            color: #A7FF9E;
+            color: var(--primary-green);
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.8rem;
             text-decoration: none;
@@ -337,9 +409,50 @@
             transition: all 0.3s ease;
         }
         
-        .card-button:hover {
+        .card-button:hover,
+        .card-button:focus {
             background: rgba(167, 255, 158, 0.1);
             transform: translateX(5px);
+            outline: none;
+        }
+        
+        /* Trust Indicators */
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(167, 255, 158, 0.1);
+        }
+        
+        .trust-badge-icon {
+            font-size: 2rem;
+        }
+        
+        .trust-badge-text {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-align: center;
         }
         
         /* Status Bar */
@@ -348,9 +461,9 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            border-top: 1px solid var(--border-color);
             padding: 0.25rem 2rem;
             z-index: 100;
         }
@@ -368,11 +481,31 @@
         .status-left {
             display: flex;
             gap: 2rem;
-            color: rgba(167, 255, 158, 0.7);
+            color: var(--text-secondary);
         }
         
         .status-right {
             color: rgba(167, 255, 158, 0.5);
+        }
+        
+        /* Loading Animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-green);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loadingComplete 2s ease-out forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes loadingComplete {
+            0% { transform: scaleX(0); }
+            50% { transform: scaleX(0.7); }
+            100% { transform: scaleX(1); opacity: 0; }
         }
         
         /* Cursor */
@@ -397,119 +530,291 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+            
+            .trust-indicators {
+                gap: 1rem;
+            }
+            
+            .trust-badge {
+                min-width: 120px;
+            }
+        }
+        
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-green: #00FF00;
+                --border-color: rgba(0, 255, 0, 0.5);
+            }
+        }
+        
+        /* Focus styles */
+        *:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+        
+        /* Print styles */
+        @media print {
+            .bg-grid,
+            .particle,
+            .status-bar,
+            nav {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            main {
+                padding-top: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading bar -->
+    <div class="loading-bar" aria-hidden="true"></div>
+    
     <!-- Background Grid -->
-    <div class="bg-grid"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
     
     <!-- Floating Particles -->
-    <div id="particles"></div>
+    <div id="particles" aria-hidden="true"></div>
     
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">
-                <span>▶</span>
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
                 <span>BiyteLüm.sys</span>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="consultation.html">CONSULTATION</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="data-removal.html">DATA_REMOVAL</a></li>
-                <li><a href="resources.html">RESOURCES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="privacy.html">PRIVACY</a></li>
-                <li><a href="terms.html">TERMS</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="/" class="active" aria-current="page">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/consultation">CONSULTATION</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/data-removal">DATA_REMOVAL</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/privacy">PRIVACY</a></li>
+                <li><a href="/terms">TERMS</a></li>
+                <li><a href="/blog">BLOG</a></li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
         </div>
         <!-- Mobile Menu Dropdown -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">01. HOME</a>
-            <a href="services.html">02. SERVICES</a>
-            <a href="consultation.html">03. CONSULTATION</a>
-            <a href="pricing.html">04. PRICING</a>
-            <a href="data-removal.html">05. DATA_REMOVAL</a>
-            <a href="resources.html">06. RESOURCES</a>
-            <a href="contact.html">07. CONTACT</a>
-            <a href="privacy.html">08. PRIVACY</a>
-            <a href="terms.html">09. TERMS</a>
-            <a href="blog.html">10. BLOG</a>
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/consultation" role="menuitem">03. CONSULTATION</a>
+            <a href="/pricing" role="menuitem">04. PRICING</a>
+            <a href="/data-removal" role="menuitem">05. DATA_REMOVAL</a>
+            <a href="/resources" role="menuitem">06. RESOURCES</a>
+            <a href="/contact" role="menuitem">07. CONTACT</a>
+            <a href="/privacy" role="menuitem">08. PRIVACY</a>
+            <a href="/terms" role="menuitem">09. TERMS</a>
+            <a href="/blog" role="menuitem">10. BLOG</a>
         </div>
     </nav>
     
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" role="banner">
             <h1>BIYTELÜM</h1>
-            <div class="typing-text">
-                DIGITAL_<span id="typed-text">SOVEREIGNTY</span><span class="cursor">|</span>
+            <div class="typing-text" aria-live="polite">
+                DIGITAL_<span id="typed-text">SOVEREIGNTY</span><span class="cursor" aria-hidden="true">|</span>
             </div>
             <p class="subtitle">Your Data. Your Rules. Reclaim Your Digital Identity.</p>
-            <a href="consultation.html" class="cta-button">
+            <a href="/consultation" class="cta-button">
                 INITIATE_PROTOCOL
-                <span>→</span>
+                <span aria-hidden="true">→</span>
             </a>
         </section>
         
+        <!-- Trust Indicators -->
+        <section class="trust-indicators" aria-label="Certifications and credentials">
+            <div class="trust-badge">
+                <div class="trust-badge-icon" aria-hidden="true">🏆</div>
+                <div class="trust-badge-text">CIPP/E & CIPM<br>CERTIFIED</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon" aria-hidden="true">🔒</div>
+                <div class="trust-badge-text">GDPR<br>COMPLIANT</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon" aria-hidden="true">⚡</div>
+                <div class="trust-badge-text">24/7<br>SUPPORT</div>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon" aria-hidden="true">🌍</div>
+                <div class="trust-badge-text">GLOBAL<br>REACH</div>
+            </div>
+        </section>
+        
         <!-- Content Cards -->
-        <section class="content-grid">
+        <section class="content-grid" role="main">
             <!-- Who We Are -->
-            <div class="content-card">
+            <article class="content-card">
                 <div class="card-header">
-                    <div class="card-icon">🛡️</div>
+                    <div class="card-icon" aria-hidden="true">🛡️</div>
                     <div>
-                        <div class="card-title">WHO_WE_ARE</div>
+                        <h2 class="card-title">WHO_WE_ARE</h2>
                         <div class="card-subtitle">Privacy-First Consultancy</div>
                     </div>
                 </div>
                 <p class="card-description">
                     BiyteLüm is a privacy-first consultancy dedicated to helping individuals and businesses regain control over their digital footprint. In an era of mass surveillance and data exploitation, we believe in protecting your online presence, preserving your sovereignty, and restoring your digital autonomy.
                 </p>
-            </div>
+            </article>
             
             <!-- Industry Certified -->
-            <div class="content-card">
+            <article class="content-card">
                 <div class="card-header">
-                    <div class="card-icon">💾</div>
+                    <div class="card-icon" aria-hidden="true">💾</div>
                     <div>
-                        <div class="card-title">INDUSTRY_CERTIFIED</div>
+                        <h2 class="card-title">INDUSTRY_CERTIFIED</h2>
                         <div class="card-subtitle">CIPP/E & CIPM Certified</div>
                     </div>
                 </div>
                 <p class="card-description">
-                    Our team holds CIPP/E & CIPM certifications, ensuring compliance with GDPR and international data protection laws. With experience in homeland security, national intelligence, and cybersecurity, we provide expert guidance on data privacy.
+                    Our team holds CIPP/E & CIPM certifications, ensuring compliance with GDPR and international data protection laws. With extensive experience in homeland security operations, national intelligence analysis, and enterprise cybersecurity implementations, we bring deep expertise to data privacy challenges. Our consultants have worked with Fortune 500 companies and government agencies to develop comprehensive privacy frameworks.
                 </p>
-            </div>
+            </article>
+            
+            <!-- Our Process -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚙️</div>
+                    <div>
+                        <h2 class="card-title">OUR_PROCESS</h2>
+                        <div class="card-subtitle">Professional Privacy Recovery Workflow</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>1. 30-Minute Consultation ($50):</strong> Live search of your name, phone, and email across Google and common data broker sites. Review social media exposures across all platforms.<br>
+                    <strong>2. Privacy Audit Report:</strong> Within 48 hours, receive a customized report summarizing risks, exposures, and recommended service options.<br>
+                    <strong>3. Data Removal Execution:</strong> Manual opt-out submissions to top 30 data brokers, Google/Bing de-indexing, and social media privacy lockdown.<br>
+                    <strong>4. Account Cleanup:</strong> Delete up to 5 inactive online accounts using professional tools like Justdelete.me and AccountKiller.<br>
+                    <em>Timeline: 10-14 business days for full package completion with 50% upfront payment.</em>
+                </p>
+                <a href="/consultation" class="card-button">
+                    BOOK_$50_CONSULTATION
+                    <span aria-hidden="true">→</span>
+                </a>
+            </article>
+            
+            <!-- Services & Pricing Preview -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">💰</div>
+                    <div>
+                        <h2 class="card-title">SERVICES_&_PRICING</h2>
+                        <div class="card-subtitle">Transparent, Professional Solutions</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>Full Package:</strong> $350 - Complete data scrubbing from top 30 data brokers, Google/Bing de-indexing, social media privacy review, and cleanup of up to 5 inactive accounts (10-14 business days).<br>
+                    <strong>30-Minute Consultation:</strong> $50 - Live search analysis and customized privacy audit report within 48 hours.<br>
+                    <strong>Social Media Lockdown (Add-On):</strong> Privacy overhaul for LinkedIn, Instagram, Facebook, and additional social platforms.<br>
+                    <strong>Data Breach Scan (Add-On):</strong> HaveIBeenPwned check for up to 3 email addresses with security recommendations.<br>
+                    <em>All services require 50% upfront payment. Service agreements via DocuSign.</em>
+                </p>
+                <a href="/pricing" class="card-button">
+                    VIEW_FULL_PRICING
+                    <span aria-hidden="true">→</span>
+                </a>
+            </article>
+            
+            <!-- FAQ Section -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">❓</div>
+                    <div>
+                        <h2 class="card-title">FREQUENTLY_ASKED</h2>
+                        <div class="card-subtitle">Common Privacy Concerns</div>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <details style="margin-bottom: 1rem;">
+                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">What happens during the consultation?</summary>
+                        <p style="margin-top: 0.5rem; padding-left: 1rem;">We perform live searches of your name, phone, and email across Google and data broker sites. Review your social media exposure across all platforms and discuss your privacy goals.</p>
+                    </details>
+                    <details style="margin-bottom: 1rem;">
+                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">How long does the Full Package take?</summary>
+                        <p style="margin-top: 0.5rem; padding-left: 1rem;">The Full Package ($350) is completed within 10-14 business days, targeting the top 30 data brokers with manual opt-out submissions.</p>
+                    </details>
+                    <details style="margin-bottom: 1rem;">
+                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">What platforms do you target for removal?</summary>
+                        <p style="margin-top: 0.5rem; padding-left: 1rem;">We target the top 30 data brokers including Whitepages, Spokeo, and other common sites. We also handle Google/Bing de-indexing and social media privacy settings.</p>
+                    </details>
+                    <details>
+                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">What information do you need from me?</summary>
+                        <p style="margin-top: 0.5rem; padding-left: 1rem;">Full name (including aliases), email addresses, phone number, current address (optional), social media handles, and key concerns or target platforms.</p>
+                    </details>
+                </div>
+                <a href="/resources" class="card-button">
+                    MORE_FAQS
+                    <span aria-hidden="true">→</span>
+                </a>
+            </article>
+            
+            <!-- Contact Information -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">📞</div>
+                    <div>
+                        <h2 class="card-title">GET_STARTED_TODAY</h2>
+                        <div class="card-subtitle">Begin Your Privacy Recovery</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>Book Your $50 Consultation:</strong> 30-minute Zoom/phone session with live search analysis and personalized privacy audit report delivered within 48 hours.<br>
+                    <strong>Required Information:</strong> Full name (and aliases), primary email addresses, phone number, current address (optional), social media handles, and specific privacy concerns.<br>
+                    <strong>Payment Terms:</strong> 50% upfront payment required before service begins. All agreements handled via DocuSign for security.<br>
+                    <strong>Add-On Services Available:</strong> Social Media Lockdown, Data Breach Scanning, and Online Privacy Education sessions.<br>
+                    <em>Professional consultation includes assessment of your exposure across all major platforms and data brokers.</em>
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <a href="/consultation" class="card-button">
+                        BOOK_$50_CONSULTATION
+                        <span aria-hidden="true">→</span>
+                    </a>
+                    <a href="/contact" class="card-button">
+                        CONTACT_BIYTELÜM
+                        <span aria-hidden="true">📧</span>
+                    </a>
+                </div>
+            </article>
             
             <!-- Erase Your Data -->
-            <div class="content-card">
+            <article class="content-card">
                 <div class="card-header">
-                    <div class="card-icon">👁️</div>
+                    <div class="card-icon" aria-hidden="true">👁️</div>
                     <div>
-                        <div class="card-title">ERASE_YOUR_DATA_NOW</div>
+                        <h2 class="card-title">ERASE_YOUR_DATA_NOW</h2>
                         <div class="card-subtitle">Data Removal Services</div>
                     </div>
                 </div>
                 <p class="card-description">
                     We specialize in data removal services that help erase your personal information from databases and people search sites. Take back control of your digital identity today.
                 </p>
-                <a href="data-removal.html" class="card-button">
+                <a href="/data-removal" class="card-button">
                     GET_STARTED
-                    <span>→</span>
+                    <span aria-hidden="true">→</span>
                 </a>
-            </div>
+            </article>
         </section>
     </main>
     
     <!-- Status Bar -->
-    <div class="status-bar">
+    <div class="status-bar" role="contentinfo">
         <div class="status-content">
             <div class="status-left">
                 <span>⚡ STATUS: ONLINE</span>
@@ -523,14 +828,17 @@
     </div>
     
     <script>
-        // Create floating particles
+        // Performance optimized particle creation
         function createParticles() {
             const container = document.getElementById('particles');
-            for (let i = 0; i < 15; i++) {
+            const particleCount = window.innerWidth < 768 ? 8 : 15; // Fewer particles on mobile
+            
+            for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                particle.style.width = `${2 + Math.random() * 4}px`;
-                particle.style.height = particle.style.width;
+                const size = 2 + Math.random() * 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
                 particle.style.animationDelay = `${Math.random() * 4}s`;
@@ -539,14 +847,17 @@
             }
         }
         
-        // Typing animation
-        const words = ['SOVEREIGNTY', 'PRIVACY', 'SECURITY', 'FREEDOM'];
+        // Enhanced typing animation with better performance
+        const words = ['SOVEREIGNTY', 'PRIVACY', 'SECURITY', 'FREEDOM', 'CONTROL'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
+        let typingTimeout;
         
         function typeText() {
             const typedElement = document.getElementById('typed-text');
+            if (!typedElement) return;
+            
             const currentWord = words[wordIndex];
             
             if (isDeleting) {
@@ -557,33 +868,68 @@
                 charIndex++;
             }
             
+            let timeout = isDeleting ? 50 : 100;
+            
             if (!isDeleting && charIndex === currentWord.length) {
-                setTimeout(() => { isDeleting = true; }, 2000);
+                timeout = 2000;
+                isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
+                timeout = 500;
             }
             
-            setTimeout(typeText, isDeleting ? 50 : 100);
+            typingTimeout = setTimeout(typeText, timeout);
         }
         
-        // Mobile menu toggle
+        // Mobile menu toggle with proper ARIA
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const isOpen = mobileNav.classList.contains('show');
+            
             mobileNav.classList.toggle('show');
+            mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
         }
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            typeText();
-        });
+        // Throttled scroll handler for better performance
+        let ticking = false;
         
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
+        function updateParallax() {
             const scrolled = window.pageYOffset;
             const grid = document.querySelector('.bg-grid');
-            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+            if (grid) {
+                grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+            }
+            ticking = false;
+        }
+        
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for reduced motion preference
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            createParticles();
+            
+            if (!prefersReducedMotion) {
+                typeText();
+                window.addEventListener('scroll', onScroll, { passive: true });
+            }
+            
+            // Remove loading bar after content loads
+            setTimeout(() => {
+                const loadingBar = document.querySelector('.loading-bar');
+                if (loadingBar) {
+                    loadingBar.style.display = 'none';
+                }
+            }, 2000);
         });
         
         // Close mobile menu when clicking outside
@@ -591,10 +937,10 @@
             const mobileNav = document.getElementById('mobileNav');
             const mobileMenu = document.querySelector('.mobile-menu');
             
-            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if (mobileNav.classList.contains('show') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
                 mobileNav.classList.remove('show');
+                mobileMenu.setAttribute('aria-expanded', 'false');
             }
         });
-    </script>
-</body>
-</html>
