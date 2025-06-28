@@ -108,6 +108,11 @@
             letter-spacing: 0.1em;
         }
         
+        .nav-links a.active {
+            color: #A7FF9E;
+            border-bottom: 1px solid #A7FF9E;
+        }
+        
         /* Mobile Menu */
         .mobile-menu {
             display: none;
@@ -167,11 +172,12 @@
             position: relative;
             z-index: 10;
             padding-top: 6rem;
-            min-height: 100vh;
+            min-height: calc(100vh - 2.5rem);
             max-width: 1000px;
             margin: 0 auto;
             padding-left: 2rem;
             padding-right: 2rem;
+            padding-bottom: 2.5rem;
         }
         
         /* Header */
@@ -181,9 +187,16 @@
         }
         
         .page-title {
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
             margin-bottom: 0.5rem;
+        }
+        
+        .title-line {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
             color: #A7FF9E;
             text-shadow: 
                 0 0 20px #A7FF9E,
@@ -191,6 +204,7 @@
                 0 0 60px #A7FF9E;
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
+            line-height: 0.9;
         }
         
         .page-subtitle {
@@ -205,6 +219,7 @@
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.6;
         }
         
         /* Content Grid */
@@ -229,6 +244,21 @@
             transform: translateY(-5px);
             border-color: rgba(167, 255, 158, 0.6);
             box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .content-card:hover::before {
+            left: 100%;
         }
         
         .card-header {
@@ -285,6 +315,23 @@
             padding: 2rem;
             margin: 2rem 0;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .pgp-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         .pgp-container h2 {
@@ -295,6 +342,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-shadow: 0 0 10px #A7FF9E;
         }
         
         .pgp-container p {
@@ -481,6 +529,7 @@
         .contact-method p {
             color: rgba(167, 255, 158, 0.8);
             font-size: 0.9rem;
+            line-height: 1.4;
         }
         
         /* Status Bar */
@@ -492,7 +541,7 @@
             background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(167, 255, 158, 0.3);
-            padding: 0.75rem 2rem;
+            padding: 0.25rem 2rem;
             z-index: 100;
         }
         
@@ -503,7 +552,7 @@
             justify-content: space-between;
             align-items: center;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
         
         .status-left {
@@ -514,6 +563,53 @@
         
         .status-right {
             color: rgba(167, 255, 158, 0.5);
+        }
+        
+        .status-right a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .status-right a:hover {
+            color: #A7FF9E;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .pgp-container {
+                padding: 1.5rem;
+            }
+            
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .contact-form, .pgp-container {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -538,7 +634,7 @@
                 <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="data-removal.html">DATA_REMOVAL</a></li>
                 <li><a href="resources.html">RESOURCES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
                 <li><a href="privacy.html">PRIVACY</a></li>
                 <li><a href="terms.html">TERMS</a></li>
                 <li><a href="blog.html">BLOG</a></li>
@@ -564,7 +660,10 @@
     <main>
         <!-- Header -->
         <div class="page-header">
-            <h1 class="page-title">CONTACT_PROTOCOL</h1>
+            <h1 class="page-title">
+                <span class="title-line">CONTACT</span>
+                <span class="title-line">PROTOCOL</span>
+            </h1>
             <div class="page-subtitle">SECURE_COMMUNICATION_CHANNEL</div>
             <p class="page-description">Establish encrypted contact for digital privacy consultations. All communications secured with military-grade protocols.</p>
         </div>
@@ -652,7 +751,7 @@ FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
                 <span>RESPONSE_TIME: 24-48H</span>
             </div>
             <div class="status-right">
-                © 2025 BiyteLüm.sys | Contact Protocol v2.3.1
+                © 2025 BiyteLüm.sys | <a href="index.html">RETURN_HOME</a>
             </div>
         </div>
     </div>
@@ -705,6 +804,16 @@ FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
             const scrolled = window.pageYOffset;
             const grid = document.querySelector('.bg-grid');
             grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
         });
     </script>
 </body>
