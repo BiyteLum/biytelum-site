@@ -518,6 +518,11 @@
             51%, 100% { opacity: 0; }
         }
         
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .status-content {
@@ -831,7 +836,7 @@
                             <div style="font-size: 2rem; opacity: 0.8;">🛡️</div>
                             <div style="flex: 1;">
                                 <h3 style="font-family: 'Share Tech Mono', monospace; color: #A7FF9E; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem;">SPOKEO_REMOVAL_PROTOCOL</h3>
-                                <div style="font-family: 'Share Tech Mono', monospace; color: rgba(167, 255, 158, 0.6); font-size: 0.7rem; text-transform: uppercase;">CLASSIFIED • 2.3MB • PDF_FORMAT</div>
+                                <div style="font-family: 'Share Tech Mono', monospace; color: rgba(167, 255, 158, 0.6); font-size: 0.7rem; text-transform: uppercase;">CLASSIFIED • HTML_FORMAT</div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.3rem;">
                                 <span style="color: #A7FF9E; font-size: 0.8rem; animation: pulse 2s infinite;">●</span>
@@ -842,9 +847,9 @@
                             Complete tactical guide for removing your personal data from Spokeo databases. Includes screenshots, legal frameworks, and advanced evasion techniques.
                         </p>
                         <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <a href="/resources/spokeo-removal-guide.pdf" download style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: #A7FF9E; color: #000; font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; text-decoration: none; border-radius: 5px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold; box-shadow: 0 0 15px rgba(167, 255, 158, 0.3);" onmouseover="this.style.background='#00FF99'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 20px rgba(167, 255, 158, 0.4)'" onmouseout="this.style.background='#A7FF9E'; this.style.transform='translateY(0)'; this.style.boxShadow='0 0 15px rgba(167, 255, 158, 0.3)'">
-                                <span style="font-size: 1rem;">⬇</span>
-                                DOWNLOAD_PROTOCOL
+                            <a href="/resources/spokeo-removal-guide.html" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: #A7FF9E; color: #000; font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; text-decoration: none; border-radius: 5px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold; box-shadow: 0 0 15px rgba(167, 255, 158, 0.3);" onmouseover="this.style.background='#00FF99'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 20px rgba(167, 255, 158, 0.4)'" onmouseout="this.style.background='#A7FF9E'; this.style.transform='translateY(0)'; this.style.boxShadow='0 0 15px rgba(167, 255, 158, 0.3)'">
+                                <span style="font-size: 1rem;">📖</span>
+                                VIEW_PROTOCOL
                             </a>
                             <div style="display: flex; gap: 1rem; font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: rgba(167, 255, 158, 0.6); text-transform: uppercase; justify-content: center;">
                                 <span>🔒 ENCRYPTED</span>
@@ -1000,4 +1005,4 @@
         });
     </script>
 </body>
-</html>
+</html>       
