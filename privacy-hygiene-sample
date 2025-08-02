@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Hygiene Review - Sample Report | BiyteLüm</title>
+    <meta name="description" content="Sample Privacy Hygiene Review showing what you'll receive - personalized digital privacy audit with actionable recommendations.">
+    <link rel="canonical" href="https://biytelum.com/privacy-hygiene-sample">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+            --warning-color: #FFB366;
+            --success-color: #A7FF9E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .header h1 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .header .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .client-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(167, 255, 158, 0.1);
+        }
+        
+        .client-info h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+        }
+        
+        .section-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .section-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(167, 255, 158, 0.9);
+        }
+        
+        .item-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border-left: 3px solid var(--success-color);
+        }
+        
+        .item.warning {
+            border-left-color: var(--warning-color);
+        }
+        
+        .item.recommendation {
+            border-left-color: var(--accent-green);
+        }
+        
+        .item-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        
+        .item-content h4 {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+        
+        .item-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .recommendation-link {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color 0.3s ease;
+        }
+        
+        .recommendation-link:hover {
+            border-bottom-color: var(--accent-green);
+        }
+        
+        .pro-tip {
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 2px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pro-tip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 153, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .pro-tip-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pro-tip-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        .footer {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .cta-button:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        
+        .back-link:hover {
+            border-color: var(--primary-green);
+            background: rgba(167, 255, 158, 0.1);
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 4rem;
+            color: rgba(167, 255, 158, 0.03);
+            z-index: 1;
+            pointer-events: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .back-link {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 1rem;
+                align-self: flex-start;
+            }
+            
+            .header h1 {
+                font-size: 1.2rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .watermark {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">
+        <span>←</span>
+        BACK_TO_HOME
+    </a>
+    
+    <div class="container">
+        <div class="watermark">SAMPLE</div>
+        
+        <div class="header">
+            <h1>🔍 Privacy Hygiene Review</h1>
+            <p class="subtitle">Personalized Digital Privacy Audit Report</p>
+            
+            <div class="client-info">
+                <h3>📋 Client Profile</h3>
+                <p><strong>Name:</strong> Alex Chen</p>
+                <p><strong>Report Date:</strong> January 15, 2025</p>
+                <p><strong>Turnaround:</strong> 2 business days</p>
+                <p><strong>Privacy Goals:</strong> Reduce corporate tracking, secure communications</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Summary Section -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🔍</div>
+                    <h2 class="section-title">Privacy Health Summary</h2>
+                </div>
+                
+                <div class="summary-box">
+                    <p class="summary-text">
+                        <strong>Overall Assessment:</strong> You're doing well with password management and have good privacy awareness, but your browser and email setup leave you significantly exposed to corporate tracking. Your social media privacy settings need immediate attention, and you're missing key tools that would dramatically improve your digital sovereignty.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- What You're Doing Well -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">✅</div>
+                    <h2 class="section-title">What You're Doing Well</h2>
+                </div>
+                
+                <ul class="item-list">
+                    <li class="item">
+                        <div class="item-icon">🔐</div>
+                        <div class="item-content">
+                            <h4>Strong Password Management</h4>
+                            <p>Using Bitwarden is an excellent choice. Your unique passwords across all accounts significantly reduce your attack surface.</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-icon">📱</div>
+                        <div class="item-content">
+                            <h4>Device Security Awareness</h4>
+                            <p>Keeping your iOS device updated and using Face ID shows good security hygiene. Your device-level protections are solid.</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-icon">🔒</div>
+                        <div class="item-content">
+                            <h4>VPN Usage</h4>
+                            <p>Using NordVPN shows privacy awareness, though there are better options for your specific needs (see recommendations).</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- What Needs Improvement -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">⚠️</div>
+                    <h2 class="section-title">What Needs Immediate Attention</h2>
+                </div>
+                
+                <ul class="item-list">
+                    <li class="item warning">
+                        <div class="item-icon">🌐</div>
+                        <div class="item-content">
+                            <h4>Browser Privacy Exposure</h4>
+                            <p>Chrome with default settings is heavily integrated with Google's tracking ecosystem. Your browsing data, search history, and online behavior are being extensively profiled for advertising.</p>
+                        </div>
+                    </li>
+                    <li class="item warning">
+                        <div class="item-icon">📧</div>
+                        <div class="item-content">
+                            <h4>Email Privacy Concerns</h4>
+                            <p>Gmail scans all your emails for advertising purposes and shares data across Google's services. Your communications lack end-to-end encryption.</p>
+                        </div>
+                    </li>
+                    <li class="item warning">
+                        <div class="item-icon">📱</div>
+                        <div class="item-content">
+                            <h4>Social Media Over-Exposure</h4>
+                            <p>LinkedIn and Instagram have default privacy settings that expose your information to data brokers and advertisers. Your professional and personal profiles are publicly searchable.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Recommendations -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-icon">🛠️</div>
+                    <h2 class="section-title">Specific Recommendations</h2>
+                </div>
+                
+                <ul class="item-list">
+                    <li class="item recommendation">
+                        <div class="item-icon">🦊</div>
+                        <div class="item-content">
+                            <h4>Switch to Firefox with Privacy Extensions</h4>
+                            <p>Replace Chrome with <a href="https://firefox.com" class="recommendation-link">Firefox</a> + <a href="https://ublockorigin.com" class="recommendation-link">uBlock Origin</a> + <a href="https://clearurls.xyz" class="recommendation-link">ClearURLs</a>. This eliminates Google tracking while maintaining usability.</p>
+                        </div>
+                    </li>
+                    <li class="item recommendation">
+                        <div class="item-icon">📬</div>
+                        <div class="item-content">
+                            <h4>Migrate to ProtonMail</h4>
+                            <p>Switch from Gmail to <a href="https://proton.me" class="recommendation-link">ProtonMail</a> for end-to-end encrypted email. Use email aliasing to compartmentalize your digital identity.</p>
+                        </div>
+                    </li>
+                    <li class="item recommendation">
+                        <div class="item-icon">🔍</div>
+                        <div class="item-content">
+                            <h4>Replace Google Search</h4>
+                            <p>Use <a href="https://duckduckgo.com" class="recommendation-link">DuckDuckGo</a> or <a href="https://startpage.com" class="recommendation-link">Startpage</a> for searches. Both provide Google-quality results without tracking.</p>
+                        </div>
+                    </li>
+                    <li class="item recommendation">
+                        <div class="item-icon">🛡️</div>
+                        <div class="item-content">
+                            <h4>Upgrade VPN Service</h4>
+                            <p>Consider switching to <a href="https://mullvad.net" class="recommendation-link">Mullvad</a> or <a href="https://protonvpn.com" class="recommendation-link">ProtonVPN</a> for stronger privacy policies and no-logs verification.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Pro Tip -->
+            <div class="pro-tip">
+                <div class="pro-tip-header">
+                    <span style="font-size: 1.2rem;">💡</span>
+                    <h3 class="pro-tip-title">Pro Move You Didn't Ask For</h3>
+                </div>
+                <p><strong>Freeze Your Credit Reports:</strong> Contact Experian, Equifax, and TransUnion to freeze your credit reports. This prevents new accounts from being opened in your name and is one of the most effective protections against identity theft. It's free, takes 10 minutes, and you can temporarily unfreeze when applying for credit.</p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    <em>This single action stops 90% of identity theft scenarios and costs nothing to implement.</em>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-text">
+                This sample shows the format and quality of recommendations you'll receive.<br>
+                Your actual report will be customized based on your specific setup and privacy goals.
+            </p>
+            <a href="/privacy-hygiene" class="cta-button">
+                ORDER_YOUR_REVIEW_$25
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
