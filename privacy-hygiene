@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Hygiene Review - $25 Digital Privacy Audit | BiyteLüm</title>
+    <meta name="description" content="Get a personalized audit of your digital privacy setup for just $25. No jargon, just actionable recommendations to strengthen your online privacy and digital sovereignty.">
+    <meta name="keywords" content="privacy audit, digital privacy review, privacy assessment, online privacy checkup, data protection audit">
+    <link rel="canonical" href="https://biytelum.com/privacy-hygiene">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Hygiene Review - $25 Digital Privacy Audit">
+    <meta property="og:description" content="Professional privacy audit analyzing your email, browser, devices, and social media. Get clear, actionable recommendations from CIPP/E certified experts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com/privacy-hygiene">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: var(--primary-green);
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-green);
+            letter-spacing: 0.1em;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-green);
+            border-bottom: 1px solid var(--primary-green);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.25rem 2.5rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+        
+        .hero-button.primary {
+            background: rgba(167, 255, 158, 0.1);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+        
+        .hero-button:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+        
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .hero-button.primary::before {
+            background: var(--accent-green);
+        }
+        
+        .hero-button:hover::before {
+            left: 0;
+        }
+        
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .value-prop h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .value-prop p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .value-prop strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .process-step {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent-green);
+            color: #000;
+            border-radius: 50%;
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* What's Included */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-green);
+        }
+        
+        .included-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+        
+        .included-content h4 {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .included-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Perfect For Section */
+        .perfect-for {
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--accent-green);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .perfect-for h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .perfect-for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .perfect-for-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .perfect-for-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .perfect-for-item h4 {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .perfect-for-item p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.6) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-green);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .faq-question:hover {
+            background: rgba(167, 255, 158, 0.05);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 2px solid var(--accent-green);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 153, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .cta-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Back Button */
+        .back-section {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(167, 255, 158, 0.1);
+            transform: translateX(-5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .trust-indicators {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .perfect-for-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span>▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/consultation">CONSULTATION</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/data-removal">DATA_REMOVAL</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/privacy">PRIVACY</a></li>
+                <li><a href="/terms">TERMS</a></li>
+                <li><a href="/blog">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/consultation">03. CONSULTATION</a>
+            <a href="/pricing">04. PRICING</a>
+            <a href="/data-removal">05. DATA_REMOVAL</a>
+            <a href="/resources">06. RESOURCES</a>
+            <a href="/contact">07. CONTACT</a>
+            <a href="/privacy">08. PRIVACY</a>
+            <a href="/terms">09. TERMS</a>
+            <a href="/blog">10. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>🔍 Privacy Hygiene Review</h1>
+            <p class="subtitle">Personalized Digital Privacy Audit - $25</p>
+            <p class="description">
+                Get a professional audit of your digital privacy setup with clear, actionable recommendations. No jargon, no fear-mongering — just practical guidance to strengthen your online sovereignty.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="https://buy.stripe.com/8x28wQbcRctm4MKgdAcAo03" class="hero-button primary">
+                    ORDER NOW - $25
+                    <span>🛒</span>
+                </a>
+                <a href="/privacy-hygiene-sample" class="hero-button">
+                    VIEW SAMPLE REPORT
+                    <span>👁️</span>
+                </a>
+            </div>
+            
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span>🏆</span>
+                    <span>CIPP/E Certified</span>
+                </div>
+                <div class="trust-item">
+                    <span>⚡</span>
+                    <span>3-Day Delivery</span>
+                </div>
+                <div class="trust-item">
+                    <span>🔒</span>
+                    <span>No Data Retention</span>
+                </div>
+                <div class="trust-item">
+                    <span>💯</span>
+                    <span>Actionable Results</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Value Proposition -->
+        <section class="content-section">
+            <div class="value-prop">
+                <h3>Why Your Digital Privacy Needs a Professional Review</h3>
+                <p>
+                    <strong>Most people think they're protected online, but they're not.</strong> Using Chrome with default settings? Your browsing data is being extensively profiled. Using Gmail? Your emails are scanned for advertising purposes. Default social media privacy settings? Your information is exposed to data brokers worldwide.
+                </p>
+                <p>
+                    <strong>Our Privacy Hygiene Review identifies exactly where you're exposed</strong> and provides specific, actionable recommendations to strengthen your digital sovereignty. No generic advice — this is a personalized analysis of YOUR setup by CIPP/E certified privacy professionals.
+                </p>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">
+                    Our streamlined process delivers personalized privacy recommendations in just 3 business days.
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Submit Your Info</h3>
+                    <p class="step-description">
+                        After purchase, you'll receive a secure intake form covering your email providers, devices, browsers, VPN usage, and privacy goals. All information is handled confidentially.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Expert Analysis</h3>
+                    <p class="step-description">
+                        Our CIPP/E certified privacy professionals analyze your digital footprint, identifying strengths, vulnerabilities, and improvement opportunities specific to your setup.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Receive Your Report</h3>
+                    <p class="step-description">
+                        Get a comprehensive one-page privacy audit with specific tool recommendations, implementation steps, and a bonus "pro tip" delivered within 3 business days.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What's Included Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">What's Included in Your Review</h2>
+                <p class="section-subtitle">
+                    Your Privacy Hygiene Review covers all critical aspects of your digital privacy setup.
+                </p>
+            </div>
+            
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-icon">✅</div>
+                    <div class="included-content">
+                        <h4>What You're Doing Well</h4>
+                        <p>Recognition of your current privacy strengths and good security practices to build upon.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">⚠️</div>
+                    <div class="included-content">
+                        <h4>Privacy Vulnerabilities</h4>
+                        <p>Specific issues with your current setup that expose you to tracking and data collection.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">🛠️</div>
+                    <div class="included-content">
+                        <h4>Tool Recommendations</h4>
+                        <p>Specific alternative tools and services that better protect your privacy without sacrificing usability.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">📧</div>
+                    <div class="included-content">
+                        <h4>Email Privacy Analysis</h4>
+                        <p>Assessment of your email providers and recommendations for encrypted, privacy-focused alternatives.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">🌐</div>
+                    <div class="included-content">
+                        <h4>Browser & Search Review</h4>
+                        <p>Analysis of your browsing habits and recommendations for privacy-focused browsers and search engines.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">📱</div>
+                    <div class="included-content">
+                        <h4>Device & Social Media</h4>
+                        <p>Review of your devices, operating systems, and social media privacy settings with improvement suggestions.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">🔐</div>
+                    <div class="included-content">
+                        <h4>VPN & Security Tools</h4>
+                        <p>Evaluation of your current VPN and security tools with recommendations for better privacy protection.</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="included-icon">💡</div>
+                    <div class="included-content">
+                        <h4>Bonus Pro Tip</h4>
+                        <p>An advanced privacy technique tailored to your specific situation that you didn't ask for but should implement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Perfect For Section -->
+        <section class="content-section">
+            <div class="perfect-for">
+                <h3>Perfect For</h3>
+                <div class="perfect-for-grid">
+                    <div class="perfect-for-item">
+                        <span class="icon">📰</span>
+                        <h4>Journalists</h4>
+                        <p>Protect sources and secure communications</p>
+                    </div>
+                    <div class="perfect-for-item">
+                        <span class="icon">🔬</span>
+                        <h4>Researchers</h4>
+                        <p>Maintain confidentiality and academic freedom</p>
+                    </div>
+                    <div class="perfect-for-item">
+                        <span class="icon">₿</span>
+                        <h4>Crypto Users</h4>
+                        <p>Enhance operational security and privacy</p>
+                    </div>
+                    <div class="perfect-for-item">
+                        <span class="icon">💼</span>
+                        <h4>Professionals</h4>
+                        <p>Protect client data and business interests</p>
+                    </div>
+                    <div class="perfect-for-item">
+                        <span class="icon">🏠</span>
+                        <h4>Privacy-Conscious Individuals</h4>
+                        <p>Anyone tired of corporate surveillance</p>
+                    </div>
+                    <div class="perfect-for-item">
+                        <span class="icon">👨‍💻</span>
+                        <h4>Tech Workers</h4>
+                        <p>Implement professional-grade privacy measures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What information do I need to provide?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You'll need to share your email providers, browser choices, devices/operating systems, VPN service (if any), social media platforms, and your specific privacy concerns or goals. All information is handled confidentially and deleted after your report is delivered.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How long does the review take?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Your Privacy Hygiene Review is delivered within 3 business days of receiving your completed intake form. Most reviews are completed within 48 hours.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What makes this different from free online privacy guides?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            This is a personalized analysis of YOUR specific setup by CIPP/E certified privacy professionals. Instead of generic advice, you get tailored recommendations based on your actual tools, devices, and privacy goals.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Do you store my personal information?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No. All information provided is used solely to create your privacy report and is permanently deleted after delivery. We practice data minimization and have a strict no-retention policy for Privacy Hygiene Reviews.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Is this suitable for beginners?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. Our reviews are written in plain language with step-by-step recommendations. Whether you're a privacy novice or experienced user, you'll receive actionable guidance appropriate for your skill level.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What if I need help implementing the recommendations?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Your report includes clear implementation steps for each recommendation. If you need additional support, you can book a 30-minute consultation ($50) or upgrade to our full Data Removal package ($350) for hands-on assistance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <h3 class="cta-title">Ready to Strengthen Your Digital Privacy?</h3>
+            <p class="cta-description">
+                Join hundreds of privacy-conscious individuals who have taken control of their digital footprint. Get your personalized Privacy Hygiene Review today.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://buy.stripe.com/8x28wQbcRctm4MKgdAcAo03" class="hero-button primary">
+                    GET YOUR REVIEW - $25
+                    <span>🛒</span>
+                </a>
+                <a href="/privacy-hygiene-sample" class="hero-button">
+                    SEE SAMPLE FIRST
+                    <span>👁️</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Back Button -->
+        <div class="back-section">
+            <a href="/services" class="back-button">
+                ← Back to Services
+            </a>
+        </div>
+    </main>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 8 : 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = 2 + Math.random() * 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('show');
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+        
+        // Parallax effect
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            if (grid) {
+                grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            window.addEventListener('scroll', updateParallax, { passive: true });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileNav && mobileNav.classList.contains('show') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
