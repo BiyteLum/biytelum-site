@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
         :root {
             --primary-green: #A7FF9E;
@@ -266,6 +266,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .cta-button {
@@ -380,12 +381,25 @@
         .card-subtitle {
             font-size: 0.7rem;
             color: rgba(167, 255, 158, 0.6);
+            font-family: 'Share Tech Mono', monospace;
         }
         
         .card-description {
             line-height: 1.6;
             color: var(--text-secondary);
             margin-bottom: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .card-description strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .card-description em {
+            color: rgba(167, 255, 158, 0.8);
+            font-style: italic;
         }
         
         .card-button {
@@ -515,6 +529,30 @@
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
+        }
+        
+        /* FAQ Styles */
+        details {
+            margin-bottom: 1rem;
+        }
+        
+        details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-green);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: color 0.3s ease;
+        }
+        
+        details summary:hover {
+            color: var(--accent-green);
+        }
+        
+        details p {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-secondary);
         }
         
         /* Responsive Design */
@@ -687,7 +725,34 @@
                 </p>
             </article>
             
-            <!-- Social Media Warfare Pack - NEW -->
+            <!-- Privacy Hygiene Review - NEW -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🔍</div>
+                    <div>
+                        <h2 class="card-title">PRIVACY_HYGIENE_REVIEW</h2>
+                        <div class="card-subtitle">Personalized Digital Privacy Audit</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>Get a personalized audit of your digital privacy setup — no jargon, just what to fix.</strong> Our Privacy Hygiene Review analyzes your current digital footprint and provides clear, actionable recommendations to strengthen your online privacy.<br><br>
+                    <strong>What You Get:</strong> A comprehensive one-page review covering what you're doing well, what needs improvement, specific tool recommendations, and a bonus "pro tip" tailored to your privacy goals.<br><br>
+                    <strong>Perfect For:</strong> Journalists, researchers, crypto users, and anyone tired of being tracked by big tech companies. We review your email provider, password management, browser choices, devices, VPN usage, and social media exposure.<br><br>
+                    <strong>Delivery:</strong> Personalized report delivered via secure email within 3 business days. All consultations are completely private with no data retention.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <a href="/privacy-hygiene" class="card-button" style="background: rgba(167, 255, 158, 0.1); border-color: var(--accent-green); color: var(--accent-green); font-weight: bold;">
+                        ORDER_NOW_$25
+                        <span aria-hidden="true">🛒</span>
+                    </a>
+                    <a href="/privacy-hygiene-sample" class="card-button">
+                        VIEW_SAMPLE
+                        <span aria-hidden="true">👁️</span>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Social Media Warfare Pack -->
             <article class="content-card">
                 <div class="card-header">
                     <div class="card-icon" aria-hidden="true">📱</div>
@@ -697,10 +762,10 @@
                     </div>
                 </div>
                 <p class="card-description">
-                    <strong>Dominate the Privacy Space on X/Twitter:</strong> 33 CIPP/E certified social media posts designed to establish your authority in digital sovereignty. Each post optimized for maximum engagement and lead generation.<br>
-                    <strong>What You Get:</strong> Ready-to-copy posts, character counts, engagement hooks, hashtag strategies, and deployment protocols.<br>
-                    <strong>Perfect For:</strong> Privacy professionals, consultants, and cybersecurity experts looking to build their personal brand and attract clients.<br>
-                    <strong>Instant Access:</strong> Secure link delivered immediately after purchase. No downloads, no PDFs—just clean, copy-paste ready content.<br>
+                    <strong>Dominate the Privacy Space on X/Twitter:</strong> 33 CIPP/E certified social media posts designed to establish your authority in digital sovereignty. Each post optimized for maximum engagement and lead generation.<br><br>
+                    <strong>What You Get:</strong> Ready-to-copy posts, character counts, engagement hooks, hashtag strategies, and deployment protocols.<br><br>
+                    <strong>Perfect For:</strong> Privacy professionals, consultants, and cybersecurity experts looking to build their personal brand and attract clients.<br><br>
+                    <strong>Instant Access:</strong> Secure link delivered immediately after purchase. No downloads, no PDFs—just clean, copy-paste ready content.<br><br>
                     <em>Battle-tested by privacy professionals worldwide. Establish your expertise and generate leads through strategic social media presence.</em>
                 </p>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
@@ -725,10 +790,10 @@
                     </div>
                 </div>
                 <p class="card-description">
-                    <strong>1. 30-Minute Consultation ($50):</strong> Live search of your name, phone, and email across Google and common data broker sites. Review social media exposures across all platforms.<br>
-                    <strong>2. Privacy Audit Report:</strong> Within 48 hours, receive a customized report summarizing risks, exposures, and recommended service options.<br>
-                    <strong>3. Data Removal Execution:</strong> Manual opt-out submissions to top 30 data brokers, Google/Bing de-indexing, and social media privacy lockdown.<br>
-                    <strong>4. Account Cleanup:</strong> Delete up to 5 inactive online accounts using professional tools like Justdelete.me and AccountKiller.<br>
+                    <strong>1. 30-Minute Consultation ($50):</strong> Live search of your name, phone, and email across Google and common data broker sites. Review social media exposures across all platforms.<br><br>
+                    <strong>2. Privacy Audit Report:</strong> Within 48 hours, receive a customized report summarizing risks, exposures, and recommended service options.<br><br>
+                    <strong>3. Data Removal Execution:</strong> Manual opt-out submissions to top 30 data brokers, Google/Bing de-indexing, and social media privacy lockdown.<br><br>
+                    <strong>4. Account Cleanup:</strong> Delete up to 5 inactive online accounts using professional tools like Justdelete.me and AccountKiller.<br><br>
                     <em>Timeline: 10-14 business days for full package completion with 50% upfront payment.</em>
                 </p>
                 <a href="/consultation" class="card-button">
@@ -747,10 +812,10 @@
                     </div>
                 </div>
                 <p class="card-description">
-                    <strong>Full Package:</strong> $350 - Complete data scrubbing from top 30 data brokers, Google/Bing de-indexing, social media privacy review, and cleanup of up to 5 inactive accounts (10-14 business days).<br>
-                    <strong>30-Minute Consultation:</strong> $50 - Live search analysis and customized privacy audit report within 48 hours.<br>
-                    <strong>Social Media Lockdown (Add-On):</strong> Privacy overhaul for LinkedIn, Instagram, Facebook, and additional social platforms.<br>
-                    <strong>Data Breach Scan (Add-On):</strong> HaveIBeenPwned check for up to 3 email addresses with security recommendations.<br>
+                    <strong>Full Package:</strong> $350 - Complete data scrubbing from top 30 data brokers, Google/Bing de-indexing, social media privacy review, and cleanup of up to 5 inactive accounts (10-14 business days).<br><br>
+                    <strong>30-Minute Consultation:</strong> $50 - Live search analysis and customized privacy audit report within 48 hours.<br><br>
+                    <strong>Social Media Lockdown (Add-On):</strong> Privacy overhaul for LinkedIn, Instagram, Facebook, and additional social platforms.<br><br>
+                    <strong>Data Breach Scan (Add-On):</strong> HaveIBeenPwned check for up to 3 email addresses with security recommendations.<br><br>
                     <em>All services require 50% upfront payment. Service agreements via DocuSign.</em>
                 </p>
                 <a href="/pricing" class="card-button">
@@ -770,20 +835,20 @@
                 </div>
                 <div class="card-description">
                     <details style="margin-bottom: 1rem;">
-                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">What happens during the consultation?</summary>
-                        <p style="margin-top: 0.5rem; padding-left: 1rem;">We perform live searches of your name, phone, and email across Google and data broker sites. Review your social media exposure across all platforms and discuss your privacy goals.</p>
+                        <summary>What happens during the consultation?</summary>
+                        <p>We perform live searches of your name, phone, and email across Google and data broker sites. Review your social media exposure across all platforms and discuss your privacy goals.</p>
                     </details>
                     <details style="margin-bottom: 1rem;">
-                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">How long does the Full Package take?</summary>
-                        <p style="margin-top: 0.5rem; padding-left: 1rem;">The Full Package ($350) is completed within 10-14 business days, targeting the top 30 data brokers with manual opt-out submissions.</p>
+                        <summary>How long does the Full Package take?</summary>
+                        <p>The Full Package ($350) is completed within 10-14 business days, targeting the top 30 data brokers with manual opt-out submissions.</p>
                     </details>
                     <details style="margin-bottom: 1rem;">
-                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">What platforms do you target for removal?</summary>
-                        <p style="margin-top: 0.5rem; padding-left: 1rem;">We target the top 30 data brokers including Whitepages, Spokeo, and other common sites. We also handle Google/Bing de-indexing and social media privacy settings.</p>
+                        <summary>What platforms do you target for removal?</summary>
+                        <p>We target the top 30 data brokers including Whitepages, Spokeo, and other common sites. We also handle Google/Bing de-indexing and social media privacy settings.</p>
                     </details>
                     <details>
-                        <summary style="cursor: pointer; font-weight: bold; color: var(--primary-green);">What information do you need from me?</summary>
-                        <p style="margin-top: 0.5rem; padding-left: 1rem;">Full name (including aliases), email addresses, phone number, current address (optional), social media handles, and key concerns or target platforms.</p>
+                        <summary>What information do you need from me?</summary>
+                        <p>Full name (including aliases), email addresses, phone number, current address (optional), social media handles, and key concerns or target platforms.</p>
                     </details>
                 </div>
                 <a href="/resources" class="card-button">
@@ -802,10 +867,10 @@
                     </div>
                 </div>
                 <p class="card-description">
-                    <strong>Book Your $50 Consultation:</strong> 30-minute Zoom/phone session with live search analysis and personalized privacy audit report delivered within 48 hours.<br>
-                    <strong>Required Information:</strong> Full name (and aliases), primary email addresses, phone number, current address (optional), social media handles, and specific privacy concerns.<br>
-                    <strong>Payment Terms:</strong> 50% upfront payment required before service begins. All agreements handled via DocuSign for security.<br>
-                    <strong>Add-On Services Available:</strong> Social Media Lockdown, Data Breach Scanning, and Online Privacy Education sessions.<br>
+                    <strong>Book Your $50 Consultation:</strong> 30-minute Zoom/phone session with live search analysis and personalized privacy audit report delivered within 48 hours.<br><br>
+                    <strong>Required Information:</strong> Full name (and aliases), primary email addresses, phone number, current address (optional), social media handles, and specific privacy concerns.<br><br>
+                    <strong>Payment Terms:</strong> 50% upfront payment required before service begins. All agreements handled via DocuSign for security.<br><br>
+                    <strong>Add-On Services Available:</strong> Social Media Lockdown, Data Breach Scanning, and Online Privacy Education sessions.<br><br>
                     <em>Professional consultation includes assessment of your exposure across all major platforms and data brokers.</em>
                 </p>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
@@ -864,7 +929,7 @@
                                 <span style="font-family: 'Share Tech Mono', monospace; color: rgba(167, 255, 158, 0.7); font-size: 0.7rem; text-transform: uppercase;">ACTIVE</span>
                             </div>
                         </div>
-                        <p style="color: rgba(167, 255, 158, 0.8); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                        <p style="color: rgba(167, 255, 158, 0.8); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                             Complete tactical guide for removing your personal data from Spokeo databases. Includes screenshots, legal frameworks, and advanced evasion techniques.
                         </p>
                         <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -893,7 +958,7 @@
                                 <span style="font-family: 'Share Tech Mono', monospace; color: rgba(167, 255, 158, 0.7); font-size: 0.7rem; text-transform: uppercase;">ACTIVE</span>
                             </div>
                         </div>
-                        <p style="color: rgba(167, 255, 158, 0.8); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                        <p style="color: rgba(167, 255, 158, 0.8); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                             Advanced tactical guide for eliminating your profile from WhitePages - the largest people search database. Includes multi-factor verification bypass and legal escalation protocols.
                         </p>
                         <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -911,7 +976,7 @@
                 
                 <!-- Coming Soon Notice -->
                 <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(167, 255, 158, 0.2); text-align: center;">
-                    <p style="color: rgba(167, 255, 158, 0.7); font-size: 0.9rem; font-style: italic;">
+                    <p style="color: rgba(167, 255, 158, 0.7); font-size: 0.9rem; font-style: italic; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
                         More privacy protocols coming soon: BeenVerified Erasure Manual, MyLife Removal Guide, and LinkedIn Privacy Configuration.
                     </p>
                     <p style="margin-top: 0.5rem;">
