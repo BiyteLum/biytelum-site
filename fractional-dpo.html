@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Fractional Data Protection Officer (DPO) services. CIPP/E, CIPM & CIPT certified privacy experts. Flexible monthly retainers $500-$1,200.">
+    <title>Fractional DPO Services | BiyteLüm - Expert Privacy Leadership On-Demand</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: #A7FF9E;
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: #A7FF9E;
+            opacity: 0.3;
+            box-shadow: 0 0 10px #A7FF9E;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: #A7FF9E;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-links a:hover {
+            color: #A7FF9E;
+            letter-spacing: 0.1em;
+        }
+        
+        .nav-links a.active {
+            color: #A7FF9E;
+            border-bottom: 1px solid #A7FF9E;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            color: #A7FF9E;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu:hover {
+            border-color: rgba(167, 255, 158, 0.6);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: #A7FF9E;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav a:hover {
+            color: #00FF99;
+            padding-left: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            nav { position: relative; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #A7FF9E;
+            text-shadow: 
+                0 0 20px #A7FF9E,
+                0 0 40px #00FF99,
+                0 0 60px #A7FF9E;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+            color: rgba(167, 255, 158, 0.8);
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .page-subtitle strong {
+            color: #A7FF9E;
+            text-shadow: 0 0 5px #A7FF9E;
+        }
+        
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(167, 255, 158, 0.4);
+            box-shadow: 0 8px 25px rgba(167, 255, 158, 0.1);
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .content-card:hover::before {
+            left: 100%;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+            padding-bottom: 1rem;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: #A7FF9E;
+            text-shadow: 0 0 15px #A7FF9E;
+        }
+        
+        .card-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: #A7FF9E;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        
+        .card-content {
+            color: rgba(167, 255, 158, 0.8);
+            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .card-content strong {
+            color: #A7FF9E;
+            font-weight: 600;
+        }
+        
+        .card-content em {
+            color: rgba(167, 255, 158, 0.6);
+            font-style: italic;
+        }
+        
+        /* Two-column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Feature Lists */
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-list li {
+            color: rgba(167, 255, 158, 0.8);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .feature-list li::before {
+            content: '▶';
+            color: #00FF99;
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        
+        /* Pricing Tiers */
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .pricing-tier {
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 1px solid rgba(0, 255, 153, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-tier:hover {
+            border-color: rgba(0, 255, 153, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .pricing-tier.popular {
+            border-color: #00FF99;
+            border-width: 2px;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #00FF99;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .tier-name {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            color: #A7FF9E;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .tier-price {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.8rem;
+            color: #00FF99;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-duration {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: rgba(167, 255, 158, 0.6);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .tier-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .tier-features li {
+            color: rgba(167, 255, 158, 0.8);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .process-step {
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .process-step:hover {
+            border-color: rgba(167, 255, 158, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .step-number {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
+            color: #00FF99;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .step-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: #A7FF9E;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .step-text {
+            color: rgba(167, 255, 158, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid #A7FF9E;
+            background: transparent;
+            color: #A7FF9E;
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        
+        .cta-button:hover {
+            color: #000;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #A7FF9E;
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        .cta-button.secondary {
+            border-color: rgba(167, 255, 158, 0.6);
+            color: rgba(167, 255, 158, 0.8);
+        }
+        
+        .cta-button.secondary::before {
+            background: rgba(167, 255, 158, 0.1);
+        }
+        
+        .cta-button.secondary:hover {
+            color: #A7FF9E;
+        }
+        
+        /* Back Button */
+        .back-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(167, 255, 158, 0.6);
+            background: transparent;
+            color: #A7FF9E;
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+        
+        .back-button:hover {
+            background: rgba(167, 255, 158, 0.1);
+            transform: translateX(-5px);
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            padding: 0.25rem 2rem;
+            z-index: 100;
+        }
+        
+        .status-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 2rem;
+            color: rgba(167, 255, 158, 0.7);
+        }
+        
+        .status-right {
+            color: rgba(167, 255, 158, 0.5);
+        }
+        
+        .status-right a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .status-right a:hover {
+            color: #A7FF9E;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 0 1rem;
+            }
+            
+            .content-card {
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .pricing-tiers {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-card {
+                margin: 1.5rem 0;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span>▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/dpia">DPIA SERVICES</a></li>
+                <li><a href="/fractional-dpo" class="active">FRACTIONAL DPO</a></li>
+                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
+                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/dpia">03. DPIA SERVICES</a>
+            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
+            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
+            <a href="/ai-governance">06. AI GOVERNANCE</a>
+            <a href="/pricing">07. PRICING</a>
+            <a href="/resources">08. RESOURCES</a>
+            <a href="/contact">09. CONTACT</a>
+            <a href="/blog">10. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Fractional DPO Services</h1>
+            <p class="page-subtitle">Get <strong>privacy expertise without full-time overhead.</strong> Our CIPP/E, CIPM & CIPT certified team provides privacy guidance, compliance support, and program development on flexible monthly retainers.</p>
+        </section>
+        
+        <div class="content-container">
+            <!-- What is a Fractional DPO -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">👨‍💼</div>
+                    <h2 class="card-title">What is a Fractional DPO?</h2>
+                </div>
+                <div class="card-content">
+                    <p>A <strong>Fractional Data Protection Officer (DPO)</strong> provides professional privacy leadership on a part-time, contract basis. Instead of hiring a full-time privacy officer, organizations can access experienced CIPP/E, CIPM & CIPT certified professionals for strategic guidance and compliance oversight.</p>
+                    
+                    <p>Our fractional DPO service is perfect for startups and growing companies that need ongoing privacy expertise but don't have the budget or workload to justify a full-time privacy hire.</p>
+                </div>
+            </div>
+
+            <!-- Why Choose Fractional Over Full-Time -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">💡</div>
+                    <h2 class="card-title">Fractional vs Full-Time DPO</h2>
+                </div>
+                <div class="card-content">
+                    <div class="two-column">
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Fractional DPO Benefits:</h3>
+                            <ul class="feature-list">
+                                <li><strong>Cost-effective:</strong> Pay only for hours you need</li>
+                                <li><strong>Immediate expertise:</strong> No hiring or training time</li>
+                                <li><strong>Flexible commitment:</strong> Scale up or down as needed</li>
+                                <li><strong>Fresh perspective:</strong> External viewpoint on privacy challenges</li>
+                                <li><strong>Diverse experience:</strong> Cross-industry knowledge</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Full-Time DPO Challenges:</h3>
+                            <ul class="feature-list">
+                                <li><strong>High cost:</strong> $120K+ annual salaries plus benefits</li>
+                                <li><strong>Limited talent pool:</strong> Hard to find qualified candidates</li>
+                                <li><strong>Underutilized:</strong> May not have enough work for 40 hours/week</li>
+                                <li><strong>Single perspective:</strong> One person's experience and approach</li>
+                                <li><strong>Training required:</strong> Company-specific systems and processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Services -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">⚙️</div>
+                    <h2 class="card-title">What Our Fractional DPO Provides</h2>
+                </div>
+                <div class="card-content">
+                    <p>Our fractional DPO service includes comprehensive privacy program support:</p>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Strategic Guidance:</h3>
+                            <ul class="feature-list">
+                                <li>Privacy program development and maturation</li>
+                                <li>Regulatory compliance strategy (GDPR, CCPA)</li>
+                                <li>Risk assessment and mitigation planning</li>
+                                <li>Data governance framework development</li>
+                                <li>Privacy policy creation and updates</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Operational Support:</h3>
+                            <ul class="feature-list">
+                                <li>Monthly privacy program reviews</li>
+                                <li>Vendor risk assessments and contract reviews</li>
+                                <li>Incident response planning and execution</li>
+                                <li>Staff training and awareness programs</li>
+                                <li>Regulatory update briefings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Tiers -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">💰</div>
+                    <h2 class="card-title">Flexible Pricing Tiers</h2>
+                </div>
+                <div class="card-content">
+                    <p>Choose the level of support that fits your organization's needs:</p>
+                    
+                    <div class="pricing-tiers">
+                        <div class="pricing-tier">
+                            <div class="tier-name">Essential</div>
+                            <div class="tier-price">$500</div>
+                            <div class="tier-duration">per month</div>
+                            <ul class="tier-features">
+                                <li>10 hours monthly</li>
+                                <li>Monthly check-in meetings</li>
+                                <li>Email support</li>
+                                <li>Basic policy reviews</li>
+                                <li>Regulatory updates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-tier popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="tier-name">Professional</div>
+                            <div class="tier-price">$800</div>
+                            <div class="tier-duration">per month</div>
+                            <ul class="tier-features">
+                                <li>15 hours monthly</li>
+                                <li>Bi-weekly strategy meetings</li>
+                                <li>Priority email/phone support</li>
+                                <li>Vendor risk assessments</li>
+                                <li>Incident response support</li>
+                                <li>Staff training sessions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-tier">
+                            <div class="tier-name">Enterprise</div>
+                            <div class="tier-price">$1,200</div>
+                            <div class="tier-duration">per month</div>
+                            <ul class="tier-features">
+                                <li>20 hours monthly</li>
+                                <li>Weekly strategy sessions</li>
+                                <li>Unlimited communication</li>
+                                <li>Program development</li>
+                                <li>Board reporting assistance</li>
+                                <li>Crisis management support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; text-align: center; font-style: italic;">All tiers include CIPP/E, CIPM & CIPT certified professionals and can be scaled up or down with 30-day notice.</p>
+                </div>
+            </div>
+
+            <!-- Engagement Process -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">🚀</div>
+                    <h2 class="card-title">Our Engagement Process</h2>
+                </div>
+                <div class="card-content">
+                    <p>Getting started with fractional DPO services is straightforward:</p>
+                    
+                    <div class="process-grid">
+                        <div class="process-step">
+                            <div class="step-number">Step 1</div>
+                            <div class="step-title">Discovery Call</div>
+                            <div class="step-text">30-minute consultation to assess your privacy needs and determine the right service tier</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">Step 2</div>
+                            <div class="step-title">Agreement & Kickoff</div>
+                            <div class="step-text">Sign service agreement and schedule your first strategic planning session</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">Step 3</div>
+                            <div class="step-title">Privacy Assessment</div>
+                            <div class="step-text">Initial review of your current privacy posture and identification of priority areas</div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">Step 4</div>
+                            <div class="step-title">Ongoing Support</div>
+                            <div class="step-text">Regular meetings, email support, and project work based on your selected tier</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industries We Serve -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">🏭</div>
+                    <h2 class="card-title">Perfect For Growing Companies</h2>
+                </div>
+                <div class="card-content">
+                    <p>Our fractional DPO services are ideal for organizations that need privacy expertise but aren't ready for a full-time hire:</p>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Company Types:</h3>
+                            <ul class="feature-list">
+                                <li><strong>Startups (10-100 employees)</strong> scaling operations</li>
+                                <li><strong>SaaS companies</strong> handling customer data</li>
+                                <li><strong>E-commerce businesses</strong> expanding to new markets</li>
+                                <li><strong>Healthcare tech</strong> companies with sensitive data</li>
+                                <li><strong>Fintech startups</strong> needing compliance support</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Common Situations:</h3>
+                            <ul class="feature-list">
+                                <li><strong>EU market expansion</strong> requiring GDPR compliance</li>
+                                <li><strong>Investor due diligence</strong> requiring privacy documentation</li>
+                                <li><strong>Customer privacy audits</strong> from enterprise clients</li>
+                                <li><strong>Privacy team transitions</strong> or interim leadership needs</li>
+                                <li><strong>New product launches</strong> with privacy considerations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Our Team -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">🎯</div>
+                    <h2 class="card-title">Why Choose Our Fractional DPO Team</h2>
+                </div>
+                <div class="card-content">
+                    <div class="two-column">
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Our Expertise:</h3>
+                            <ul class="feature-list">
+                                <li><strong>Triple certified:</strong> CIPP/E, CIPM & CIPT credentials</li>
+                                <li><strong>Practical experience:</strong> Homeland security and cybersecurity backgrounds</li>
+                                <li><strong>Startup focused:</strong> Understanding of resource constraints</li>
+                                <li><strong>Multi-jurisdictional:</strong> EU, US, and LATAM compliance knowledge</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #A7FF9E; margin-bottom: 1rem; font-family: 'Share Tech Mono', monospace;">Our Approach:</h3>
+                            <ul class="feature-list">
+                                <li><strong>Business-first:</strong> Privacy solutions that enable growth</li>
+                                <li><strong>Flexible engagement:</strong> Scale up or down as needed</li>
+                                <li><strong>Clear communication:</strong> No jargon, actionable guidance</li>
+                                <li><strong>Quick response:</strong> Email support within 24 hours</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">📞</div>
+                    <h2 class="card-title">Ready for Privacy Leadership?</h2>
+                </div>
+                <div class="card-content">
+                    <p>Stop struggling with privacy compliance alone. Our fractional DPO service provides the expertise you need at a fraction of the cost of a full-time hire. Start with a complimentary consultation to discuss your privacy needs.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="/consultation" class="cta-button">
+                            Schedule Free Consultation
+                            <span>📅</span>
+                        </a>
+                        <a href="/pricing" class="cta-button secondary">
+                            View Detailed Pricing
+                            <span>💰</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-section">
+                <a href="/services" class="back-button">
+                    ← Back to Services
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-content">
+            <div class="status-left">
+                <span>👨‍💼 STATUS: FRACTIONAL DPO</span>
+                <span>CERTIFIED: CIPP/E | CIPM | CIPT</span>
+                <span>PRICING: $500-$1,200/MONTH</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys | <a href="/">RETURN HOME</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = `${2 + Math.random() * 4}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('show');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+        
+        // Parallax effect for background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
