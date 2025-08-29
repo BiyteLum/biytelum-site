@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore BiyteLüm's expert privacy services including data removal, identity lockdown, and privacy consulting.">
-    <title>Services | BiyteLüm - Digital Sovereignty Solutions</title>
+    <meta name="description" content="Expert corporate privacy compliance services including DPIA, Fractional DPO, Privacy Gap Assessment, and AI Governance. CIPP/E, CIPM & CIPT certified.">
+    <title>Services | BiyteLüm - Corporate Privacy Compliance Solutions</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
@@ -222,7 +222,7 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -236,7 +236,6 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            text-align: center;
         }
         
         .service-card:hover {
@@ -260,19 +259,30 @@
             left: 100%;
         }
         
+        .service-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #A7FF9E;
             text-shadow: 0 0 15px #A7FF9E;
-            margin-bottom: 1rem;
+            flex-shrink: 0;
             display: block;
+        }
+        
+        .service-info {
+            flex: 1;
         }
         
         .service-title {
             font-family: 'Share Tech Mono', monospace;
             font-size: 1.1rem;
             color: #A7FF9E;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 0.05em;
@@ -280,9 +290,9 @@
         
         .service-price {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #00FF99;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: bold;
         }
         
@@ -299,6 +309,32 @@
             font-weight: 600;
         }
         
+        .service-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-features li {
+            color: rgba(167, 255, 158, 0.7);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00FF99;
+            font-size: 0.7rem;
+        }
+        
         .service-button {
             display: inline-flex;
             align-items: center;
@@ -313,6 +349,8 @@
             border-radius: 8px;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
         }
         
         .service-button:hover {
@@ -571,13 +609,13 @@
             <ul class="nav-links">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/services" class="active">SERVICES</a></li>
-                <li><a href="/consultation">CONSULTATION</a></li>
+                <li><a href="/dpia">DPIA SERVICES</a></li>
+                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
+                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
+                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
                 <li><a href="/pricing">PRICING</a></li>
-                <li><a href="/data-removal">DATA_REMOVAL</a></li>
                 <li><a href="/resources">RESOURCES</a></li>
                 <li><a href="/contact">CONTACT</a></li>
-                <li><a href="/privacy">PRIVACY</a></li>
-                <li><a href="/terms">TERMS</a></li>
                 <li><a href="/blog">BLOG</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
@@ -586,13 +624,13 @@
         <div class="mobile-nav" id="mobileNav">
             <a href="/">01. HOME</a>
             <a href="/services">02. SERVICES</a>
-            <a href="/consultation">03. CONSULTATION</a>
-            <a href="/pricing">04. PRICING</a>
-            <a href="/data-removal">05. DATA_REMOVAL</a>
-            <a href="/resources">06. RESOURCES</a>
-            <a href="/contact">07. CONTACT</a>
-            <a href="/privacy">08. PRIVACY</a>
-            <a href="/terms">09. TERMS</a>
+            <a href="/dpia">03. DPIA SERVICES</a>
+            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
+            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
+            <a href="/ai-governance">06. AI GOVERNANCE</a>
+            <a href="/pricing">07. PRICING</a>
+            <a href="/resources">08. RESOURCES</a>
+            <a href="/contact">09. CONTACT</a>
             <a href="/blog">10. BLOG</a>
         </div>
     </nav>
@@ -601,124 +639,210 @@
     <main>
         <!-- Page Header -->
         <section class="page-header">
-            <h1>Our Privacy Services</h1>
-            <p class="page-subtitle">BiyteLüm specializes in <strong>digital sovereignty and online privacy solutions.</strong> Our services are tailored for individuals who want full control over their personal data.</p>
+            <h1>Corporate Privacy Services</h1>
+            <p class="page-subtitle">BiyteLüm delivers <strong>enterprise-grade privacy compliance and data protection solutions.</strong> Our services help businesses navigate complex regulatory landscapes with confidence and strategic precision.</p>
         </section>
         
         <div class="services-container">
             <div class="services-grid">
-                <!-- Privacy Hygiene Review - Featured -->
+                <!-- Fractional DPO Services - Featured -->
                 <div class="service-card featured">
                     <div class="featured-badge">Most Popular</div>
-                    <div class="service-icon">🔍</div>
-                    <h2 class="service-title">Privacy Hygiene Review</h2>
-                    <div class="service-price">$25</div>
+                    <div class="service-header">
+                        <div class="service-icon">👨‍💼</div>
+                        <div class="service-info">
+                            <h2 class="service-title">Fractional DPO Services</h2>
+                            <div class="service-price">$1,500-$4,500/month</div>
+                        </div>
+                    </div>
                     <p class="service-description">
-                        <strong>Get a personalized audit of your digital privacy setup — no jargon, just what to fix.</strong> We analyze your email, browser, devices, VPN, and social media to provide clear, actionable recommendations. Perfect for journalists, researchers, crypto users, and anyone tired of being tracked.
+                        <strong>Get enterprise-level privacy leadership without full-time overhead.</strong> Our CIPP/E, CIPM & CIPT certified privacy officers provide strategic guidance, compliance oversight, and incident response capabilities on a flexible retainer basis.
                     </p>
-                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://buy.stripe.com/8x28wQbcRctm4MKgdAcAo03" class="service-button primary">
-                            ORDER NOW
-                            <span>🛒</span>
-                        </a>
-                        <a href="/privacy-hygiene-sample" class="service-button">
-                            VIEW SAMPLE
-                            <span>👁️</span>
-                        </a>
-                        <a href="/privacy-hygiene" class="service-button">
-                            MORE ON THIS
+                    <div class="service-features">
+                        <ul>
+                            <li>Monthly privacy program reviews</li>
+                            <li>Regulatory update briefings</li>
+                            <li>Vendor assessment guidance</li>
+                            <li>Incident response planning</li>
+                            <li>Direct access to certified DPO</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="/fractional-dpo" class="service-button primary">
+                            LEARN MORE
                             <span>→</span>
+                        </a>
+                        <a href="/consultation" class="service-button">
+                            SCHEDULE CONSULTATION
+                            <span>📅</span>
                         </a>
                     </div>
                 </div>
                 
-                <!-- 30-Minute Consultation -->
+                <!-- Privacy Gap Assessment -->
                 <div class="service-card">
-                    <div class="service-icon">📞</div>
-                    <h2 class="service-title">30-Minute Consultation</h2>
-                    <div class="service-price">$50</div>
+                    <div class="service-header">
+                        <div class="service-icon">🔍</div>
+                        <div class="service-info">
+                            <h2 class="service-title">Privacy Gap Assessment</h2>
+                            <div class="service-price">$7,500</div>
+                        </div>
+                    </div>
                     <p class="service-description">
-                        <strong>Live search analysis and privacy audit.</strong> We perform real-time searches of your name, phone, and email across Google and data broker sites. Includes customized privacy report within 48 hours.
+                        <strong>Comprehensive evaluation of your privacy posture.</strong> We assess current practices against GDPR, CCPA, and industry best practices to create actionable improvement plans with prioritized roadmaps.
                     </p>
-                    <a href="/consultation" class="service-button">
-                        BOOK SESSION
-                        <span>→</span>
-                    </a>
+                    <div class="service-features">
+                        <ul>
+                            <li>Policy and technical controls review</li>
+                            <li>Data flow mapping analysis</li>
+                            <li>Vendor risk assessment</li>
+                            <li>Executive dashboard and gap analysis</li>
+                            <li>90-day implementation plan</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="/compliance-audit" class="service-button primary">
+                            START ASSESSMENT
+                            <span>📊</span>
+                        </a>
+                        <a href="/assessment-methodology" class="service-button">
+                            VIEW METHODOLOGY
+                            <span>🔬</span>
+                        </a>
+                    </div>
                 </div>
                 
-                <!-- Data Removal Service -->
+                <!-- DPIA Sprint Services -->
                 <div class="service-card">
-                    <div class="service-icon">🗑️</div>
-                    <h2 class="service-title">Data Removal</h2>
-                    <div class="service-price">$350</div>
+                    <div class="service-header">
+                        <div class="service-icon">📋</div>
+                        <div class="service-info">
+                            <h2 class="service-title">DPIA Sprint Services</h2>
+                            <div class="service-price">$3,500</div>
+                        </div>
+                    </div>
                     <p class="service-description">
-                        <strong>Complete data scrubbing from top 30 data brokers.</strong> Manual opt-out submissions, Google/Bing de-indexing, social media privacy review, and cleanup of up to 5 inactive accounts. Completed in 10-14 business days.
+                        <strong>GDPR-compliant Data Protection Impact Assessments.</strong> Our DPIA Sprint delivers thorough privacy risk analysis and mitigation strategies for high-risk processing activities within 2-4 weeks.
                     </p>
-                    <a href="/data-removal" class="service-button">
+                    <div class="service-features">
+                        <ul>
+                            <li>Risk assessment methodology</li>
+                            <li>Stakeholder consultations</li>
+                            <li>Privacy risk identification</li>
+                            <li>Detailed mitigation roadmap</li>
+                            <li>Ongoing monitoring framework</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="/dpia" class="service-button primary">
+                            START DPIA SPRINT
+                            <span>🚀</span>
+                        </a>
+                        <a href="/dpia-sample" class="service-button">
+                            VIEW SAMPLE DPIA
+                            <span>👁️</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Startup Privacy Launch Kit -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🚀</div>
+                        <div class="service-info">
+                            <h2 class="service-title">Startup Privacy Launch Kit</h2>
+                            <div class="service-price">$2,500</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        <strong>Essential privacy foundation for growing businesses.</strong> Get your privacy program started with policy templates, consent mechanisms, and basic compliance framework designed for startups and scale-ups.
+                    </p>
+                    <div class="service-features">
+                        <ul>
+                            <li>Privacy policy templates</li>
+                            <li>Consent mechanism setup</li>
+                            <li>Basic compliance framework</li>
+                            <li>Data mapping templates</li>
+                            <li>Implementation guidance</li>
+                        </ul>
+                    </div>
+                    <a href="/consultation" class="service-button primary">
                         GET STARTED
                         <span>→</span>
                     </a>
                 </div>
                 
-                <!-- Identity Lockdown Service -->
+                <!-- AI Governance Program -->
                 <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h2 class="service-title">Identity Lockdown</h2>
-                    <div class="service-price">Custom</div>
+                    <div class="service-header">
+                        <div class="service-icon">🤖</div>
+                        <div class="service-info">
+                            <h2 class="service-title">AI Governance Program</h2>
+                            <div class="service-price">Custom Pricing</div>
+                        </div>
+                    </div>
                     <p class="service-description">
-                        <strong>Advanced protection against doxxing, identity theft, and online tracking.</strong> Comprehensive security assessment and implementation of advanced privacy measures to secure your online presence.
+                        <strong>Navigate AI privacy compliance and algorithmic accountability.</strong> Implement responsible AI practices while meeting emerging regulatory requirements for automated decision-making systems.
                     </p>
-                    <a href="/consultation" class="service-button">
-                        LEARN MORE
-                        <span>→</span>
-                    </a>
-                </div>
-                
-                <!-- Privacy Consulting Service -->
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h2 class="service-title">Privacy Consulting</h2>
-                    <div class="service-price">Custom</div>
-                    <p class="service-description">
-                        <strong>Expert guidance on digital privacy best practices.</strong> Data minimization strategies, secure communication setup, and comprehensive privacy frameworks for individuals and businesses. CIPP/E & CIPM certified.
-                    </p>
-                    <a href="/consultation" class="service-button">
-                        CONTACT US
-                        <span>→</span>
-                    </a>
-                </div>
-                
-                <!-- Social Media Warfare Pack -->
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h2 class="service-title">Social Media Warfare</h2>
-                    <div class="service-price">$25</div>
-                    <p class="service-description">
-                        <strong>33 ready-to-deploy privacy posts for X/Twitter.</strong> CIPP/E certified content designed to establish your authority in digital sovereignty. Perfect for privacy professionals building their personal brand.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://buy.stripe.com/5kQ00k2Gl8d61AygdAcAo04" class="service-button primary">
-                            BUY NOW
-                            <span>💳</span>
+                    <div class="service-features">
+                        <ul>
+                            <li>AI risk assessment frameworks</li>
+                            <li>Algorithmic impact evaluations</li>
+                            <li>Model governance policies</li>
+                            <li>EU AI Act preparation</li>
+                            <li>Bias detection protocols</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="/ai-governance" class="service-button primary">
+                            EXPLORE AI SERVICES
+                            <span>🚀</span>
                         </a>
-                        <a href="/social-media-preview" class="service-button">
-                            PREVIEW
-                            <span>👁️</span>
+                        <a href="/ai-compliance-checklist" class="service-button">
+                            AI COMPLIANCE CHECKLIST
+                            <span>✅</span>
                         </a>
                     </div>
+                </div>
+                
+                <!-- Enterprise Privacy Consulting -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">💼</div>
+                        <div class="service-info">
+                            <h2 class="service-title">Enterprise Privacy Consulting</h2>
+                            <div class="service-price">Custom Pricing</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        <strong>Strategic privacy guidance for complex enterprise needs.</strong> Customized consulting for large organizations requiring specialized privacy program development, regulatory compliance, and cross-border data transfers.
+                    </p>
+                    <div class="service-features">
+                        <ul>
+                            <li>Multi-jurisdictional compliance</li>
+                            <li>Cross-border data transfer strategy</li>
+                            <li>Privacy program maturation</li>
+                            <li>Regulatory relationship management</li>
+                            <li>Executive privacy training</li>
+                        </ul>
+                    </div>
+                    <a href="/consultation" class="service-button primary">
+                        DISCUSS REQUIREMENTS
+                        <span>→</span>
+                    </a>
                 </div>
             </div>
             
             <!-- CTA Section -->
             <div class="cta-section">
-                <h3 class="cta-title">Not Sure Which Service You Need?</h3>
+                <h3 class="cta-title">Ready to Build Your Privacy Program?</h3>
                 <div class="cta-buttons">
                     <a href="/consultation" class="cta-button">
-                        Book a Consultation
+                        Schedule Strategic Consultation
                         <span>→</span>
                     </a>
                     <a href="/pricing" class="cta-button">
-                        See Full Pricing
+                        View Detailed Pricing
                         <span>→</span>
                     </a>
                 </div>
@@ -737,12 +861,12 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>⚡ STATUS: SERVICES</span>
-                <span>PROTOCOLS: 6</span>
-                <span>ENCRYPTION: ACTIVE</span>
+                <span>🏢 STATUS: ENTERPRISE SERVICES</span>
+                <span>COMPLIANCE: GDPR | CCPA | AI ACT</span>
+                <span>CERTIFIED: CIPP/E | CIPM | CIPT</span>
             </div>
             <div class="status-right">
-                © 2025 BiyteLüm.sys | <a href="/">RETURN_HOME</a>
+                © 2025 BiyteLüm.sys | <a href="/">RETURN HOME</a>
             </div>
         </div>
     </div>
