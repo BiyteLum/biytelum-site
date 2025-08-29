@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BiyteLüm - Transparent pricing for data privacy, identity lockdown, and digital sovereignty.">
-    <title>Pricing | BiyteLüm - Digital Privacy Services</title>
+    <meta name="description" content="BiyteLüm - Transparent pricing for corporate privacy compliance services. CIPP/E, CIPM & CIPT certified privacy consultancy.">
+    <title>Pricing | BiyteLüm - Corporate Privacy Compliance</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
         * {
             margin: 0;
@@ -86,6 +86,7 @@
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
             color: #A7FF9E;
+            text-decoration: none;
         }
         
         .nav-links {
@@ -204,6 +205,7 @@
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         /* Pricing Grid */
@@ -258,7 +260,7 @@
         }
         
         .pricing-card.featured::after {
-            content: 'RECOMMENDED';
+            content: 'MOST POPULAR';
             position: absolute;
             top: -1px;
             right: 2rem;
@@ -279,20 +281,29 @@
         }
         
         .card-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
             color: #A7FF9E;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             font-weight: 700;
+            letter-spacing: 0.05em;
         }
         
         .card-price {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #00FF99;
             font-weight: bold;
             text-shadow: 0 0 10px #00FF99;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-duration {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: rgba(167, 255, 158, 0.6);
+            text-transform: uppercase;
         }
         
         .card-description {
@@ -300,6 +311,7 @@
             font-size: 0.9rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .feature-list {
@@ -315,12 +327,13 @@
             gap: 0.5rem;
             font-size: 0.9rem;
             line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .feature-list li::before {
-            content: '✔️';
-            color: #A7FF9E;
-            font-size: 0.8rem;
+            content: '▶';
+            color: #00FF99;
+            font-size: 0.7rem;
             margin-top: 0.1rem;
             flex-shrink: 0;
         }
@@ -374,12 +387,13 @@
         }
         
         .process-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
             color: #A7FF9E;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             text-shadow: 0 0 10px #A7FF9E;
+            letter-spacing: 0.05em;
         }
         
         .process-steps {
@@ -403,17 +417,19 @@
         }
         
         .step-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
             color: #00FF99;
             font-weight: bold;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
         
         .step-text {
             color: rgba(167, 255, 158, 0.8);
             font-size: 0.9rem;
             line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         /* Highlight spans */
@@ -435,18 +451,25 @@
         }
         
         .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
             color: #A7FF9E;
             margin-bottom: 1rem;
             text-transform: uppercase;
             text-shadow: 0 0 10px #A7FF9E;
+            letter-spacing: 0.05em;
         }
         
         .section-content {
             color: rgba(167, 255, 158, 0.8);
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .section-content strong {
+            color: #A7FF9E;
+            font-weight: 600;
         }
         
         /* Status Bar */
@@ -544,36 +567,36 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="/" class="logo">
                 <span>▶</span>
                 <span>BiyteLüm.sys</span>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="consultation.html">CONSULTATION</a></li>
-                <li><a href="pricing.html" class="active">PRICING</a></li>
-                <li><a href="data-removal.html">DATA_REMOVAL</a></li>
-                <li><a href="resources.html">RESOURCES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="privacy.html">PRIVACY</a></li>
-                <li><a href="terms.html">TERMS</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/dpia">DPIA SERVICES</a></li>
+                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
+                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
+                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
+                <li><a href="/pricing" class="active">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </div>
         <!-- Mobile Menu Dropdown -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">01. HOME</a>
-            <a href="services.html">02. SERVICES</a>
-            <a href="consultation.html">03. CONSULTATION</a>
-            <a href="pricing.html">04. PRICING</a>
-            <a href="data-removal.html">05. DATA_REMOVAL</a>
-            <a href="resources.html">06. RESOURCES</a>
-            <a href="contact.html">07. CONTACT</a>
-            <a href="privacy.html">08. PRIVACY</a>
-            <a href="terms.html">09. TERMS</a>
-            <a href="blog.html">10. BLOG</a>
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/dpia">03. DPIA SERVICES</a>
+            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
+            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
+            <a href="/ai-governance">06. AI GOVERNANCE</a>
+            <a href="/pricing">07. PRICING</a>
+            <a href="/resources">08. RESOURCES</a>
+            <a href="/contact">09. CONTACT</a>
+            <a href="/blog">10. BLOG</a>
         </div>
     </nav>
     
@@ -581,131 +604,182 @@
     <main>
         <!-- Page Header -->
         <section class="page-header">
-            <h1>Transparent Pricing</h1>
-            <p class="page-subtitle">Our pricing is simple, upfront, and designed to provide full control over your digital privacy. Choose a package or add-ons based on your needs.</p>
+            <h1>Corporate Privacy Pricing</h1>
+            <p class="page-subtitle">Transparent, competitive pricing for corporate privacy compliance services. All engagements include 30-day post-delivery support and follow-up consultation.</p>
         </section>
         
         <div class="pricing-container">
-            <!-- Consultation Section -->
+            <!-- Strategic Consultation Section -->
             <div class="single-section">
-                <h2 class="section-title">Consultation (Required Before Any Service)</h2>
+                <h2 class="section-title">Strategic Consultation (Recommended Start)</h2>
                 <div class="section-content">
-                    <h3><strong>30-Minute Privacy Consultation</strong> - <span class="highlight"></span></h3>
-                    <p>We assess your data exposure, privacy risks, and online presence. Includes a live audit of data broker sites, social media, and search engine results.</p>
-                    <p><strong>Note:</strong> If you purchase a service, the consultation fee is credited toward your total.</p>
+                    <h3><strong>60-Minute Discovery Session</strong> - <span class="highlight">Complimentary</span></h3>
+                    <p>We assess your privacy needs, regulatory requirements, and implementation priorities. Includes follow-up strategy document within 48 hours.</p>
+                    <p><strong>What We'll Discuss:</strong> Company size, industry sector, current privacy challenges, regulatory scope (GDPR/CCPA/other), and specific project timelines.</p>
                 </div>
-                <a href="consultation.html" class="cta-button">Schedule Consultation</a>
+                <a href="/consultation" class="cta-button">Schedule Strategic Session</a>
             </div>
             
             <!-- Main Pricing Grid -->
             <div class="pricing-grid">
-                <!-- Full Privacy Reset -->
-                <div class="pricing-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Full Privacy Reset</h3>
-                        <div class="card-price"></div>
-                    </div>
-                    <p class="card-description">Our most comprehensive data removal service, targeting major data brokers and personal exposure across the internet.</p>
-                    <ul class="feature-list">
-                        <li>Removal from <strong>30+ data broker sites</strong> (Whitepages, Spokeo, MyLife, etc.)</li>
-                        <li><strong>Google/Bing de-indexing</strong> to remove searchable links</li>
-                        <li><strong>Social Media Privacy Audit</strong> for LinkedIn, Facebook, Instagram, and more</li>
-                        <li><strong>Old Account Deletions</strong> for up to 5 inactive online accounts</li>
-                        <li>Final report summarizing completed removals & next steps</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button">Get Started</a>
-                </div>
-                
-                <!-- Identity Lockdown -->
+                <!-- Fractional DPO Services -->
                 <div class="pricing-card featured">
                     <div class="card-header">
-                        <h3 class="card-title">Identity Lockdown</h3>
-                        <div class="card-price"></div>
+                        <h3 class="card-title">Fractional DPO Services</h3>
+                        <div class="card-price">$500-$1,200</div>
+                        <div class="card-duration">per month</div>
                     </div>
-                    <p class="card-description">For individuals facing heightened privacy risks such as doxxing, harassment, or professional exposure.</p>
+                    <p class="card-description">Get privacy expertise without full-time overhead. Perfect for startups and growing companies needing ongoing privacy guidance.</p>
                     <ul class="feature-list">
-                        <li>Everything in <strong>Full Privacy Reset</strong> package</li>
-                        <li><strong>Advanced Google/Bing de-indexing</strong> for harder-to-remove content</li>
-                        <li><strong>Deep web search</strong> for exposed credentials</li>
-                        <li><strong>Social media lockdown service</strong> full privacy optimization for profiles</li>
-                        <li><strong>Quarterly monitoring</strong> for 6 months</li>
+                        <li><strong>10-20 hours monthly</strong> dedicated privacy support</li>
+                        <li><strong>Monthly privacy program reviews</strong></li>
+                        <li><strong>Regulatory update briefings</strong></li>
+                        <li><strong>Vendor assessment guidance</strong></li>
+                        <li><strong>Incident response planning</strong></li>
+                        <li><strong>Direct access</strong> to CIPP/E, CIPM & CIPT certified team</li>
+                        <li><strong>Unlimited email support</strong></li>
                     </ul>
-                    <a href="contact.html" class="cta-button">Secure Identity</a>
+                    <a href="/fractional-dpo" class="cta-button">Learn More</a>
                 </div>
-            </div>
-            
-            <!-- Add-On Services -->
-            <div class="single-section">
-                <h2 class="section-title">Add-On Services</h2>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Social Media Lockdown</h3>
-                            <div class="card-price"></div>
-                        </div>
-                        <p class="card-description">Full privacy overhaul for LinkedIn, Instagram, Facebook, and other accounts.</p>
-                        <a href="contact.html" class="cta-button">Add Service</a>
+                
+                <!-- Privacy Gap Assessment -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Privacy Gap Assessment</h3>
+                        <div class="card-price">$2,500-$3,500</div>
+                        <div class="card-duration">one-time project</div>
                     </div>
-                    
-                    <div class="pricing-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Data Breach Scan</h3>
-                            <div class="card-price"></div>
-                        </div>
-                        <p class="card-description">Check up to 3 email addresses for exposure in data breaches. Includes a security report with recommended actions.</p>
-                        <a href="contact.html" class="cta-button">Add Service</a>
+                    <p class="card-description">Comprehensive evaluation of your current privacy practices against GDPR, CCPA, and industry best practices.</p>
+                    <ul class="feature-list">
+                        <li><strong>Policy and technical controls review</strong></li>
+                        <li><strong>Data flow mapping analysis</strong></li>
+                        <li><strong>Vendor risk assessment</strong></li>
+                        <li><strong>Staff interviews</strong> and gap identification</li>
+                        <li><strong>Executive dashboard</strong> with compliance scoring</li>
+                        <li><strong>90-day implementation plan</strong></li>
+                        <li><strong>Leadership presentation</strong> included</li>
+                    </ul>
+                    <a href="/compliance-audit" class="cta-button">Start Assessment</a>
+                </div>
+                
+                <!-- DPIA Sprint Services -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">DPIA Sprint Services</h3>
+                        <div class="card-price">$1,500-$2,000</div>
+                        <div class="card-duration">2-4 week delivery</div>
                     </div>
-                    
-                    <div class="pricing-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Privacy Education Session</h3>
-                            <div class="card-price"></div>
-                        </div>
-                        <p class="card-description">1-hour private session covering VPNs, two-factor authentication, and social media privacy best practices.</p>
-                        <a href="contact.html" class="cta-button">Add Service</a>
+                    <p class="card-description">GDPR-compliant Data Protection Impact Assessments for high-risk processing activities.</p>
+                    <ul class="feature-list">
+                        <li><strong>Risk assessment methodology</strong></li>
+                        <li><strong>Stakeholder consultations</strong></li>
+                        <li><strong>Privacy risk identification</strong></li>
+                        <li><strong>Detailed mitigation recommendations</strong></li>
+                        <li><strong>Executive summary</strong> and detailed report</li>
+                        <li><strong>Ongoing monitoring framework</strong></li>
+                        <li><strong>Follow-up consultation</strong> for implementation questions</li>
+                    </ul>
+                    <a href="/dpia" class="cta-button">Start DPIA Sprint</a>
+                </div>
+                
+                <!-- Startup Privacy Launch Kit -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Startup Privacy Launch Kit</h3>
+                        <div class="card-price">$800-$1,200</div>
+                        <div class="card-duration">2-3 week delivery</div>
                     </div>
+                    <p class="card-description">Essential privacy foundation for growing businesses. Get started with compliance framework and policy templates.</p>
+                    <ul class="feature-list">
+                        <li><strong>Privacy policy templates</strong> customized for your industry</li>
+                        <li><strong>Consent mechanism setup</strong> guidance</li>
+                        <li><strong>Basic compliance framework</strong></li>
+                        <li><strong>Data mapping templates</strong></li>
+                        <li><strong>Implementation checklist</strong></li>
+                        <li><strong>30-day support period</strong></li>
+                    </ul>
+                    <a href="/consultation" class="cta-button">Get Started</a>
+                </div>
+                
+                <!-- AI Governance Program -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">AI Governance Program</h3>
+                        <div class="card-price">Custom Pricing</div>
+                        <div class="card-duration">project-based</div>
+                    </div>
+                    <p class="card-description">Navigate AI privacy compliance and algorithmic accountability for automated decision-making systems.</p>
+                    <ul class="feature-list">
+                        <li><strong>AI risk assessment frameworks</strong></li>
+                        <li><strong>Algorithmic impact evaluations</strong></li>
+                        <li><strong>Model governance policies</strong></li>
+                        <li><strong>EU AI Act preparation</strong> guidance</li>
+                        <li><strong>Bias detection protocols</strong></li>
+                        <li><strong>Compliance monitoring dashboards</strong></li>
+                    </ul>
+                    <a href="/ai-governance" class="cta-button">Explore AI Services</a>
+                </div>
+                
+                <!-- Enterprise Privacy Consulting -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Enterprise Privacy Consulting</h3>
+                        <div class="card-price">Custom Pricing</div>
+                        <div class="card-duration">tailored engagements</div>
+                    </div>
+                    <p class="card-description">Strategic privacy guidance for complex enterprise needs and multi-jurisdictional compliance requirements.</p>
+                    <ul class="feature-list">
+                        <li><strong>Multi-jurisdictional compliance</strong> (EU, US, LATAM)</li>
+                        <li><strong>Cross-border data transfer</strong> strategy</li>
+                        <li><strong>Privacy program maturation</strong></li>
+                        <li><strong>Regulatory relationship management</strong></li>
+                        <li><strong>Executive privacy training</strong></li>
+                        <li><strong>Board-level reporting</strong></li>
+                    </ul>
+                    <a href="/consultation" class="cta-button">Discuss Requirements</a>
                 </div>
             </div>
             
             <!-- How It Works -->
             <div class="process-section">
-                <h2 class="process-title">How It Works</h2>
+                <h2 class="process-title">Our Engagement Process</h2>
                 <div class="process-steps">
                     <div class="process-step">
-                        <div class="step-number">STEP 1</div>
-                        <div class="step-text">Book a consultation & privacy audit <span class="highlight"></span></div>
+                        <div class="step-number">Step 1</div>
+                        <div class="step-text">Strategic consultation to assess privacy needs and regulatory requirements</div>
                     </div>
                     <div class="process-step">
-                        <div class="step-number">STEP 2</div>
-                        <div class="step-text">Choose a package & sign the service agreement</div>
+                        <div class="step-number">Step 2</div>
+                        <div class="step-text">Proposal development and statement of work agreement</div>
                     </div>
                     <div class="process-step">
-                        <div class="step-number">STEP 3</div>
-                        <div class="step-text">We begin data removal & social media lockdown</div>
+                        <div class="step-number">Step 3</div>
+                        <div class="step-text">Project kickoff within 1 week of signed agreement</div>
                     </div>
                     <div class="process-step">
-                        <div class="step-number">STEP 4</div>
-                        <div class="step-text">Final report with completed removals & security recommendations</div>
+                        <div class="step-number">Step 4</div>
+                        <div class="step-text">Delivery with 30-day post-delivery support included</div>
                     </div>
                 </div>
             </div>
             
-            <!-- Detailed Pricing File -->
+            <!-- Payment Terms -->
             <div class="single-section">
-                <h2 class="section-title">Detailed Pricing File</h2>
+                <h2 class="section-title">Payment Terms & Policies</h2>
                 <div class="section-content">
-                    <p>A <strong>comprehensive pricing breakdown</strong> is available for download. This document explains our <strong>full-service structure</strong>, pricing tiers, and customization options.</p>
+                    <p><strong>Payment Structure:</strong> 50% upon engagement, 50% upon delivery for project work. Monthly retainer services billed in advance.</p>
+                    <p><strong>Enterprise Clients:</strong> Quarterly payment plans available for ongoing engagements over $5,000.</p>
+                    <p><strong>All Services Include:</strong> Confidentiality agreement, 30-day post-delivery support, and detailed follow-up recommendations.</p>
                 </div>
-                <a href="BiyteLum_Pricing_Document.pdf" class="cta-button" download>Download Pricing File</a>
             </div>
             
             <!-- Final CTA -->
             <div class="single-section">
-                <h2 class="section-title">Ready to Secure Your Digital Presence?</h2>
+                <h2 class="section-title">Ready to Build Your Privacy Program?</h2>
                 <div class="section-content">
-                    <p>Take the first step toward reclaiming your <strong>privacy and security</strong>.</p>
+                    <p>Start with a complimentary strategic consultation to discuss your <strong>privacy compliance needs and implementation roadmap.</strong></p>
                 </div>
-                <a href="contact.html" class="cta-button">Contact Us</a>
+                <a href="/consultation" class="cta-button">Schedule Free Consultation</a>
             </div>
         </div>
     </main>
@@ -714,12 +788,12 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>⚡ STATUS: PRICING</span>
-                <span>PACKAGES: 2</span>
-                <span>ENCRYPTION: ACTIVE</span>
+                <span>🏢 STATUS: ENTERPRISE PRICING</span>
+                <span>CERTIFIED: CIPP/E | CIPM | CIPT</span>
+                <span>SUPPORT: 30-DAY INCLUDED</span>
             </div>
             <div class="status-right">
-                © 2025 BiyteLüm.sys | <a href="index.html">RETURN_HOME</a>
+                © 2025 BiyteLüm.sys | <a href="/">RETURN HOME</a>
             </div>
         </div>
     </div>
