@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How I Removed Myself from 50+ Data Brokers | BiyteLüm</title>
+    <title>Building a GDPR-Compliant Privacy Framework for Growing Companies | BiyteLüm</title>
+    <meta name="description" content="Learn how to establish a comprehensive GDPR compliance framework that scales with your business. Strategic guide for startups and growing companies entering EU markets.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
         * {
             margin: 0;
@@ -85,6 +86,7 @@
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
             color: #A7FF9E;
+            text-decoration: none;
         }
         
         .nav-links {
@@ -253,6 +255,15 @@
             text-shadow: 0 0 10px #A7FF9E;
             border-left: 3px solid #A7FF9E;
             padding-left: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .content-card h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            color: #00FF99;
+            margin: 1.5rem 0 0.75rem 0;
+            text-transform: uppercase;
         }
         
         .content-card p {
@@ -260,7 +271,7 @@
             line-height: 1.7;
             color: rgba(167, 255, 158, 0.8);
             margin-bottom: 1.2rem;
-            text-align: justify;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .content-card ul {
@@ -272,11 +283,40 @@
             color: rgba(167, 255, 158, 0.8);
             margin-bottom: 0.5rem;
             line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .content-card strong {
             color: #A7FF9E;
             text-shadow: 0 0 5px #A7FF9E;
+            font-weight: 600;
+        }
+        
+        .content-card em {
+            color: rgba(0, 255, 153, 0.8);
+            font-style: italic;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: rgba(0, 255, 153, 0.1);
+            border: 1px solid rgba(0, 255, 153, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #00FF99;
+        }
+        
+        .highlight-box h4 {
+            font-family: 'Share Tech Mono', monospace;
+            color: #00FF99;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0.5rem;
         }
         
         /* CTA Section */
@@ -307,6 +347,21 @@
             100% { transform: translateX(100%); }
         }
         
+        .cta-section h3 {
+            font-family: 'Share Tech Mono', monospace;
+            color: #A7FF9E;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section p {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1.5rem;
+        }
+        
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -323,10 +378,13 @@
             overflow: hidden;
             z-index: 1;
             border-radius: 5px;
+            text-transform: uppercase;
+            margin: 0.5rem;
         }
         
         .cta-button:hover {
             color: #000;
+            transform: translateY(-2px);
         }
         
         .cta-button::before {
@@ -432,36 +490,36 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="/" class="logo">
                 <span>▶</span>
                 <span>BiyteLüm.sys</span>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="consultation.html">CONSULTATION</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="data-removal.html">DATA_REMOVAL</a></li>
-                <li><a href="resources.html">RESOURCES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="privacy.html">PRIVACY</a></li>
-                <li><a href="terms.html">TERMS</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/dpia">DPIA SERVICES</a></li>
+                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
+                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
+                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </div>
         <!-- Mobile Menu Dropdown -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">01. HOME</a>
-            <a href="services.html">02. SERVICES</a>
-            <a href="consultation.html">03. CONSULTATION</a>
-            <a href="pricing.html">04. PRICING</a>
-            <a href="data-removal.html">05. DATA_REMOVAL</a>
-            <a href="resources.html">06. RESOURCES</a>
-            <a href="contact.html">07. CONTACT</a>
-            <a href="privacy.html">08. PRIVACY</a>
-            <a href="terms.html">09. TERMS</a>
-            <a href="blog.html">10. BLOG</a>
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/dpia">03. DPIA SERVICES</a>
+            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
+            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
+            <a href="/ai-governance">06. AI GOVERNANCE</a>
+            <a href="/pricing">07. PRICING</a>
+            <a href="/resources">08. RESOURCES</a>
+            <a href="/contact">09. CONTACT</a>
+            <a href="/blog">10. BLOG</a>
         </div>
     </nav>
     
@@ -469,123 +527,189 @@
     <main>
         <!-- Article Header -->
         <header class="article-header">
-            <h1 class="article-title">How I Removed Myself from 50+ Data Brokers (And How You Can Too)</h1>
-            <div class="article-meta">PUBLISHED: 2025.06.15 | AUTHOR: BIYTELÜM_TEAM | READ_TIME: 8_MIN</div>
+            <h1 class="article-title">Building a GDPR-Compliant Privacy Framework for Growing Companies</h1>
+            <div class="article-meta">PUBLISHED: 2025.01.15 | AUTHOR: BIYTELÜM_TEAM | READ_TIME: 12_MIN</div>
             <div class="article-tags">
-                <span class="tag">DATA_REMOVAL</span>
-                <span class="tag">PRIVACY</span>
                 <span class="tag">GDPR</span>
-                <span class="tag">TUTORIAL</span>
+                <span class="tag">COMPLIANCE</span>
+                <span class="tag">ENTERPRISE</span>
+                <span class="tag">STRATEGY</span>
             </div>
         </header>
         
         <!-- Article Content -->
         <article class="article-content">
             <div class="content-card">
-                <p>The first time I Googled myself, I expected to find the usual—maybe a social media account, an article from high school or an old email. What I didn't expect was a full dossier on my life and the roadmap to my front door.</p>
+                <p>When your startup is ready to expand into European markets, GDPR compliance isn't just a legal checkbox—it's a competitive advantage. Companies that get privacy right from the start build stronger customer trust, avoid costly regulatory fines, and create sustainable data practices that scale with their business.</p>
 
-                <p>My home address. My phone number. My email address, voter registration, my dad's name, the address to my childhood home. Heck, even my half-sister (who I haven't spoken to since 2008). Even family members were listed, linking me to people I haven't seen in more than a decade and half (Mind you, some of these people I genuinely never want to talk to again, but I digress)</p>
+                <p>But where do you start when you're a growing company with limited resources? The GDPR can feel overwhelming with its 99 articles and complex requirements. The key is building a framework that's both compliant and practical for your business model.</p>
 
-                <p>It was extremely unsettling and I felt exposed in the "it's 2000 and I'm on the front tabloid" kind of exposed.</p>
+                <div class="highlight-box">
+                    <h4>Why This Matters Now</h4>
+                    <p>GDPR fines have exceeded €4.5 billion since 2018, with penalties reaching up to 4% of global annual revenue. More importantly, 73% of consumers won't buy from companies they don't trust with their data.</p>
+                </div>
 
-                <p>But it wasn't just one website doing this—it was dozens. Spokeo, Whitepages, MyLife, Radaris, BeenVerified, Intelius, FastPeopleSearch… the list kept going. Shoot, even my voter registration was out there with my current address.</p>
+                <h2>Understanding GDPR Fundamentals</h2>
+                <p>Before diving into implementation, let's establish what GDPR actually requires from your business:</p>
 
-                <p>And the worst part? I don't genuinely remember giving my stamp of approval and giving the green light to give my current address out to every shmuck from here to Guam.</p>
+                <h3>Core Principles</h3>
+                <p>GDPR is built on seven key principles that should guide every privacy decision:</p>
+                <ul>
+                    <li><strong>Lawfulness, fairness, and transparency:</strong> You need a legal basis for processing personal data, and you must be clear about what you're doing with it</li>
+                    <li><strong>Purpose limitation:</strong> Only collect data for specific, legitimate purposes and don't use it for other things later</li>
+                    <li><strong>Data minimization:</strong> Collect only what you actually need—no "just in case" data collection</li>
+                    <li><strong>Accuracy:</strong> Keep personal data correct and up-to-date</li>
+                    <li><strong>Storage limitation:</strong> Don't keep data longer than necessary</li>
+                    <li><strong>Integrity and confidentiality:</strong> Protect data with appropriate security measures</li>
+                    <li><strong>Accountability:</strong> Document how you comply with all the above</li>
+                </ul>
 
-                <p>From that point on, I made it my mission to erase myself from the internet (easier said than done, but I still made it my mission). It took time, frustration, and more CAPTCHA verifications that I ever wanted to encounter, but it felt so good erasing myself (I genuinely didn't want just anyone appearing at my front door….unless you're giving out those lifetime 5,000 a month prizes, then you're always invited and I'll make sure to have cake for you while I take my prize)</p>
+                <h3>When Does GDPR Apply to Your Business?</h3>
+                <p>You need GDPR compliance if you:</p>
+                <ul>
+                    <li>Have an office, subsidiary, or employees in the EU</li>
+                    <li>Offer goods or services to people in the EU (even if free)</li>
+                    <li>Monitor the behavior of people in the EU (analytics, tracking, etc.)</li>
+                    <li>Process personal data using EU-based cloud providers or processors</li>
+                </ul>
 
-                <p>Okay, so now I want to give you some insight and save you some of the dumb headaches I encountered.</p>
+                <h2>Building Your Privacy Framework</h2>
+                <p>A GDPR-compliant privacy framework has five essential components. Think of it as your privacy infrastructure—each component supports the others.</p>
 
-                <h2>Step 1: Find Out Where Your Data Is Public (and if it's publicly available on a website like Whitepages, it's very likely being sold)</h2>
-                <p>If you've never searched for yourself online, pause for a second and do it now.</p>
+                <h3>1. Data Processing Inventory</h3>
+                <p>Start by mapping all personal data your company processes. This is your foundation—you can't protect what you don't know you have.</p>
 
-                <p>Google your name with "address." (Sometimes, include old addresses too)</p>
+                <div class="highlight-box">
+                    <h4>Data Mapping Checklist</h4>
+                    <p>For each data processing activity, document: What personal data you collect, Why you collect it (legal basis), Where it's stored, Who has access, How long you keep it, Who you share it with.</p>
+                </div>
 
-                <p>Google your name with "phone number." (Add any old phone numbers you used, heck even old work numbers)</p>
+                <p>Many startups discover they're collecting data they don't actually need. This exercise often results in immediate data minimization opportunities.</p>
 
-                <p>Google your name with "background check." (This is where you realize your literally human gold)</p>
+                <h3>2. Legal Basis Framework</h3>
+                <p>Every piece of personal data you process needs a legal basis under GDPR. The six legal bases are:</p>
+                <ul>
+                    <li><strong>Consent:</strong> Clear, specific agreement from the individual</li>
+                    <li><strong>Contract:</strong> Necessary to fulfill a contract with the individual</li>
+                    <li><strong>Legal obligation:</strong> Required by law (tax records, etc.)</li>
+                    <li><strong>Vital interests:</strong> Protect someone's life (rarely applicable to most businesses)</li>
+                    <li><strong>Public task:</strong> Carrying out public functions (government entities)</li>
+                    <li><strong>Legitimate interests:</strong> Your business interests, balanced against individual privacy rights</li>
+                </ul>
 
-                <p>Take a moment to click through the first 5-10 results. If you find personal details listed, you're in the data broker system. Nothing like knowing your information is digital oil for someone else</p>
+                <p><em>Most growing companies rely primarily on contract and legitimate interests, with consent for marketing activities.</em></p>
 
-                <p>I still remember the feeling of seeing my current address publicly listed. It was right under my political party affiliation. It made me wonder—who else had access to this and even more, could they show up at my front door.</p>
+                <h3>3. Privacy Policies and Documentation</h3>
+                <p>Your privacy policy isn't just a legal document—it's a trust-building tool. It should clearly explain what you do with personal data in language your customers actually understand.</p>
 
-                <p>If you don't want to do this manually, you can scan multiple broker sites at once using tools like:</p>
+                <p>Essential policy components:</p>
+                <ul>
+                    <li>What personal data you collect and why</li>
+                    <li>Your legal basis for processing</li>
+                    <li>How long you keep data</li>
+                    <li>Who you share data with (vendors, partners)</li>
+                    <li>Individual rights and how to exercise them</li>
+                    <li>Contact information for privacy questions</li>
+                </ul>
 
-                <p><strong>Optery</strong> (Free scan, paid removals)</p>
-                <p><strong>DeleteMe</strong> (Paid service, works in the U.S.)</p>
-                <p><strong>Incogni</strong> (Works in the U.S. & EU)</p>
+                <h3>4. Individual Rights Management</h3>
+                <p>GDPR gives individuals eight rights regarding their personal data. You need processes to handle these requests efficiently:</p>
+                <ul>
+                    <li><strong>Right to be informed:</strong> Clear privacy notices</li>
+                    <li><strong>Right of access:</strong> Provide copies of personal data</li>
+                    <li><strong>Right to rectification:</strong> Correct inaccurate data</li>
+                    <li><strong>Right to erasure:</strong> Delete data when requested</li>
+                    <li><strong>Right to restrict processing:</strong> Limit how you use data</li>
+                    <li><strong>Right to data portability:</strong> Provide data in a usable format</li>
+                    <li><strong>Right to object:</strong> Stop processing for marketing/legitimate interests</li>
+                    <li><strong>Rights related to automated decision-making:</strong> Explain algorithmic decisions</li>
+                </ul>
 
-                <p>Even if you don't pay for removal services, these tools will at least show you where your information is exposed.</p>
+                <div class="highlight-box">
+                    <h4>Response Timeline Requirements</h4>
+                    <p>You have 30 days to respond to most individual rights requests. For complex requests, you can extend this by another 60 days, but you must inform the individual within the first 30 days.</p>
+                </div>
 
-                <h2>Step 2: Start the Removal Process (The Hard and Tedious Part)</h2>
-                <p>Once you know where your data is being sold, it's time to start pulling yourself out (and stopping the flow of digital gold, cause let's be honest, someone somewhere is making money out there)</p>
+                <h3>5. Security and Breach Response</h3>
+                <p>GDPR requires "appropriate technical and organizational measures" to protect personal data. For most growing companies, this means:</p>
+                <ul>
+                    <li><strong>Encryption:</strong> Data at rest and in transit</li>
+                    <li><strong>Access controls:</strong> Role-based permissions and regular reviews</li>
+                    <li><strong>Regular backups:</strong> With encryption and access controls</li>
+                    <li><strong>Vendor management:</strong> Ensuring processors meet GDPR standards</li>
+                    <li><strong>Staff training:</strong> Regular privacy awareness programs</li>
+                </ul>
 
-                <p>Each data broker has a different removal process—some let you opt out easily, others make it a frustrating maze. While unnerving, I found it useful to remind myself how important it was for me to remove the possibility of some shmuck coming up to my front door.</p>
+                <p>For data breaches, you have 72 hours to notify your supervisory authority if the breach is likely to result in a risk to individual rights and freedoms.</p>
 
-                <p>Below are the biggest offenders:</p>
+                <h2>Implementation Strategy for Growing Companies</h2>
+                <p>Building GDPR compliance doesn't happen overnight. Here's a practical roadmap:</p>
 
-                <p><strong>Whitepages</strong></p>
-                <p><strong>Spokeo</strong></p>
-                <p><strong>BeenVerified</strong></p>
-                <p><strong>Radaris</strong></p>
-                <p><strong>Intelius</strong></p>
+                <h3>Phase 1: Foundation (Months 1-2)</h3>
+                <ul>
+                    <li>Complete data processing inventory</li>
+                    <li>Establish legal bases for all processing activities</li>
+                    <li>Update privacy policy with GDPR requirements</li>
+                    <li>Implement basic security controls</li>
+                </ul>
 
-                <p>For each site:</p>
-                <p>Enter your information and request removal</p>
-                <p>Confirm via email (if required)</p>
+                <h3>Phase 2: Operationalization (Months 3-4)</h3>
+                <ul>
+                    <li>Build individual rights request procedures</li>
+                    <li>Establish breach response protocols</li>
+                    <li>Review and update vendor agreements</li>
+                    <li>Conduct staff privacy training</li>
+                </ul>
 
-                <p>I remember when MyVoterRegistration made me submit an opt-out request multiple times for the various locations I've lived in. Maybe they counted on me giving up? Either way, I was going to erase my personal information one way or another.</p>
+                <h3>Phase 3: Optimization (Months 5-6)</h3>
+                <ul>
+                    <li>Implement privacy by design in product development</li>
+                    <li>Regular compliance monitoring and audits</li>
+                    <li>Advanced security measures based on risk assessment</li>
+                    <li>Ongoing staff training and awareness programs</li>
+                </ul>
 
-                <p><strong>What If a Broker Refuses to Remove Your Data?</strong></p>
+                <h2>Common Pitfalls to Avoid</h2>
 
-                <p>Some sites drag their feet or try to make you pay for removal. If that happens:</p>
+                <h3>Over-Relying on Consent</h3>
+                <p>Many companies default to consent for everything, but consent under GDPR must be freely given, specific, informed, and easily withdrawable. For most business operations, other legal bases are more appropriate.</p>
 
-                <p><strong>Use GDPR (if you're in the EU) or CCPA (if you're in California)</strong></p>
-                <p>• Companies legally must delete your data upon request.</p>
-                <p>• If they refuse, report them to your local Data Protection Authority.</p>
+                <h3>Ignoring Vendor Compliance</h3>
+                <p>Your cloud providers, analytics tools, and other vendors must also be GDPR compliant. Their non-compliance becomes your liability.</p>
 
-                <p><strong>Send a Legal Demand Letter</strong></p>
-                <p>• You can use tools like Mine or JunkEmailRemoval to send automated legal requests.</p>
+                <h3>Treating Compliance as a One-Time Project</h3>
+                <p>GDPR compliance is ongoing. Regulations evolve, your business changes, and new data processing activities require continuous privacy assessment.</p>
 
-                <p><strong>Use a Paid Service If You're Overwhelmed</strong></p>
-                <p>• If you don't have time for manual opt-outs, services like DeleteMe and Incogni will do it for you.</p>
+                <div class="highlight-box">
+                    <h4>Practical Tip</h4>
+                    <p>Start with a privacy gap assessment to identify your current compliance status. This gives you a clear roadmap and helps prioritize improvements based on risk and business impact.</p>
+                </div>
 
-                <h2>Step 3: Future-Proof Your Privacy</h2>
-                <p>Removing yourself from data brokers is only half the battle. If you don't change how your data leaks in the first place, it will keep showing up again. And suddenly you're feeling like you're on that tabloid in the early 2000's.</p>
+                <h2>The Business Value of Getting Privacy Right</h2>
+                <p>GDPR compliance isn't just about avoiding fines—it's about building sustainable business practices:</p>
 
-                <p>Here's how to stay private going forward:</p>
+                <p><strong>Customer Trust:</strong> Privacy-conscious customers are more likely to engage with companies that demonstrate data protection leadership.</p>
 
-                <p><strong>Stop using your real phone number for accounts</strong> (no, really. Go ahead and get a fake number or even use those free texting app services)</p>
+                <p><strong>Competitive Advantage:</strong> Privacy compliance can differentiate your company in crowded markets, especially when selling to enterprise customers.</p>
 
-                <p>Use MySudo, JMP.chat, or Silent.link to generate a private number.</p>
+                <p><strong>Operational Efficiency:</strong> Good data practices reduce storage costs, improve data quality, and streamline business operations.</p>
 
-                <p><strong>Use burner emails instead of your personal one.</strong> (I mean, I'd say go and give yourself a designated one on Protonmail or Tutanota.)</p>
+                <p><strong>Investment Readiness:</strong> Due diligence for funding rounds increasingly includes privacy compliance assessment.</p>
 
-                <p>SimpleLogin, AnonAddy, or Firefox Relay let you create alias emails for sign-ups.</p>
+                <h2>Getting Expert Help</h2>
+                <p>Building GDPR compliance requires expertise that most growing companies don't have in-house. Consider working with privacy professionals who understand both the regulatory requirements and the practical challenges of implementation.</p>
 
-                <p><strong>Don't give your real info to "free" sites.</strong></p>
-
-                <p>Many "free tools" (like job boards, quizzes, and online forms) are data brokers in disguise. And it's frustrating, cause these websites always somehow need an email for everything they do.</p>
-
-                <p>I once signed up for a "free background check" on myself, only to later find my information for sale on a data broker site. They got me with the "free" and that's when I realized, I will not be doing that again.</p>
-
-                <h2>Final Thoughts: Privacy Is a Moving Target</h2>
-                <p>Data brokers don't want you to opt out—their business model depends on keeping your data public.</p>
-
-                <p>But you can fight back.</p>
-
-                <p>Here's your privacy to-do list for today:</p>
-                <p>Google yourself and find where your info is exposed.</p>
-                <p>Start removing yourself using the opt-out links above.</p>
-                <p>Set up privacy-first habits (burner emails, no phone number sign-ups, regular checks).</p>
-                <p>Need help? If you want to remove your data but don't have time for all the manual requests, that's what we do at BiyteLüm.</p>
-
-                <p><strong>Your data, your rules. Let's keep it that way</strong></p>
+                <p>Whether through fractional DPO services, compliance assessments, or ongoing advisory support, expert guidance helps you build privacy practices that protect your business while enabling growth.</p>
 
                 <div class="cta-section">
-                    <p><strong>Need help with data removal?</strong> That's what we do at BiyteLüm.</p>
-                    <a href="data-removal.html" class="cta-button">
-                        ERASE_YOUR_DATA_NOW
+                    <h3>Ready to Build Your Privacy Framework?</h3>
+                    <p><strong>Need help implementing GDPR compliance?</strong> Our CIPP/E, CIPM & CIPT certified team provides strategic guidance and hands-on support for growing companies.</p>
+                    <a href="/compliance-audit" class="cta-button">
+                        START PRIVACY ASSESSMENT
+                        <span>→</span>
+                    </a>
+                    <a href="/fractional-dpo" class="cta-button">
+                        EXPLORE FRACTIONAL DPO
                         <span>→</span>
                     </a>
                 </div>
@@ -597,12 +721,12 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>⚡ STATUS: READING</span>
-                <span>WORDS: 950</span>
-                <span>ENCRYPTION: ACTIVE</span>
+                <span>📚 STATUS: CORPORATE GUIDE</span>
+                <span>TOPIC: GDPR FRAMEWORK</span>
+                <span>EXPERTISE: CIPP/E | CIPM | CIPT</span>
             </div>
             <div class="status-right">
-                © 2025 BiyteLüm.sys | <a href="blog.html">BACK_TO_BLOG</a>
+                © 2025 BiyteLüm.sys | <a href="/blog">BACK_TO_BLOG</a>
             </div>
         </div>
     </div>
