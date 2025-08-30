@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact BiyteLüm - Secure digital privacy consultations.">
-    <title>BiyteLüm | Secure Contact Protocol</title>
+    <title>Blog | BiyteLüm - Corporate Privacy Insights</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
         
@@ -174,25 +173,23 @@
             z-index: 10;
             padding-top: 6rem;
             min-height: calc(100vh - 2.5rem);
-            max-width: 1000px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
             padding-bottom: 2.5rem;
         }
         
-        /* Header */
+        /* Page Header */
         .page-header {
             text-align: center;
-            margin-bottom: 3rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
         }
         
-        .page-title {
+        .page-header h1 {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
         .title-line {
@@ -209,185 +206,63 @@
         }
         
         .page-subtitle {
-            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
             color: rgba(167, 255, 158, 0.8);
-            font-size: 1rem;
-            margin-bottom: 1rem;
+            font-weight: 300;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 10px #A7FF9E;
         }
         
-        .page-description {
-            color: rgba(167, 255, 158, 0.8);
-            font-size: 1.1rem;
-            max-width: 600px;
+        /* Blog Grid */
+        .blog-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 900px;
             margin: 0 auto;
-            line-height: 1.6;
         }
         
-        /* Contact Methods */
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .contact-method {
-            background: rgba(167, 255, 158, 0.05);
+        /* Blog Cards */
+        .blog-card {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
             border: 1px solid rgba(167, 255, 158, 0.2);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-method:hover {
-            border-color: rgba(167, 255, 158, 0.4);
-            transform: translateY(-3px);
-        }
-        
-        .contact-method .icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-method h3 {
-            font-family: 'Share Tech Mono', monospace;
-            color: #A7FF9E;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-        
-        .contact-method p {
-            color: rgba(167, 255, 158, 0.8);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .contact-method a {
-            color: #A7FF9E;
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-method a:hover {
-            color: #00FF99;
-            text-shadow: 0 0 10px #00FF99;
-        }
-        
-        /* PGP Container */
-        .pgp-container {
-            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
-            border: 2px solid rgba(167, 255, 158, 0.3);
             border-radius: 10px;
             padding: 2rem;
-            margin: 2rem 0;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .pgp-container::before {
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .blog-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(167, 255, 158, 0.1), transparent);
-            animation: shimmer 3s ease-in-out infinite;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
         }
         
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .blog-card:hover::before {
+            left: 100%;
         }
         
-        .pgp-container h2 {
-            font-family: 'Share Tech Mono', monospace;
-            color: #A7FF9E;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+        .blog-header {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-shadow: 0 0 10px #A7FF9E;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .pgp-container p {
-            color: rgba(167, 255, 158, 0.8);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .pgp-container a {
-            color: #A7FF9E;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .pgp-container a:hover {
-            color: #00FF99;
-            text-shadow: 0 0 10px #00FF99;
-        }
-        
-        .pgp-key {
-            background: #000;
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            border-radius: 5px;
-            padding: 1rem;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: #A7FF9E;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow: auto;
-            max-height: 200px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(167, 255, 158, 0.1);
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            color: #A7FF9E;
-            padding: 0.3rem 0.6rem;
-            border-radius: 3px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 3;
-        }
-        
-        .copy-button:hover {
-            background: rgba(167, 255, 158, 0.2);
-            border-color: rgba(167, 255, 158, 0.6);
-        }
-        
-        /* Contact Form */
-        .contact-form {
-            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
-            border: 1px solid rgba(167, 255, 158, 0.2);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .card-header {
-            display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
         
-        .card-icon {
+        .blog-icon {
             width: 3rem;
             height: 3rem;
             border: 1px solid rgba(167, 255, 158, 0.3);
@@ -396,59 +271,60 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            background: rgba(167, 255, 158, 0.1);
+            flex-shrink: 0;
         }
         
-        .card-title {
+        .blog-meta {
+            flex: 1;
+        }
+        
+        .blog-title {
             font-family: 'Share Tech Mono', monospace;
             font-size: 1.1rem;
             font-weight: bold;
             color: #A7FF9E;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
         }
         
-        .form-group {
+        .blog-title:hover {
+            color: #00FF99;
+            text-shadow: 0 0 10px #A7FF9E;
+        }
+        
+        .blog-date {
+            font-size: 0.7rem;
+            color: rgba(167, 255, 158, 0.6);
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .blog-excerpt {
+            line-height: 1.6;
+            color: rgba(167, 255, 158, 0.7);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .blog-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
         
-        .form-group label {
-            display: block;
+        .tag {
+            background: rgba(167, 255, 158, 0.1);
             color: #A7FF9E;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(167, 255, 158, 0.3);
-            border-radius: 5px;
-            padding: 0.75rem;
-            color: #A7FF9E;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
         }
         
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: rgba(167, 255, 158, 0.6);
-            box-shadow: 0 0 10px rgba(167, 255, 158, 0.2);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* Buttons */
-        .cta-button {
+        .read-more {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -461,48 +337,11 @@
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
         
-        .cta-button:hover {
+        .read-more:hover {
             background: rgba(167, 255, 158, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .cta-primary {
-            background: #A7FF9E;
-            color: #000;
-            border-color: #A7FF9E;
-            font-weight: bold;
-        }
-        
-        .cta-primary:hover {
-            background: #00FF99;
-            border-color: #00FF99;
-            box-shadow: 0 0 20px rgba(167, 255, 158, 0.3);
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid rgba(167, 255, 158, 0.6);
-            background: transparent;
-            color: #A7FF9E;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-        
-        .back-button:hover {
-            background: rgba(167, 255, 158, 0.1);
-            transform: translateX(-5px);
+            transform: translateX(5px);
         }
         
         /* Status Bar */
@@ -550,16 +389,14 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .contact-methods {
-                grid-template-columns: 1fr;
+            .blog-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
             
-            .contact-form {
-                padding: 1.5rem;
-            }
-            
-            .pgp-container {
-                padding: 1.5rem;
+            .blog-icon {
+                order: -1;
             }
             
             .status-content {
@@ -574,15 +411,21 @@
             }
         }
         
-        @media (max-width: 480px) {
-            main {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .contact-form, .pgp-container {
-                padding: 1.5rem;
-            }
+        /* Loading Animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #A7FF9E, transparent);
+            animation: loading 2s ease-in-out infinite;
+            z-index: 200;
+        }
+        
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
     </style>
 </head>
@@ -592,6 +435,9 @@
     
     <!-- Floating Particles -->
     <div id="particles"></div>
+    
+    <!-- Loading Bar -->
+    <div class="loading-bar"></div>
     
     <!-- Navigation -->
     <nav>
@@ -609,8 +455,8 @@
                 <li><a href="/ai-governance">AI GOVERNANCE</a></li>
                 <li><a href="/pricing">PRICING</a></li>
                 <li><a href="/resources">RESOURCES</a></li>
-                <li><a href="/contact" class="active">CONTACT</a></li>
-                <li><a href="/blog">BLOG</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog" class="active">BLOG</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </div>
@@ -631,100 +477,50 @@
     
     <!-- Main Content -->
     <main>
-        <!-- Header -->
-        <div class="page-header">
-            <h1 class="page-title">
-                <span class="title-line">CONTACT</span>
-                <span class="title-line">PROTOCOL</span>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>
+                <span class="title-line">CORPORATE</span>
+                <span class="title-line">INTELLIGENCE</span>
             </h1>
-            <div class="page-subtitle">SECURE_COMMUNICATION_CHANNEL</div>
-            <p class="page-description">Establish encrypted contact for digital privacy consultations. All communications secured with military-grade protocols.</p>
-        </div>
+            <p class="page-subtitle">Privacy compliance insights, regulatory updates, and enterprise data protection strategies</p>
+        </section>
         
-        <!-- Contact Methods -->
-        <div class="contact-methods">
-            <div class="contact-method">
-                <div class="icon">📧</div>
-                <h3>Secure Email</h3>
-                <p><a href="mailto:biytelum@protonmail.com">biytelum@protonmail.com</a></p>
-            </div>
-            <div class="contact-method">
-                <div class="icon">🔐</div>
-                <h3>PGP Encrypted</h3>
-                <p>End-to-end encryption available for sensitive communications</p>
-            </div>
-            <div class="contact-method">
-                <div class="icon">⚡</div>
-                <h3>Response Time</h3>
-                <p>24-48 hour response for all inquiries</p>
-            </div>
-        </div>
-        
-        <!-- PGP Key Section -->
-        <div class="pgp-container">
-            <h2>🔒 PGP_PUBLIC_KEY</h2>
-            <p>Copy the key below or <a href="publickey-biytelum.asc" download>download the PGP Key</a> for end-to-end encryption.</p>
-            <div class="pgp-key">
-                <button class="copy-button" onclick="copyPGPKey()">COPY</button>-----BEGIN PGP PUBLIC KEY BLOCK-----
-mQINBGfNDX4BEADHOrevSaQzdTnyTPiNd4d0wKHdRRmAKTCF3lxHw87xdS51BDr+
-hWIpDSZSXcrhKl8JPquJ1anB1WSA/3FaiPR572WtTK0q2SYfM6Km12IHG7Njvi2D
-ZmmD9t8rnEHjtWgYaU7H1RwuIWYoIzh4uHEbmiCMaQBJgqv4VMg4C8FcBIAD1Hdl
-td90u4Lhl2vAs5eVqcwR4dN4mQcUmtgtAea8q7DIiOGHHOC/aJbCr0e6p2MFV2ba
-yOOQhEq6TKyjKXdLtWC81qfZZQu6vatpFxsmbpjymkT5IStYtVvXInFCWJbns0Gu
-RBQPnL6mifWzYyq6XGJNq5FYrFqUV5bMv2tla31bqC9L09Xy1QDJP0g9OYbB2367
-hNLr4iDVDNBOzmvLhV8phNUbFVD527PuVjIG6v9cto3mBwhOzGjg6nHXZy3Nw7HA
-7nwXquCN5KxGZHz0cFzxUtNE/Jt5myC8jnT4fKqW8zFvBLli/pOehFpxsMfUEVYh
-UbkjivWPpG8A/Lve/A1tvepngelbjsJqpneebz/pv1rte7chLM9ZVjqkloq4QMQF
-FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
-9FYxWFsPGH/JOTtpj27PhwNEM/At6OTxL1hrCpogA+xIP9JGTJC/XcXO7QARAQAB
------END PGP PUBLIC KEY BLOCK-----
-            </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <div class="card-header">
-                <div class="card-icon">📡</div>
-                <div class="card-title">SECURE_MESSAGE_TRANSMISSION</div>
-            </div>
-            <form action="https://formspree.io/f/manjakny" method="POST">
-                <div class="form-group">
-                    <label for="name">OPERATOR_DESIGNATION:</label>
-                    <input type="text" name="name" id="name" required placeholder="Enter your identifier">
+        <!-- Blog Grid -->
+        <section class="blog-grid">
+            <!-- Featured Blog Post -->
+            <article class="blog-card">
+                <div class="blog-header">
+                    <div class="blog-icon">🛡️</div>
+                    <div class="blog-meta">
+                        <a href="/blog/gdpr-compliance-framework" class="blog-title">Building a GDPR-Compliant Privacy Framework for Growing Companies</a>
+                        <div class="blog-date">2025.01.15 | COMPLIANCE_GUIDE</div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">CONTACT_FREQUENCY:</label>
-                    <input type="email" name="email" id="email" required placeholder="your.email@domain.com">
+                <p class="blog-excerpt">
+                    Learn how to establish a comprehensive GDPR compliance framework that scales with your business. This strategic guide covers essential privacy program components, from data processing inventories to incident response protocols, designed specifically for startups and growing companies entering EU markets.
+                </p>
+                <div class="blog-tags">
+                    <span class="tag">GDPR</span>
+                    <span class="tag">COMPLIANCE</span>
+                    <span class="tag">ENTERPRISE</span>
+                    <span class="tag">STRATEGY</span>
                 </div>
-                
-                <div class="form-group">
-                    <label for="message">MESSAGE_PAYLOAD:</label>
-                    <textarea name="message" id="message" required placeholder="Enter your secure message..."></textarea>
-                </div>
-                
-                <!-- Hidden fields for better email formatting -->
-                <input type="hidden" name="_subject" value="New BiyteLüm Contact - Privacy Consultation Request">
-                
-                <button type="submit" class="cta-button cta-primary">
-                    TRANSMIT_MESSAGE
+                <a href="/blog/gdpr-compliance-framework" class="read-more">
+                    READ_GUIDE
                     <span>→</span>
-                </button>
-            </form>
-        </div>
-        
-        <a href="/" class="back-button">
-            ← RETURN_TO_BASE
-        </a>
+                </a>
+            </article>
+        </section>
     </main>
     
     <!-- Status Bar -->
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>🔐 ENCRYPTION_STATUS: ACTIVE</span>
-                <span>CHANNEL: SECURED</span>
-                <span>RESPONSE_TIME: 24-48H</span>
+                <span>📚 STATUS: CORPORATE BLOG</span>
+                <span>FOCUS: PRIVACY COMPLIANCE</span>
+                <span>EXPERTISE: CIPP/E | CIPM | CIPT</span>
             </div>
             <div class="status-right">
                 © 2025 BiyteLüm.sys | <a href="/">RETURN_HOME</a>
@@ -749,21 +545,6 @@ FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
             }
         }
         
-        // Copy PGP Key function
-        function copyPGPKey() {
-            const pgpKey = document.querySelector('.pgp-key').textContent;
-            navigator.clipboard.writeText(pgpKey.replace('COPY', '').trim()).then(() => {
-                const button = document.querySelector('.copy-button');
-                const originalText = button.textContent;
-                button.textContent = 'COPIED!';
-                button.style.background = 'rgba(167, 255, 158, 0.3)';
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'rgba(167, 255, 158, 0.1)';
-                }, 2000);
-            });
-        }
-        
         // Mobile menu toggle
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
@@ -773,6 +554,14 @@ FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
+            
+            // Remove loading bar after page loads
+            setTimeout(() => {
+                const loadingBar = document.querySelector('.loading-bar');
+                if (loadingBar) {
+                    loadingBar.style.display = 'none';
+                }
+            }, 2000);
         });
         
         // Parallax effect for background
