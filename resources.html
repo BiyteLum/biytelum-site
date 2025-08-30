@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BiyteLüm Resources - Free privacy tools and guides to protect your data.">
-    <title>Resources | BiyteLüm - Privacy Tools & Guides</title>
+    <meta name="description" content="Corporate privacy compliance resources, GDPR guides, CCPA frameworks, and enterprise privacy tools for businesses and privacy professionals.">
+    <title>Corporate Privacy Resources | BiyteLüm - Compliance Guides & Tools</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
         * {
             margin: 0;
@@ -86,6 +86,7 @@
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
             color: #A7FF9E;
+            text-decoration: none;
         }
         
         .nav-links {
@@ -204,18 +205,24 @@
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .page-subtitle strong {
+            color: #A7FF9E;
+            text-shadow: 0 0 5px #A7FF9E;
         }
         
         /* Resources Container */
         .resources-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
         
         .resources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -224,8 +231,8 @@
         .resource-card {
             background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
             border: 1px solid rgba(167, 255, 158, 0.2);
-            border-radius: 10px;
-            padding: 2rem;
+            border-radius: 15px;
+            padding: 2.5rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -262,18 +269,31 @@
         }
         
         .card-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #A7FF9E;
-            text-shadow: 0 0 10px #A7FF9E;
+            text-shadow: 0 0 15px #A7FF9E;
         }
         
         .card-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
             color: #A7FF9E;
             text-transform: uppercase;
             font-weight: 700;
-            text-shadow: 0 0 10px #A7FF9E;
+            letter-spacing: 0.05em;
+        }
+        
+        .card-description {
+            color: rgba(167, 255, 158, 0.8);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-description strong {
+            color: #A7FF9E;
+            font-weight: 600;
         }
         
         .resource-list {
@@ -282,10 +302,10 @@
         
         .resource-item {
             margin-bottom: 1rem;
-            padding: 0.75rem;
+            padding: 1rem;
             background: rgba(167, 255, 158, 0.05);
-            border: 1px solid rgba(167, 255, 158, 0.1);
-            border-radius: 5px;
+            border: 1px solid rgba(167, 255, 158, 0.15);
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
         
@@ -299,7 +319,7 @@
             color: #A7FF9E;
             text-decoration: none;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: bold;
             transition: all 0.3s ease;
             display: flex;
@@ -324,15 +344,49 @@
         
         .resource-description {
             color: rgba(167, 255, 158, 0.7);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin-top: 0.5rem;
-            font-style: italic;
+            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
-        /* Back Button */
-        .back-section {
+        .resource-category {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(0, 255, 153, 0.8);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Featured Resource Card */
+        .featured-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 2px solid rgba(0, 255, 153, 0.3);
+        }
+        
+        .featured-card .card-title {
+            color: #00FF99;
+            text-shadow: 0 0 15px #00FF99;
+        }
+        
+        /* CTA Section */
+        .cta-section {
             text-align: center;
-            margin-top: 3rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 15px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
         .cta-button {
@@ -349,12 +403,14 @@
             transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
-            border-radius: 5px;
+            border-radius: 8px;
             text-transform: uppercase;
+            z-index: 1;
         }
         
         .cta-button:hover {
             color: #000;
+            transform: translateY(-2px);
         }
         
         .cta-button::before {
@@ -371,6 +427,19 @@
         
         .cta-button:hover::before {
             left: 0;
+        }
+        
+        .cta-button.secondary {
+            border-color: rgba(167, 255, 158, 0.6);
+            color: rgba(167, 255, 158, 0.8);
+        }
+        
+        .cta-button.secondary::before {
+            background: rgba(167, 255, 158, 0.1);
+        }
+        
+        .cta-button.secondary:hover {
+            color: #A7FF9E;
         }
         
         /* Status Bar */
@@ -422,14 +491,29 @@
                 grid-template-columns: 1fr;
             }
             
+            .featured-card {
+                grid-column: 1;
+            }
+            
             .resource-card {
-                padding: 1.5rem;
+                padding: 2rem;
             }
             
             .card-header {
                 flex-direction: column;
                 text-align: center;
                 gap: 0.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
             
             .status-content {
@@ -466,36 +550,36 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="/" class="logo">
                 <span>▶</span>
                 <span>BiyteLüm.sys</span>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="consultation.html">CONSULTATION</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="data-removal.html">DATA_REMOVAL</a></li>
-                <li><a href="resources.html" class="active">RESOURCES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="privacy.html">PRIVACY</a></li>
-                <li><a href="terms.html">TERMS</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/dpia">DPIA SERVICES</a></li>
+                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
+                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
+                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources" class="active">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </div>
         <!-- Mobile Menu Dropdown -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">01. HOME</a>
-            <a href="services.html">02. SERVICES</a>
-            <a href="consultation.html">03. CONSULTATION</a>
-            <a href="pricing.html">04. PRICING</a>
-            <a href="data-removal.html">05. DATA_REMOVAL</a>
-            <a href="resources.html">06. RESOURCES</a>
-            <a href="contact.html">07. CONTACT</a>
-            <a href="privacy.html">08. PRIVACY</a>
-            <a href="terms.html">09. TERMS</a>
-            <a href="blog.html">10. BLOG</a>
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/dpia">03. DPIA SERVICES</a>
+            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
+            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
+            <a href="/ai-governance">06. AI GOVERNANCE</a>
+            <a href="/pricing">07. PRICING</a>
+            <a href="/resources">08. RESOURCES</a>
+            <a href="/contact">09. CONTACT</a>
+            <a href="/blog">10. BLOG</a>
         </div>
     </nav>
     
@@ -503,96 +587,251 @@
     <main>
         <!-- Page Header -->
         <section class="page-header">
-            <h1>Privacy Resources & Tools</h1>
-            <p class="page-subtitle">Access free resources to enhance your online privacy and security.</p>
+            <h1>Corporate Privacy Resources</h1>
+            <p class="page-subtitle">Essential tools, frameworks, and guidance for <strong>enterprise privacy compliance</strong> and data protection program development.</p>
         </section>
         
         <div class="resources-container">
             <div class="resources-grid">
-                <!-- Data Broker Opt-Out Links -->
+                <!-- Regulatory Guidance -->
                 <div class="resource-card">
                     <div class="card-header">
-                        <div class="card-icon">🔹</div>
-                        <h2 class="card-title">Data Broker Opt-Out Links</h2>
+                        <div class="card-icon">📜</div>
+                        <h2 class="card-title">Regulatory Guidance</h2>
+                    </div>
+                    <div class="card-description">
+                        Official regulatory resources and guidance documents for corporate privacy compliance across multiple jurisdictions.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <a href="https://www.whitepages.com/suppression_request" target="_blank" class="resource-link">
-                                Whitepages Opt-Out
+                            <div class="resource-category">GDPR Resources</div>
+                            <a href="https://gdpr.eu/" target="_blank" class="resource-link">
+                                GDPR Official Guide
                             </a>
-                            <div class="resource-description">Remove your personal information from Whitepages directory</div>
+                            <div class="resource-description">Comprehensive GDPR compliance guide with article-by-article explanations</div>
                         </li>
                         <li class="resource-item">
-                            <a href="https://www.spokeo.com/optout" target="_blank" class="resource-link">
-                                Spokeo Opt-Out
+                            <div class="resource-category">CCPA Resources</div>
+                            <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" class="resource-link">
+                                California AG CCPA Guidance
                             </a>
-                            <div class="resource-description">Delete your profile from Spokeo's people search engine</div>
+                            <div class="resource-description">Official California Attorney General CCPA implementation guidance</div>
                         </li>
                         <li class="resource-item">
-                            <a href="https://www.mylife.com/ccpa/optout" target="_blank" class="resource-link">
-                                MyLife Opt-Out
+                            <div class="resource-category">EU AI Act</div>
+                            <a href="https://artificialintelligenceact.eu/" target="_blank" class="resource-link">
+                                EU AI Act Hub
                             </a>
-                            <div class="resource-description">Remove your data from MyLife background check service</div>
+                            <div class="resource-description">Comprehensive resource for EU AI Act compliance and implementation</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">ISO Standards</div>
+                            <a href="https://www.iso.org/standard/71670.html" target="_blank" class="resource-link">
+                                ISO 27001 Privacy Controls
+                            </a>
+                            <div class="resource-description">International standard for information security management systems</div>
                         </li>
                     </ul>
                 </div>
                 
-                <!-- Secure Email Providers -->
+                <!-- Privacy Frameworks -->
                 <div class="resource-card">
                     <div class="card-header">
-                        <div class="card-icon">🔹</div>
-                        <h2 class="card-title">Secure Email Providers</h2>
+                        <div class="card-icon">🏗️</div>
+                        <h2 class="card-title">Privacy Frameworks</h2>
+                    </div>
+                    <div class="card-description">
+                        Industry-standard frameworks and methodologies for building comprehensive privacy programs.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <a href="https://protonmail.com/" target="_blank" class="resource-link">
-                                ProtonMail
+                            <div class="resource-category">NIST Framework</div>
+                            <a href="https://www.nist.gov/privacy-framework" target="_blank" class="resource-link">
+                                NIST Privacy Framework
                             </a>
-                            <div class="resource-description">End-to-end encrypted email with zero-access encryption</div>
+                            <div class="resource-description">US government privacy framework for managing privacy risks</div>
                         </li>
                         <li class="resource-item">
-                            <a href="https://tutanota.com/" target="_blank" class="resource-link">
-                                Tutanota
+                            <div class="resource-category">FAIR Information</div>
+                            <a href="https://iapp.org/resources/article/fair-information-practice-principles/" target="_blank" class="resource-link">
+                                FAIR Information Principles
                             </a>
-                            <div class="resource-description">Open source encrypted email service from Germany</div>
+                            <div class="resource-description">Foundation principles for privacy program development</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Privacy by Design</div>
+                            <a href="https://www.ipc.on.ca/wp-content/uploads/resources/7foundationalprinciples.pdf" target="_blank" class="resource-link">
+                                Privacy by Design Principles
+                            </a>
+                            <div class="resource-description">Seven foundational principles for privacy-centric system design</div>
                         </li>
                     </ul>
                 </div>
                 
-                <!-- Privacy & Security Tools -->
+                <!-- Professional Development -->
                 <div class="resource-card">
                     <div class="card-header">
-                        <div class="card-icon">🔹</div>
-                        <h2 class="card-title">Privacy & Security Tools</h2>
+                        <div class="card-icon">🎓</div>
+                        <h2 class="card-title">Professional Certification</h2>
+                    </div>
+                    <div class="card-description">
+                        Privacy certification programs and continuing education resources for building expertise in data protection.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <a href="https://www.torproject.org/" target="_blank" class="resource-link">
-                                Tor Browser
+                            <div class="resource-category">IAPP Certification</div>
+                            <a href="https://iapp.org/certify/" target="_blank" class="resource-link">
+                                IAPP Privacy Certifications
                             </a>
-                            <div class="resource-description">Browse anonymously through the Tor network</div>
+                            <div class="resource-description">CIPP/E, CIPM, and CIPT certification programs for privacy professionals</div>
                         </li>
                         <li class="resource-item">
-                            <a href="https://www.signal.org/" target="_blank" class="resource-link">
-                                Signal Messenger
+                            <div class="resource-category">Training Programs</div>
+                            <a href="https://iapp.org/training/" target="_blank" class="resource-link">
+                                IAPP Training Courses
                             </a>
-                            <div class="resource-description">End-to-end encrypted messaging and voice calls</div>
+                            <div class="resource-description">Professional development courses and workshops for privacy teams</div>
                         </li>
                         <li class="resource-item">
-                            <a href="https://www.privacyguides.org/" target="_blank" class="resource-link">
-                                Privacy Guides
+                            <div class="resource-category">Industry Events</div>
+                            <a href="https://iapp.org/conference/" target="_blank" class="resource-link">
+                                Privacy Conferences
                             </a>
-                            <div class="resource-description">Comprehensive security recommendations and tool reviews</div>
+                            <div class="resource-description">Annual privacy summits and industry networking events</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Enterprise Tools -->
+                <div class="resource-card">
+                    <div class="card-header">
+                        <div class="card-icon">⚙️</div>
+                        <h2 class="card-title">Enterprise Privacy Tools</h2>
+                    </div>
+                    <div class="card-description">
+                        Professional-grade privacy management platforms and tools for enterprise data protection programs.
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-category">Privacy Management</div>
+                            <a href="https://www.privacydynamics.io/" target="_blank" class="resource-link">
+                                Privacy Dynamics
+                            </a>
+                            <div class="resource-description">Data anonymization and privacy engineering platform</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Consent Management</div>
+                            <a href="https://www.cookiebot.com/" target="_blank" class="resource-link">
+                                Cookiebot CMP
+                            </a>
+                            <div class="resource-description">GDPR-compliant consent management platform for websites</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Data Discovery</div>
+                            <a href="https://www.varonis.com/" target="_blank" class="resource-link">
+                                Varonis Data Classification
+                            </a>
+                            <div class="resource-description">Enterprise data discovery and classification platform</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Vendor Management</div>
+                            <a href="https://www.privacyguard.com/" target="_blank" class="resource-link">
+                                Third-Party Risk Assessment
+                            </a>
+                            <div class="resource-description">Vendor privacy risk assessment and monitoring tools</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Legal & Compliance -->
+                <div class="resource-card">
+                    <div class="card-header">
+                        <div class="card-icon">⚖️</div>
+                        <h2 class="card-title">Legal & Compliance</h2>
+                    </div>
+                    <div class="card-description">
+                        Legal resources, court decisions, and regulatory enforcement guidance for privacy compliance.
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-category">Enforcement Actions</div>
+                            <a href="https://www.enforcementtracker.com/" target="_blank" class="resource-link">
+                                GDPR Enforcement Tracker
+                            </a>
+                            <div class="resource-description">Database of GDPR fines and enforcement actions across the EU</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Case Law</div>
+                            <a href="https://curia.europa.eu/" target="_blank" class="resource-link">
+                                CJEU Privacy Decisions
+                            </a>
+                            <div class="resource-description">European Court of Justice privacy and data protection rulings</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Standard Clauses</div>
+                            <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en" target="_blank" class="resource-link">
+                                EU Standard Contractual Clauses
+                            </a>
+                            <div class="resource-description">Official SCCs for international data transfers</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Industry Best Practices -->
+                <div class="resource-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h2 class="card-title">Industry Best Practices</h2>
+                    </div>
+                    <div class="card-description">
+                        Research reports, benchmarking studies, and industry guidance for privacy program development.
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-category">Research Reports</div>
+                            <a href="https://iapp.org/resources/research/" target="_blank" class="resource-link">
+                                IAPP Privacy Research
+                            </a>
+                            <div class="resource-description">Annual privacy surveys and industry trend analysis</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Benchmarking</div>
+                            <a href="https://www.pwc.com/gx/en/issues/cybersecurity/trust-us-survey.html" target="_blank" class="resource-link">
+                                PwC Trust Survey
+                            </a>
+                            <div class="resource-description">Annual consumer trust and privacy perception survey</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Technical Guidance</div>
+                            <a href="https://edpb.europa.eu/our-work-tools/documents/public-consultations_en" target="_blank" class="resource-link">
+                                EDPB Guidelines
+                            </a>
+                            <div class="resource-description">European Data Protection Board technical implementation guidance</div>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <!-- Back Button -->
-            <div class="back-section">
-                <a href="index.html" class="cta-button">
-                    ← Return Home
-                </a>
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2 style="font-family: 'Share Tech Mono', monospace; color: #A7FF9E; margin-bottom: 1rem; text-transform: uppercase;">Need Expert Privacy Guidance?</h2>
+                <p style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif; margin-bottom: 1rem;">
+                    Resources are helpful, but implementing a comprehensive privacy program requires expertise. Our CIPP/E, CIPM & CIPT certified team provides strategic guidance and hands-on support.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/consultation" class="cta-button">
+                        Schedule Free Consultation
+                        <span>📅</span>
+                    </a>
+                    <a href="/fractional-dpo" class="cta-button secondary">
+                        Explore Fractional DPO
+                        <span>👨‍💼</span>
+                    </a>
+                    <a href="/pricing" class="cta-button secondary">
+                        View Services & Pricing
+                        <span>💰</span>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
@@ -601,12 +840,12 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>⚡ STATUS: RESOURCES</span>
-                <span>TOOLS: 8</span>
-                <span>ENCRYPTION: ACTIVE</span>
+                <span>📚 STATUS: CORPORATE RESOURCES</span>
+                <span>FRAMEWORKS: GDPR | CCPA | EU AI ACT</span>
+                <span>CERTIFICATION: CIPP/E | CIPM | CIPT</span>
             </div>
             <div class="status-right">
-                © 2025 BiyteLüm.sys | <a href="index.html">RETURN_HOME</a>
+                © 2025 BiyteLüm.sys | <a href="/">RETURN_HOME</a>
             </div>
         </div>
     </div>
