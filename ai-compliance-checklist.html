@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Compliance Checklist - EU AI Act & GDPR Readiness | BiyteLüm Privacy Consultancy</title>
+    <meta name="description" content="Comprehensive AI compliance checklist covering EU AI Act, GDPR algorithmic requirements, and AI governance best practices for business implementation.">
+    <meta name="keywords" content="AI compliance checklist, EU AI Act, GDPR AI compliance, algorithmic accountability, AI governance, machine learning compliance">
+    <link rel="canonical" href="https://biytelum.com/ai-compliance-checklist">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Compliance Checklist - BiyteLüm">
+    <meta property="og:description" content="Free comprehensive AI compliance checklist for businesses implementing AI systems">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com/ai-compliance-checklist">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+            --warning-yellow: #FFD700;
+            --risk-red: #FF6B6B;
+            --low-risk: #4ECDC4;
+            --completed-green: #00FF99;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Skip to content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-green);
+            letter-spacing: 0.1em;
+            outline: none;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(0.8rem, 2vw, 1.1rem);
+            color: var(--text-secondary);
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 1rem;
+        }
+        
+        .checklist-intro {
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 1.5rem;
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-secondary);
+        }
+        
+        .disclaimer-notice {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--warning-yellow);
+        }
+        
+        /* Progress Dashboard */
+        .progress-dashboard {
+            max-width: 1000px;
+            margin: 0 auto 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .progress-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+        
+        .stat-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        
+        /* Checklist Container */
+        .checklist-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Category Sections */
+        .checklist-category {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .category-header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-header:hover {
+            background: rgba(167, 255, 158, 0.05);
+        }
+        
+        .category-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .category-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .category-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .category-score {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .category-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-header.expanded .category-icon {
+            transform: rotate(90deg);
+        }
+        
+        .category-content {
+            display: none;
+            padding: 0;
+        }
+        
+        .category-content.expanded {
+            display: block;
+        }
+        
+        .category-description {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid var(--border-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Checklist Items */
+        .checklist-items {
+            padding: 1rem;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist-item:hover {
+            background: rgba(167, 255, 158, 0.02);
+        }
+        
+        .item-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        
+        .item-checkbox.checked {
+            background: var(--completed-green);
+            border-color: var(--completed-green);
+            color: var(--dark-bg);
+        }
+        
+        .item-checkbox:hover {
+            border-color: var(--primary-green);
+            transform: scale(1.1);
+        }
+        
+        .item-content {
+            flex: 1;
+        }
+        
+        .item-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-priority {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .priority-critical {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--risk-red);
+            border: 1px solid var(--risk-red);
+        }
+        
+        .priority-high {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--warning-yellow);
+            border: 1px solid var(--warning-yellow);
+        }
+        
+        .priority-medium {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--low-risk);
+            border: 1px solid var(--low-risk);
+        }
+        
+        .priority-low {
+            background: rgba(167, 255, 158, 0.1);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Filter Controls */
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .filter-select {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+        }
+        
+        .filter-select:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+        
+        /* Action Buttons */
+        .action-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .action-button:hover,
+        .action-button:focus {
+            color: #000;
+            outline: none;
+            transform: translateY(-2px);
+        }
+        
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .action-button:hover::before,
+        .action-button:focus::before {
+            left: 0;
+        }
+        
+        .action-button.secondary {
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+        }
+        
+        .action-button.secondary::before {
+            background: var(--text-secondary);
+        }
+        
+        /* Export/Print Styles */
+        .utility-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .utility-button {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .utility-button:hover,
+        .utility-button:focus {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .filter-controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .utility-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .bg-grid,
+            nav,
+            .action-section,
+            .utility-buttons,
+            .filter-controls {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            main {
+                padding-top: 0;
+            }
+            
+            .checklist-category {
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+            
+            .category-content {
+                display: block !important;
+            }
+        }
+        
+        /* Focus styles */
+        *:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Background Grid -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/dpia">DPIA SERVICES</a></li>
+                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
+                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
+                <li><a href="/ai-governance" class="active" aria-current="page">AI GOVERNANCE</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/dpia" role="menuitem">03. DPIA SERVICES</a>
+            <a href="/fractional-dpo" role="menuitem">04. FRACTIONAL DPO</a>
+            <a href="/compliance-audit" role="menuitem">05. COMPLIANCE AUDIT</a>
+            <a href="/ai-governance" role="menuitem">06. AI GOVERNANCE</a>
+            <a href="/pricing" role="menuitem">07. PRICING</a>
+            <a href="/resources" role="menuitem">08. RESOURCES</a>
+            <a href="/contact" role="menuitem">09. CONTACT</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header" role="banner">
+            <h1>AI COMPLIANCE CHECKLIST</h1>
+            <div class="page-subtitle">EU AI ACT & GDPR READINESS ASSESSMENT</div>
+            <div class="checklist-intro">
+                <p><strong>Interactive Assessment Tool:</strong> Evaluate your AI system's compliance readiness across regulatory frameworks including the EU AI Act, GDPR Article 22, and emerging algorithmic accountability standards. Check items as you complete them to track your compliance progress.</p>
+            </div>
+            <div class="disclaimer-notice">
+                <strong>⚠️ EDUCATIONAL RESOURCE ONLY:</strong> This checklist is provided for informational purposes and does not constitute legal advice. AI compliance requirements vary by jurisdiction, use case, and system complexity. Do not rely on this checklist alone for regulatory compliance. Consult qualified privacy professionals for specific legal guidance regarding your AI implementation.
+            </div>
+        </section>
+        
+        <!-- Progress Dashboard -->
+        <div class="progress-dashboard">
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="completed-count">0</div>
+                    <div class="stat-label">Completed Items</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-count">0</div>
+                    <div class="stat-label">Total Items</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="progress-percent">0%</div>
+                    <div class="stat-label">Overall Progress</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="risk-score">HIGH</div>
+                    <div class="stat-label">Risk Assessment</div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+        
+        <!-- Filter Controls -->
+        <div class="checklist-container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <span class="filter-label">FILTER BY PRIORITY:</span>
+                    <select class="filter-select" id="priority-filter">
+                        <option value="all">All Priorities</option>
+                        <option value="critical">Critical Only</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">SHOW:</span>
+                    <select class="filter-select" id="status-filter">
+                        <option value="all">All Items</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="utility-buttons">
+                    <button class="utility-button" onclick="expandAll()">EXPAND ALL</button>
+                    <button class="utility-button" onclick="collapseAll()">COLLAPSE ALL</button>
+                    <button class="utility-button" onclick="resetChecklist()">RESET</button>
+                    <button class="utility-button" onclick="window.print()">PRINT</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Checklist Categories -->
+        <div class="checklist-container">
+            <!-- EU AI Act Compliance -->
+            <div class="checklist-category" data-category="eu-ai-act">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">EU AI ACT COMPLIANCE</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/12</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Ensure your AI system meets EU AI Act requirements including risk classification, conformity assessment, and transparency obligations for high-risk AI systems.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">AI System Risk Classification</div>
+                                <div class="item-description">Properly classify your AI system according to EU AI Act risk categories (prohibited, high-risk, limited risk, minimal risk) based on intended use and application domain.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Conformity Assessment Procedure</div>
+                                <div class="item-description">Complete required conformity assessment including technical documentation, quality management system, and third-party assessment where mandated.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">CE Marking and Declaration</div>
+                                <div class="item-description">Obtain CE marking for high-risk AI systems and prepare EU declaration of conformity with all required technical specifications.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Transparency Documentation</div>
+                                <div class="item-description">Create user-facing documentation explaining AI system functionality, limitations, and human oversight mechanisms in clear, understandable language.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Human Oversight Implementation</div>
+                                <div class="item-description">Establish meaningful human oversight with ability to intervene, interrupt, or override AI system decisions, especially for high-risk applications.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Post-Market Monitoring System</div>
+                                <div class="item-description">Implement continuous monitoring for AI system performance, bias detection, and adverse outcomes with incident reporting procedures.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GDPR Article 22 Compliance -->
+            <div class="checklist-category" data-category="gdpr-ai">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">GDPR AUTOMATED DECISION-MAKING</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/10</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Comply with GDPR Article 22 requirements for automated individual decision-making including profiling, consent mechanisms, and individual rights protection.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Legal Basis Assessment</div>
+                                <div class="item-description">Establish valid legal basis for automated decision-making under GDPR Article 6, with explicit consent or legitimate interest documentation.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Meaningful Information Provision</div>
+                                <div class="item-description">Provide clear information about automated decision-making logic, significance, and consequences as required under Articles 13 and 14.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Right to Human Intervention</div>
+                                <div class="item-description">Implement mechanisms allowing individuals to request human review of automated decisions affecting them significantly.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Right to Explanation</div>
+                                <div class="item-description">Develop capability to explain specific automated decisions to individuals upon request, including key decision factors.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Profiling Safeguards</div>
+                                <div class="item-description">Implement technical and organizational measures to prevent discriminatory profiling and ensure fair processing.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Governance -->
+            <div class="checklist-category" data-category="data-governance">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">AI DATA GOVERNANCE</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/8</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Establish robust data governance frameworks for AI training data, model development, and ongoing system optimization while maintaining privacy principles.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Training Data Audit</div>
+                                <div class="item-description">Document data sources, collection methods, and consent status for all training datasets used in AI model development.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Data Minimization Controls</div>
+                                <div class="item-description">Implement data minimization principles in AI feature selection and model training to process only necessary personal data.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Retention Policies</div>
+                                <div class="item-description">Define retention schedules for AI training data, model outputs, and individual profiles with automated deletion procedures.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Third-Party Data Agreements</div>
+                                <div class="item-description">Review and update contracts with data providers to ensure AI processing is within scope of original agreements.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security & Technical Safeguards -->
+            <div class="checklist-category" data-category="security">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">SECURITY & TECHNICAL SAFEGUARDS</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/9</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Implement robust security controls and technical safeguards to protect AI systems from attacks, ensure model integrity, and prevent unauthorized access to training data.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Model Security Assessment</div>
+                                <div class="item-description">Conduct security assessment of AI models including adversarial attack resistance, data poisoning protection, and model extraction defenses.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Training Data Encryption</div>
+                                <div class="item-description">Implement encryption at rest and in transit for all AI training datasets containing personal data with key management protocols.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Access Control Framework</div>
+                                <div class="item-description">Deploy role-based access controls for AI development environments with regular privilege reviews and audit logging.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Model Versioning & Backup</div>
+                                <div class="item-description">Implement version control for AI models with secure backup procedures and rollback capabilities for incident response.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bias & Fairness Testing -->
+            <div class="checklist-category" data-category="fairness">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">BIAS & FAIRNESS TESTING</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/7</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Implement comprehensive bias detection and fairness testing protocols to ensure AI systems do not discriminate against protected groups or individuals.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Bias Impact Assessment</div>
+                                <div class="item-description">Conduct systematic bias testing across protected characteristics including race, gender, age, and other relevant demographic factors.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Fairness Metrics Implementation</div>
+                                <div class="item-description">Define and measure fairness metrics appropriate for your AI system's use case with established thresholds for acceptable performance.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Representative Training Data</div>
+                                <div class="item-description">Ensure training datasets are representative of target population with documented diversity analysis and bias mitigation strategies.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Ongoing Bias Monitoring</div>
+                                <div class="item-description">Deploy continuous monitoring for model drift and bias emergence with automated alerting for fairness threshold violations.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Documentation & Records -->
+            <div class="checklist-category" data-category="documentation">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">DOCUMENTATION & RECORDS</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/8</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Maintain comprehensive documentation and records management for AI system development, deployment, and ongoing operations to demonstrate compliance.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Technical Documentation Package</div>
+                                <div class="item-description">Create complete technical documentation including system architecture, data flow diagrams, model specifications, and performance metrics.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Decision Audit Logs</div>
+                                <div class="item-description">Implement comprehensive logging of AI decisions with sufficient detail to enable individual explanation and system auditing.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Model Development Records</div>
+                                <div class="item-description">Maintain records of model training processes, validation results, and iterative improvements with version control documentation.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Incident Response Documentation</div>
+                                <div class="item-description">Document AI-related incident response procedures including bias detection protocols and model performance degradation response.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Individual Rights -->
+            <div class="checklist-category" data-category="individual-rights">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">INDIVIDUAL RIGHTS IMPLEMENTATION</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/6</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Enable full implementation of GDPR individual rights in AI system context including access, rectification, erasure, and portability for AI-generated profiles and decisions.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Subject Access Request Handling</div>
+                                <div class="item-description">Develop automated systems to provide individuals with access to AI-generated profiles, scores, and decision histories upon request.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Right to Rectification</div>
+                                <div class="item-description">Implement mechanisms allowing individuals to correct inaccurate data used in AI processing with model retraining or adjustment procedures.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Right to Erasure Implementation</div>
+                                <div class="item-description">Design systems to handle erasure requests for personal data used in AI training while maintaining model performance where legally permitted.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="low">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Data Portability for AI Profiles</div>
+                                <div class="item-description">Enable export of AI-generated individual profiles and preferences in structured, machine-readable format.</div>
+                                <span class="item-priority priority-low">Low</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vendor & Third-Party Management -->
+            <div class="checklist-category" data-category="vendor-management">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <div class="category-title">
+                        <span class="category-name">VENDOR & THIRD-PARTY MANAGEMENT</span>
+                        <div class="category-progress">
+                            <span class="category-score" data-score="0/0">0/6</span>
+                            <span class="category-icon">▶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="category-description">
+                        Ensure all AI vendors, cloud providers, and third-party services meet compliance requirements with appropriate contractual safeguards and oversight mechanisms.
+                    </div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" data-priority="critical">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Data Processing Agreements</div>
+                                <div class="item-description">Execute GDPR-compliant DPAs with all AI service providers including specific provisions for automated decision-making and profiling.</div>
+                                <span class="item-priority priority-critical">Critical</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="high">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Vendor Compliance Verification</div>
+                                <div class="item-description">Verify AI vendor compliance with relevant regulations including SOC 2, ISO 27001, and AI-specific certifications where available.</div>
+                                <span class="item-priority priority-high">High</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="medium">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Cross-Border Transfer Controls</div>
+                                <div class="item-description">Implement appropriate safeguards for international data transfers including Standard Contractual Clauses and adequacy decision compliance.</div>
+                                <span class="item-priority priority-medium">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item" data-priority="low">
+                            <div class="item-checkbox" onclick="toggleItem(this)"></div>
+                            <div class="item-content">
+                                <div class="item-title">Vendor Performance Monitoring</div>
+                                <div class="item-description">Establish ongoing monitoring of vendor compliance performance with regular reviews and audit rights in service agreements.</div>
+                                <span class="item-priority priority-low">Low</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Section -->
+        <div class="action-section">
+            <h2 style="font-family: 'Orbitron', sans-serif; margin-bottom: 1rem; color: var(--primary-green);">NEED AI COMPLIANCE EXPERTISE?</h2>
+            <p style="font-family: 'Inter', sans-serif; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto;">
+                This checklist provides a foundation, but AI compliance requires deep expertise across multiple regulatory frameworks. BiyteLüm's AI governance specialists help businesses implement comprehensive compliance programs that meet current and emerging requirements.
+            </p>
+            
+            <div class="action-buttons">
+                <a href="/ai-governance" class="action-button">
+                    AI GOVERNANCE SERVICES
+                    <span aria-hidden="true">🤖</span>
+                </a>
+                <a href="/consultation" class="action-button">
+                    EXPERT CONSULTATION
+                    <span aria-hidden="true">💬</span>
+                </a>
+                <a href="/dpia" class="action-button secondary">
+                    AI DPIA SERVICES
+                    <span aria-hidden="true">📋</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        let checklistData = {};
+        
+        // Initialize checklist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeChecklist();
+            updateProgress();
+            setupFilters();
+        });
+        
+        function initializeChecklist() {
+            // Load saved progress from memory (no localStorage in artifacts)
+            const categories = document.querySelectorAll('.checklist-category');
+            categories.forEach(category => {
+                const categoryId = category.dataset.category;
+                if (!checklistData[categoryId]) {
+                    checklistData[categoryId] = {};
+                }
+            });
+            
+            // Count total items for each category
+            updateCategoryCounts();
+        }
+        
+        function toggleCategory(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.category-icon');
+            
+            content.classList.toggle('expanded');
+            header.classList.toggle('expanded');
+        }
+        
+        function toggleItem(checkbox) {
+            const item = checkbox.closest('.checklist-item');
+            const categoryElement = checkbox.closest('.checklist-category');
+            const categoryId = categoryElement.dataset.category;
+            const itemTitle = item.querySelector('.item-title').textContent;
+            
+            checkbox.classList.toggle('checked');
+            
+            if (checkbox.classList.contains('checked')) {
+                checkbox.innerHTML = '✓';
+                checklistData[categoryId][itemTitle] = true;
+            } else {
+                checkbox.innerHTML = '';
+                checklistData[categoryId][itemTitle] = false;
+            }
+            
+            updateProgress();
+            updateCategoryCounts();
+        }
+        
+        function updateProgress() {
+            let totalItems = 0;
+            let completedItems = 0;
+            
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                totalItems++;
+                if (item.querySelector('.item-checkbox').classList.contains('checked')) {
+                    completedItems++;
+                }
+            });
+            
+            const percentage = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+            
+            document.getElementById('completed-count').textContent = completedItems;
+            document.getElementById('total-count').textContent = totalItems;
+            document.getElementById('progress-percent').textContent = percentage + '%';
+            document.getElementById('progress-bar-fill').style.width = percentage + '%';
+            
+            // Update risk assessment
+            let riskLevel = 'HIGH';
+            let riskColor = 'var(--risk-red)';
+            
+            if (percentage >= 90) {
+                riskLevel = 'LOW';
+                riskColor = 'var(--low-risk)';
+            } else if (percentage >= 70) {
+                riskLevel = 'MEDIUM';
+                riskColor = 'var(--warning-yellow)';
+            } else if (percentage >= 50) {
+                riskLevel = 'MEDIUM-HIGH';
+                riskColor = 'var(--warning-yellow)';
+            }
+            
+            const riskElement = document.getElementById('risk-score');
+            riskElement.textContent = riskLevel;
+            riskElement.style.color = riskColor;
+        }
+        
+        function updateCategoryCounts() {
+            document.querySelectorAll('.checklist-category').forEach(category => {
+                const items = category.querySelectorAll('.checklist-item');
+                const completedItems = category.querySelectorAll('.item-checkbox.checked');
+                const scoreElement = category.querySelector('.category-score');
+                scoreElement.textContent = `${completedItems.length}/${items.length}`;
+            });
+        }
+        
+        function setupFilters() {
+            const priorityFilter = document.getElementById('priority-filter');
+            const statusFilter = document.getElementById('status-filter');
+            
+            priorityFilter.addEventListener('change', applyFilters);
+            statusFilter.addEventListener('change', applyFilters);
+        }
+        
+        function applyFilters() {
+            const priorityFilter = document.getElementById('priority-filter').value;
+            const statusFilter = document.getElementById('status-filter').value;
+            
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                let showItem = true;
+                
+                // Priority filter
+                if (priorityFilter !== 'all') {
+                    const itemPriority = item.dataset.priority;
+                    if (itemPriority !== priorityFilter) {
+                        showItem = false;
+                    }
+                }
+                
+                // Status filter
+                if (statusFilter !== 'all') {
+                    const isCompleted = item.querySelector('.item-checkbox').classList.contains('checked');
+                    if (statusFilter === 'completed' && !isCompleted) {
+                        showItem = false;
+                    } else if (statusFilter === 'pending' && isCompleted) {
+                        showItem = false;
+                    }
+                }
+                
+                item.style.display = showItem ? 'flex' : 'none';
+            });
+        }
+        
+        function expandAll() {
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.classList.add('expanded');
+            });
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.classList.add('expanded');
+            });
+        }
+        
+        function collapseAll() {
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.classList.remove('expanded');
+            });
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.classList.remove('expanded');
+            });
+        }
+        
+        function resetChecklist() {
+            if (confirm('Reset all checklist progress? This action cannot be undone.')) {
+                document.querySelectorAll('.item-checkbox').forEach(checkbox => {
+                    checkbox.classList.remove('checked');
+                    checkbox.innerHTML = '';
+                });
+                
+                checklistData = {};
+                initializeChecklist();
+                updateProgress();
+                updateCategoryCounts();
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const isOpen = mobileNav.classList.contains('show');
+            
+            mobileNav.classList.toggle('show');
+            mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileNav.classList.contains('show') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
