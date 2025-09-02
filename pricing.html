@@ -761,4 +761,79 @@
                 <div class="section-content">
                     <p><strong>Payment Structure:</strong> 50% upon engagement start, 50% upon delivery. Simple and straightforward.</p>
                     <p><strong>What's Included:</strong> All services include confidentiality agreement, detailed deliverables, and 30-day follow-up support for implementation questions.</p>
-                    <p><strong>No
+                    <p><strong>No Hidden Fees:</strong> The price you see is the price you pay. No additional charges for revisions, follow-up questions, or implementation support during the 30-day period.</p>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="single-section">
+                <h2 class="section-title">Ready to Improve Your Privacy Compliance?</h2>
+                <div class="section-content">
+                    <p>Start with a free consultation to discuss your <strong>specific privacy needs and determine which service fits best.</strong> No obligation, just practical guidance.</p>
+                </div>
+                <a href="/consultation" class="cta-button">Schedule Free Consultation</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-content">
+            <div class="status-left">
+                <span>💰 STATUS: TRANSPARENT PRICING</span>
+                <span>SCOPE: SAFE | EDUCATIONAL | PRACTICAL</span>
+                <span>SUPPORT: 30-DAY INCLUDED</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys | <a href="/">RETURN HOME</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = `${2 + Math.random() * 4}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('show');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+        
+        // Parallax effect for background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
