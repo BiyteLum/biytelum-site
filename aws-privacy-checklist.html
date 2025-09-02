@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational AWS Privacy Configuration Checklist from BiyteLüm - Essential privacy settings for AWS cloud infrastructure compliance.">
+    <title>AWS Privacy Configuration Checklist | BiyteLüm - Cloud Privacy Review</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --warning-orange: #FF8C00;
+            --critical-red: #FF4444;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-green);
+            letter-spacing: 0.1em;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-green);
+            border-bottom: 1px solid var(--primary-green);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .mobile-menu:hover {
+            border-color: rgba(167, 255, 158, 0.6);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--accent-green);
+            padding-left: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .educational-badge {
+            display: inline-block;
+            background: var(--accent-green);
+            color: #000;
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        /* Checklist Container */
+        .checklist-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .checklist-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-card:hover {
+            border-color: rgba(167, 255, 158, 0.4);
+        }
+        
+        .card-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Progress Summary */
+        .progress-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .progress-item {
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .progress-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        
+        .complete { color: var(--accent-green); }
+        .pending { color: var(--warning-orange); }
+        .critical { color: var(--critical-red); }
+        
+        /* Checklist Sections */
+        .checklist-section {
+            margin: 2rem 0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section-icon {
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--primary-green);
+            text-transform: uppercase;
+        }
+        
+        .section-description {
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            margin-left: 2.5rem;
+        }
+        
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(167, 255, 158, 0.02);
+            border: 1px solid rgba(167, 255, 158, 0.1);
+            border-radius: 8px;
+            margin: 0.75rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            border-color: rgba(167, 255, 158, 0.3);
+        }
+        
+        .item-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .item-checkbox.checked {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: #000;
+        }
+        
+        .item-checkbox.warning {
+            border-color: var(--warning-orange);
+            background: rgba(255, 140, 0, 0.1);
+        }
+        
+        .item-checkbox.critical {
+            border-color: var(--critical-red);
+            background: rgba(255, 68, 68, 0.1);
+        }
+        
+        .item-content {
+            flex: 1;
+        }
+        
+        .item-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--primary-green);
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-description {
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .item-priority {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .priority-high {
+            background: rgba(255, 68, 68, 0.2);
+            color: var(--critical-red);
+        }
+        
+        .priority-medium {
+            background: rgba(255, 140, 0, 0.2);
+            color: var(--warning-orange);
+        }
+        
+        .priority-low {
+            background: rgba(167, 255, 158, 0.2);
+            color: var(--accent-green);
+        }
+        
+        /* AWS Service Tags */
+        .aws-service {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            background: rgba(167, 255, 158, 0.1);
+            color: var(--primary-green);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            margin-left: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 2px solid rgba(167, 255, 158, 0.3);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .cta-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(167, 255, 158, 0.6);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        
+        .back-button:hover {
+            background: rgba(167, 255, 158, 0.1);
+            transform: translateX(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-text {
+            color: var(--text-secondary);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .progress-summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .section-description {
+                margin-left: 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .checklist-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .checklist-container {
+                padding: 0 1rem;
+            }
+            
+            .checklist-card {
+                padding: 1.5rem;
+            }
+            
+            .progress-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
+                <li><a href="/aws-privacy-review" class="active">AWS REVIEW</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/privacy-policy-review" role="menuitem">03. POLICY REVIEW</a>
+            <a href="/compliance-check" role="menuitem">04. COMPLIANCE CHECK</a>
+            <a href="/aws-privacy-review" role="menuitem">05. AWS REVIEW</a>
+            <a href="/pricing" role="menuitem">06. PRICING</a>
+            <a href="/resources" role="menuitem">07. RESOURCES</a>
+            <a href="/contact" role="menuitem">08. CONTACT</a>
+            <a href="/blog" role="menuitem">09. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Header -->
+        <section class="page-header">
+            <div class="educational-badge">Educational Checklist</div>
+            <h1>AWS Privacy Configuration Checklist</h1>
+            <p class="page-subtitle">Essential privacy settings and configurations for AWS cloud infrastructure. This educational checklist demonstrates the depth of analysis included in our professional AWS Privacy Review service.</p>
+        </section>
+        
+        <div class="checklist-container">
+            <div class="back-button-container">
+                <a href="/aws-privacy-review" class="back-button">
+                    ← Back to AWS Privacy Review
+                </a>
+            </div>
+            
+            <!-- Progress Summary -->
+            <div class="checklist-card">
+                <h2 class="card-title">📊 Configuration Status Overview</h2>
+                <div class="progress-summary">
+                    <div class="progress-item">
+                        <div class="progress-number complete">23</div>
+                        <div class="progress-label">Configured</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-number pending">15</div>
+                        <div class="progress-label">Needs Review</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-number critical">7</div>
+                        <div class="progress-label">Critical Issues</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-number">45</div>
+                        <div class="progress-label">Total Items</div>
+                    </div>
+                </div>
+                <p style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif; margin-top: 1rem;">
+                    This sample checklist shows typical privacy configuration issues found in AWS environments. Your actual assessment would include your specific AWS services and configurations.
+                </p>
+            </div>
+            
+            <!-- Data Residency Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">🗺️</div>
+                        <div>
+                            <div class="section-title">Data Residency Compliance</div>
+                            <div class="section-description">Ensure your data stays in appropriate regions for GDPR and regulatory compliance</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">S3 Buckets Region Verification</div>
+                            <div class="item-description">Check all S3 buckets are in EU regions for GDPR compliance. Found buckets in us-west-2 containing EU user data.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">S3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">RDS Instance Regional Placement</div>
+                            <div class="item-description">Database instances should be in appropriate regions. Some instances need verification for data residency requirements.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">RDS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">Lambda Function Region Configuration</div>
+                            <div class="item-description">Lambda functions are properly configured in eu-west-1 region for GDPR compliance.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">Lambda</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">Cross-Region Backup Configuration</div>
+                            <div class="item-description">Automated backups are copying data to us-east-1, violating EU data residency requirements.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">S3</span><span class="aws-service">RDS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Encryption Settings Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">🔐</div>
+                        <div>
+                            <div class="section-title">Encryption Configuration</div>
+                            <div class="section-description">Review encryption at rest and in transit for proper personal data protection</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">S3 Bucket Encryption at Rest</div>
+                            <div class="item-description">All S3 buckets have server-side encryption enabled with customer-managed KMS keys.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">S3</span><span class="aws-service">KMS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">RDS Encryption Configuration</div>
+                            <div class="item-description">Some RDS instances lack encryption at rest. Consider enabling for databases containing personal data.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">RDS</span><span class="aws-service">KMS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">Application Load Balancer SSL/TLS</div>
+                            <div class="item-description">HTTPS is enforced with valid SSL certificates for all public-facing services.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">ALB</span><span class="aws-service">ACM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">EBS Volume Encryption</div>
+                            <div class="item-description">EC2 instances have unencrypted EBS volumes that may contain personal data or application logs.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">EC2</span><span class="aws-service">EBS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Access Logging Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">📊</div>
+                        <div>
+                            <div class="section-title">Access Logging & Auditing</div>
+                            <div class="section-description">Assess logging capabilities for privacy incident response and compliance auditing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">CloudTrail Configuration</div>
+                            <div class="item-description">CloudTrail is enabled across all regions with proper log integrity and encryption.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">CloudTrail</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">S3 Access Logging</div>
+                            <div class="item-description">Some S3 buckets lack access logging. Enable for buckets containing personal data to track access patterns.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">S3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">VPC Flow Logs</div>
+                            <div class="item-description">VPC Flow Logs are not enabled. Essential for tracking network access to resources containing personal data.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">VPC</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">Application-Level Logging</div>
+                            <div class="item-description">Review application logs in CloudWatch for personal data exposure and ensure proper retention policies.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">CloudWatch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- IAM & Access Control Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">🔍</div>
+                        <div>
+                            <div class="section-title">IAM & Access Control</div>
+                            <div class="section-description">Review identity management for data minimization and least privilege access</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">Overprivileged User Accounts</div>
+                            <div class="item-description">Several users have broader S3 access than needed. Apply principle of least privilege for personal data access.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">IAM</span><span class="aws-service">S3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">Service Account Permissions</div>
+                            <div class="item-description">Application service accounts have unnecessary database read permissions across multiple environments.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">IAM</span><span class="aws-service">RDS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">Multi-Factor Authentication</div>
+                            <div class="item-description">MFA is enforced for all users with access to production resources containing personal data.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">IAM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">Cross-Account Access</div>
+                            <div class="item-description">Review cross-account roles for appropriate data access boundaries and time-limited access.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">IAM</span><span class="aws-service">STS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Storage Services Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">💾</div>
+                        <div>
+                            <div class="section-title">Data Storage Configuration</div>
+                            <div class="section-description">Examine storage services for privacy-relevant settings and lifecycle policies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">S3 Public Access Review</div>
+                            <div class="item-description">Found S3 buckets with public read access that may contain personal data. Immediate remediation required.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">S3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">Data Retention Policies</div>
+                            <div class="item-description">S3 lifecycle policies need configuration to automatically delete personal data per retention requirements.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">S3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">DynamoDB Point-in-Time Recovery</div>
+                            <div class="item-description">DynamoDB tables have point-in-time recovery enabled for data protection and compliance.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">DynamoDB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">RDS Backup Retention</div>
+                            <div class="item-description">Review backup retention periods to align with data retention policies and privacy requirements.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">RDS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Network Security Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">🌐</div>
+                        <div>
+                            <div class="section-title">Network Security & Privacy</div>
+                            <div class="section-description">Assess VPC configuration and network controls from privacy perspective</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">Private Subnet Configuration</div>
+                            <div class="item-description">Database and sensitive services are properly isolated in private subnets without direct internet access.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">VPC</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">Security Group Rules</div>
+                            <div class="item-description">Some security groups have overly permissive rules. Tighten access to resources containing personal data.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">EC2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">Network ACL Configuration</div>
+                            <div class="item-description">Default network ACLs are too permissive. Implement restrictive NACLs for sensitive data tier.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">VPC</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">VPC Endpoints Implementation</div>
+                            <div class="item-description">VPC endpoints are configured for S3 and other AWS services to keep traffic within AWS network.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">VPC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Services Section -->
+            <div class="checklist-card">
+                <div class="checklist-section">
+                    <div class="section-header">
+                        <div class="section-icon">⚙️</div>
+                        <div>
+                            <div class="section-title">Additional AWS Services</div>
+                            <div class="section-description">Review other AWS services for privacy configuration requirements</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">CloudWatch Logs Retention</div>
+                            <div class="item-description">Application logs may contain personal data. Configure appropriate retention periods and review log content.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">CloudWatch</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox checked">✓</div>
+                        <div class="item-content">
+                            <div class="item-title">AWS Config Compliance</div>
+                            <div class="item-description">AWS Config is monitoring resource configurations for compliance with privacy-related rules.</div>
+                            <div class="item-priority priority-low">Good</div>
+                            <span class="aws-service">Config</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox critical">✗</div>
+                        <div class="item-content">
+                            <div class="item-title">ElastiCache Security</div>
+                            <div class="item-description">Redis clusters lack encryption at rest and in transit. May contain cached personal data.</div>
+                            <div class="item-priority priority-high">Critical</div>
+                            <span class="aws-service">ElastiCache</span>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <div class="item-checkbox warning">⚠</div>
+                        <div class="item-content">
+                            <div class="item-title">SQS Queue Configuration</div>
+                            <div class="item-description">Message queues should be encrypted if processing personal data. Review queue configurations.</div>
+                            <div class="item-priority priority-medium">Medium</div>
+                            <span class="aws-service">SQS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Professional Assessment CTA -->
+            <div class="cta-section">
+                <h2 class="cta-title">Get Your Professional AWS Privacy Review</h2>
+                <div class="cta-description">
+                    <p style="margin-bottom: 1rem;">This educational checklist shows common AWS privacy configuration issues. Your professional assessment will include:</p>
+                    <ul style="text-align: left; max-width: 600px; margin: 0 auto 2rem;">
+                        <li style="margin-bottom: 0.5rem;">✓ Analysis of your actual AWS environment and services</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Industry-specific compliance requirements (GDPR, HIPAA, etc.)</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Step-by-step technical implementation guide</li>
+                        <li style="margin-bottom: 0.5rem;">✓ AWS CLI commands and Infrastructure as Code templates</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Cost-optimized privacy improvements</li>
+                        <li style="margin-bottom: 0.5rem;">✓ 30 days of technical implementation support</li>
+                    </ul>
+                    <p><strong>Delivered by privacy experts with hands-on AWS experience</strong> - not just compliance theory.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="/aws-privacy-review" class="cta-button">
+                        ☁️ Start AWS Review
+                    </a>
+                    <a href="/pricing" class="cta-button">
+                        💰 View Pricing
+                    </a>
+                    <a href="/contact" class="cta-button">
+                        💬 Technical Questions
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Educational Disclaimer -->
+            <div class="checklist-card">
+                <h2 class="card-title">📋 About This Checklist</h2>
+                <div style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif;">
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Educational Purpose:</strong> This checklist demonstrates typical AWS privacy configuration issues for educational purposes. It's based on common patterns but doesn't reflect your specific AWS environment.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Professional Review:</strong> Our actual AWS Privacy Configuration Review analyzes your real AWS account, services, and configurations to provide customized recommendations specific to your infrastructure and compliance needs.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Technical Implementation:</strong> Unlike generic privacy consultants, we provide technical implementation guidance including AWS CLI commands, CloudFormation templates, and Terraform configurations.
+                    </p>
+                    <p>
+                        <strong>Ongoing Support:</strong> All professional reviews include 30 days of technical support to help implement recommendations and answer AWS-specific privacy questions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                © 2025 BiyteLüm.sys - AWS Privacy & Cloud Compliance Solutions
+            </div>
+            <div class="footer-links">
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/contact">Contact</a>
+                <a href="/about">About</a>
+                <a href="/resources">Resources</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuButton = document.querySelector('.mobile-menu');
+            
+            mobileNav.classList.toggle('show');
+            
+            // Update aria-expanded for accessibility
+            const isExpanded = mobileNav.classList.contains('show');
+            mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuButton = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                mobileNav.classList.remove('show');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close mobile menu when window is resized to desktop
+        window.addEventListener('resize', function() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuButton = document.querySelector('.mobile-menu');
+            
+            if (window.innerWidth > 768) {
+                mobileNav.classList.remove('show');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Interactive checklist functionality
+        document.querySelectorAll('.item-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Toggle states: unchecked -> checked -> warning -> critical -> unchecked
+                if (this.classList.contains('checked')) {
+                    this.classList.remove('checked');
+                    this.classList.add('warning');
+                    this.innerHTML = '⚠';
+                } else if (this.classList.contains('warning')) {
+                    this.classList.remove('warning');
+                    this.classList.add('critical');
+                    this.innerHTML = '✗';
+                } else if (this.classList.contains('critical')) {
+                    this.classList.remove('critical');
+                    this.innerHTML = '';
+                } else {
+                    this.classList.add('checked');
+                    this.innerHTML = '✓';
+                }
+                
+                // Update progress summary
+                updateProgressSummary();
+            });
+        });
+        
+        // Update progress summary
+        function updateProgressSummary() {
+            const total = document.querySelectorAll('.item-checkbox').length;
+            const checked = document.querySelectorAll('.item-checkbox.checked').length;
+            const warning = document.querySelectorAll('.item-checkbox.warning').length;
+            const critical = document.querySelectorAll('.item-checkbox.critical').length;
+            
+            document.querySelector('.complete .progress-number').textContent = checked;
+            document.querySelector('.pending .progress-number').textContent = warning;
+            document.querySelector('.critical .progress-number').textContent = critical;
+            document.querySelector('.progress-summary .progress-item:last-child .progress-number').textContent = total;
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add loading animation for CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // Background grid animation
+        function animateGrid() {
+            const grid = document.querySelector('.bg-grid');
+            let translateY = 0;
+            
+            function animate() {
+                translateY += 0.1;
+                if (translateY >= 50) translateY = 0;
+                grid.style.transform = `translateY(${translateY}px)`;
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+        
+        // Start grid animation when page loads
+        window.addEventListener('load', animateGrid);
+        
+        // Add intersection observer for fade-in animations
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all checklist cards for animation
+            document.querySelectorAll('.checklist-card, .cta-section').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }
+        
+        // Filter functionality (bonus feature)
+        function filterByService(service) {
+            const items = document.querySelectorAll('.checklist-item');
+            items.forEach(item => {
+                const services = item.querySelectorAll('.aws-service');
+                let hasService = false;
+                services.forEach(serviceTag => {
+                    if (serviceTag.textContent.toLowerCase().includes(service.toLowerCase())) {
+                        hasService = true;
+                    }
+                });
+                
+                if (service === 'all' || hasService) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        
+        // Filter by priority
+        function filterByPriority(priority) {
+            const items = document.querySelectorAll('.checklist-item');
+            items.forEach(item => {
+                const checkbox = item.querySelector('.item-checkbox');
+                let showItem = false;
+                
+                if (priority === 'all') {
+                    showItem = true;
+                } else if (priority === 'critical' && checkbox.classList.contains('critical')) {
+                    showItem = true;
+                } else if (priority === 'warning' && checkbox.classList.contains('warning')) {
+                    showItem = true;
+                } else if (priority === 'good' && checkbox.classList.contains('checked')) {
+                    showItem = true;
+                }
+                
+                item.style.display = showItem ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
