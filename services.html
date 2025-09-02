@@ -829,3 +829,36 @@
                 particle.style.animationDelay = `${Math.random() * 4}s`;
                 particle.style.animationDuration = `${3 + Math.random() * 2}s`;
                 container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('show');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+        
+        // Parallax effect for background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
