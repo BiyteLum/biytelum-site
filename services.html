@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Expert corporate privacy compliance services including DPIA, Fractional DPO, Privacy Gap Assessment, and AI Governance. CIPP/E, CIPM & CIPT certified.">
-    <title>Services | BiyteLüm - Corporate Privacy Compliance Solutions</title>
+    <meta name="description" content="Safe-scope privacy services including Privacy Policy Review, Basic Compliance Check, and AWS Privacy Configuration Review. CIPP/E, CIPM & CIPT certified.">
+    <title>Services | BiyteLüm - Safe-Scope Privacy Compliance Solutions</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
@@ -389,6 +389,20 @@
             text-transform: uppercase;
         }
         
+        .safe-scope-badge {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #A7FF9E;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
@@ -609,10 +623,9 @@
             <ul class="nav-links">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/services" class="active">SERVICES</a></li>
-                <li><a href="/dpia">DPIA SERVICES</a></li>
-                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
-                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
-                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
+                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
+                <li><a href="/aws-privacy-review">AWS REVIEW</a></li>
                 <li><a href="/pricing">PRICING</a></li>
                 <li><a href="/resources">RESOURCES</a></li>
                 <li><a href="/contact">CONTACT</a></li>
@@ -624,14 +637,13 @@
         <div class="mobile-nav" id="mobileNav">
             <a href="/">01. HOME</a>
             <a href="/services">02. SERVICES</a>
-            <a href="/dpia">03. DPIA SERVICES</a>
-            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
-            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
-            <a href="/ai-governance">06. AI GOVERNANCE</a>
-            <a href="/pricing">07. PRICING</a>
-            <a href="/resources">08. RESOURCES</a>
-            <a href="/contact">09. CONTACT</a>
-            <a href="/blog">10. BLOG</a>
+            <a href="/privacy-policy-review">03. POLICY REVIEW</a>
+            <a href="/compliance-check">04. COMPLIANCE CHECK</a>
+            <a href="/aws-privacy-review">05. AWS REVIEW</a>
+            <a href="/pricing">06. PRICING</a>
+            <a href="/resources">07. RESOURCES</a>
+            <a href="/contact">08. CONTACT</a>
+            <a href="/blog">09. BLOG</a>
         </div>
     </nav>
     
@@ -639,211 +651,143 @@
     <main>
         <!-- Page Header -->
         <section class="page-header">
-            <h1>Corporate Privacy Services</h1>
-            <p class="page-subtitle">BiyteLüm delivers <strong>enterprise-grade privacy compliance and data protection solutions.</strong> Our services help businesses navigate complex regulatory landscapes with confidence and strategic precision.</p>
+            <h1>Safe-Scope Privacy Services</h1>
+            <p class="page-subtitle">BiyteLüm delivers <strong>practical privacy compliance solutions with educational focus.</strong> Our services provide reviews, assessments, and technical recommendations without complex legal strategy development.</p>
         </section>
         
         <div class="services-container">
             <div class="services-grid">
-                <!-- Fractional DPO Services - Featured -->
+                <!-- Privacy Policy Review - Featured -->
                 <div class="service-card featured">
                     <div class="featured-badge">Most Popular</div>
-                    <div class="service-header">
-                        <div class="service-icon">👨‍💼</div>
-                        <div class="service-info">
-                            <h2 class="service-title">Fractional DPO Services</h2>
-                            <div class="service-price">$750-$1,500/month</div>
-                        </div>
-                    </div>
-                    <p class="service-description">
-                        <strong>Get enterprise-level privacy leadership without full-time overhead.</strong> Our CIPP/E, CIPM & CIPT certified privacy officers provide strategic guidance, compliance oversight, and incident response capabilities on a flexible retainer basis.
-                    </p>
-                    <div class="service-features">
-                        <ul>
-                            <li>Monthly privacy program reviews</li>
-                            <li>Regulatory update briefings</li>
-                            <li>Vendor assessment guidance</li>
-                            <li>Incident response planning</li>
-                            <li>Direct access to certified DPO</li>
-                        </ul>
-                    </div>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="/fractional-dpo" class="service-button primary">
-                            LEARN MORE
-                            <span>→</span>
-                        </a>
-                        <a href="/consultation" class="service-button">
-                            SCHEDULE CONSULTATION
-                            <span>📅</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Privacy Gap Assessment -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🔍</div>
-                        <div class="service-info">
-                            <h2 class="service-title">Privacy Gap Assessment</h2>
-                            <div class="service-price">$4,500</div>
-                        </div>
-                    </div>
-                    <p class="service-description">
-                        <strong>Comprehensive evaluation of your privacy posture.</strong> We assess current practices against GDPR, CCPA, and industry best practices to create actionable improvement plans with prioritized roadmaps.
-                    </p>
-                    <div class="service-features">
-                        <ul>
-                            <li>Policy and technical controls review</li>
-                            <li>Data flow mapping analysis</li>
-                            <li>Vendor risk assessment</li>
-                            <li>Executive dashboard and gap analysis</li>
-                            <li>90-day implementation plan</li>
-                        </ul>
-                    </div>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="/compliance-audit" class="service-button primary">
-                            START ASSESSMENT
-                            <span>📊</span>
-                        </a>
-                        <a href="/assessment-methodology" class="service-button">
-                            VIEW METHODOLOGY
-                            <span>🔬</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- DPIA Sprint Services -->
-                <div class="service-card">
+                    <div class="safe-scope-badge">Safe Scope</div>
                     <div class="service-header">
                         <div class="service-icon">📋</div>
                         <div class="service-info">
-                            <h2 class="service-title">DPIA Sprint Services</h2>
-                            <div class="service-price">$3,000</div>
+                            <h2 class="service-title">Privacy Policy Review</h2>
+                            <div class="service-price">$800 - $1,500</div>
                         </div>
                     </div>
                     <p class="service-description">
-                        <strong>GDPR-compliant Data Protection Impact Assessments.</strong> Our DPIA Sprint delivers thorough privacy risk analysis and mitigation strategies for high-risk processing activities within 2-4 weeks.
+                        <strong>Compare your existing policy against GDPR disclosure requirements.</strong> We review your current privacy policy to identify missing elements and unclear language, providing specific improvement recommendations.
                     </p>
                     <div class="service-features">
                         <ul>
-                            <li>Risk assessment methodology</li>
-                            <li>Stakeholder consultations</li>
-                            <li>Privacy risk identification</li>
-                            <li>Detailed mitigation roadmap</li>
-                            <li>Ongoing monitoring framework</li>
+                            <li>Line-by-line policy analysis</li>
+                            <li>GDPR requirement mapping</li>
+                            <li>Clarity and language assessment</li>
+                            <li>Actionable improvement recommendations</li>
+                            <li>Compliance gap identification</li>
                         </ul>
                     </div>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="/dpia" class="service-button primary">
-                            START DPIA SPRINT
-                            <span>🚀</span>
+                        <a href="/privacy-policy-review" class="service-button primary">
+                            START POLICY REVIEW
+                            <span>📝</span>
                         </a>
-                        <a href="/dpia-sample" class="service-button">
-                            VIEW SAMPLE DPIA
+                        <a href="/consultation" class="service-button">
+                            FREE CONSULTATION
+                            <span>📞</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Basic Privacy Compliance Check -->
+                <div class="service-card">
+                    <div class="safe-scope-badge">Educational</div>
+                    <div class="service-header">
+                        <div class="service-icon">✅</div>
+                        <div class="service-info">
+                            <h2 class="service-title">Basic Privacy Compliance Check</h2>
+                            <div class="service-price">$1,200 - $2,000</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        <strong>Structured assessment of your current privacy practices against GDPR basics.</strong> Our comprehensive questionnaire-based evaluation scores your compliance posture and generates prioritized action items.
+                    </p>
+                    <div class="service-features">
+                        <ul>
+                            <li>Detailed assessment questionnaire</li>
+                            <li>Current practice evaluation</li>
+                            <li>GDPR basics scoring system</li>
+                            <li>Prioritized improvement roadmap</li>
+                            <li>90-day action plan</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="/compliance-check" class="service-button primary">
+                            START COMPLIANCE CHECK
+                            <span>🔍</span>
+                        </a>
+                        <a href="/assessment-sample" class="service-button">
+                            VIEW SAMPLE REPORT
                             <span>👁️</span>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Startup Privacy Launch Kit -->
+                <!-- AWS Privacy Configuration Review -->
                 <div class="service-card">
+                    <div class="safe-scope-badge">Tech Expert</div>
                     <div class="service-header">
-                        <div class="service-icon">🚀</div>
+                        <div class="service-icon">☁️</div>
                         <div class="service-info">
-                            <h2 class="service-title">Startup Privacy Launch Kit</h2>
-                            <div class="service-price">$2,000</div>
+                            <h2 class="service-title">AWS Privacy Configuration Review</h2>
+                            <div class="service-price">$600 - $1,200</div>
                         </div>
                     </div>
                     <p class="service-description">
-                        <strong>Essential privacy foundation for growing businesses.</strong> Get your privacy program started with policy templates, consent mechanisms, and basic compliance framework designed for startups and scale-ups.
+                        <strong>Leverage our unique AWS expertise for privacy-focused infrastructure review.</strong> We review your basic AWS privacy settings, check data residency configurations, and provide simple technical recommendations.
                     </p>
                     <div class="service-features">
                         <ul>
-                            <li>Privacy policy templates</li>
-                            <li>Consent mechanism setup</li>
-                            <li>Basic compliance framework</li>
-                            <li>Data mapping templates</li>
-                            <li>Implementation guidance</li>
-                        </ul>
-                    </div>
-                    <a href="/consultation" class="service-button primary">
-                        GET STARTED
-                        <span>→</span>
-                    </a>
-                </div>
-                
-                <!-- AI Governance Program -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🤖</div>
-                        <div class="service-info">
-                            <h2 class="service-title">AI Governance Program</h2>
-                            <div class="service-price">Custom Pricing</div>
-                        </div>
-                    </div>
-                    <p class="service-description">
-                        <strong>Navigate AI privacy compliance and algorithmic accountability.</strong> Implement responsible AI practices while meeting emerging regulatory requirements for automated decision-making systems.
-                    </p>
-                    <div class="service-features">
-                        <ul>
-                            <li>AI risk assessment frameworks</li>
-                            <li>Algorithmic impact evaluations</li>
-                            <li>Model governance policies</li>
-                            <li>EU AI Act preparation</li>
-                            <li>Bias detection protocols</li>
+                            <li>Data residency settings review</li>
+                            <li>Basic encryption configuration check</li>
+                            <li>Access logging setup assessment</li>
+                            <li>Privacy-relevant AWS service review</li>
+                            <li>Technical improvement recommendations</li>
                         </ul>
                     </div>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="/ai-governance" class="service-button primary">
-                            EXPLORE AI SERVICES
-                            <span>🚀</span>
+                        <a href="/aws-privacy-review" class="service-button primary">
+                            START AWS REVIEW
+                            <span>⚡</span>
                         </a>
-                        <a href="/ai-compliance-checklist" class="service-button">
-                            AI COMPLIANCE CHECKLIST
-                            <span>✅</span>
+                        <a href="/aws-privacy-checklist" class="service-button">
+                            AWS PRIVACY CHECKLIST
+                            <span>📋</span>
                         </a>
                     </div>
                 </div>
-                
-                <!-- Enterprise Privacy Consulting -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">💼</div>
-                        <div class="service-info">
-                            <h2 class="service-title">Enterprise Privacy Consulting</h2>
-                            <div class="service-price">Custom Pricing</div>
-                        </div>
+            </div>
+            
+            <!-- Why These Services Section -->
+            <div class="service-card" style="margin-bottom: 2rem;">
+                <div class="service-header">
+                    <div class="service-icon">🎯</div>
+                    <div class="service-info">
+                        <h2 class="service-title">Why These Services?</h2>
                     </div>
-                    <p class="service-description">
-                        <strong>Strategic privacy guidance for complex enterprise needs.</strong> Customized consulting for large organizations requiring specialized privacy program development, regulatory compliance, and cross-border data transfers.
-                    </p>
-                    <div class="service-features">
-                        <ul>
-                            <li>Multi-jurisdictional compliance</li>
-                            <li>Cross-border data transfer strategy</li>
-                            <li>Privacy program maturation</li>
-                            <li>Regulatory relationship management</li>
-                            <li>Executive privacy training</li>
-                        </ul>
-                    </div>
-                    <a href="/consultation" class="service-button primary">
-                        DISCUSS REQUIREMENTS
-                        <span>→</span>
-                    </a>
                 </div>
+                <p class="service-description">
+                    <strong>Safe Scope:</strong> All services focus on review, assessment, and recommendations rather than complex legal strategy development. This keeps risk low while providing maximum value.<br><br>
+                    <strong>Educational Focus:</strong> Our compliance check provides educational assessment and practical guidance, not legal advice. Perfect for businesses who want to understand their current state.<br><br>
+                    <strong>Technical Differentiator:</strong> Our AWS privacy expertise is unique in the privacy consulting space. Most consultants don't understand cloud infrastructure privacy implications.<br><br>
+                    <strong>Practical Outcomes:</strong> Every engagement delivers actionable recommendations you can implement immediately to improve your privacy posture.
+                </p>
             </div>
             
             <!-- CTA Section -->
             <div class="cta-section">
-                <h3 class="cta-title">Ready to Build Your Privacy Program?</h3>
+                <h3 class="cta-title">Ready to Improve Your Privacy Compliance?</h3>
                 <div class="cta-buttons">
                     <a href="/consultation" class="cta-button">
-                        Schedule Strategic Consultation
+                        Schedule Free Consultation
                         <span>→</span>
                     </a>
-                    <a href="/pricing" class="cta-button">
-                        View Detailed Pricing
-                        <span>→</span>
+                    <a href="/contact" class="cta-button">
+                        Ask Questions
+                        <span>💬</span>
                     </a>
                 </div>
             </div>
@@ -861,8 +805,8 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>🏢 STATUS: ENTERPRISE SERVICES</span>
-                <span>COMPLIANCE: GDPR | CCPA | AI ACT</span>
+                <span>🏢 STATUS: SAFE SCOPE SERVICES</span>
+                <span>FOCUS: EDUCATIONAL | REVIEWS | TECHNICAL</span>
                 <span>CERTIFIED: CIPP/E | CIPM | CIPT</span>
             </div>
             <div class="status-right">
@@ -885,36 +829,3 @@
                 particle.style.animationDelay = `${Math.random() * 4}s`;
                 particle.style.animationDuration = `${3 + Math.random() * 2}s`;
                 container.appendChild(particle);
-            }
-        }
-        
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('show');
-        }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-        });
-        
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const grid = document.querySelector('.bg-grid');
-            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileNav.classList.remove('show');
-            }
-        });
-    </script>
-</body>
-</html>
