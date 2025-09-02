@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AWS Privacy Configuration Review - Leverage our unique AWS expertise for privacy-focused infrastructure review. Technical recommendations from BiyteLüm.">
+    <title>AWS Privacy Configuration Review | BiyteLüm - Cloud Privacy Expert</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: var(--primary-green);
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-green);
+            letter-spacing: 0.1em;
+            outline: none;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-green);
+            border-bottom: 1px solid var(--primary-green);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .mobile-menu:hover,
+        .mobile-menu:focus {
+            border-color: rgba(167, 255, 158, 0.6);
+            outline: none;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav a:hover,
+        .mobile-nav a:focus {
+            color: var(--accent-green);
+            padding-left: 1rem;
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .service-tagline {
+            font-size: clamp(1rem, 4vw, 2rem);
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+        
+        .hero-description {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .hero-price {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--accent-green);
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover,
+        .cta-button:focus {
+            color: #000;
+            outline: none;
+            transform: translateY(-2px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before,
+        .cta-button:focus::before {
+            left: 0;
+        }
+        
+        /* Content Grid */
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .content-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card:hover,
+        .content-card:focus-within {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .content-card:hover::before {
+            left: 100%;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-transform: uppercase;
+        }
+        
+        .card-description {
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .card-description strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .card-description em {
+            color: rgba(167, 255, 158, 0.8);
+            font-style: italic;
+        }
+        
+        /* Feature Lists */
+        .feature-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .feature-list li {
+            color: var(--text-secondary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-size: 0.8rem;
+        }
+        
+        /* Technical Areas Grid */
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .technical-area {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .technical-area:hover {
+            border-color: rgba(167, 255, 158, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .technical-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .technical-description {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .process-step {
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            border-color: rgba(167, 255, 158, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .step-number {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .step-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        /* Tech Expert Badge */
+        .tech-expert-badge {
+            display: inline-block;
+            background: var(--accent-green);
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        /* CTA Sections */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 2px solid rgba(167, 255, 158, 0.3);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .cta-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Back Button */
+        .back-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(167, 255, 158, 0.6);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+        
+        .back-button:hover {
+            background: rgba(167, 255, 158, 0.1);
+            transform: translateX(-5px);
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 0.25rem 2rem;
+            z-index: 100;
+        }
+        
+        .status-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .status-right {
+            color: rgba(167, 255, 158, 0.5);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .process-grid, .technical-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-grid {
+                padding: 2rem 1rem;
+            }
+            
+            .content-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
+                <li><a href="/aws-privacy-review" class="active" aria-current="page">AWS REVIEW</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/privacy-policy-review" role="menuitem">03. POLICY REVIEW</a>
+            <a href="/compliance-check" role="menuitem">04. COMPLIANCE CHECK</a>
+            <a href="/aws-privacy-review" role="menuitem">05. AWS REVIEW</a>
+            <a href="/pricing" role="menuitem">06. PRICING</a>
+            <a href="/resources" role="menuitem">07. RESOURCES</a>
+            <a href="/contact" role="menuitem">08. CONTACT</a>
+            <a href="/blog" role="menuitem">09. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <h1>AWS Privacy Configuration Review</h1>
+            <div class="service-tagline">CLOUD_INFRASTRUCTURE_EXPERT</div>
+            <p class="hero-description">Leverage our unique AWS expertise for privacy-focused infrastructure review. We review your basic AWS privacy settings, check data residency configurations, and provide simple technical recommendations.</p>
+            <div class="hero-price">$600 - $1,200</div>
+            <a href="/contact" class="cta-button">
+                START AWS REVIEW
+                <span aria-hidden="true">→</span>
+            </a>
+        </section>
+        
+        <!-- Content Cards -->
+        <section class="content-grid" role="main">
+            <!-- Service Overview -->
+            <article class="content-card">
+                <div class="tech-expert-badge">Technical Differentiator</div>
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">☁️</div>
+                    <div>
+                        <h2 class="card-title">Your Unique Advantage</h2>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <strong>Most privacy consultants don't understand cloud infrastructure.</strong> We combine CIPP/E, CIPM & CIPT privacy expertise with hands-on AWS technical knowledge to review your cloud privacy settings from both compliance and infrastructure perspectives.<br><br>
+                    This is a <strong>technical review service</strong> - we're not creating complex compliance strategies, just helping you understand your AWS privacy configuration and providing actionable technical recommendations.<br><br>
+                    <em>Perfect for AWS-hosted businesses needing privacy-focused infrastructure guidance that most consultants can't provide.</em>
+                </div>
+                <ul class="feature-list">
+                    <li><strong>Data residency compliance</strong> - Ensure your data stays in appropriate regions</li>
+                    <li><strong>Encryption configuration review</strong> - Verify proper data protection at rest and in transit</li>
+                    <li><strong>Access logging assessment</strong> - Check that privacy-relevant access is properly tracked</li>
+                    <li><strong>Service-specific privacy settings</strong> - Review configurations across your AWS services</li>
+                    <li><strong>Implementation guidance</strong> - Clear steps to improve your privacy posture</li>
+                </ul>
+            </article>
+            
+            <!-- Technical Coverage -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚙️</div>
+                    <div>
+                        <h2 class="card-title">Technical Review Areas</h2>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <strong>We review your AWS privacy configuration across key service areas:</strong>
+                </div>
+                <div class="technical-grid">
+                    <div class="technical-area">
+                        <div class="technical-title">🗺️ Data Residency</div>
+                        <div class="technical-description">Verify your data is stored in appropriate AWS regions to meet GDPR and other regulatory requirements for data localization.</div>
+                    </div>
+                    <div class="technical-area">
+                        <div class="technical-title">🔐 Encryption Settings</div>
+                        <div class="technical-description">Review encryption at rest (KMS, S3, RDS) and in transit (TLS, VPC) to ensure personal data is properly protected.</div>
+                    </div>
+                    <div class="technical-area">
+                        <div class="technical-title">📊 Access Logging</div>
+                        <div class="technical-description">Assess CloudTrail, VPC Flow Logs, and service-specific logging to support privacy incident response and auditing.</div>
+                    </div>
+                    <div class="technical-area">
+                        <div class="technical-title">🔍 IAM & Access Control</div>
+                        <div class="technical-description">Review identity and access management for data minimization and principle of least privilege access to personal data.</div>
+                    </div>
+                    <div class="technical-area">
+                        <div class="technical-title">💾 Data Storage Services</div>
+                        <div class="technical-description">Examine S3, RDS, DynamoDB, and other storage services for privacy-relevant configuration and lifecycle policies.</div>
+                    </div>
+                    <div class="technical-area">
+                        <div class="technical-title">🌐 Network Security</div>
+                        <div class="technical-description">Assess VPC configuration, security groups, and network ACLs from a privacy and data protection perspective.</div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Review Process */
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚡</div>
+                    <div>
+                        <h2 class="card-title">Review Process</h2>
+                    </div>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">Step 1</div>
+                        <div class="step-text">AWS account access setup and scope definition for privacy-relevant services</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">Step 2</div>
+                        <div class="step-text">Technical review of configurations against privacy best practices</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">Step 3</div>
+                        <div class="step-text">Findings documentation with specific improvement recommendations</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">Step 4</div>
+                        <div class="step-text">Implementation guidance and 30-day technical support included</div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Deliverables -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">📄</div>
+                    <div>
+                        <h2 class="card-title">What You Receive</h2>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <strong>Comprehensive AWS privacy configuration report includes:</strong>
+                </div>
+                <ul class="feature-list">
+                    <li><strong>Executive summary</strong> - High-level privacy posture assessment of your AWS environment</li>
+                    <li><strong>Configuration findings</strong> - Specific issues identified across your AWS services</li>
+                    <li><strong>Data residency compliance check</strong> - Regional data storage verification and recommendations</li>
+                    <li><strong>Encryption assessment</strong> - Review of current encryption implementation and gaps</li>
+                    <li><strong>Access logging evaluation</strong> - Audit trail adequacy for privacy incident response</li>
+                    <li><strong>Technical implementation roadmap</strong> - Step-by-step improvement recommendations</li>
+                    <li><strong>AWS service-specific guidance</strong> - Configuration adjustments for better privacy posture</li>
+                    <li><strong>Follow-up technical support</strong> - 30-day assistance with implementation questions</li>
+                </ul>
+            </article>
+            
+            <!-- Who This Is For -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🎯</div>
+                    <div>
+                        <h2 class="card-title">Perfect For</h2>
+                    </div>
+                </div>
+                <div class="card-description">
+                    This technical review is ideal for businesses that:
+                </div>
+                <ul class="feature-list">
+                    <li><strong>Host their applications and data on AWS</strong> and need privacy-focused infrastructure guidance</li>
+                    <li><strong>Want technical privacy recommendations</strong> from experts who understand both privacy law and cloud architecture</li>
+                    <li><strong>Need to verify data residency compliance</strong> for GDPR or other regulatory requirements</li>
+                    <li><strong>Prefer straightforward technical reviews</strong> over complex compliance consulting engagements</li>
+                    <li><strong>Value our unique AWS expertise</strong> that most privacy consultants don't possess</li>
+                    <li><strong>Want fast delivery</strong> with implementation support (1-2 weeks typically)</li>
+                </ul>
+            </article>
+            
+            <!-- Why Our AWS Expertise Matters -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🚀</div>
+                    <div>
+                        <h2 class="card-title">Why Our AWS Expertise Is Unique</h2>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <strong>Most privacy consultants understand compliance but not cloud infrastructure:</strong>
+                </div>
+                <ul class="feature-list">
+                    <li><strong>Dual expertise</strong> - We combine privacy law knowledge with hands-on AWS technical experience</li>
+                    <li><strong>Practical recommendations</strong> - Our suggestions work in real AWS environments, not just on paper</li>
+                    <li><strong>Technical depth</strong> - We understand KMS, VPCs, IAM policies, and service-specific privacy settings</li>
+                    <li><strong>Implementation focus</strong> - Clear, actionable steps you can execute immediately</li>
+                    <li><strong>Cost-conscious approach</strong> - Privacy improvements that don't break your AWS budget</li>
+                    <li><strong>Real-world experience</strong> - We've actually configured these systems, not just read about them</li>
+                </ul>
+            </article>
+            
+            <!-- Common Issues We Find -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🔧</div>
+                    <div>
+                        <h2 class="card-title">Common AWS Privacy Issues</h2>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <strong>Typical privacy configuration problems we discover and help fix:</strong>
+                </div>
+                <ul class="feature-list">
+                    <li><strong>Data stored in wrong regions</strong> - GDPR requires EU data to stay in EU, but it's often misconfigured</li>
+                    <li><strong>Encryption gaps</strong> - Some services lack proper encryption at rest or in transit</li>
+                    <li><strong>Overprivileged access</strong> - Too many people have access to personal data than necessary</li>
+                    <li><strong>Insufficient logging</strong> - Can't track who accessed what personal data when needed</li>
+                    <li><strong>Backup location issues</strong> - Backups stored in regions that don't meet data residency requirements</li>
+                    <li><strong>Public access risks</strong> - S3 buckets or databases inadvertently exposed</li>
+                </ul>
+            </article>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Review Your AWS Privacy Configuration?</h2>
+            <p class="cta-description">
+                Start with a free 30-minute consultation to discuss your AWS setup and determine how our technical review can help improve your cloud privacy posture.
+            </p>
+            <div class="cta-buttons">
+                <a href="/contact" class="cta-button">
+                    Schedule Free Consultation
+                    <span aria-hidden="true">📅</span>
+                </a>
+                <a href="/pricing" class="cta-button">
+                    View All Services
+                    <span aria-hidden="true">💰</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Back Button -->
+        <div class="back-section">
+            <a href="/services" class="back-button">
+                ← Back to Services
+            </a>
+        </div>
+    </main>
+    
+    <!-- Status Bar -->
+    <div class="status-bar" role="contentinfo">
+        <div class="status-content">
+            <div class="status-left">
+                <span>☁️ SERVICE: AWS PRIVACY REVIEW</span>
+                <span>PRICING: $600-$1,200 | DELIVERY: 1-2 WEEKS</span>
+                <span>EXPERTISE: CLOUD + PRIVACY</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys | Privacy Made Simple
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Performance optimized particle creation
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 8 : 15; // Fewer particles on mobile
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = 2 + Math.random() * 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle with proper ARIA
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const isOpen = mobileNav.classList.contains('show');
+            
+            mobileNav.classList.toggle('show');
+            mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+        }
+        
+        // Throttled scroll handler for better performance
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            if (grid) {
+                grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+            }
+            ticking = false;
+        }
+        
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for reduced motion preference
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            createParticles();
+            
+            if (!prefersReducedMotion) {
+                window.addEventListener('scroll', onScroll, { passive: true });
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileNav.classList.contains('show') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html></li>
