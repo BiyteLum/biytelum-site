@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Corporate privacy compliance resources, GDPR guides, CCPA frameworks, and enterprise privacy tools for businesses and privacy professionals.">
-    <title>Corporate Privacy Resources | BiyteLüm - Compliance Guides & Tools</title>
+    <meta name="description" content="Privacy compliance resources, GDPR guides, AWS privacy tools, and safe-scope privacy frameworks for businesses seeking practical privacy guidance.">
+    <title>Privacy Resources | BiyteLüm - Practical Privacy Guidance</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
@@ -359,18 +359,6 @@
             letter-spacing: 0.05em;
         }
         
-        /* Featured Resource Card */
-        .featured-card {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, rgba(0, 255, 153, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
-            border: 2px solid rgba(0, 255, 153, 0.3);
-        }
-        
-        .featured-card .card-title {
-            color: #00FF99;
-            text-shadow: 0 0 15px #00FF99;
-        }
-        
         /* CTA Section */
         .cta-section {
             text-align: center;
@@ -491,10 +479,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .featured-card {
-                grid-column: 1;
-            }
-            
             .resource-card {
                 padding: 2rem;
             }
@@ -557,10 +541,9 @@
             <ul class="nav-links">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/services">SERVICES</a></li>
-                <li><a href="/dpia">DPIA SERVICES</a></li>
-                <li><a href="/fractional-dpo">FRACTIONAL DPO</a></li>
-                <li><a href="/compliance-audit">COMPLIANCE AUDIT</a></li>
-                <li><a href="/ai-governance">AI GOVERNANCE</a></li>
+                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
+                <li><a href="/aws-privacy-review">AWS REVIEW</a></li>
                 <li><a href="/pricing">PRICING</a></li>
                 <li><a href="/resources" class="active">RESOURCES</a></li>
                 <li><a href="/contact">CONTACT</a></li>
@@ -572,14 +555,13 @@
         <div class="mobile-nav" id="mobileNav">
             <a href="/">01. HOME</a>
             <a href="/services">02. SERVICES</a>
-            <a href="/dpia">03. DPIA SERVICES</a>
-            <a href="/fractional-dpo">04. FRACTIONAL DPO</a>
-            <a href="/compliance-audit">05. COMPLIANCE AUDIT</a>
-            <a href="/ai-governance">06. AI GOVERNANCE</a>
-            <a href="/pricing">07. PRICING</a>
-            <a href="/resources">08. RESOURCES</a>
-            <a href="/contact">09. CONTACT</a>
-            <a href="/blog">10. BLOG</a>
+            <a href="/privacy-policy-review">03. POLICY REVIEW</a>
+            <a href="/compliance-check">04. COMPLIANCE CHECK</a>
+            <a href="/aws-privacy-review">05. AWS REVIEW</a>
+            <a href="/pricing">06. PRICING</a>
+            <a href="/resources">07. RESOURCES</a>
+            <a href="/contact">08. CONTACT</a>
+            <a href="/blog">09. BLOG</a>
         </div>
     </nav>
     
@@ -587,83 +569,185 @@
     <main>
         <!-- Page Header -->
         <section class="page-header">
-            <h1>Corporate Privacy Resources</h1>
-            <p class="page-subtitle">Essential tools, frameworks, and guidance for <strong>enterprise privacy compliance</strong> and data protection program development.</p>
+            <h1>Privacy Resources</h1>
+            <p class="page-subtitle">Practical guidance and tools for <strong>safe-scope privacy compliance</strong> including GDPR basics, AWS privacy configuration, and policy development.</p>
         </section>
         
         <div class="resources-container">
             <div class="resources-grid">
-                <!-- Regulatory Guidance -->
+                <!-- GDPR Essentials -->
                 <div class="resource-card">
                     <div class="card-header">
                         <div class="card-icon">📜</div>
-                        <h2 class="card-title">Regulatory Guidance</h2>
+                        <h2 class="card-title">GDPR Essentials</h2>
                     </div>
                     <div class="card-description">
-                        Official regulatory resources and guidance documents for corporate privacy compliance across multiple jurisdictions.
+                        Core GDPR resources for understanding compliance requirements and building practical privacy policies.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <div class="resource-category">GDPR Resources</div>
+                            <div class="resource-category">Official Guide</div>
                             <a href="https://gdpr.eu/" target="_blank" class="resource-link">
-                                GDPR Official Guide
+                                GDPR Complete Guide
                             </a>
-                            <div class="resource-description">Comprehensive GDPR compliance guide with article-by-article explanations</div>
+                            <div class="resource-description">Article-by-article explanations of GDPR requirements with practical examples</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">CCPA Resources</div>
-                            <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" class="resource-link">
-                                California AG CCPA Guidance
+                            <div class="resource-category">Policy Template</div>
+                            <a href="https://gdpr.eu/privacy-notice/" target="_blank" class="resource-link">
+                                Privacy Policy Template
                             </a>
-                            <div class="resource-description">Official California Attorney General CCPA implementation guidance</div>
+                            <div class="resource-description">GDPR-compliant privacy policy template with required disclosures</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">EU AI Act</div>
-                            <a href="https://artificialintelligenceact.eu/" target="_blank" class="resource-link">
-                                EU AI Act Hub
+                            <div class="resource-category">Individual Rights</div>
+                            <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/" target="_blank" class="resource-link">
+                                Data Subject Rights Guide
                             </a>
-                            <div class="resource-description">Comprehensive resource for EU AI Act compliance and implementation</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">ISO Standards</div>
-                            <a href="https://www.iso.org/standard/71670.html" target="_blank" class="resource-link">
-                                ISO 27001 Privacy Controls
-                            </a>
-                            <div class="resource-description">International standard for information security management systems</div>
+                            <div class="resource-description">How to handle access, deletion, and portability requests from individuals</div>
                         </li>
                     </ul>
                 </div>
                 
-                <!-- Privacy Frameworks -->
+                <!-- AWS Privacy Tools -->
                 <div class="resource-card">
                     <div class="card-header">
-                        <div class="card-icon">🏗️</div>
-                        <h2 class="card-title">Privacy Frameworks</h2>
+                        <div class="card-icon">☁️</div>
+                        <h2 class="card-title">AWS Privacy Configuration</h2>
                     </div>
                     <div class="card-description">
-                        Industry-standard frameworks and methodologies for building comprehensive privacy programs.
+                        Technical resources for configuring AWS services with privacy-focused settings and data protection.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <div class="resource-category">NIST Framework</div>
-                            <a href="https://www.nist.gov/privacy-framework" target="_blank" class="resource-link">
-                                NIST Privacy Framework
+                            <div class="resource-category">Data Residency</div>
+                            <a href="https://aws.amazon.com/compliance/data-residency/" target="_blank" class="resource-link">
+                                AWS Data Residency Guide
                             </a>
-                            <div class="resource-description">US government privacy framework for managing privacy risks</div>
+                            <div class="resource-description">How to ensure data stays in specific AWS regions for GDPR compliance</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">FAIR Information</div>
-                            <a href="https://iapp.org/resources/article/fair-information-practice-principles/" target="_blank" class="resource-link">
-                                FAIR Information Principles
+                            <div class="resource-category">Encryption</div>
+                            <a href="https://docs.aws.amazon.com/kms/latest/developerguide/overview.html" target="_blank" class="resource-link">
+                                AWS KMS Documentation
                             </a>
-                            <div class="resource-description">Foundation principles for privacy program development</div>
+                            <div class="resource-description">Key Management Service for encrypting data at rest and in transit</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">Privacy by Design</div>
-                            <a href="https://www.ipc.on.ca/wp-content/uploads/resources/7foundationalprinciples.pdf" target="_blank" class="resource-link">
-                                Privacy by Design Principles
+                            <div class="resource-category">Access Logging</div>
+                            <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html" target="_blank" class="resource-link">
+                                CloudTrail Setup Guide
                             </a>
-                            <div class="resource-description">Seven foundational principles for privacy-centric system design</div>
+                            <div class="resource-description">Enable comprehensive logging for privacy incident response and auditing</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">S3 Privacy</div>
+                            <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html" target="_blank" class="resource-link">
+                                S3 Security Best Practices
+                            </a>
+                            <div class="resource-description">Secure S3 configuration for storing personal data with proper access controls</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Policy Development -->
+                <div class="resource-card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h2 class="card-title">Policy Development</h2>
+                    </div>
+                    <div class="card-description">
+                        Templates and guidance for developing practical privacy policies and procedures within safe scope boundaries.
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-category">Policy Templates</div>
+                            <a href="https://iapp.org/resources/article/sample-privacy-policies/" target="_blank" class="resource-link">
+                                IAPP Policy Samples
+                            </a>
+                            <div class="resource-description">Industry-standard privacy policy examples for different business types</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Cookie Notices</div>
+                            <a href="https://www.cookiebot.com/en/cookie-consent-examples/" target="_blank" class="resource-link">
+                                Cookie Consent Examples
+                            </a>
+                            <div class="resource-description">GDPR-compliant cookie notice templates and consent mechanisms</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Data Processing</div>
+                            <a href="https://gdpr.eu/article-30-record-of-processing/" target="_blank" class="resource-link">
+                                Article 30 Records Template
+                            </a>
+                            <div class="resource-description">Template for documenting data processing activities as required by GDPR</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Self-Assessment Tools -->
+                <div class="resource-card">
+                    <div class="card-header">
+                        <div class="card-icon">✅</div>
+                        <h2 class="card-title">Self-Assessment Tools</h2>
+                    </div>
+                    <div class="card-description">
+                        Educational tools and checklists to help you evaluate your current privacy practices and identify improvement areas.
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-category">GDPR Readiness</div>
+                            <a href="https://ico.org.uk/for-organisations/resources-and-support/data-protection-self-assessment/" target="_blank" class="resource-link">
+                                ICO Self-Assessment Tool
+                            </a>
+                            <div class="resource-description">UK Information Commissioner's Office GDPR readiness checklist</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Privacy Audit</div>
+                            <a href="https://iapp.org/resources/article/privacy-program-assessment-checklist/" target="_blank" class="resource-link">
+                                Privacy Program Checklist
+                            </a>
+                            <div class="resource-description">Comprehensive checklist for evaluating privacy program maturity</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Vendor Assessment</div>
+                            <a href="https://www.cisa.gov/sites/default/files/publications/Third%20Party%20Assessment%20Questionnaire.pdf" target="_blank" class="resource-link">
+                                Third-Party Risk Questionnaire
+                            </a>
+                            <div class="resource-description">Template for assessing privacy risks with vendors and service providers</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Regulatory Updates -->
+                <div class="resource-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h2 class="card-title">Regulatory Updates</h2>
+                    </div>
+                    <div class="card-description">
+                        Stay informed about privacy regulation changes and enforcement trends that may affect your business.
+                    </div>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-category">GDPR Enforcement</div>
+                            <a href="https://www.enforcementtracker.com/" target="_blank" class="resource-link">
+                                GDPR Enforcement Tracker
+                            </a>
+                            <div class="resource-description">Database of GDPR fines and enforcement actions across EU member states</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">Privacy News</div>
+                            <a href="https://iapp.org/news/" target="_blank" class="resource-link">
+                                IAPP Privacy News
+                            </a>
+                            <div class="resource-description">Latest developments in privacy law and regulatory guidance</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">EU Guidelines</div>
+                            <a href="https://edpb.europa.eu/our-work-tools/documents_en" target="_blank" class="resource-link">
+                                EDPB Guidelines
+                            </a>
+                            <div class="resource-description">European Data Protection Board technical implementation guidance</div>
                         </li>
                     </ul>
                 </div>
@@ -672,141 +756,32 @@
                 <div class="resource-card">
                     <div class="card-header">
                         <div class="card-icon">🎓</div>
-                        <h2 class="card-title">Professional Certification</h2>
+                        <h2 class="card-title">Learning Resources</h2>
                     </div>
                     <div class="card-description">
-                        Privacy certification programs and continuing education resources for building expertise in data protection.
+                        Educational resources for building privacy knowledge and staying current with best practices.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
                             <div class="resource-category">IAPP Certification</div>
                             <a href="https://iapp.org/certify/" target="_blank" class="resource-link">
-                                IAPP Privacy Certifications
+                                Privacy Certifications
                             </a>
                             <div class="resource-description">CIPP/E, CIPM, and CIPT certification programs for privacy professionals</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">Training Programs</div>
-                            <a href="https://iapp.org/training/" target="_blank" class="resource-link">
-                                IAPP Training Courses
+                            <div class="resource-category">Free Training</div>
+                            <a href="https://www.futurelearn.com/courses/data-protection-and-privacy" target="_blank" class="resource-link">
+                                Data Protection Course
                             </a>
-                            <div class="resource-description">Professional development courses and workshops for privacy teams</div>
+                            <div class="resource-description">Free online course covering GDPR fundamentals and data protection principles</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">Industry Events</div>
-                            <a href="https://iapp.org/conference/" target="_blank" class="resource-link">
-                                Privacy Conferences
+                            <div class="resource-category">Webinars</div>
+                            <a href="https://iapp.org/resources/topics/webinars/" target="_blank" class="resource-link">
+                                IAPP Privacy Webinars
                             </a>
-                            <div class="resource-description">Annual privacy summits and industry networking events</div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Enterprise Tools -->
-                <div class="resource-card">
-                    <div class="card-header">
-                        <div class="card-icon">⚙️</div>
-                        <h2 class="card-title">Enterprise Privacy Tools</h2>
-                    </div>
-                    <div class="card-description">
-                        Professional-grade privacy management platforms and tools for enterprise data protection programs.
-                    </div>
-                    <ul class="resource-list">
-                        <li class="resource-item">
-                            <div class="resource-category">Privacy Management</div>
-                            <a href="https://www.privacydynamics.io/" target="_blank" class="resource-link">
-                                Privacy Dynamics
-                            </a>
-                            <div class="resource-description">Data anonymization and privacy engineering platform</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Consent Management</div>
-                            <a href="https://www.cookiebot.com/" target="_blank" class="resource-link">
-                                Cookiebot CMP
-                            </a>
-                            <div class="resource-description">GDPR-compliant consent management platform for websites</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Data Discovery</div>
-                            <a href="https://www.varonis.com/" target="_blank" class="resource-link">
-                                Varonis Data Classification
-                            </a>
-                            <div class="resource-description">Enterprise data discovery and classification platform</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Vendor Management</div>
-                            <a href="https://www.privacyguard.com/" target="_blank" class="resource-link">
-                                Third-Party Risk Assessment
-                            </a>
-                            <div class="resource-description">Vendor privacy risk assessment and monitoring tools</div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Legal & Compliance -->
-                <div class="resource-card">
-                    <div class="card-header">
-                        <div class="card-icon">⚖️</div>
-                        <h2 class="card-title">Legal & Compliance</h2>
-                    </div>
-                    <div class="card-description">
-                        Legal resources, court decisions, and regulatory enforcement guidance for privacy compliance.
-                    </div>
-                    <ul class="resource-list">
-                        <li class="resource-item">
-                            <div class="resource-category">Enforcement Actions</div>
-                            <a href="https://www.enforcementtracker.com/" target="_blank" class="resource-link">
-                                GDPR Enforcement Tracker
-                            </a>
-                            <div class="resource-description">Database of GDPR fines and enforcement actions across the EU</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Case Law</div>
-                            <a href="https://curia.europa.eu/" target="_blank" class="resource-link">
-                                CJEU Privacy Decisions
-                            </a>
-                            <div class="resource-description">European Court of Justice privacy and data protection rulings</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Standard Clauses</div>
-                            <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en" target="_blank" class="resource-link">
-                                EU Standard Contractual Clauses
-                            </a>
-                            <div class="resource-description">Official SCCs for international data transfers</div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Industry Best Practices -->
-                <div class="resource-card">
-                    <div class="card-header">
-                        <div class="card-icon">📊</div>
-                        <h2 class="card-title">Industry Best Practices</h2>
-                    </div>
-                    <div class="card-description">
-                        Research reports, benchmarking studies, and industry guidance for privacy program development.
-                    </div>
-                    <ul class="resource-list">
-                        <li class="resource-item">
-                            <div class="resource-category">Research Reports</div>
-                            <a href="https://iapp.org/resources/research/" target="_blank" class="resource-link">
-                                IAPP Privacy Research
-                            </a>
-                            <div class="resource-description">Annual privacy surveys and industry trend analysis</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Benchmarking</div>
-                            <a href="https://www.pwc.com/gx/en/issues/cybersecurity/trust-us-survey.html" target="_blank" class="resource-link">
-                                PwC Trust Survey
-                            </a>
-                            <div class="resource-description">Annual consumer trust and privacy perception survey</div>
-                        </li>
-                        <li class="resource-item">
-                            <div class="resource-category">Technical Guidance</div>
-                            <a href="https://edpb.europa.eu/our-work-tools/documents/public-consultations_en" target="_blank" class="resource-link">
-                                EDPB Guidelines
-                            </a>
-                            <div class="resource-description">European Data Protection Board technical implementation guidance</div>
+                            <div class="resource-description">Regular webinars on current privacy topics and compliance updates</div>
                         </li>
                     </ul>
                 </div>
@@ -814,21 +789,21 @@
             
             <!-- CTA Section -->
             <div class="cta-section">
-                <h2 style="font-family: 'Share Tech Mono', monospace; color: #A7FF9E; margin-bottom: 1rem; text-transform: uppercase;">Need Expert Privacy Guidance?</h2>
+                <h2 style="font-family: 'Share Tech Mono', monospace; color: #A7FF9E; margin-bottom: 1rem; text-transform: uppercase;">Need Practical Privacy Help?</h2>
                 <p style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif; margin-bottom: 1rem;">
-                    Resources are helpful, but implementing a comprehensive privacy program requires expertise. Our CIPP/E, CIPM & CIPT certified team provides strategic guidance and hands-on support.
+                    Resources are helpful, but implementing privacy compliance requires expertise. Our safe-scope services provide practical guidance without complex legal strategy development.
                 </p>
                 <div class="cta-buttons">
                     <a href="/consultation" class="cta-button">
                         Schedule Free Consultation
                         <span>📅</span>
                     </a>
-                    <a href="/fractional-dpo" class="cta-button secondary">
-                        Explore Fractional DPO
-                        <span>👨‍💼</span>
+                    <a href="/services" class="cta-button secondary">
+                        View Our Services
+                        <span>→</span>
                     </a>
                     <a href="/pricing" class="cta-button secondary">
-                        View Services & Pricing
+                        See Pricing
                         <span>💰</span>
                     </a>
                 </div>
@@ -840,9 +815,9 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>📚 STATUS: CORPORATE RESOURCES</span>
-                <span>FRAMEWORKS: GDPR | CCPA | EU AI ACT</span>
-                <span>CERTIFICATION: CIPP/E | CIPM | CIPT</span>
+                <span>📚 STATUS: PRACTICAL RESOURCES</span>
+                <span>FOCUS: GDPR | AWS | POLICY DEVELOPMENT</span>
+                <span>SCOPE: SAFE | EDUCATIONAL</span>
             </div>
             <div class="status-right">
                 © 2025 BiyteLüm.sys | <a href="/">RETURN_HOME</a>
