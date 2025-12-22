@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy compliance resources, GDPR guides, AWS privacy tools, and safe-scope privacy frameworks for businesses seeking practical privacy guidance.">
+    <meta name="description" content="Privacy compliance resources, GDPR/LGPD guides, AWS/Azure privacy tools, and safe-scope privacy frameworks for businesses seeking practical privacy guidance.">
     <title>Privacy Resources | BiyteLüm - Practical Privacy Guidance</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
@@ -543,7 +543,7 @@
                 <li><a href="/services">SERVICES</a></li>
                 <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
                 <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
-                <li><a href="/aws-privacy-review">AWS REVIEW</a></li>
+                <li><a href="/cloud-privacy-review">CLOUD REVIEW</a></li>
                 <li><a href="/pricing">PRICING</a></li>
                 <li><a href="/resources" class="active">RESOURCES</a></li>
                 <li><a href="/contact">CONTACT</a></li>
@@ -557,7 +557,7 @@
             <a href="/services">02. SERVICES</a>
             <a href="/privacy-policy-review">03. POLICY REVIEW</a>
             <a href="/compliance-check">04. COMPLIANCE CHECK</a>
-            <a href="/aws-privacy-review">05. AWS REVIEW</a>
+            <a href="/cloud-privacy-review">05. CLOUD REVIEW</a>
             <a href="/pricing">06. PRICING</a>
             <a href="/resources">07. RESOURCES</a>
             <a href="/contact">08. CONTACT</a>
@@ -570,34 +570,41 @@
         <!-- Page Header -->
         <section class="page-header">
             <h1>Privacy Resources</h1>
-            <p class="page-subtitle">Practical guidance and tools for <strong>safe-scope privacy compliance</strong> including GDPR basics, AWS privacy configuration, and policy development.</p>
+            <p class="page-subtitle">Practical guidance and tools for <strong>safe-scope privacy compliance</strong> including GDPR/LGPD basics, cloud privacy configuration (AWS & Azure), and policy development.</p>
         </section>
         
         <div class="resources-container">
             <div class="resources-grid">
-                <!-- GDPR Essentials -->
+                <!-- GDPR & LGPD Essentials -->
                 <div class="resource-card">
                     <div class="card-header">
                         <div class="card-icon">📜</div>
-                        <h2 class="card-title">GDPR Essentials</h2>
+                        <h2 class="card-title">GDPR & LGPD Essentials</h2>
                     </div>
                     <div class="card-description">
-                        Core GDPR resources for understanding compliance requirements and building practical privacy policies.
+                        Core GDPR and LGPD resources for understanding compliance requirements and building practical privacy policies for European and Brazilian markets.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <div class="resource-category">Official Guide</div>
+                            <div class="resource-category">GDPR Official Guide</div>
                             <a href="https://gdpr.eu/" target="_blank" class="resource-link">
                                 GDPR Complete Guide
                             </a>
                             <div class="resource-description">Article-by-article explanations of GDPR requirements with practical examples</div>
                         </li>
                         <li class="resource-item">
+                            <div class="resource-category">LGPD Official Guide</div>
+                            <a href="https://www.gov.br/anpd/pt-br/assuntos/lei-geral-de-protecao-de-dados" target="_blank" class="resource-link">
+                                LGPD Official Resources (ANPD)
+                            </a>
+                            <div class="resource-description">Brazilian National Data Protection Authority guidance on LGPD compliance</div>
+                        </li>
+                        <li class="resource-item">
                             <div class="resource-category">Policy Template</div>
                             <a href="https://gdpr.eu/privacy-notice/" target="_blank" class="resource-link">
                                 Privacy Policy Template
                             </a>
-                            <div class="resource-description">GDPR-compliant privacy policy template with required disclosures</div>
+                            <div class="resource-description">GDPR/LGPD-compliant privacy policy template with required disclosures</div>
                         </li>
                         <li class="resource-item">
                             <div class="resource-category">Individual Rights</div>
@@ -609,39 +616,53 @@
                     </ul>
                 </div>
                 
-                <!-- AWS Privacy Tools -->
+                <!-- Cloud Privacy Tools -->
                 <div class="resource-card">
                     <div class="card-header">
                         <div class="card-icon">☁️</div>
-                        <h2 class="card-title">AWS Privacy Configuration</h2>
+                        <h2 class="card-title">Cloud Privacy Configuration</h2>
                     </div>
                     <div class="card-description">
-                        Technical resources for configuring AWS services with privacy-focused settings and data protection.
+                        Technical resources for configuring AWS and Azure services with privacy-focused settings and data protection for GDPR/LGPD compliance.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
-                            <div class="resource-category">Data Residency</div>
+                            <div class="resource-category">AWS Data Residency</div>
                             <a href="https://aws.amazon.com/compliance/data-residency/" target="_blank" class="resource-link">
                                 AWS Data Residency Guide
                             </a>
-                            <div class="resource-description">How to ensure data stays in specific AWS regions for GDPR compliance</div>
+                            <div class="resource-description">How to ensure data stays in specific AWS regions for GDPR/LGPD compliance</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">Encryption</div>
+                            <div class="resource-category">Azure Data Residency</div>
+                            <a href="https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-eu-data-boundary" target="_blank" class="resource-link">
+                                Azure Data Residency Resources
+                            </a>
+                            <div class="resource-description">Azure regional compliance and data boundary controls for GDPR/LGPD</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">AWS Encryption</div>
                             <a href="https://docs.aws.amazon.com/kms/latest/developerguide/overview.html" target="_blank" class="resource-link">
                                 AWS KMS Documentation
                             </a>
                             <div class="resource-description">Key Management Service for encrypting data at rest and in transit</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">Access Logging</div>
+                            <div class="resource-category">Azure Encryption</div>
+                            <a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview" target="_blank" class="resource-link">
+                                Azure Key Vault & Encryption
+                            </a>
+                            <div class="resource-description">Azure encryption capabilities for protecting personal data</div>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-category">AWS Access Logging</div>
                             <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html" target="_blank" class="resource-link">
                                 CloudTrail Setup Guide
                             </a>
                             <div class="resource-description">Enable comprehensive logging for privacy incident response and auditing</div>
                         </li>
                         <li class="resource-item">
-                            <div class="resource-category">S3 Privacy</div>
+                            <div class="resource-category">AWS S3 Privacy</div>
                             <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html" target="_blank" class="resource-link">
                                 S3 Security Best Practices
                             </a>
@@ -657,7 +678,7 @@
                         <h2 class="card-title">Policy Development</h2>
                     </div>
                     <div class="card-description">
-                        Templates and guidance for developing practical privacy policies and procedures within safe scope boundaries.
+                        Templates and guidance for developing practical privacy policies and procedures within safe scope boundaries for GDPR and LGPD.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
@@ -672,14 +693,14 @@
                             <a href="https://www.cookiebot.com/en/cookie-consent-examples/" target="_blank" class="resource-link">
                                 Cookie Consent Examples
                             </a>
-                            <div class="resource-description">GDPR-compliant cookie notice templates and consent mechanisms</div>
+                            <div class="resource-description">GDPR/LGPD-compliant cookie notice templates and consent mechanisms</div>
                         </li>
                         <li class="resource-item">
                             <div class="resource-category">Data Processing</div>
                             <a href="https://gdpr.eu/article-30-record-of-processing/" target="_blank" class="resource-link">
                                 Article 30 Records Template
                             </a>
-                            <div class="resource-description">Template for documenting data processing activities as required by GDPR</div>
+                            <div class="resource-description">Template for documenting data processing activities as required by GDPR/LGPD</div>
                         </li>
                     </ul>
                 </div>
@@ -691,7 +712,7 @@
                         <h2 class="card-title">Self-Assessment Tools</h2>
                     </div>
                     <div class="card-description">
-                        Educational tools and checklists to help you evaluate your current privacy practices and identify improvement areas.
+                        Educational tools and checklists to help you evaluate your current privacy practices and identify improvement areas for GDPR/LGPD compliance.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
@@ -725,7 +746,7 @@
                         <h2 class="card-title">Regulatory Updates</h2>
                     </div>
                     <div class="card-description">
-                        Stay informed about privacy regulation changes and enforcement trends that may affect your business.
+                        Stay informed about GDPR and LGPD regulation changes and enforcement trends that may affect your business.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
@@ -759,7 +780,7 @@
                         <h2 class="card-title">Learning Resources</h2>
                     </div>
                     <div class="card-description">
-                        Educational resources for building privacy knowledge and staying current with best practices.
+                        Educational resources for building privacy knowledge and staying current with GDPR/LGPD best practices.
                     </div>
                     <ul class="resource-list">
                         <li class="resource-item">
@@ -767,7 +788,7 @@
                             <a href="https://iapp.org/certify/" target="_blank" class="resource-link">
                                 Privacy Certifications
                             </a>
-                            <div class="resource-description">CIPP/E, CIPM, and CIPT certification programs for privacy professionals</div>
+                            <div class="resource-description">CIPP/E and CIPM certification programs for privacy professionals</div>
                         </li>
                         <li class="resource-item">
                             <div class="resource-category">Free Training</div>
@@ -816,7 +837,7 @@
         <div class="status-content">
             <div class="status-left">
                 <span>📚 STATUS: PRACTICAL RESOURCES</span>
-                <span>FOCUS: GDPR | AWS | POLICY DEVELOPMENT</span>
+                <span>FOCUS: GDPR/LGPD | CLOUD (AWS/AZURE) | POLICY</span>
                 <span>SCOPE: SAFE | EDUCATIONAL</span>
             </div>
             <div class="status-right">
