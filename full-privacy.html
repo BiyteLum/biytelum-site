@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BiyteLüm - Privacy Policy</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
         
         * {
             margin: 0;
@@ -85,6 +85,7 @@
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.9rem;
             color: #A7FF9E;
+            text-decoration: none;
         }
         
         .nav-links {
@@ -105,6 +106,11 @@
         .nav-links a:hover {
             color: #A7FF9E;
             letter-spacing: 0.1em;
+        }
+        
+        .nav-links a.active {
+            color: #A7FF9E;
+            border-bottom: 1px solid #A7FF9E;
         }
         
         /* Mobile Menu */
@@ -166,7 +172,8 @@
             position: relative;
             z-index: 10;
             padding-top: 6rem;
-            min-height: 100vh;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
             max-width: 1000px;
             margin: 0 auto;
             padding-left: 2rem;
@@ -189,6 +196,7 @@
                 0 0 40px #00FF99,
                 0 0 60px #A7FF9E;
             font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
         }
         
         .page-subtitle {
@@ -242,6 +250,7 @@
             color: rgba(167, 255, 158, 0.8);
             margin-bottom: 1rem;
             font-size: 0.9rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .section ul, .section ol {
@@ -253,6 +262,7 @@
         .section li {
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .highlight {
@@ -311,6 +321,12 @@
         .summary-box h3 {
             color: #A7FF9E;
             margin-bottom: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
+        }
+        
+        .summary-box p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .data-table {
@@ -350,10 +366,13 @@
         .contact-info h3 {
             color: #A7FF9E;
             margin-bottom: 1rem;
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
         }
         
         .contact-info p {
             margin-bottom: 0.5rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .back-button {
@@ -386,7 +405,7 @@
             background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(167, 255, 158, 0.3);
-            padding: 0.75rem 2rem;
+            padding: 0.25rem 2rem;
             z-index: 100;
         }
         
@@ -397,7 +416,7 @@
             justify-content: space-between;
             align-items: center;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
         
         .status-left {
@@ -408,6 +427,29 @@
         
         .status-right {
             color: rgba(167, 255, 158, 0.5);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            main {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .privacy-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -421,36 +463,34 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="/" class="logo">
                 <span>▶</span>
                 <span>BiyteLüm.sys</span>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="consultation.html">CONSULTATION</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="data-removal.html">DATA_REMOVAL</a></li>
-                <li><a href="resources.html">RESOURCES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="privacy.html">PRIVACY</a></li>
-                <li><a href="terms.html">TERMS</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
+                <li><a href="/cloud-privacy-review">CLOUD REVIEW</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
         </div>
         <!-- Mobile Menu Dropdown -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="index.html">01. HOME</a>
-            <a href="services.html">02. SERVICES</a>
-            <a href="consultation.html">03. CONSULTATION</a>
-            <a href="pricing.html">04. PRICING</a>
-            <a href="data-removal.html">05. DATA_REMOVAL</a>
-            <a href="resources.html">06. RESOURCES</a>
-            <a href="contact.html">07. CONTACT</a>
-            <a href="privacy.html">08. PRIVACY</a>
-            <a href="terms.html">09. TERMS</a>
-            <a href="blog.html">10. BLOG</a>
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/privacy-policy-review">03. POLICY REVIEW</a>
+            <a href="/compliance-check">04. COMPLIANCE CHECK</a>
+            <a href="/cloud-privacy-review">05. CLOUD REVIEW</a>
+            <a href="/pricing">06. PRICING</a>
+            <a href="/resources">07. RESOURCES</a>
+            <a href="/contact">08. CONTACT</a>
+            <a href="/blog">09. BLOG</a>
         </div>
     </nav>
     
@@ -458,46 +498,45 @@
     <main>
         <!-- Header -->
         <div class="page-header">
-            <h1 class="page-title">PRIVACY_POLICY</h1>
-            <div class="page-subtitle">DATA_PROTECTION_PROTOCOL_v3.2.1</div>
-            <div class="last-updated">LAST_UPDATED: March 09, 2025</div>
+            <h1 class="page-title">PRIVACY POLICY</h1>
+            <div class="page-subtitle">DATA PROTECTION PROTOCOL v3.2.1</div>
+            <div class="last-updated">LAST UPDATED: March 09, 2025</div>
         </div>
         
-        <a href="index.html" class="back-button">
-            ← RETURN_TO_MAIN
+        <a href="/" class="back-button">
+            ← RETURN TO MAIN
         </a>
         
         <!-- Summary -->
         <div class="summary-box">
-            <h3>EXECUTIVE_SUMMARY</h3>
+            <h3>EXECUTIVE SUMMARY</h3>
             <p>This Privacy Notice for <span class="highlight">BiyteLüm OU</span> describes how we collect, process, and protect your personal information when you use our digital privacy services. We are committed to maintaining the highest standards of data protection and privacy.</p>
         </div>
         
         <!-- Table of Contents -->
         <div class="toc">
-            <h3>SYSTEM_NAVIGATION</h3>
+            <h3>SYSTEM NAVIGATION</h3>
             <ul>
-                <li><a href="#infocollect">01. INFORMATION_COLLECTION</a></li>
-                <li><a href="#infouse">02. DATA_PROCESSING</a></li>
-                <li><a href="#legalbases">03. LEGAL_BASES</a></li>
-                <li><a href="#whoshare">04. DATA_SHARING</a></li>
-                <li><a href="#intltransfers">05. INTERNATIONAL_TRANSFERS</a></li>
-                <li><a href="#inforetain">06. RETENTION_PERIODS</a></li>
-                <li><a href="#infosafe">07. SECURITY_MEASURES</a></li>
-                <li><a href="#infominors">08. MINORS_PROTECTION</a></li>
-                <li><a href="#privacyrights">09. YOUR_RIGHTS</a></li>
-                <li><a href="#DNT">10. DO_NOT_TRACK</a></li>
-                <li><a href="#uslaws">11. US_PRIVACY_RIGHTS</a></li>
-                <li><a href="#policyupdates">12. POLICY_UPDATES</a></li>
-                <li><a href="#contact">13. CONTACT_PROTOCOL</a></li>
-                <li><a href="#request">14. DATA_REQUESTS</a></li>
+                <li><a href="#infocollect">01. INFORMATION COLLECTION</a></li>
+                <li><a href="#infouse">02. DATA PROCESSING</a></li>
+                <li><a href="#legalbases">03. LEGAL BASES</a></li>
+                <li><a href="#whoshare">04. DATA SHARING</a></li>
+                <li><a href="#intltransfers">05. INTERNATIONAL TRANSFERS</a></li>
+                <li><a href="#inforetain">06. RETENTION PERIODS</a></li>
+                <li><a href="#infosafe">07. SECURITY MEASURES</a></li>
+                <li><a href="#infominors">08. MINORS PROTECTION</a></li>
+                <li><a href="#privacyrights">09. YOUR RIGHTS</a></li>
+                <li><a href="#DNT">10. DO NOT TRACK</a></li>
+                <li><a href="#uslaws">11. US PRIVACY RIGHTS</a></li>
+                <li><a href="#policyupdates">12. POLICY UPDATES</a></li>
+                <li><a href="#contact">13. CONTACT PROTOCOL</a></li>
             </ul>
         </div>
         
         <!-- Privacy Content -->
         <div class="privacy-content">
             <div class="section" id="infocollect">
-                <h2>1. INFORMATION_COLLECTION</h2>
+                <h2>1. INFORMATION COLLECTION</h2>
                 <h3>Personal Data Categories</h3>
                 <p>We collect personal information that you voluntarily provide when you:</p>
                 <ul>
@@ -518,7 +557,7 @@
             </div>
             
             <div class="section" id="infouse">
-                <h2>2. DATA_PROCESSING</h2>
+                <h2>2. DATA PROCESSING</h2>
                 <p>We process your information to:</p>
                 <ul>
                     <li><span class="highlight">Provide Services</span> - Deliver privacy consulting and data removal services</li>
@@ -530,7 +569,7 @@
             </div>
             
             <div class="section" id="legalbases">
-                <h2>3. LEGAL_BASES</h2>
+                <h2>3. LEGAL BASES</h2>
                 <h3>EU/UK Residents</h3>
                 <p>Under GDPR and UK GDPR, we process your data based on:</p>
                 <ul>
@@ -545,7 +584,7 @@
             </div>
             
             <div class="section" id="whoshare">
-                <h2>4. DATA_SHARING</h2>
+                <h2>4. DATA SHARING</h2>
                 <p>We may share your information with:</p>
                 <ul>
                     <li><span class="highlight">Cloud Computing Services</span> - For secure data storage</li>
@@ -558,28 +597,28 @@
             </div>
             
             <div class="section" id="intltransfers">
-                <h2>5. INTERNATIONAL_TRANSFERS</h2>
+                <h2>5. INTERNATIONAL TRANSFERS</h2>
                 <p>Our servers are located in the <span class="highlight">United Kingdom, Switzerland, United States, and Estonia</span>. We implement appropriate safeguards including Standard Contractual Clauses for international transfers.</p>
             </div>
             
             <div class="section" id="inforetain">
-                <h2>6. RETENTION_PERIODS</h2>
+                <h2>6. RETENTION PERIODS</h2>
                 <p>We retain personal information only as long as necessary for service provision. <span class="highlight">Maximum retention period: 90 days</span> unless legally required otherwise.</p>
             </div>
             
             <div class="section" id="infosafe">
-                <h2>7. SECURITY_MEASURES</h2>
+                <h2>7. SECURITY MEASURES</h2>
                 <p>We implement robust technical and organizational security measures to protect your data. However, no internet transmission can be guaranteed 100% secure. We recommend accessing our services only in secure environments.</p>
             </div>
             
             <div class="section" id="infominors">
-                <h2>8. MINORS_PROTECTION</h2>
+                <h2>8. MINORS PROTECTION</h2>
                 <p><span class="highlight">Age Restriction: 18+</span></p>
                 <p>We do not knowingly collect data from individuals under 18 years of age. If we discover such data collection, we will promptly delete the information.</p>
             </div>
             
             <div class="section" id="privacyrights">
-                <h2>9. YOUR_RIGHTS</h2>
+                <h2>9. YOUR RIGHTS</h2>
                 <p>Depending on your location, you may have the following rights:</p>
                 <ul>
                     <li><span class="highlight">Access</span> - Request a copy of your personal information</li>
@@ -591,8 +630,13 @@
                 </ul>
             </div>
             
+            <div class="section" id="DNT">
+                <h2>10. DO NOT TRACK</h2>
+                <p>We currently do not respond to Do-Not-Track signals as no uniform technology standard has been finalized. We will update this policy when industry standards are established.</p>
+            </div>
+            
             <div class="section" id="uslaws">
-                <h2>11. US_PRIVACY_RIGHTS</h2>
+                <h2>11. US PRIVACY RIGHTS</h2>
                 <h3>State-Specific Rights</h3>
                 <p>Residents of California, Colorado, Connecticut, and other applicable states have additional rights including:</p>
                 
@@ -637,20 +681,15 @@
                 <p>Contact us via data subject access request or email: <span class="highlight">biytelumprivacy@protonmail.com</span></p>
             </div>
             
-            <div class="section" id="DNT">
-                <h2>10. DO_NOT_TRACK</h2>
-                <p>We currently do not respond to Do-Not-Track signals as no uniform technology standard has been finalized. We will update this policy when industry standards are established.</p>
-            </div>
-            
             <div class="section" id="policyupdates">
-                <h2>12. POLICY_UPDATES</h2>
+                <h2>12. POLICY UPDATES</h2>
                 <p>We may update this Privacy Notice periodically. Material changes will be communicated through prominent notices or direct notifications. The "Last Updated" date reflects the most recent version.</p>
             </div>
         </div>
         
         <!-- Contact Information -->
         <div class="contact-info" id="contact">
-            <h3>CONTACT_PROTOCOL</h3>
+            <h3>13. CONTACT PROTOCOL</h3>
             <p><strong>BiyteLüm OU</strong></p>
             <p><strong>Sepapaja Tn 6</strong></p>
             <p><strong>Tallinn, Harjumaa 15551</strong></p>
@@ -664,9 +703,9 @@
     <div class="status-bar">
         <div class="status-content">
             <div class="status-left">
-                <span>🔒 PRIVACY_STATUS: PROTECTED</span>
+                <span>🔒 PRIVACY STATUS: PROTECTED</span>
                 <span>ENCRYPTION: AES-256</span>
-                <span>GDPR: COMPLIANT</span>
+                <span>GDPR/LGPD: COMPLIANT</span>
             </div>
             <div class="status-right">
                 © 2025 BiyteLüm.sys | Privacy v3.2.1
@@ -708,6 +747,16 @@
             const grid = document.querySelector('.bg-grid');
             grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
         });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+            }
+        });
     </script>
 </body>
-</html>      
+</html>
