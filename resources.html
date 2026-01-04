@@ -359,6 +359,173 @@
             letter-spacing: 0.05em;
         }
         
+        /* POC Featured Section */
+        .poc-featured {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.08) 0%, rgba(0, 0, 0, 0.9) 100%);
+            border: 2px solid rgba(167, 255, 158, 0.4);
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .poc-featured::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(167, 255, 158, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .poc-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .poc-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(167, 255, 158, 0.1);
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            border-radius: 20px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: #A7FF9E;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        
+        .poc-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #A7FF9E;
+            text-shadow: 0 0 20px #A7FF9E;
+            margin-bottom: 0.5rem;
+        }
+        
+        .poc-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(167, 255, 158, 0.8);
+            line-height: 1.6;
+        }
+        
+        .poc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .poc-item {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .poc-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.2);
+        }
+        
+        .poc-number {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(0, 255, 153, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .poc-item-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: #A7FF9E;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .poc-item-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(167, 255, 158, 0.7);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .poc-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .poc-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            background: rgba(167, 255, 158, 0.1);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 4px;
+            color: rgba(167, 255, 158, 0.8);
+        }
+        
+        .poc-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #A7FF9E;
+            background: transparent;
+            color: #A7FF9E;
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            z-index: 1;
+        }
+        
+        .poc-download::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #A7FF9E;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .poc-download:hover {
+            color: #000;
+        }
+        
+        .poc-download:hover::before {
+            left: 0;
+        }
+        
         /* CTA Section */
         .cta-section {
             text-align: center;
@@ -479,6 +646,14 @@
                 grid-template-columns: 1fr;
             }
             
+            .poc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .poc-featured {
+                padding: 2rem;
+            }
+            
             .resource-card {
                 padding: 2rem;
             }
@@ -519,6 +694,10 @@
             
             .resource-card {
                 margin: 1.5rem 0;
+                padding: 1.5rem;
+            }
+            
+            .poc-item {
                 padding: 1.5rem;
             }
         }
@@ -574,6 +753,68 @@
         </section>
         
         <div class="resources-container">
+            <!-- Proof of Competence Featured Section -->
+            <div class="poc-featured">
+                <div class="poc-header">
+                    <div class="poc-badge">⚡ FEATURED</div>
+                    <h2 class="poc-title">Proof of Competence</h2>
+                    <p class="poc-subtitle">Real-world privacy compliance examples showing our safe-scope approach: GDPR cloud audits, zero-knowledge migrations, and LGPD market entry support.</p>
+                </div>
+                
+                <div class="poc-grid">
+                    <!-- PoC 01 -->
+                    <div class="poc-item">
+                        <div class="poc-number">PoC 01</div>
+                        <h3 class="poc-item-title">The Cloud-Privacy Audit</h3>
+                        <p class="poc-item-description">SaaS company fixed GDPR Article 44 violations by migrating EU customer data from US-East to eu-west-1, implementing encryption-at-rest, and establishing data residency controls.</p>
+                        <div class="poc-meta">
+                            <span class="poc-tag">AWS</span>
+                            <span class="poc-tag">GDPR</span>
+                            <span class="poc-tag">Cloud Review</span>
+                            <span class="poc-tag">$1,200</span>
+                        </div>
+                        <a href="/path/to/BiyteLum_PoC_01_Cloud_Privacy_Audit.pdf" download class="poc-download">
+                            <span>📄</span>
+                            Download PDF
+                        </a>
+                    </div>
+                    
+                    <!-- PoC 02 -->
+                    <div class="poc-item">
+                        <div class="poc-number">PoC 02</div>
+                        <h3 class="poc-item-title">The "Boring Tech" Migration</h3>
+                        <p class="poc-item-description">Immigration law firm switched from Google Workspace to zero-knowledge tools (CryptPad, ProtonMail, Brave) to protect attorney-client privilege and achieve CCPA compliance.</p>
+                        <div class="poc-meta">
+                            <span class="poc-tag">Zero-Knowledge</span>
+                            <span class="poc-tag">CCPA</span>
+                            <span class="poc-tag">Policy + Compliance</span>
+                            <span class="poc-tag">$2,800</span>
+                        </div>
+                        <a href="/path/to/BiyteLum_PoC_02_Boring_Tech_Migration.pdf" download class="poc-download">
+                            <span>📄</span>
+                            Download PDF
+                        </a>
+                    </div>
+                    
+                    <!-- PoC 03 -->
+                    <div class="poc-item">
+                        <div class="poc-number">PoC 03</div>
+                        <h3 class="poc-item-title">The Brazil Market Entry</h3>
+                        <p class="poc-item-description">HealthTech company achieved LGPD compliance for São Paulo launch in 3 weeks: Encarregado protocol, Portuguese privacy notice, consent mechanisms, and data subject rights workflow.</p>
+                        <div class="poc-meta">
+                            <span class="poc-tag">LGPD</span>
+                            <span class="poc-tag">Brazil</span>
+                            <span class="poc-tag">HealthTech</span>
+                            <span class="poc-tag">$3,200</span>
+                        </div>
+                        <a href="/path/to/BiyteLum_PoC_03_Brazil_Market_Entry.pdf" download class="poc-download">
+                            <span>📄</span>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
             <div class="resources-grid">
                 <!-- GDPR & LGPD Essentials -->
                 <div class="resource-card">
