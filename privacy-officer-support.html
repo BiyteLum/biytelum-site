@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Officer Support - BiyteLüm | Operational Privacy Leadership</title>
+    <meta name="description" content="Structured operational privacy support for organizations needing hands-on governance without statutory DPO appointment. GDPR, LGPD, DSAR workflows, DPIA prep, vendor assessments.">
+    <meta name="keywords" content="privacy officer, privacy governance, DSAR workflows, DPIA support, privacy operations, non-DPO support, privacy program">
+    <link rel="canonical" href="https://biytelum.com/privacy-officer-support">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Officer Support - BiyteLüm">
+    <meta property="og:description" content="Operational privacy leadership without statutory DPO appointment">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com/privacy-officer-support">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Skip to content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: var(--primary-green);
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .particle,
+            .bg-grid {
+                animation: none;
+                transform: none !important;
+            }
+            
+            .content-card::before {
+                transition: none;
+            }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-green);
+            letter-spacing: 0.1em;
+            outline: none;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-green);
+            border-bottom: 1px solid var(--primary-green);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .mobile-menu:hover,
+        .mobile-menu:focus {
+            border-color: rgba(167, 255, 158, 0.6);
+            outline: none;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav a:hover,
+        .mobile-nav a:focus {
+            color: var(--accent-green);
+            padding-left: 1rem;
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+        
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .hero-notice {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: rgba(167, 255, 158, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover,
+        .cta-button:focus {
+            color: #000;
+            outline: none;
+            transform: translateY(-2px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before,
+        .cta-button:focus::before {
+            left: 0;
+        }
+        
+        .cta-button.secondary {
+            border-color: rgba(167, 255, 158, 0.5);
+            color: var(--text-secondary);
+        }
+        
+        .cta-button.secondary::before {
+            background: rgba(167, 255, 158, 0.2);
+        }
+        
+        /* Content Grid */
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 2rem 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .content-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card:hover,
+        .content-card:focus-within {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .content-card:hover::before {
+            left: 100%;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+        
+        .card-description {
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 1rem;
+        }
+        
+        .card-description strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .card-description em {
+            color: rgba(167, 255, 158, 0.8);
+            font-style: italic;
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+        
+        /* Pricing Tiers */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .pricing-tier {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-tier:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .pricing-tier.featured {
+            border-color: var(--accent-green);
+            background: rgba(167, 255, 158, 0.05);
+        }
+        
+        .tier-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-price {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 2rem;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .tier-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tier-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .tier-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+        }
+        
+        /* Alert Boxes */
+        .alert-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-box.warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-color: #FFC107;
+            color: rgba(255, 193, 7, 0.9);
+        }
+        
+        .alert-box.info {
+            background: rgba(33, 150, 243, 0.1);
+            border-color: #2196F3;
+            color: rgba(33, 150, 243, 0.9);
+        }
+        
+        .alert-box.success {
+            background: rgba(167, 255, 158, 0.1);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+        
+        .alert-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .alert-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Status Bar */
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 0.25rem 2rem;
+            z-index: 100;
+        }
+        
+        .status-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .status-right {
+            color: rgba(167, 255, 158, 0.5);
+        }
+        
+        /* Loading Animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-green);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loadingComplete 2s ease-out forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes loadingComplete {
+            0% { transform: scaleX(0); }
+            50% { transform: scaleX(0.7); }
+            100% { transform: scaleX(1); opacity: 0; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Focus styles */
+        *:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading bar -->
+    <div class="loading-bar" aria-hidden="true"></div>
+    
+    <!-- Background Grid -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/privacy-officer-support" class="active" aria-current="page">PRIVACY OFFICER</a></li>
+                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
+                <li><a href="/cloud-privacy-review">CLOUD REVIEW</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/privacy-officer-support" role="menuitem">03. PRIVACY OFFICER</a>
+            <a href="/privacy-policy-review" role="menuitem">04. POLICY REVIEW</a>
+            <a href="/compliance-check" role="menuitem">05. COMPLIANCE CHECK</a>
+            <a href="/cloud-privacy-review" role="menuitem">06. CLOUD REVIEW</a>
+            <a href="/pricing" role="menuitem">07. PRICING</a>
+            <a href="/resources" role="menuitem">08. RESOURCES</a>
+            <a href="/contact" role="menuitem">09. CONTACT</a>
+            <a href="/blog" role="menuitem">10. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <div class="hero-icon" aria-hidden="true">👤</div>
+            <h1>PRIVACY OFFICER SUPPORT</h1>
+            <p class="subtitle">Operational Privacy Leadership Without Statutory DPO Appointment</p>
+            <div class="hero-notice">
+                ⚖️ NOT A DPO APPOINTMENT | OPERATIONAL & ADVISORY SUPPORT
+            </div>
+            <div>
+                <a href="/consultation" class="cta-button">
+                    SCHEDULE CONSULTATION
+                    <span aria-hidden="true">📅</span>
+                </a>
+                <a href="#pricing" class="cta-button secondary">
+                    VIEW PRICING
+                    <span aria-hidden="true">💰</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Service Overview -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">📊</div>
+                    <h2 class="card-title">What Is Privacy Officer Support?</h2>
+                </div>
+                <div class="card-description">
+                    <p><strong>Privacy Officer Support</strong> is a structured operational and advisory service designed for organizations that need hands-on privacy governance, compliance coordination, and privacy program development — without appointing a statutory Data Protection Officer (DPO).</p>
+                    <br>
+                    <p>This service supports leadership, legal teams, and internal stakeholders in building, operating, and maintaining privacy programs while preserving proper legal accountability structures.</p>
+                </div>
+                <div class="alert-box warning">
+                    <div class="alert-title">⚠️ Important Legal Boundary</div>
+                    <div class="alert-content">
+                        This service does <strong>not</strong> constitute appointment as a statutory Data Protection Officer and does not replace legal counsel. Final risk acceptance and legal sign-off remain with your organization and/or legal counsel.
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Who This Is For -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🎯</div>
+                    <h2 class="card-title">Who This Is For</h2>
+                </div>
+                <ul class="feature-list">
+                    <li>Startups and scale-ups building privacy programs from the ground up</li>
+                    <li>SaaS and tech platforms processing customer data across jurisdictions</li>
+                    <li>SMEs operating in multi-jurisdictional environments (EU, Brazil, US)</li>
+                    <li>Remote-first companies needing distributed privacy governance</li>
+                    <li>Companies expanding into GDPR/LGPD jurisdictions for the first time</li>
+                    <li>Organizations without internal privacy staff or resources</li>
+                    <li>Teams needing operational privacy support without enterprise DPO liability</li>
+                </ul>
+            </article>
+            
+            <!-- Core Functions -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚙️</div>
+                    <h2 class="card-title">Core Functions & Support Areas</h2>
+                </div>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">Privacy Program Operations</h3>
+                <ul class="feature-list">
+                    <li>Build and maintain privacy governance structures</li>
+                    <li>Develop internal privacy workflows and processes</li>
+                    <li>Establish compliance task tracking systems</li>
+                    <li>Coordinate privacy responsibilities across teams</li>
+                    <li>Operationalize privacy policies into daily practice</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">Compliance Infrastructure</h3>
+                <ul class="feature-list">
+                    <li>Article 30 Records of Processing support and maintenance</li>
+                    <li>Privacy documentation systems development</li>
+                    <li>Internal compliance frameworks design</li>
+                    <li>Regulatory mapping (GDPR, LGPD, CCPA-style regimes)</li>
+                    <li>Privacy maturity assessments and roadmapping</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">DSAR & Data Rights Operations</h3>
+                <ul class="feature-list">
+                    <li>DSAR intake workflow design and implementation</li>
+                    <li>Request handling procedures and documentation</li>
+                    <li>Identity verification flows</li>
+                    <li>Response templates and standardization</li>
+                    <li>Processing timelines and tracking</li>
+                    <li>Internal escalation procedures</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">DPIA & Risk Support</h3>
+                <ul class="feature-list">
+                    <li>DPIA preparation support and coordination</li>
+                    <li>Risk documentation and assessment frameworks</li>
+                    <li>Privacy risk mapping across business units</li>
+                    <li>Processing risk classification</li>
+                    <li>Mitigation documentation and tracking</li>
+                    <li>Governance reporting to leadership</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">Vendor & Third-Party Privacy</h3>
+                <ul class="feature-list">
+                    <li>Vendor privacy assessments and questionnaires</li>
+                    <li>Data Processing Agreement (DPA) reviews</li>
+                    <li>Privacy risk classification of vendors</li>
+                    <li>Vendor risk scoring systems</li>
+                    <li>Third-party documentation support</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">Policy & Documentation</h3>
+                <ul class="feature-list">
+                    <li>Privacy policy updates and maintenance</li>
+                    <li>Internal data handling policies</li>
+                    <li>Data retention policies</li>
+                    <li>Incident response documentation</li>
+                    <li>Data governance documentation</li>
+                </ul>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.1rem;">Privacy Training & Awareness</h3>
+                <ul class="feature-list">
+                    <li>Internal training materials development</li>
+                    <li>Staff onboarding privacy training</li>
+                    <li>Compliance awareness programs</li>
+                    <li>Privacy literacy development across organization</li>
+                </ul>
+            </article>
+            
+            <!-- Governance Boundaries -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🚧</div>
+                    <h2 class="card-title">Governance Boundaries</h2>
+                </div>
+                <div class="alert-box warning">
+                    <div class="alert-title">⚠️ This Service Does NOT Include:</div>
+                    <div class="alert-content">
+                        <ul class="feature-list">
+                            <li>Acting as statutory DPO under GDPR, LGPD, or other frameworks</li>
+                            <li>Regulatory representation or direct regulator communication</li>
+                            <li>Legal sign-off authority on privacy matters</li>
+                            <li>Regulatory correspondence ownership</li>
+                            <li>Breach liability ownership or legal accountability</li>
+                            <li>Legal accountability transfer from your organization</li>
+                            <li>High-risk processing authorization or approval</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-description" style="margin-top: 1.5rem;">
+                    <p><strong>We provide operational privacy leadership without replacing legal authority.</strong> Your organization retains all legal accountability and decision-making authority. We support you in building compliant, resilient privacy infrastructure.</p>
+                </div>
+            </article>
+            
+            <!-- Value Proposition -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">💎</div>
+                    <h2 class="card-title">How This Creates Value</h2>
+                </div>
+                <ul class="feature-list">
+                    <li><strong>Reduces regulatory risk</strong> through structured compliance frameworks</li>
+                    <li><strong>Creates compliance structure</strong> without full-time DPO hiring costs</li>
+                    <li><strong>Builds internal privacy capability</strong> over time</li>
+                    <li><strong>Improves governance maturity</strong> systematically</li>
+                    <li><strong>Establishes defensible documentation</strong> for regulatory inquiries</li>
+                    <li><strong>Prepares organizations for future audits</strong> and assessments</li>
+                    <li><strong>Builds scalable privacy infrastructure</strong> that grows with your business</li>
+                    <li><strong>Provides expertise without enterprise overhead</strong></li>
+                </ul>
+            </article>
+            
+            <!-- Service Models -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">📦</div>
+                    <h2 class="card-title">Service Models</h2>
+                </div>
+                
+                <div style="display: grid; gap: 1.5rem; margin-top: 1rem;">
+                    <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin-bottom: 0.5rem;">Ongoing Support</h3>
+                        <p style="font-family: 'Inter', sans-serif; color: var(--text-secondary);">Monthly operational privacy support with continuous program development, DSAR handling, vendor reviews, and compliance coordination.</p>
+                    </div>
+                    
+                    <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin-bottom: 0.5rem;">Project-Based</h3>
+                        <p style="font-family: 'Inter', sans-serif; color: var(--text-secondary);">Privacy program buildouts, DPIA frameworks, DSAR workflow implementation, or specific compliance infrastructure projects.</p>
+                    </div>
+                    
+                    <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin-bottom: 0.5rem;">Readiness Programs</h3>
+                        <p style="font-family: 'Inter', sans-serif; color: var(--text-secondary);">Pre-audit preparation, documentation remediation, compliance gap closure for upcoming regulatory reviews.</p>
+                    </div>
+                    
+                    <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 8px;">
+                        <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin-bottom: 0.5rem;">Expansion Support</h3>
+                        <p style="font-family: 'Inter', sans-serif; color: var(--text-secondary);">Market entry compliance preparation for companies expanding into GDPR, LGPD, or other jurisdictional requirements.</p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Pricing -->
+            <article class="content-card" id="pricing">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">💰</div>
+                    <h2 class="card-title">Pricing Models</h2>
+                </div>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 1.5rem 0 1rem; font-size: 1.2rem;">Retainer-Based (Recommended)</h3>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-tier">
+                        <div class="tier-name">Early-Stage / Small Teams</div>
+                        <div class="tier-price">$750–$1,500<span style="font-size: 0.5em; color: var(--text-secondary);">/month</span></div>
+                        <div class="tier-description">Light operational support for growing companies</div>
+                        <ul class="tier-features">
+                            <li>Documentation support</li>
+                            <li>DSAR workflow setup</li>
+                            <li>Policy maintenance</li>
+                            <li>Basic compliance coordination</li>
+                            <li>Email & async support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-tier featured">
+                        <div class="tier-name">SMBs / Scale-Ups</div>
+                        <div class="tier-price">$2,000–$4,000<span style="font-size: 0.5em; color: var(--text-secondary);">/month</span></div>
+                        <div class="tier-description">Comprehensive operational privacy support</div>
+                        <ul class="tier-features">
+                            <li>Full privacy ops support</li>
+                            <li>DPIA prep & risk mapping</li>
+                            <li>Vendor privacy assessments</li>
+                            <li>Training & governance reporting</li>
+                            <li>Ongoing compliance operations</li>
+                            <li>Monthly strategy calls</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3 style="color: var(--accent-green); font-family: 'Orbitron', sans-serif; margin: 2rem 0 1rem; font-size: 1.2rem;">Hourly (Flexible / Project-Based)</h3>
+                
+                <div style="padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="tier-price" style="margin-bottom: 1rem;">$60–$120<span style="font-size: 0.5em; color: var(--text-secondary);">/hour</span></div>
+                    <p style="font-family: 'Inter', sans-serif; color: var(--text-secondary); margin-bottom: 1rem;">
+                        Pricing varies based on organizational complexity, jurisdictional scope, and risk exposure.
+                    </p>
+                    <p style="font-family: 'Orbitron', sans-serif; color: var(--primary-green); font-size: 0.9rem; margin-bottom: 0.5rem;">Best for:</p>
+                    <ul class="tier-features">
+                        <li>One-time assessments</li>
+                        <li>Short-term privacy projects</li>
+                        <li>Overflow operational support</li>
+                        <li>Specific deliverables (DPIA, vendor assessment, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="alert-box info" style="margin-top: 2rem;">
+                    <div class="alert-title">📋 Custom Pricing</div>
+                    <div class="alert-content">
+                        Final pricing is customized based on company size, regulatory footprint, processing risk, and operational scope. Schedule a consultation to discuss your specific needs.
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Legal Clarity -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚖️</div>
+                    <h2 class="card-title">Legal Clarity Clause</h2>
+                </div>
+                <div class="alert-box warning">
+                    <div class="alert-content">
+                        <p><strong>BiyteLüm Privacy Officer Support services are advisory and operational in nature and do not constitute legal services, legal representation, or statutory Data Protection Officer appointment under GDPR, LGPD, or any applicable data protection framework.</strong></p>
+                        <br>
+                        <p>Organizations engaging this service retain full legal accountability and decision-making authority for privacy matters. We provide operational support, technical guidance, and privacy program development — not legal counsel or regulatory representation.</p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- CTA Section -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🚀</div>
+                    <h2 class="card-title">Ready to Build Your Privacy Program?</h2>
+                </div>
+                <div class="card-description">
+                    <p>Let's discuss your privacy governance needs and design a support structure that works for your organization.</p>
+                    <br>
+                    <p><strong>Free 30-minute consultation</strong> to understand your current state, challenges, and objectives.</p>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <a href="/consultation" class="cta-button">
+                        SCHEDULE CONSULTATION
+                        <span aria-hidden="true">📅</span>
+                    </a>
+                    <a href="/contact" class="cta-button secondary">
+                        ASK QUESTIONS
+                        <span aria-hidden="true">💬</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    <!-- Status Bar -->
+    <div class="status-bar" role="contentinfo">
+        <div class="status-content">
+            <div class="status-left">
+                <span>👤 SERVICE: PRIVACY OFFICER SUPPORT</span>
+                <span>SCOPE: OPERATIONAL & ADVISORY (NON-DPO)</span>
+                <span>FRAMEWORKS: GDPR | LGPD | CCPA</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys | <a href="/privacy" style="color: rgba(167, 255, 158, 0.7); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#A7FF9E'" onmouseout="this.style.color='rgba(167, 255, 158, 0.7)'">Privacy Policy</a> | <a href="/terms" style="color: rgba(167, 255, 158, 0.7); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#A7FF9E'" onmouseout="this.style.color='rgba(167, 255, 158, 0.7)'">Terms</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Performance optimized particle creation
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 8 : 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = 2 + Math.random() * 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const isOpen = mobileNav.classList.contains('show');
+            
+            mobileNav.classList.toggle('show');
+            mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+        }
+        
+        // Throttled scroll handler
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            if (grid) {
+                grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+            }
+            ticking = false;
+        }
+        
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            createParticles();
+            
+            if (!prefersReducedMotion) {
+                window.addEventListener('scroll', onScroll, { passive: true });
+            }
+            
+            setTimeout(() => {
+                const loadingBar = document.querySelector('.loading-bar');
+                if (loadingBar) {
+                    loadingBar.style.display = 'none';
+                }
+            }, 2000);
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileNav.classList.contains('show') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
