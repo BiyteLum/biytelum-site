@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify + GTM Privacy Audit | BiyteLüm - E-commerce Analytics Compliance</title>
+    <meta name="description" content="Comprehensive Shopify and Google Tag Manager privacy audit. Identify consent compliance issues, duplicate events, broken attribution, and tracking accuracy problems. GDPR-compliant e-commerce analytics.">
+    <meta name="keywords" content="Shopify privacy audit, GTM compliance, Google Tag Manager GDPR, e-commerce analytics compliance, conversion tracking audit, consent implementation">
+    <link rel="canonical" href="https://biytelum.com/shopify-gtm-audit">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shopify + GTM Privacy Audit | BiyteLüm">
+    <meta property="og:description" content="Technical audit of Shopify and GTM for consent compliance and data accuracy">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com/shopify-gtm-audit">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: var(--primary-green);
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .particle,
+            .bg-grid {
+                animation: none;
+                transform: none !important;
+            }
+            
+            .content-card::before {
+                transition: none;
+            }
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-green);
+            letter-spacing: 0.1em;
+            outline: none;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .mobile-menu:hover,
+        .mobile-menu:focus {
+            border-color: rgba(167, 255, 158, 0.6);
+            outline: none;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+        
+        .mobile-nav.show {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav a:hover,
+        .mobile-nav a:focus {
+            color: var(--accent-green);
+            padding-left: 1rem;
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+        
+        main {
+            position: relative;
+            z-index: 10;
+            padding-top: 6rem;
+            min-height: calc(100vh - 2.5rem);
+            padding-bottom: 2.5rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .typing-text {
+            font-size: clamp(1rem, 3vw, 2rem);
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+        
+        .subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover,
+        .cta-button:focus {
+            color: #000;
+            outline: none;
+            transform: translateY(-2px);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before,
+        .cta-button:focus::before {
+            left: 0;
+        }
+        
+        .cta-button.secondary {
+            border-color: var(--border-color);
+            color: var(--text-secondary);
+        }
+        
+        .cta-button.secondary::before {
+            background: rgba(167, 255, 158, 0.1);
+        }
+        
+        .cta-button.secondary:hover,
+        .cta-button.secondary:focus {
+            color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: rgba(0, 255, 153, 0.1);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1rem 0 2rem;
+        }
+        
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .content-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card:hover,
+        .content-card:focus-within {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .content-card:hover::before {
+            left: 100%;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+        
+        .card-subtitle {
+            font-size: 0.7rem;
+            color: rgba(167, 255, 158, 0.6);
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        .card-description {
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .card-description strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .card-description em {
+            color: rgba(167, 255, 158, 0.8);
+            font-style: italic;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .checklist li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-secondary);
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+            margin: 3rem 0;
+        }
+        
+        .pull-quote {
+            background: rgba(167, 255, 158, 0.05);
+            border-left: 3px solid var(--accent-green);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            color: var(--accent-green);
+            font-style: italic;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .column-item {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .column-item h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+        
+        details {
+            margin-bottom: 1rem;
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        details summary:hover {
+            color: var(--accent-green);
+        }
+        
+        details p {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 0.25rem 2rem;
+            z-index: 100;
+        }
+        
+        .status-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .status-right {
+            color: rgba(167, 255, 158, 0.5);
+        }
+        
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-green);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: loadingComplete 2s ease-out forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes loadingComplete {
+            0% { transform: scaleX(0); }
+            50% { transform: scaleX(0.7); }
+            100% { transform: scaleX(1); opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .status-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .status-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-green: #00FF00;
+                --border-color: rgba(0, 255, 0, 0.5);
+            }
+        }
+        
+        *:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+        
+        @media print {
+            .bg-grid,
+            .particle,
+            .status-bar,
+            nav {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            main {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="loading-bar" aria-hidden="true"></div>
+    
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <div id="particles" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/pricing" role="menuitem">03. PRICING</a>
+            <a href="/resources" role="menuitem">04. RESOURCES</a>
+            <a href="/contact" role="menuitem">05. CONTACT</a>
+            <a href="/blog" role="menuitem">06. BLOG</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <h1>SHOPIFY + GTM<br>PRIVACY AUDIT</h1>
+            <div class="typing-text">
+                E-COMMERCE_ANALYTICS_COMPLIANCE
+            </div>
+            <p class="subtitle">
+                Review of your Shopify and Google Tag Manager setup to identify consent compliance issues, duplicate events, and tracking configuration problems. Get clear recommendations on what needs fixing.
+            </p>
+            <div class="price-tag">$1,200</div>
+            <div>
+                <a href="/consultation" class="cta-button">
+                    SCHEDULE AUDIT
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a href="#what-we-audit" class="cta-button secondary">
+                    LEARN MORE
+                    <span aria-hidden="true">↓</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Content Cards -->
+        <section class="content-grid" role="main">
+            <!-- The Problem -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚠️</div>
+                    <div>
+                        <h2 class="card-title">THE PROBLEM</h2>
+                        <div class="card-subtitle">Why Most E-commerce Tracking Fails Privacy Compliance</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Your Shopify store is probably tracking customers before they consent. Your Google Tag Manager is likely firing duplicate events. Your attribution is broken, and you don't know which marketing channels are actually working.
+                </p>
+                <div class="pull-quote">
+                    "We understand both privacy compliance requirements and how GTM tracking works. We can spot the issues most people miss."
+                </div>
+                <p class="card-description">
+                    <strong>Common issues we find:</strong>
+                </p>
+                <ul class="checklist">
+                    <li>Tags firing before consent is captured (GDPR violation)</li>
+                    <li>Duplicate conversion events inflating reported revenue</li>
+                    <li>Broken data layer implementations causing attribution gaps</li>
+                    <li>Third-party scripts loading without proper consent controls</li>
+                    <li>Customer data sent to analytics before consent banner loads</li>
+                    <li>Consent mode misconfigured or not implemented at all</li>
+                    <li>Server-side tracking bypassing consent entirely</li>
+                </ul>
+                <p class="card-description">
+                    These aren't theoretical risks. They're compliance violations that expose you to regulatory action and undermine your ability to trust your own data.
+                </p>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- What We Audit -->
+            <article class="content-card" id="what-we-audit">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🔍</div>
+                    <div>
+                        <h2 class="card-title">WHAT WE AUDIT</h2>
+                        <div class="card-subtitle">Comprehensive Technical Review</div>
+                    </div>
+                </div>
+                <div class="two-column">
+                    <div class="column-item">
+                        <h3>📊 CONVERSION TRACKING</h3>
+                        <ul class="checklist">
+                            <li>Event firing sequence analysis</li>
+                            <li>Duplicate event detection</li>
+                            <li>Revenue attribution accuracy</li>
+                            <li>Cross-domain tracking review</li>
+                        </ul>
+                    </div>
+                    <div class="column-item">
+                        <h3>✅ CONSENT IMPLEMENTATION</h3>
+                        <ul class="checklist">
+                            <li>Consent banner timing</li>
+                            <li>Tag blocking before consent</li>
+                            <li>Consent mode configuration</li>
+                            <li>Cookie categorization</li>
+                        </ul>
+                    </div>
+                    <div class="column-item">
+                        <h3>⚙️ TAG FIRING LOGIC</h3>
+                        <ul class="checklist">
+                            <li>Trigger configuration review</li>
+                            <li>Tag sequencing analysis</li>
+                            <li>Exception handling</li>
+                            <li>Custom JavaScript audit</li>
+                        </ul>
+                    </div>
+                    <div class="column-item">
+                        <h3>📦 DATA LAYER</h3>
+                        <ul class="checklist">
+                            <li>Variable structure assessment</li>
+                            <li>Data accuracy validation</li>
+                            <li>Enhanced e-commerce setup</li>
+                            <li>Custom event tracking</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="card-description" style="margin-top: 1.5rem;">
+                    We review your entire tracking stack from page load to conversion, identifying technical issues and compliance gaps that impact both data quality and regulatory risk.
+                </p>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- What You Get -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">📋</div>
+                    <div>
+                        <h2 class="card-title">DELIVERABLES</h2>
+                        <div class="card-subtitle">What You Receive</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>Audit Report (8-10 pages)</strong><br>
+                    Documented review of your GTM and Shopify tracking setup identifying:
+                </p>
+                <ul class="checklist">
+                    <li>Consent compliance issues (tags firing before consent)</li>
+                    <li>Duplicate or conflicting tracking events</li>
+                    <li>Data layer configuration problems</li>
+                    <li>Cookie categorization gaps</li>
+                    <li>Third-party script consent issues</li>
+                </ul>
+                <p class="card-description" style="margin-top: 1rem;">
+                    <strong>Recommendations Document</strong><br>
+                    Specific, actionable recommendations for addressing identified issues. We tell you what needs fixing and point you in the right direction for implementation.
+                </p>
+                <p class="card-description">
+                    <strong>30-Minute Review Call</strong><br>
+                    Walk through the audit findings, answer questions about the report, and clarify implementation recommendations.
+                </p>
+                <div class="pull-quote" style="margin-top: 1.5rem;">
+                    "We identify the issues and tell you what needs fixing. You handle implementation or hire technical help."
+                </div>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- Process & Timeline -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⏱️</div>
+                    <div>
+                        <h2 class="card-title">PROCESS & TIMELINE</h2>
+                        <div class="card-subtitle">How It Works</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>Week 1: Setup & Access</strong><br>
+                    Kickoff call to understand your setup and concerns. You provide GTM container export and Shopify tracking screenshots/documentation.
+                </p>
+                <p class="card-description">
+                    <strong>Week 2: Review & Analysis</strong><br>
+                    We review your GTM configuration, Shopify tracking setup, consent implementation, and identify compliance and accuracy issues.
+                </p>
+                <p class="card-description">
+                    <strong>Week 3: Report Delivery</strong><br>
+                    Deliver audit report with findings and recommendations. Schedule 30-minute review call to walk through results and answer questions.
+                </p>
+                <p class="card-description">
+                    <strong>Post-Delivery:</strong> 14 days of email support for clarification questions about the audit findings.
+                </p>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- Who This Is For -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🎯</div>
+                    <div>
+                        <h2 class="card-title">WHO THIS IS FOR</h2>
+                        <div class="card-subtitle">Ideal Client Profile</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>✓ Shopify merchants with EU customers</strong> who need to verify GDPR compliance in their tracking implementation<br><br>
+                    <strong>✓ E-commerce teams questioning data accuracy</strong> seeing discrepancies between GA4, Shopify analytics, and ad platform reporting<br><br>
+                    <strong>✓ Marketing teams preparing for regulatory scrutiny</strong> who want to get ahead of consent compliance requirements<br><br>
+                    <strong>✓ Growing stores implementing GA4</strong> who want to ensure proper consent-aware tracking from the start<br><br>
+                    <strong>✓ Brands with complex tracking setups</strong> using multiple analytics platforms, affiliate tracking, and third-party integrations
+                </p>
+                <div class="pull-quote">
+                    "If you're running a serious e-commerce business in GDPR jurisdictions, you need to know your tracking implementation is both compliant and accurate."
+                </div>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- Pricing -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">💰</div>
+                    <div>
+                        <h2 class="card-title">INVESTMENT</h2>
+                        <div class="card-subtitle">Simple, Transparent Pricing</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    <strong>Standard Audit: $1,200</strong><br>
+                    Complete review of your Shopify store and GTM setup. Includes 8-10 page audit report, recommendations document, and 30-minute review call.
+                </p>
+                <p class="card-description">
+                    <strong>What's Included:</strong><br>
+                    Audit report identifying consent compliance issues, duplicate events, tracking problems, and cookie categorization gaps. Clear recommendations for fixes. 30-minute review call to walk through findings. 14 days email support for clarification questions.
+                </p>
+                <p class="card-description">
+                    <strong>What's NOT Included:</strong><br>
+                    Implementation work, hands-on GTM configuration, ongoing monitoring, or technical consulting beyond the initial audit.
+                </p>
+                <p class="card-description">
+                    <strong>Payment Terms:</strong> 50% ($600) upon engagement, 50% ($600) upon report delivery.
+                </p>
+                <div class="pull-quote" style="margin-top: 1rem;">
+                    "One service, one price. Simple."
+                </div>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- FAQ -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">❓</div>
+                    <div>
+                        <h2 class="card-title">FREQUENTLY ASKED QUESTIONS</h2>
+                        <div class="card-subtitle">Common Questions</div>
+                    </div>
+                </div>
+                
+                <details>
+                    <summary>Do you fix the issues you find?</summary>
+                    <p>No. This is an audit and recommendations service only. We identify issues and tell you what needs fixing, but we don't make changes to your GTM or Shopify setup. You'll need to implement the recommendations yourself or hire a technical partner.</p>
+                </details>
+                
+                <details>
+                    <summary>What access do you need?</summary>
+                    <p>We work from GTM container exports (JSON file) and screenshots/documentation of your Shopify tracking setup. We don't need direct access to your accounts. You provide the exports and documentation to us.</p>
+                </details>
+                
+                <details>
+                    <summary>How technical is the audit?</summary>
+                    <p>We identify consent compliance issues, duplicate events, and tracking configuration problems. The report is written for business owners and marketers, not just developers. We explain what's wrong and what needs fixing in plain language.</p>
+                </details>
+                
+                <details>
+                    <summary>Will this audit tell me if I'm GDPR compliant?</summary>
+                    <p>We review your tracking setup against GDPR consent requirements and flag issues. This is educational guidance, not a legal compliance determination. For legal opinions on GDPR compliance, consult qualified legal counsel.</p>
+                </details>
+                
+                <details>
+                    <summary>What if I need help implementing the recommendations?</summary>
+                    <p>We provide clear recommendations but don't do the implementation work. You'll need to either implement the changes yourself or hire a GTM/Shopify developer. We can suggest where to find qualified help if needed.</p>
+                </details>
+                
+                <details>
+                    <summary>Is this service right for me if I'm not technical?</summary>
+                    <p>Yes. The audit identifies problems and explains what needs fixing. You can take our recommendations to your developer, freelancer, or agency to handle implementation. The value is knowing what's broken and what to fix.</p>
+                </details>
+            </article>
+            
+            <div class="section-divider" aria-hidden="true"></div>
+            
+            <!-- CTA -->
+            <article class="content-card" style="text-align: center;">
+                <div class="card-header" style="justify-content: center;">
+                    <div class="card-icon" aria-hidden="true">🚀</div>
+                    <div>
+                        <h2 class="card-title">READY TO AUDIT YOUR SETUP?</h2>
+                        <div class="card-subtitle">Let's Start with a Conversation</div>
+                    </div>
+                </div>
+                <p class="card-description" style="max-width: 600px; margin: 1rem auto;">
+                    Schedule a free 30-minute consultation to discuss your Shopify and GTM setup. We'll talk about your specific concerns, review high-level configuration, and determine if this audit is the right fit for your needs.
+                </p>
+                <div class="pull-quote" style="text-align: left;">
+                    "We'll review your setup, identify the issues, and tell you what needs fixing. Straightforward, honest assessment."
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="/consultation" class="cta-button">
+                        SCHEDULE FREE CONSULTATION
+                        <span aria-hidden="true">📅</span>
+                    </a>
+                    <a href="/contact" class="cta-button secondary">
+                        EMAIL US INSTEAD
+                        <span aria-hidden="true">✉️</span>
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+    
+    <!-- Status Bar -->
+    <div class="status-bar" role="contentinfo">
+        <div class="status-content">
+            <div class="status-left">
+                <span>📊 SERVICE: SHOPIFY + GTM AUDIT</span>
+                <span>PRICING: $1,200 FLAT</span>
+                <span>TIMELINE: 2-3 WEEKS</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys | <a href="/privacy" style="color: rgba(167, 255, 158, 0.7); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#A7FF9E'" onmouseout="this.style.color='rgba(167, 255, 158, 0.7)'">Privacy Policy</a> | <a href="/terms" style="color: rgba(167, 255, 158, 0.7); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#A7FF9E'" onmouseout="this.style.color='rgba(167, 255, 158, 0.7)'">Terms</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 8 : 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = 2 + Math.random() * 4;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 4}s`;
+                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(particle);
+            }
+        }
+        
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const isOpen = mobileNav.classList.contains('show');
+            
+            mobileNav.classList.toggle('show');
+            mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+        }
+        
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const grid = document.querySelector('.bg-grid');
+            if (grid) {
+                grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+            }
+            ticking = false;
+        }
+        
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            createParticles();
+            
+            if (!prefersReducedMotion) {
+                window.addEventListener('scroll', onScroll, { passive: true });
+            }
+            
+            setTimeout(() => {
+                const loadingBar = document.querySelector('.loading-bar');
+                if (loadingBar) {
+                    loadingBar.style.display = 'none';
+                }
+            }, 2000);
+        });
+        
+        document.addEventListener('click', (e) => {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileNav.classList.contains('show') && 
+                !mobileNav.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                mobileNav.classList.remove('show');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
