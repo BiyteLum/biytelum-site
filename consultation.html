@@ -376,7 +376,7 @@
         /* Service Options */
         .service-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
@@ -394,20 +394,6 @@
         .service-option:hover {
             border-color: rgba(167, 255, 158, 0.4);
             transform: translateY(-3px);
-        }
-        
-        .service-badge {
-            position: absolute;
-            top: -8px;
-            right: 15px;
-            background: #00FF99;
-            color: #000;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.6rem;
-            font-weight: bold;
-            text-transform: uppercase;
         }
         
         .service-option .icon {
@@ -655,9 +641,11 @@
             <ul class="nav-links">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/services">SERVICES</a></li>
+                <li><a href="/privacy-officer-support">PRIVACY OFFICER</a></li>
                 <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
                 <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
-                <li><a href="/aws-privacy-review">CLOUD REVIEW</a></li>
+                <li><a href="/cloud-privacy-review">CLOUD REVIEW</a></li>
+                <li><a href="/shopify-gtm-audit">GTM AUDIT</a></li>
                 <li><a href="/pricing">PRICING</a></li>
                 <li><a href="/resources">RESOURCES</a></li>
                 <li><a href="/contact">CONTACT</a></li>
@@ -669,13 +657,15 @@
         <div class="mobile-nav" id="mobileNav">
             <a href="/">01. HOME</a>
             <a href="/services">02. SERVICES</a>
-            <a href="/privacy-policy-review">03. POLICY REVIEW</a>
-            <a href="/compliance-check">04. COMPLIANCE CHECK</a>
-            <a href="/aws-privacy-review">05. CLOUD REVIEW</a>
-            <a href="/pricing">06. PRICING</a>
-            <a href="/resources">07. RESOURCES</a>
-            <a href="/contact">08. CONTACT</a>
-            <a href="/blog">09. BLOG</a>
+            <a href="/privacy-officer-support">03. PRIVACY OFFICER</a>
+            <a href="/privacy-policy-review">04. POLICY REVIEW</a>
+            <a href="/compliance-check">05. COMPLIANCE CHECK</a>
+            <a href="/cloud-privacy-review">06. CLOUD REVIEW</a>
+            <a href="/shopify-gtm-audit">07. GTM AUDIT</a>
+            <a href="/pricing">08. PRICING</a>
+            <a href="/resources">09. RESOURCES</a>
+            <a href="/contact">10. CONTACT</a>
+            <a href="/blog">11. BLOG</a>
         </div>
     </nav>
     
@@ -694,25 +684,34 @@
         <!-- Service Options -->
         <div class="service-options">
             <div class="service-option">
-                <div class="service-badge">Safe Scope</div>
+                <div class="icon">👤</div>
+                <h3>Privacy Officer Support</h3>
+                <div class="service-price">$750 - $4,000/mo</div>
+                <p>Fractional privacy officer for GDPR/LGPD compliance, policy updates, and incident response</p>
+            </div>
+            <div class="service-option">
                 <div class="icon">📋</div>
                 <h3>Privacy Policy Review</h3>
                 <div class="service-price">$800 - $1,500</div>
                 <p>Compare your existing policy against GDPR and LGPD disclosure requirements</p>
             </div>
             <div class="service-option">
-                <div class="service-badge">Educational</div>
                 <div class="icon">✅</div>
                 <h3>Compliance Check</h3>
                 <div class="service-price">$1,200 - $2,000</div>
                 <p>Structured assessment of your privacy practices against GDPR and LGPD basics</p>
             </div>
             <div class="service-option">
-                <div class="service-badge">Tech Expert</div>
                 <div class="icon">☁️</div>
                 <h3>Cloud Privacy Review</h3>
                 <div class="service-price">$600 - $1,200</div>
                 <p>Review your AWS and Azure privacy settings with our unique cloud expertise</p>
+            </div>
+            <div class="service-option">
+                <div class="icon">📊</div>
+                <h3>GTM Privacy Audit</h3>
+                <div class="service-price">$1,200</div>
+                <p>Shopify + GTM consent compliance, duplicate events, and tracking configuration review</p>
             </div>
         </div>
         
@@ -727,7 +726,9 @@
                 <ul>
                     <li>Current privacy policy and practices review</li>
                     <li>GDPR and LGPD compliance concerns assessment</li>
+                    <li>Privacy officer support and ongoing compliance needs evaluation</li>
                     <li>AWS and Azure infrastructure privacy setup evaluation</li>
+                    <li>Shopify and GTM tracking configuration review</li>
                     <li>Service recommendation based on your needs and budget</li>
                     <li>Timeline and deliverables discussion</li>
                     <li>Follow-up email with recommendations within 24 hours</li>
@@ -750,7 +751,7 @@
                 <div class="timeline-step">
                     <div class="step-number">2</div>
                     <h3>Service Matching</h3>
-                    <p>Determining which of our three services best fits your situation and budget</p>
+                    <p>Determining which of our services best fits your situation and budget</p>
                 </div>
                 <div class="timeline-step">
                     <div class="step-number">3</div>
@@ -772,11 +773,15 @@
                 <div class="card-title">PERFECT_FOR</div>
             </div>
             <div class="card-content">
+                <p><strong>Businesses needing fractional privacy officer support</strong> who want ongoing compliance guidance, policy updates, and incident response without hiring a full-time privacy team.</p>
+                
                 <p><strong>Businesses with existing privacy policies</strong> who aren't sure if they meet GDPR and LGPD requirements and want expert review.</p>
                 
                 <p><strong>Companies wanting to understand their compliance status</strong> through structured, educational assessment rather than complex legal consulting.</p>
                 
                 <p><strong>AWS and Azure hosted businesses</strong> who need privacy-focused infrastructure guidance from experts who understand both privacy law and cloud architecture.</p>
+                
+                <p><strong>Shopify stores using Google Tag Manager</strong> who need consent compliance review, duplicate event detection, and tracking configuration audit.</p>
                 
                 <p><strong>Organizations preferring safe-scope services</strong> that focus on practical recommendations rather than complex legal strategy development.</p>
             </div>
@@ -789,7 +794,7 @@
                 <div class="card-title">WHAT_YOU_GET</div>
             </div>
             <div class="card-content">
-                <p><strong>Service Recommendation:</strong> Clear guidance on which of our three services best addresses your specific needs and provides the most value.</p>
+                <p><strong>Service Recommendation:</strong> Clear guidance on which of our services best addresses your specific needs and provides the most value.</p>
                 
                 <p><strong>Priority Assessment:</strong> Understanding of what privacy issues need immediate attention versus longer-term improvements.</p>
                 
