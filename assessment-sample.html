@@ -1,980 +1,1004 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sample Basic Privacy Compliance Check report from BiyteLüm - See what you'll receive from our educational privacy assessment service.">
-    <title>Sample Compliance Report | BiyteLüm - Privacy Assessment Preview</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
-        
-        :root {
-            --primary-green: #A7FF9E;
-            --accent-green: #00FF99;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(167, 255, 158, 0.03);
-            --border-color: rgba(167, 255, 158, 0.2);
-            --text-secondary: rgba(167, 255, 158, 0.7);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            min-height: 100vh;
-            background: var(--dark-bg);
-            background-image: 
-                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
-            color: var(--primary-green);
-            font-family: 'Orbitron', 'Arial', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        /* Background Grid */
-        .bg-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: 
-                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 1;
-            will-change: transform;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-            padding: 1rem 2rem;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--primary-green);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-green);
-            letter-spacing: 0.1em;
-        }
-        
-        .nav-links a.active {
-            color: var(--primary-green);
-            border-bottom: 1px solid var(--primary-green);
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--primary-green);
-            padding: 0.5rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .mobile-menu:hover {
-            border-color: rgba(167, 255, 158, 0.6);
-        }
-        
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-        }
-        
-        .mobile-nav.show {
-            display: block;
-        }
-        
-        .mobile-nav a {
-            display: block;
-            color: var(--primary-green);
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .mobile-nav a:hover {
-            color: var(--accent-green);
-            padding-left: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: block; }
-        }
-        
-        /* Main Content */
-        main {
-            position: relative;
-            z-index: 10;
-            padding-top: 6rem;
-            min-height: calc(100vh - 2.5rem);
-            padding-bottom: 2.5rem;
-        }
-        
-        /* Header */
-        .page-header {
-            text-align: center;
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-        
-        .page-header h1 {
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            color: var(--primary-green);
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-        }
-        
-        .page-subtitle {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        .sample-badge {
-            display: inline-block;
-            background: var(--accent-green);
-            color: #000;
-            padding: 0.4rem 1rem;
-            border-radius: 15px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        
-        /* Report Container */
-        .report-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .report-card {
-            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .report-card:hover {
-            border-color: rgba(167, 255, 158, 0.4);
-        }
-        
-        .card-title {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Executive Summary */
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
+    <!-- End Google Tag Manager -->
+
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sample Basic Privacy Compliance Check report from BiyteLüm - See what you'll receive from our educational privacy assessment service.">
+<title>Sample Compliance Report | BiyteLüm - Privacy Assessment Preview</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+    
+    :root {
+        --primary-green: #A7FF9E;
+        --accent-green: #00FF99;
+        --dark-bg: #0a0a0a;
+        --card-bg: rgba(167, 255, 158, 0.03);
+        --border-color: rgba(167, 255, 158, 0.2);
+        --text-secondary: rgba(167, 255, 158, 0.7);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        min-height: 100vh;
+        background: var(--dark-bg);
+        background-image: 
+            radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+            linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+        color: var(--primary-green);
+        font-family: 'Orbitron', 'Arial', sans-serif;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+    
+    /* Background Grid */
+    .bg-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background-image: 
+            linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: 1;
+        will-change: transform;
+    }
+    
+    /* Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 100;
+        padding: 1rem 2rem;
+    }
+    
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.9rem;
+        color: var(--primary-green);
+        text-decoration: none;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+    
+    .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.75rem;
+        transition: all 0.3s ease;
+        letter-spacing: 0.05em;
+    }
+    
+    .nav-links a:hover {
+        color: var(--primary-green);
+        letter-spacing: 0.1em;
+    }
+    
+    .nav-links a.active {
+        color: var(--primary-green);
+        border-bottom: 1px solid var(--primary-green);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+        display: none;
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--primary-green);
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+    }
+    
+    .mobile-menu:hover {
+        border-color: rgba(167, 255, 158, 0.6);
+    }
+    
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid var(--border-color);
+        padding: 1rem 2rem;
+    }
+    
+    .mobile-nav.show {
+        display: block;
+    }
+    
+    .mobile-nav a {
+        display: block;
+        color: var(--primary-green);
+        text-decoration: none;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.9rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-nav a:hover {
+        color: var(--accent-green);
+        padding-left: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .mobile-menu { display: block; }
+    }
+    
+    /* Main Content */
+    main {
+        position: relative;
+        z-index: 10;
+        padding-top: 6rem;
+        min-height: calc(100vh - 2.5rem);
+        padding-bottom: 2.5rem;
+    }
+    
+    /* Header */
+    .page-header {
+        text-align: center;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+    }
+    
+    .page-header h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 900;
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+    }
+    
+    .page-subtitle {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    .sample-badge {
+        display: inline-block;
+        background: var(--accent-green);
+        color: #000;
+        padding: 0.4rem 1rem;
+        border-radius: 15px;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+    
+    /* Report Container */
+    .report-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .report-card {
+        background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 0, 0, 0.8) 100%);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .report-card:hover {
+        border-color: rgba(167, 255, 158, 0.4);
+    }
+    
+    .card-title {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--primary-green);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    /* Executive Summary */
+    .executive-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .score-card {
+        background: rgba(167, 255, 158, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .score-card:hover {
+        border-color: rgba(167, 255, 158, 0.4);
+    }
+    
+    .score-value {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--accent-green);
+        margin-bottom: 0.5rem;
+    }
+    
+    .score-label {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+    }
+    
+    /* Assessment Areas */
+    .assessment-area {
+        background: rgba(167, 255, 158, 0.03);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .area-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    
+    .area-name {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: var(--primary-green);
+        font-weight: bold;
+    }
+    
+    .area-score {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .score-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    
+    .score-high { background: var(--accent-green); }
+    .score-medium { background: #FFD700; }
+    .score-low { background: #FF6B6B; }
+    
+    .area-description {
+        color: var(--text-secondary);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Recommendations */
+    .recommendation {
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .recommendation-priority {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        color: #FFD700;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+    
+    .recommendation-title {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: var(--primary-green);
+        margin-bottom: 0.5rem;
+    }
+    
+    .recommendation-description {
+        color: var(--text-secondary);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Action Items */
+    .action-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background: rgba(167, 255, 158, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
+    
+    .action-number {
+        background: var(--accent-green);
+        color: #000;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    .action-content {
+        flex: 1;
+    }
+    
+    .action-title {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.9rem;
+        color: var(--primary-green);
+        margin-bottom: 0.25rem;
+    }
+    
+    .action-description {
+        color: var(--text-secondary);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
+        border: 2px solid rgba(167, 255, 158, 0.3);
+        border-radius: 15px;
+        padding: 2.5rem;
+        text-align: center;
+        margin: 3rem 0;
+    }
+    
+    .cta-title {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1.3rem;
+        color: var(--primary-green);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+    
+    .cta-description {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        border: 2px solid var(--primary-green);
+        background: transparent;
+        color: var(--primary-green);
+        font-family: 'Share Tech Mono', monospace;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+    
+    .cta-button:hover {
+        color: #000;
+        transform: translateY(-2px);
+    }
+    
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-green);
+        transition: left 0.5s ease;
+        z-index: -1;
+    }
+    
+    .cta-button:hover::before {
+        left: 0;
+    }
+    
+    /* Back Button */
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        border: 1px solid rgba(167, 255, 158, 0.6);
+        background: transparent;
+        color: var(--primary-green);
+        font-family: 'Share Tech Mono', monospace;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+    
+    .back-button:hover {
+        background: rgba(167, 255, 158, 0.1);
+        transform: translateX(-5px);
+    }
+    
+    /* Footer */
+    footer {
+        background: rgba(10, 10, 10, 0.95);
+        border-top: 1px solid var(--border-color);
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: 4rem;
+    }
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .footer-text {
+        color: var(--text-secondary);
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.75rem;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+        color: var(--primary-green);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
         .executive-summary {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .score-card {
-            background: rgba(167, 255, 158, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .score-card:hover {
-            border-color: rgba(167, 255, 158, 0.4);
-        }
-        
-        .score-value {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-green);
-            margin-bottom: 0.5rem;
-        }
-        
-        .score-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-        }
-        
-        /* Assessment Areas */
-        .assessment-area {
-            background: rgba(167, 255, 158, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1rem 0;
+            grid-template-columns: 1fr;
         }
         
         .area-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .area-name {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1rem;
-            color: var(--primary-green);
-            font-weight: bold;
-        }
-        
-        .area-score {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .score-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .score-high { background: var(--accent-green); }
-        .score-medium { background: #FFD700; }
-        .score-low { background: #FF6B6B; }
-        
-        .area-description {
-            color: var(--text-secondary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        /* Recommendations */
-        .recommendation {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-        }
-        
-        .recommendation-priority {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            color: #FFD700;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        
-        .recommendation-title {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1rem;
-            color: var(--primary-green);
-            margin-bottom: 0.5rem;
-        }
-        
-        .recommendation-description {
-            color: var(--text-secondary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        /* Action Items */
-        .action-item {
-            display: flex;
+            flex-direction: column;
             align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(167, 255, 158, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin: 0.5rem 0;
-        }
-        
-        .action-number {
-            background: var(--accent-green);
-            color: #000;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        
-        .action-content {
-            flex: 1;
-        }
-        
-        .action-title {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--primary-green);
-            margin-bottom: 0.25rem;
-        }
-        
-        .action-description {
-            color: var(--text-secondary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
-            border: 2px solid rgba(167, 255, 158, 0.3);
-            border-radius: 15px;
-            padding: 2.5rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
-        .cta-title {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.3rem;
-            color: var(--primary-green);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .cta-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            gap: 0.5rem;
         }
         
         .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button {
-            display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border: 2px solid var(--primary-green);
-            background: transparent;
-            color: var(--primary-green);
-            font-family: 'Share Tech Mono', monospace;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            text-transform: uppercase;
         }
         
-        .cta-button:hover {
-            color: #000;
-            transform: translateY(-2px);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-green);
-            transition: left 0.5s ease;
-            z-index: -1;
-        }
-        
-        .cta-button:hover::before {
-            left: 0;
-        }
-        
-        /* Back Button */
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border: 1px solid rgba(167, 255, 158, 0.6);
-            background: transparent;
-            color: var(--primary-green);
-            font-family: 'Share Tech Mono', monospace;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-        
-        .back-button:hover {
-            background: rgba(167, 255, 158, 0.1);
-            transform: translateX(-5px);
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(10, 10, 10, 0.95);
-            border-top: 1px solid var(--border-color);
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 4rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .footer-text {
-            color: var(--text-secondary);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
+        .report-card {
+            padding: 2rem;
         }
         
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .report-container {
+            padding: 0 1rem;
         }
         
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            transition: color 0.3s ease;
+        .report-card {
+            padding: 1.5rem;
         }
-        
-        .footer-links a:hover {
-            color: var(--primary-green);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .executive-summary {
-                grid-template-columns: 1fr;
-            }
-            
-            .area-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .report-card {
-                padding: 2rem;
-            }
-            
-            .footer-links {
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .report-container {
-                padding: 0 1rem;
-            }
-            
-            .report-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    }
+</style>
+```
+
 </head>
 <body>
-    <!-- Background Grid -->
-    <div class="bg-grid" aria-hidden="true"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+```
+<!-- Background Grid -->
+<div class="bg-grid" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <a href="/" class="logo" aria-label="BiyteLüm homepage">
+            <span aria-hidden="true">▶</span>
+            <span>BiyteLüm.sys</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/services">SERVICES</a></li>
+            <li><a href="/privacy-officer-support">PRIVACY OFFICER</a></li>
+            <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
+            <li><a href="/compliance-check" class="active">COMPLIANCE CHECK</a></li>
+            <li><a href="/cloud-privacy-review">CLOUD REVIEW</a></li>
+            <li><a href="/shopify-gtm-audit">GTM AUDIT</a></li>
+            <li><a href="/pricing">PRICING</a></li>
+            <li><a href="/resources">RESOURCES</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/blog">BLOG</a></li>
+        </ul>
+        <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+    </div>
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-nav" id="mobileNav" role="menu">
+        <a href="/" role="menuitem">01. HOME</a>
+        <a href="/services" role="menuitem">02. SERVICES</a>
+        <a href="/privacy-officer-support" role="menuitem">03. PRIVACY OFFICER</a>
+        <a href="/privacy-policy-review" role="menuitem">04. POLICY REVIEW</a>
+        <a href="/compliance-check" role="menuitem">05. COMPLIANCE CHECK</a>
+        <a href="/cloud-privacy-review" role="menuitem">06. CLOUD REVIEW</a>
+        <a href="/shopify-gtm-audit" role="menuitem">07. GTM AUDIT</a>
+        <a href="/pricing" role="menuitem">08. PRICING</a>
+        <a href="/resources" role="menuitem">09. RESOURCES</a>
+        <a href="/contact" role="menuitem">10. CONTACT</a>
+        <a href="/blog" role="menuitem">11. BLOG</a>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main id="main-content">
+    <!-- Header -->
+    <section class="page-header">
+        <div class="sample-badge">Sample Report</div>
+        <h1>Basic Privacy Compliance Check</h1>
+        <p class="page-subtitle">This sample report shows the structure and depth of analysis you'll receive from our educational privacy assessment service. The actual report would include your specific company data and customized recommendations.</p>
+    </section>
     
-    <!-- Navigation -->
-    <nav role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="/" class="logo" aria-label="BiyteLüm homepage">
-                <span aria-hidden="true">▶</span>
-                <span>BiyteLüm.sys</span>
+    <div class="report-container">
+        <div class="back-button-container">
+            <a href="/compliance-check" class="back-button">
+                ← Back to Compliance Check
             </a>
-            <ul class="nav-links">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/services">SERVICES</a></li>
-                <li><a href="/privacy-policy-review">POLICY REVIEW</a></li>
-                <li><a href="/compliance-check">COMPLIANCE CHECK</a></li>
-                <li><a href="/aws-privacy-review">AWS REVIEW</a></li>
-                <li><a href="/pricing">PRICING</a></li>
-                <li><a href="/resources">RESOURCES</a></li>
-                <li><a href="/contact">CONTACT</a></li>
-                <li><a href="/blog">BLOG</a></li>
-            </ul>
-            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
         </div>
-        <!-- Mobile Menu Dropdown -->
-        <div class="mobile-nav" id="mobileNav" role="menu">
-            <a href="/" role="menuitem">01. HOME</a>
-            <a href="/services" role="menuitem">02. SERVICES</a>
-            <a href="/privacy-policy-review" role="menuitem">03. POLICY REVIEW</a>
-            <a href="/compliance-check" role="menuitem">04. COMPLIANCE CHECK</a>
-            <a href="/aws-privacy-review" role="menuitem">05. AWS REVIEW</a>
-            <a href="/pricing" role="menuitem">06. PRICING</a>
-            <a href="/resources" role="menuitem">07. RESOURCES</a>
-            <a href="/contact" role="menuitem">08. CONTACT</a>
-            <a href="/blog" role="menuitem">09. BLOG</a>
-        </div>
-    </nav>
-    
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Header -->
-        <section class="page-header">
-            <div class="sample-badge">Sample Report</div>
-            <h1>Basic Privacy Compliance Check</h1>
-            <p class="page-subtitle">This sample report shows the structure and depth of analysis you'll receive from our educational privacy assessment service. The actual report would include your specific company data and customized recommendations.</p>
-        </section>
         
-        <div class="report-container">
-            <div class="back-button-container">
-                <a href="/compliance-check" class="back-button">
-                    ← Back to Compliance Check
+        <!-- Executive Summary -->
+        <div class="report-card">
+            <h2 class="card-title">📊 Executive Summary</h2>
+            <div class="executive-summary">
+                <div class="score-card">
+                    <div class="score-value">72</div>
+                    <div class="score-label">Overall Score</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-value">8</div>
+                    <div class="score-label">Areas Assessed</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-value">5</div>
+                    <div class="score-label">High Priority</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-value">90</div>
+                    <div class="score-label">Days Timeline</div>
+                </div>
+            </div>
+            <p style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif; margin-top: 1rem;">
+                Your privacy compliance assessment reveals a solid foundation with several areas requiring immediate attention. The overall score of 72/100 indicates good progress but highlights specific gaps that need addressing for full GDPR compliance.
+            </p>
+        </div>
+        
+        <!-- Assessment Areas -->
+        <div class="report-card">
+            <h2 class="card-title">✅ Assessment Areas</h2>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Privacy Policy & Notices</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-medium"></span>
+                        <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">65/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Your privacy policy covers basic data collection but lacks specific GDPR disclosures for legal basis, retention periods, and individual rights. Cookie notice needs updating for consent requirements.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Consent Mechanisms</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-low"></span>
+                        <span style="color: #FF6B6B; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">45/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Current consent collection is pre-ticked and bundled, which doesn't meet GDPR requirements for specific, informed, and freely given consent. Needs immediate attention.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Data Mapping & Records</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-high"></span>
+                        <span style="color: var(--accent-green); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">85/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Good progress on data mapping with clear understanding of data flows. Article 30 records need minor updates for processing purposes and legal basis documentation.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Individual Rights Processes</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-medium"></span>
+                        <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">58/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Basic processes exist for access requests but lack formal procedures for deletion, portability, and rectification requests. Response timeframes need to meet 30-day GDPR requirement.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Data Security Measures</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-high"></span>
+                        <span style="color: var(--accent-green); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">82/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Strong technical security measures in place including encryption and access controls. Recommend adding data retention automation and regular security reviews.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Priority Recommendations -->
+        <div class="report-card">
+            <h2 class="card-title">🎯 Priority Recommendations</h2>
+            
+            <div class="recommendation">
+                <div class="recommendation-priority">High Priority - Week 1-2</div>
+                <div class="recommendation-title">Update Consent Mechanisms</div>
+                <div class="recommendation-description">
+                    Replace pre-ticked consent boxes with granular, specific consent options. Implement consent management system that allows users to easily withdraw consent and tracks consent changes.
+                </div>
+            </div>
+            
+            <div class="recommendation">
+                <div class="recommendation-priority">High Priority - Week 2-4</div>
+                <div class="recommendation-title">Enhance Privacy Policy Disclosures</div>
+                <div class="recommendation-description">
+                    Add missing GDPR elements including specific legal basis for each processing purpose, data retention periods, and clear explanation of individual rights with contact information.
+                </div>
+            </div>
+            
+            <div class="recommendation">
+                <div class="recommendation-priority">Medium Priority - Week 4-6</div>
+                <div class="recommendation-title">Formalize Individual Rights Procedures</div>
+                <div class="recommendation-description">
+                    Create documented procedures for handling all types of data subject requests with clear timelines, verification processes, and escalation paths for complex requests.
+                </div>
+            </div>
+        </div>
+        
+        <!-- 90-Day Action Plan -->
+        <div class="report-card">
+            <h2 class="card-title">📋 90-Day Implementation Plan</h2>
+            
+            <div class="action-item">
+                <div class="action-number">1</div>
+                <div class="action-content">
+                    <div class="action-title">Days 1-14: Consent System Overhaul</div>
+                    <div class="action-description">Update website consent mechanisms, implement granular cookie controls, and deploy consent management system with withdrawal options.</div>
+                </div>
+            </div>
+            
+            <div class="action-item">
+                <div class="action-number">2</div>
+                <div class="action-content">
+                    <div class="action-title">Days 15-28: Privacy Policy Enhancement</div>
+                    <div class="action-description">Revise privacy policy with GDPR-required disclosures, add legal basis documentation, and publish retention schedule for each data category.</div>
+                </div>
+            </div>
+            
+            <div class="action-item">
+                <div class="action-number">3</div>
+                <div class="action-content">
+                    <div class="action-title">Days 29-42: Individual Rights Framework</div>
+                    <div class="action-description">Develop formal procedures for data subject requests, create response templates, and train team on verification and fulfillment processes.</div>
+                </div>
+            </div>
+            
+            <div class="action-item">
+                <div class="action-number">4</div>
+                <div class="action-content">
+                    <div class="action-title">Days 43-60: Vendor Management Review</div>
+                    <div class="action-description">Audit data processing agreements with vendors, ensure GDPR compliance clauses, and implement vendor risk assessment process.</div>
+                </div>
+            </div>
+            
+            <div class="action-item">
+                <div class="action-number">5</div>
+                <div class="action-content">
+                    <div class="action-title">Days 61-90: Monitoring & Optimization</div>
+                    <div class="action-description">Implement privacy monitoring tools, schedule regular compliance reviews, and establish ongoing training program for staff.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Educational Resources -->
+        <div class="report-card">
+            <h2 class="card-title">📚 Educational Resources Included</h2>
+            <div style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif;">
+                <p style="margin-bottom: 1rem;">Your assessment includes practical resources to support implementation:</p>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                    <li style="margin-bottom: 0.5rem;">GDPR compliance checklist with 45 specific requirements</li>
+                    <li style="margin-bottom: 0.5rem;">Data subject request templates for access, deletion, and portability</li>
+                    <li style="margin-bottom: 0.5rem;">Privacy policy language suggestions for each improvement area</li>
+                    <li style="margin-bottom: 0.5rem;">Staff training materials for privacy awareness</li>
+                    <li style="margin-bottom: 0.5rem;">Vendor assessment questionnaire template</li>
+                </ul>
+                <p><strong>Plus 30 days of follow-up support</strong> for implementation questions and guidance.</p>
+            </div>
+        </div>
+        
+        <!-- Call to Action Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready for Your Real Assessment?</h2>
+            <div class="cta-description">
+                <p style="margin-bottom: 1rem;">This sample shows just a fraction of what you'll receive. Your personalized compliance assessment will include:</p>
+                <ul style="text-align: left; max-width: 500px; margin: 0 auto 2rem;">
+                    <li style="margin-bottom: 0.5rem;">✓ Detailed analysis of your actual website and policies</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Industry-specific compliance requirements</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Custom implementation roadmap</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 30 days of implementation support</li>
+                    <li style="margin-bottom: 0.5rem;">✓ All templates and resources included</li>
+                </ul>
+            </div>
+            <div class="cta-buttons">
+                <a href="/compliance-check" class="cta-button">
+                    🚀 Get Your Assessment
+                </a>
+                <a href="/pricing" class="cta-button">
+                    💰 View Pricing
+                </a>
+                <a href="/contact" class="cta-button">
+                    💬 Ask Questions
                 </a>
             </div>
-            
-            <!-- Executive Summary -->
-            <div class="report-card">
-                <h2 class="card-title">📊 Executive Summary</h2>
-                <div class="executive-summary">
-                    <div class="score-card">
-                        <div class="score-value">72</div>
-                        <div class="score-label">Overall Score</div>
-                    </div>
-                    <div class="score-card">
-                        <div class="score-value">8</div>
-                        <div class="score-label">Areas Assessed</div>
-                    </div>
-                    <div class="score-card">
-                        <div class="score-value">5</div>
-                        <div class="score-label">High Priority</div>
-                    </div>
-                    <div class="score-card">
-                        <div class="score-value">90</div>
-                        <div class="score-label">Days Timeline</div>
-                    </div>
-                </div>
-                <p style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif; margin-top: 1rem;">
-                    Your privacy compliance assessment reveals a solid foundation with several areas requiring immediate attention. The overall score of 72/100 indicates good progress but highlights specific gaps that need addressing for full GDPR compliance.
+        </div>
+        
+        <!-- Additional Information -->
+        <div class="report-card">
+            <h2 class="card-title">ℹ️ About This Assessment</h2>
+            <div style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif;">
+                <p style="margin-bottom: 1rem;">
+                    <strong>Educational Purpose:</strong> This compliance check is designed for educational purposes and general guidance. It is not a substitute for legal advice from qualified privacy lawyers or comprehensive compliance audits by certified professionals.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong>Scope:</strong> Our assessment covers common GDPR compliance areas but may not address all regulatory requirements specific to your industry or jurisdiction. For complex compliance needs, we recommend consulting with legal professionals.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    <strong>Timeline:</strong> Assessment delivery typically takes 5-7 business days after submission. Rush delivery options are available for urgent needs.
+                </p>
+                <p>
+                    <strong>Support:</strong> All assessments include 30 days of email support to help clarify recommendations and answer implementation questions.
                 </p>
             </div>
-            
-            <!-- Assessment Areas -->
-            <div class="report-card">
-                <h2 class="card-title">✅ Assessment Areas</h2>
-                
-                <div class="assessment-area">
-                    <div class="area-header">
-                        <div class="area-name">Privacy Policy & Notices</div>
-                        <div class="area-score">
-                            <span class="score-indicator score-medium"></span>
-                            <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">65/100</span>
-                        </div>
-                    </div>
-                    <div class="area-description">
-                        Your privacy policy covers basic data collection but lacks specific GDPR disclosures for legal basis, retention periods, and individual rights. Cookie notice needs updating for consent requirements.
-                    </div>
-                </div>
-                
-                <div class="assessment-area">
-                    <div class="area-header">
-                        <div class="area-name">Consent Mechanisms</div>
-                        <div class="area-score">
-                            <span class="score-indicator score-low"></span>
-                            <span style="color: #FF6B6B; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">45/100</span>
-                        </div>
-                    </div>
-                    <div class="area-description">
-                        Current consent collection is pre-ticked and bundled, which doesn't meet GDPR requirements for specific, informed, and freely given consent. Needs immediate attention.
-                    </div>
-                </div>
-                
-                <div class="assessment-area">
-                    <div class="area-header">
-                        <div class="area-name">Data Mapping & Records</div>
-                        <div class="area-score">
-                            <span class="score-indicator score-high"></span>
-                            <span style="color: var(--accent-green); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">85/100</span>
-                        </div>
-                    </div>
-                    <div class="area-description">
-                        Good progress on data mapping with clear understanding of data flows. Article 30 records need minor updates for processing purposes and legal basis documentation.
-                    </div>
-                </div>
-                
-                <div class="assessment-area">
-                    <div class="area-header">
-                        <div class="area-name">Individual Rights Processes</div>
-                        <div class="area-score">
-                            <span class="score-indicator score-medium"></span>
-                            <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">58/100</span>
-                        </div>
-                    </div>
-                    <div class="area-description">
-                        Basic processes exist for access requests but lack formal procedures for deletion, portability, and rectification requests. Response timeframes need to meet 30-day GDPR requirement.
-                    </div>
-                </div>
-                
-                <div class="assessment-area">
-                    <div class="area-header">
-                        <div class="area-name">Data Security Measures</div>
-                        <div class="area-score">
-                            <span class="score-indicator score-high"></span>
-                            <span style="color: var(--accent-green); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">82/100</span>
-                        </div>
-                    </div>
-                    <div class="area-description">
-                        Strong technical security measures in place including encryption and access controls. Recommend adding data retention automation and regular security reviews.
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Priority Recommendations -->
-            <div class="report-card">
-                <h2 class="card-title">🎯 Priority Recommendations</h2>
-                
-                <div class="recommendation">
-                    <div class="recommendation-priority">High Priority - Week 1-2</div>
-                    <div class="recommendation-title">Update Consent Mechanisms</div>
-                    <div class="recommendation-description">
-                        Replace pre-ticked consent boxes with granular, specific consent options. Implement consent management system that allows users to easily withdraw consent and tracks consent changes.
-                    </div>
-                </div>
-                
-                <div class="recommendation">
-                    <div class="recommendation-priority">High Priority - Week 2-4</div>
-                    <div class="recommendation-title">Enhance Privacy Policy Disclosures</div>
-                    <div class="recommendation-description">
-                        Add missing GDPR elements including specific legal basis for each processing purpose, data retention periods, and clear explanation of individual rights with contact information.
-                    </div>
-                </div>
-                
-                <div class="recommendation">
-                    <div class="recommendation-priority">Medium Priority - Week 4-6</div>
-                    <div class="recommendation-title">Formalize Individual Rights Procedures</div>
-                    <div class="recommendation-description">
-                        Create documented procedures for handling all types of data subject requests with clear timelines, verification processes, and escalation paths for complex requests.
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 90-Day Action Plan -->
-            <div class="report-card">
-                <h2 class="card-title">📋 90-Day Implementation Plan</h2>
-                
-                <div class="action-item">
-                    <div class="action-number">1</div>
-                    <div class="action-content">
-                        <div class="action-title">Days 1-14: Consent System Overhaul</div>
-                        <div class="action-description">Update website consent mechanisms, implement granular cookie controls, and deploy consent management system with withdrawal options.</div>
-                    </div>
-                </div>
-                
-                <div class="action-item">
-                    <div class="action-number">2</div>
-                    <div class="action-content">
-                        <div class="action-title">Days 15-28: Privacy Policy Enhancement</div>
-                        <div class="action-description">Revise privacy policy with GDPR-required disclosures, add legal basis documentation, and publish retention schedule for each data category.</div>
-                    </div>
-                </div>
-                
-                <div class="action-item">
-                    <div class="action-number">3</div>
-                    <div class="action-content">
-                        <div class="action-title">Days 29-42: Individual Rights Framework</div>
-                        <div class="action-description">Develop formal procedures for data subject requests, create response templates, and train team on verification and fulfillment processes.</div>
-                    </div>
-                </div>
-                
-                <div class="action-item">
-                    <div class="action-number">4</div>
-                    <div class="action-content">
-                        <div class="action-title">Days 43-60: Vendor Management Review</div>
-                        <div class="action-description">Audit data processing agreements with vendors, ensure GDPR compliance clauses, and implement vendor risk assessment process.</div>
-                    </div>
-                </div>
-                
-                <div class="action-item">
-                    <div class="action-number">5</div>
-                    <div class="action-content">
-                        <div class="action-title">Days 61-90: Monitoring & Optimization</div>
-                        <div class="action-description">Implement privacy monitoring tools, schedule regular compliance reviews, and establish ongoing training program for staff.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Educational Resources -->
-            <div class="report-card">
-                <h2 class="card-title">📚 Educational Resources Included</h2>
-                <div style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif;">
-                    <p style="margin-bottom: 1rem;">Your assessment includes practical resources to support implementation:</p>
-                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
-                        <li style="margin-bottom: 0.5rem;">GDPR compliance checklist with 45 specific requirements</li>
-                        <li style="margin-bottom: 0.5rem;">Data subject request templates for access, deletion, and portability</li>
-                        <li style="margin-bottom: 0.5rem;">Privacy policy language suggestions for each improvement area</li>
-                        <li style="margin-bottom: 0.5rem;">Staff training materials for privacy awareness</li>
-                        <li style="margin-bottom: 0.5rem;">Vendor assessment questionnaire template</li>
-                    </ul>
-                    <p><strong>Plus 30 days of follow-up support</strong> for implementation questions and guidance.</p>
-                </div>
-            </div>
-            
-            <!-- Call to Action Section -->
-            <div class="cta-section">
-                <h2 class="cta-title">Ready for Your Real Assessment?</h2>
-                <div class="cta-description">
-                    <p style="margin-bottom: 1rem;">This sample shows just a fraction of what you'll receive. Your personalized compliance assessment will include:</p>
-                    <ul style="text-align: left; max-width: 500px; margin: 0 auto 2rem;">
-                        <li style="margin-bottom: 0.5rem;">✓ Detailed analysis of your actual website and policies</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Industry-specific compliance requirements</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Custom implementation roadmap</li>
-                        <li style="margin-bottom: 0.5rem;">✓ 30 days of implementation support</li>
-                        <li style="margin-bottom: 0.5rem;">✓ All templates and resources included</li>
-                    </ul>
-                </div>
-                <div class="cta-buttons">
-                    <a href="/compliance-check" class="cta-button">
-                        🚀 Get Your Assessment
-                    </a>
-                    <a href="/pricing" class="cta-button">
-                        💰 View Pricing
-                    </a>
-                    <a href="/contact" class="cta-button">
-                        💬 Ask Questions
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Additional Information -->
-            <div class="report-card">
-                <h2 class="card-title">ℹ️ About This Assessment</h2>
-                <div style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif;">
-                    <p style="margin-bottom: 1rem;">
-                        <strong>Educational Purpose:</strong> This compliance check is designed for educational purposes and general guidance. It is not a substitute for legal advice from qualified privacy lawyers or comprehensive compliance audits by certified professionals.
-                    </p>
-                    <p style="margin-bottom: 1rem;">
-                        <strong>Scope:</strong> Our assessment covers common GDPR compliance areas but may not address all regulatory requirements specific to your industry or jurisdiction. For complex compliance needs, we recommend consulting with legal professionals.
-                    </p>
-                    <p style="margin-bottom: 1rem;">
-                        <strong>Timeline:</strong> Assessment delivery typically takes 5-7 business days after submission. Rush delivery options are available for urgent needs.
-                    </p>
-                    <p>
-                        <strong>Support:</strong> All assessments include 30 days of email support to help clarify recommendations and answer implementation questions.
-                    </p>
-                </div>
-            </div>
         </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-text">
-                © 2025 BiyteLüm.sys - Privacy Assessment & Compliance Solutions
-            </div>
-            <div class="footer-links">
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/contact">Contact</a>
-                <a href="/about">About</a>
-                <a href="/resources">Resources</a>
-            </div>
-        </div>
-    </footer>
+    </div>
+</main>
 
-    <script>
-        // Mobile menu toggle functionality
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileMenuButton = document.querySelector('.mobile-menu');
-            
-            mobileNav.classList.toggle('show');
-            
-            // Update aria-expanded for accessibility
-            const isExpanded = mobileNav.classList.contains('show');
-            mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-text">
+            © 2025 BiyteLüm.sys - Privacy Assessment & Compliance Solutions
+        </div>
+        <div class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/resources">Resources</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle functionality
+    function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuButton = document.querySelector('.mobile-menu');
+        
+        mobileNav.classList.toggle('show');
+        
+        // Update aria-expanded for accessibility
+        const isExpanded = mobileNav.classList.contains('show');
+        mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuButton = document.querySelector('.mobile-menu');
+        
+        if (!mobileNav.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+            mobileNav.classList.remove('show');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Close mobile menu when window is resized to desktop
+    window.addEventListener('resize', function() {
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuButton = document.querySelector('.mobile-menu');
+        
+        if (window.innerWidth > 768) {
+            mobileNav.classList.remove('show');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add loading animation for CTA buttons
+    document.querySelectorAll('.cta-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Don't prevent default - let the link work normally
+            // Just add a visual feedback
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+    
+    // Background grid animation
+    function animateGrid() {
+        const grid = document.querySelector('.bg-grid');
+        let translateY = 0;
+        
+        function animate() {
+            translateY += 0.1;
+            if (translateY >= 50) translateY = 0;
+            grid.style.transform = `translateY(${translateY}px)`;
+            requestAnimationFrame(animate);
         }
         
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileMenuButton = document.querySelector('.mobile-menu');
-            
-            if (!mobileNav.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                mobileNav.classList.remove('show');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-            }
-        });
+        animate();
+    }
+    
+    // Start grid animation when page loads
+    window.addEventListener('load', animateGrid);
+    
+    // Add intersection observer for fade-in animations
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
         
-        // Close mobile menu when window is resized to desktop
-        window.addEventListener('resize', function() {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileMenuButton = document.querySelector('.mobile-menu');
-            
-            if (window.innerWidth > 768) {
-                mobileNav.classList.remove('show');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, observerOptions);
+        
+        // Observe all report cards for animation
+        document.querySelectorAll('.report-card, .cta-section').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
         });
-        
-        // Add loading animation for CTA buttons
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Don't prevent default - let the link work normally
-                // Just add a visual feedback
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
-        });
-        
-        // Background grid animation
-        function animateGrid() {
-            const grid = document.querySelector('.bg-grid');
-            let translateY = 0;
-            
-            function animate() {
-                translateY += 0.1;
-                if (translateY >= 50) translateY = 0;
-                grid.style.transform = `translateY(${translateY}px)`;
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-        
-        // Start grid animation when page loads
-        window.addEventListener('load', animateGrid);
-        
-        // Add intersection observer for fade-in animations
-        if ('IntersectionObserver' in window) {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all report cards for animation
-            document.querySelectorAll('.report-card, .cta-section').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        }
-    </script>
+    }
+</script>
+```
+
 </body>
 </html>
