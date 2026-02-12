@@ -501,44 +501,41 @@
         transform: translateX(-5px);
     }
     
-    /* Footer */
-    footer {
+    /* Status Bar */
+    .status-bar {
         background: rgba(10, 10, 10, 0.95);
         border-top: 1px solid var(--border-color);
-        padding: 2rem 0;
-        text-align: center;
+        padding: 0.5rem 2rem;
         margin-top: 4rem;
     }
     
-    .footer-content {
+    .status-content {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 2rem;
-    }
-    
-    .footer-text {
-        color: var(--text-secondary);
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .footer-links {
         display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.6rem;
     }
     
-    .footer-links a {
+    .status-left {
+        display: flex;
+        gap: 2rem;
         color: var(--text-secondary);
+    }
+    
+    .status-right {
+        color: rgba(167, 255, 158, 0.5);
+    }
+    
+    .status-right a {
+        color: rgba(167, 255, 158, 0.5);
         text-decoration: none;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.75rem;
         transition: color 0.3s ease;
     }
     
-    .footer-links a:hover {
+    .status-right a:hover {
         color: var(--primary-green);
     }
     
@@ -563,8 +560,15 @@
             padding: 2rem;
         }
         
-        .footer-links {
-            gap: 1rem;
+        .status-content {
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+        }
+        
+        .status-left {
+            flex-direction: column;
+            gap: 0.5rem;
         }
     }
     
@@ -677,7 +681,7 @@
             
             <div class="assessment-area">
                 <div class="area-header">
-                    <div class="area-name">Privacy Policy & Notices</div>
+                    <div class="area-name">Privacy Policies</div>
                     <div class="area-score">
                         <span class="score-indicator score-medium"></span>
                         <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">65/100</span>
@@ -703,7 +707,7 @@
             
             <div class="assessment-area">
                 <div class="area-header">
-                    <div class="area-name">Data Mapping & Records</div>
+                    <div class="area-name">Data Mapping</div>
                     <div class="area-score">
                         <span class="score-indicator score-high"></span>
                         <span style="color: var(--accent-green); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">85/100</span>
@@ -716,7 +720,7 @@
             
             <div class="assessment-area">
                 <div class="area-header">
-                    <div class="area-name">Individual Rights Processes</div>
+                    <div class="area-name">Individual Rights</div>
                     <div class="area-score">
                         <span class="score-indicator score-medium"></span>
                         <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">58/100</span>
@@ -729,7 +733,7 @@
             
             <div class="assessment-area">
                 <div class="area-header">
-                    <div class="area-name">Data Security Measures</div>
+                    <div class="area-name">Data Security</div>
                     <div class="area-score">
                         <span class="score-indicator score-high"></span>
                         <span style="color: var(--accent-green); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">82/100</span>
@@ -737,6 +741,45 @@
                 </div>
                 <div class="area-description">
                     Strong technical security measures in place including encryption and access controls. Recommend adding data retention automation and regular security reviews.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Vendor Management</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-medium"></span>
+                        <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">62/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Some data processing agreements are in place with key vendors, but coverage is incomplete. Several third-party integrations lack formal DPAs or adequate privacy risk classification.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Breach Response</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-low"></span>
+                        <span style="color: #FF6B6B; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">48/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    No formal breach detection or notification procedures documented. GDPR requires 72-hour supervisory authority notification for qualifying breaches. Needs documented response plan with clear roles and escalation paths.
+                </div>
+            </div>
+            
+            <div class="assessment-area">
+                <div class="area-header">
+                    <div class="area-name">Record Keeping</div>
+                    <div class="area-score">
+                        <span class="score-indicator score-medium"></span>
+                        <span style="color: #FFD700; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">70/100</span>
+                    </div>
+                </div>
+                <div class="area-description">
+                    Partial Article 30 records exist but lack completeness. Processing purposes and legal basis documentation need updating, and retention periods are not consistently recorded across all processing activities.
                 </div>
             </div>
         </div>
@@ -821,13 +864,13 @@
             <div style="color: rgba(167, 255, 158, 0.8); font-family: 'Inter', sans-serif;">
                 <p style="margin-bottom: 1rem;">Your assessment includes practical resources to support implementation:</p>
                 <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
-                    <li style="margin-bottom: 0.5rem;">GDPR compliance checklist with 45 specific requirements</li>
+                    <li style="margin-bottom: 0.5rem;">GDPR/LGPD compliance checklist with specific requirements for your jurisdiction</li>
                     <li style="margin-bottom: 0.5rem;">Data subject request templates for access, deletion, and portability</li>
                     <li style="margin-bottom: 0.5rem;">Privacy policy language suggestions for each improvement area</li>
                     <li style="margin-bottom: 0.5rem;">Staff training materials for privacy awareness</li>
                     <li style="margin-bottom: 0.5rem;">Vendor assessment questionnaire template</li>
                 </ul>
-                <p><strong>Plus 30 days of follow-up support</strong> for implementation questions and guidance.</p>
+                <p><strong>Plus 30 days of follow-up support</strong> for implementation questions.</p>
             </div>
         </div>
         
@@ -837,11 +880,12 @@
             <div class="cta-description">
                 <p style="margin-bottom: 1rem;">This sample shows just a fraction of what you'll receive. Your personalized compliance assessment will include:</p>
                 <ul style="text-align: left; max-width: 500px; margin: 0 auto 2rem;">
-                    <li style="margin-bottom: 0.5rem;">✓ Detailed analysis of your actual website and policies</li>
-                    <li style="margin-bottom: 0.5rem;">✓ Industry-specific compliance requirements</li>
-                    <li style="margin-bottom: 0.5rem;">✓ Custom implementation roadmap</li>
-                    <li style="margin-bottom: 0.5rem;">✓ 30 days of implementation support</li>
-                    <li style="margin-bottom: 0.5rem;">✓ All templates and resources included</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Executive scorecard with compliance rating across all areas</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Detailed findings report with specific gaps and improvement opportunities</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Prioritized action plan and 90-day implementation roadmap</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Educational resource package with templates and checklists</li>
+                    <li style="margin-bottom: 0.5rem;">✓ GDPR/LGPD basics reference guide for your jurisdiction</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 30 days of follow-up support for implementation questions</li>
                 </ul>
             </div>
             <div class="cta-buttons">
@@ -868,31 +912,29 @@
                     <strong>Scope:</strong> Our assessment covers common GDPR compliance areas but may not address all regulatory requirements specific to your industry or jurisdiction. For complex compliance needs, we recommend consulting with legal professionals.
                 </p>
                 <p style="margin-bottom: 1rem;">
-                    <strong>Timeline:</strong> Assessment delivery typically takes 5-7 business days after submission. Rush delivery options are available for urgent needs.
+                    <strong>Timeline:</strong> Assessment delivery typically takes 2-3 weeks after submission.
                 </p>
                 <p>
-                    <strong>Support:</strong> All assessments include 30 days of email support to help clarify recommendations and answer implementation questions.
+                    <strong>Support:</strong> All assessments include 30 days of follow-up support for implementation questions.
                 </p>
             </div>
         </div>
     </div>
 </main>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-text">
-            © 2025 BiyteLüm.sys - Privacy Assessment & Compliance Solutions
+<!-- Status Bar -->
+<div class="status-bar">
+    <div class="status-content">
+        <div class="status-left">
+            <span>📊 SAMPLE: COMPLIANCE CHECK REPORT</span>
+            <span>PRICING: $1,200-$2,000 | DELIVERY: 2-3 WEEKS</span>
+            <span>SCOPE: EDUCATIONAL | ASSESSMENT</span>
         </div>
-        <div class="footer-links">
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/contact">Contact</a>
-            <a href="/about">About</a>
-            <a href="/resources">Resources</a>
+        <div class="status-right">
+            © 2026 BiyteLüm.sys | <a href="/privacy">Privacy Policy</a> | <a href="/contact">Contact</a>
         </div>
     </div>
-</footer>
+</div>
 
 <script>
     // Mobile menu toggle functionality
@@ -946,32 +988,12 @@
     // Add loading animation for CTA buttons
     document.querySelectorAll('.cta-button').forEach(button => {
         button.addEventListener('click', function(e) {
-            // Don't prevent default - let the link work normally
-            // Just add a visual feedback
             this.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
         });
     });
-    
-    // Background grid animation
-    function animateGrid() {
-        const grid = document.querySelector('.bg-grid');
-        let translateY = 0;
-        
-        function animate() {
-            translateY += 0.1;
-            if (translateY >= 50) translateY = 0;
-            grid.style.transform = `translateY(${translateY}px)`;
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-    }
-    
-    // Start grid animation when page loads
-    window.addEventListener('load', animateGrid);
     
     // Add intersection observer for fade-in animations
     if ('IntersectionObserver' in window) {
