@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría de Privacidad para Empresas en América Latina | BiyteLüm</title>
+    <meta name="description" content="Asesoría técnica y estratégica en privacidad de datos para empresas en LATAM. Experiencia en GDPR, LGPD y marcos regulatorios de México, Colombia, Chile y Argentina.">
+    <meta name="keywords" content="consultoría privacidad LATAM, cumplimiento protección datos México, asesoría LGPD Colombia, privacidad datos Chile, GDPR América Latina, consultor privacidad datos">
+    <link rel="canonical" href="https://biytelum.com/privacidad-latam.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="es-419" href="https://biytelum.com/privacidad-latam.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://biytelum.com/dpo-suporte.html">
+    <link rel="alternate" hreflang="en" href="https://biytelum.com">
+    <link rel="alternate" hreflang="x-default" href="https://biytelum.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Consultoría de Privacidad para Empresas en América Latina | BiyteLüm">
+    <meta property="og:description" content="Asesoría técnica y estratégica en privacidad de datos para empresas en LATAM.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com/privacidad-latam.html">
+    <meta property="og:locale" content="es_419">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .skip-link {
+            position: absolute; top: -40px; left: 6px;
+            background: var(--primary-green); color: var(--dark-bg);
+            padding: 8px; text-decoration: none; z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .skip-link:focus { top: 6px; }
+
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.1;
+            background-image:
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+
+        .particle {
+            position: fixed; border-radius: 50%;
+            background: var(--primary-green); opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none; z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .particle, .bg-grid { animation: none; transform: none !important; }
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100; padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;
+            color: var(--primary-green); text-decoration: none;
+        }
+
+        .nav-lang {
+            display: flex; gap: 1rem; align-items: center;
+        }
+
+        .nav-lang a {
+            color: var(--text-secondary); text-decoration: none;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            transition: color 0.3s ease; letter-spacing: 0.05em;
+        }
+
+        .nav-lang a:hover, .nav-lang a.active { color: var(--primary-green); }
+        .nav-lang a.active { border-bottom: 1px solid var(--primary-green); }
+
+        main {
+            position: relative; z-index: 10;
+            padding-top: 6rem; padding-bottom: 2.5rem;
+        }
+
+        .hero {
+            text-align: center; padding: 2rem 2rem 1rem;
+            max-width: 900px; margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem; color: var(--accent-green);
+            letter-spacing: 0.2em; margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.6rem, 5vw, 3.5rem);
+            font-weight: 900; margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: var(--accent-green); }
+
+        .hero-sub {
+            font-size: clamp(0.9rem, 2vw, 1.15rem);
+            color: var(--text-secondary); margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif; font-weight: 300;
+            max-width: 650px; margin-left: auto; margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex; gap: 1rem; justify-content: center;
+            flex-wrap: wrap; margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent; color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace; font-weight: bold;
+            text-decoration: none; transition: all 0.5s ease;
+            position: relative; overflow: hidden; border-radius: 4px;
+        }
+
+        .cta-button:hover, .cta-button:focus {
+            color: #000; outline: none; transform: translateY(-2px);
+        }
+
+        .cta-button::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease; z-index: -1;
+        }
+
+        .cta-button:hover::before, .cta-button:focus::before { left: 0; }
+
+        .cta-button.secondary {
+            border-color: var(--border-color); color: var(--text-secondary);
+        }
+        .cta-button.secondary:hover { color: #000; }
+        .cta-button.secondary::before { background: var(--text-secondary); }
+
+        .content-grid {
+            display: flex; flex-direction: column; gap: 2rem;
+            padding: 1rem 2rem 3rem;
+            max-width: 800px; margin: 0 auto;
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0,0,0,0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative; overflow: hidden;
+        }
+
+        .content-card:hover, .content-card:focus-within {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+
+        .content-card::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .content-card:hover::before { left: 100%; }
+
+        .card-header {
+            display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;
+        }
+
+        .card-icon {
+            width: 3rem; height: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; flex-shrink: 0;
+        }
+
+        .card-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem; font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .card-subtitle {
+            font-size: 0.7rem;
+            color: rgba(167, 255, 158, 0.6);
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .card-description {
+            line-height: 1.7; color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif; font-size: 0.95rem;
+        }
+
+        .card-description strong { color: var(--primary-green); font-weight: 600; }
+
+        .pull-quote {
+            background: rgba(167, 255, 158, 0.05);
+            border-left: 3px solid var(--accent-green);
+            padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.95rem; color: var(--accent-green);
+            font-style: italic; line-height: 1.6;
+        }
+
+        .section-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+            margin: 1rem 0;
+        }
+
+        /* Country markers */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem; margin-top: 1.5rem;
+        }
+
+        .market-item {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .market-item:hover {
+            border-color: var(--accent-green);
+            background: rgba(167, 255, 158, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .market-flag { font-size: 1.75rem; margin-bottom: 0.5rem; }
+
+        .market-item h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem; color: var(--primary-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .market-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem; color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .market-item .law-tag {
+            display: inline-block;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem; color: var(--accent-green);
+            border: 1px solid rgba(0, 255, 153, 0.3);
+            padding: 2px 8px; border-radius: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem; margin-top: 1.5rem;
+        }
+
+        .service-item {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: var(--accent-green);
+            background: rgba(167, 255, 158, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .service-item-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+        .service-item h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem; color: var(--primary-green);
+            margin-bottom: 0.4rem;
+        }
+
+        .service-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem; color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Pain points list */
+        .pain-list {
+            list-style: none; padding: 0; margin: 1rem 0;
+        }
+
+        .pain-list li {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.07);
+            font-family: 'Inter', sans-serif; font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .pain-list li:last-child { border-bottom: none; }
+
+        .pain-list li::before {
+            content: '▸'; color: var(--accent-green);
+            font-size: 0.8rem; margin-top: 0.1rem; flex-shrink: 0;
+        }
+
+        /* Contact form */
+        .contact-form {
+            display: flex; flex-direction: column; gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-group {
+            display: flex; flex-direction: column; gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem; color: var(--text-secondary);
+            letter-spacing: 0.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            font-family: 'Inter', sans-serif; font-size: 0.9rem;
+            padding: 0.75rem 1rem; border-radius: 5px;
+            transition: border-color 0.3s ease; width: 100%;
+        }
+
+        .form-group select option {
+            background: #0a0a0a; color: var(--primary-green);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 2px rgba(0, 255, 153, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(167, 255, 158, 0.3);
+        }
+
+        .form-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+        }
+
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+        .form-submit {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--accent-green);
+            background: rgba(0, 255, 153, 0.08);
+            color: var(--accent-green);
+            font-family: 'Share Tech Mono', monospace; font-weight: bold;
+            font-size: 0.85rem; cursor: pointer;
+            border-radius: 4px; transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .form-submit:hover {
+            background: var(--accent-green); color: #000;
+            transform: translateY(-2px);
+        }
+
+        .form-disclaimer {
+            font-family: 'Inter', sans-serif; font-size: 0.75rem;
+            color: rgba(167, 255, 158, 0.4); margin-top: 0.5rem;
+        }
+
+        .status-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 0.25rem 2rem; z-index: 100;
+        }
+
+        .status-content {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+        }
+
+        .status-left { display: flex; gap: 2rem; color: var(--text-secondary); }
+        .status-right { color: rgba(167, 255, 158, 0.5); }
+
+        .loading-bar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--primary-green); transform: scaleX(0);
+            transform-origin: left; animation: loadingComplete 2s ease-out forwards;
+            z-index: 1000;
+        }
+
+        @keyframes loadingComplete {
+            0% { transform: scaleX(0); }
+            50% { transform: scaleX(0.7); }
+            100% { transform: scaleX(1); opacity: 0; }
+        }
+
+        *:focus { outline: 2px solid var(--primary-green); outline-offset: 2px; }
+
+        @media (max-width: 768px) {
+            .status-content { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .status-left { flex-direction: column; gap: 0.5rem; }
+            .market-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .market-grid { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            .bg-grid, .particle, .status-bar, nav { display: none; }
+            body { background: white; color: black; }
+            main { padding-top: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+    <div class="loading-bar" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="particles" aria-hidden="true"></div>
+
+    <nav role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm página principal">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <div class="nav-lang">
+                <a href="/" class="nav-back">← SITIO PRINCIPAL</a>
+                <a href="/privacidad-latam.html" class="active">ES</a>
+                <a href="/dpo-suporte.html">🇧🇷 PT-BR</a>
+                <a href="/">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="hero">
+            <p class="hero-eyebrow">🌎 Consultoría Internacional · GDPR · LATAM</p>
+            <h1>Privacidad de Datos para <span>Empresas en América Latina</span></h1>
+            <p class="hero-sub">
+                Asesoría técnica y estratégica en cumplimiento de privacidad para empresas que operan en LATAM — con base en GDPR y conocimiento directo de los marcos regulatorios de la región.
+            </p>
+            <div class="cta-group">
+                <a href="#contacto" class="cta-button">AGENDAR CONSULTA GRATUITA →</a>
+                <a href="#servicios" class="cta-button secondary">VER SERVICIOS ↓</a>
+            </div>
+        </section>
+
+        <div class="content-grid">
+
+            <!-- Why it matters now -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">📡</div>
+                    <div>
+                        <h2 class="card-title">EL MOMENTO ES AHORA</h2>
+                        <div class="card-subtitle">La regulación de privacidad en LATAM está acelerando</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    América Latina está en medio de una transformación regulatoria. Los marcos de privacidad de la región se están modernizando rápidamente — y las empresas que actúen ahora tendrán ventaja competitiva cuando la aplicación se intensifique.
+                </p>
+                <p class="card-description">
+                    El problema: <strong>la mayoría de los consultores de privacidad disponibles en la región son abogados sin experiencia técnica</strong>. Entienden la norma, pero no el sistema que procesa los datos. Eso genera recomendaciones que se ven bien en papel pero son difíciles de implementar.
+                </p>
+                <div class="pull-quote">
+                    "Cumplir con la ley de privacidad no es solo redactar políticas. Es entender cómo fluyen los datos en tu infraestructura — y eso requiere conocimiento técnico real."
+                </div>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Markets -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🌎</div>
+                    <div>
+                        <h2 class="card-title">MERCADOS QUE ATENDEMOS</h2>
+                        <div class="card-subtitle">Conocimiento directo de los marcos regulatorios regionales</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Nuestro trabajo está anclado en <strong>GDPR</strong> — el estándar global que cada vez más influye en la legislación latinoamericana. Esa base se traduce en orientación concreta para los mercados donde operan nuestros clientes.
+                </p>
+                <div class="market-grid">
+                    <div class="market-item">
+                        <div class="market-flag">🇲🇽</div>
+                        <span class="law-tag">LFPDPPP</span>
+                        <h3>MÉXICO</h3>
+                        <p>Marco federal consolidado con aplicación activa del INAI. Gran mercado con ecosistema digital en expansión.</p>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-flag">🇨🇴</div>
+                        <span class="law-tag">LEY 1581</span>
+                        <h3>COLOMBIA</h3>
+                        <p>Marco maduro con supervisión activa de la SIC. Sector tech y fintech en crecimiento acelerado.</p>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-flag">🇨🇱</div>
+                        <span class="law-tag">LEY 21.719</span>
+                        <h3>CHILE</h3>
+                        <p>Nueva ley aprobada en 2024, alineada con GDPR. Empresas enfrentando la transición ahora mismo.</p>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-flag">🇦🇷</div>
+                        <span class="law-tag">PDPA + GDPR</span>
+                        <h3>ARGENTINA</h3>
+                        <p>Ley histórica en modernización. Búsqueda activa de adecuación GDPR con la UE.</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Pain points -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚠️</div>
+                    <div>
+                        <h2 class="card-title">LO QUE ENFRENTAN LAS EMPRESAS</h2>
+                        <div class="card-subtitle">Desafíos reales de privacidad en LATAM</div>
+                    </div>
+                </div>
+                <p class="card-description">¿Alguna de estas situaciones te resulta familiar?</p>
+                <ul class="pain-list" role="list">
+                    <li>Política de privacidad desactualizada que no refleja cómo se procesan los datos realmente</li>
+                    <li>Proveedores SaaS internacionales sin contratos de protección de datos adecuados</li>
+                    <li>Transferencias de datos al exterior sin base legal clara</li>
+                    <li>Configuraciones en AWS o Azure que generan riesgos de privacidad no detectados</li>
+                    <li>Rastreo en el sitio web (GTM, cookies) sin gestión real del consentimiento</li>
+                    <li>Expansión hacia Europa que requiere entender también el GDPR</li>
+                    <li>Equipo interno que no sabe por dónde empezar con el cumplimiento</li>
+                    <li>Auditorías o due diligence inminentes sin documentación en orden</li>
+                </ul>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Services -->
+            <article class="content-card" id="servicios">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🛠️</div>
+                    <div>
+                        <h2 class="card-title">CÓMO PODEMOS AYUDARTE</h2>
+                        <div class="card-subtitle">Servicios técnicos y estratégicos de privacidad</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Todos nuestros servicios son <strong>educativos y de asesoría técnica</strong> — entregamos evaluaciones, revisiones y recomendaciones accionables. No somos un despacho jurídico; somos el puente entre la norma y la implementación real.
+                </p>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-item-icon">📋</div>
+                        <h3>REVISIÓN DE POLÍTICA DE PRIVACIDAD</h3>
+                        <p>Análisis línea por línea de tu política frente a los requisitos del marco aplicable en tu país y, si corresponde, el GDPR.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">🔍</div>
+                        <h3>EVALUACIÓN DE CUMPLIMIENTO</h3>
+                        <p>Diagnóstico del estado actual de tu programa de privacidad con plan de acción priorizado y lenguaje claro.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">☁️</div>
+                        <h3>REVISIÓN DE NUBE</h3>
+                        <p>Auditoría de configuraciones AWS y Azure — residencia de datos, cifrado y controles de acceso con impacto en privacidad.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">🌐</div>
+                        <h3>TRANSFERENCIAS INTERNACIONALES</h3>
+                        <p>Revisión de proveedores y contratos para flujos de datos entre tu país y el extranjero, con foco en bases legales y cláusulas estándar.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">📊</div>
+                        <h3>AUDITORÍA GTM & COOKIES</h3>
+                        <p>Revisión técnica del rastreo en tu sitio para verificar que el consentimiento del usuario se respeta en la práctica.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">🇪🇺</div>
+                        <h3>EXPANSIÓN A EUROPA (GDPR)</h3>
+                        <p>Orientación práctica para empresas latinoamericanas que venden o procesan datos de ciudadanos europeos.</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- About -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">👤</div>
+                    <div>
+                        <h2 class="card-title">QUIÉNES SOMOS</h2>
+                        <div class="card-subtitle">Especialistas internacionales con raíces técnicas</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    BiyteLüm es una consultoría internacional de privacidad con certificaciones <strong>CIPP/E y CIPM</strong>, y experiencia directa en <strong>LGPD brasileña</strong> — el marco más avanzado de América Latina y punto de referencia para toda la región.
+                </p>
+                <p class="card-description">
+                    Nuestro diferencial no está solo en las certificaciones. Antes de dedicarnos a la privacidad, trabajamos con infraestructura: configuramos entornos AWS, depuramos implementaciones de GTM, diseñamos pipelines de datos. Eso significa que identificamos riesgos que la mayoría de los consultores simplemente no detectan.
+                </p>
+                <div class="pull-quote">
+                    "La mayoría de los consultores de privacidad no entienden la infraestructura en la nube. Nosotros venimos del camino inverso — técnico primero, privacidad después."
+                </div>
+                <p class="card-description">
+                    Nuestro objetivo no es crear dependencia de consultoría. Es <strong>construir capacidad interna</strong> en tu equipo — para que necesites cada vez menos apoyo externo.
+                </p>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Contact form -->
+            <article class="content-card" id="contacto">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">✉️</div>
+                    <div>
+                        <h2 class="card-title">HABLEMOS</h2>
+                        <div class="card-subtitle">Consulta gratuita de 30 minutos — sin compromiso</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Sin presión de ventas. Una conversación honesta sobre tus desafíos de privacidad y si tiene sentido trabajar juntos. Si no somos la opción correcta, te lo diremos claramente.
+                </p>
+                <form class="contact-form" name="privacidad-latam-es" method="POST" action="/consulta-confirmada" netlify>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">NOMBRE *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">CORREO ELECTRÓNICO *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="empresa">EMPRESA</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="pais">PAÍS</label>
+                            <select id="pais" name="pais">
+                                <option value="" disabled selected>Selecciona tu país</option>
+                                <option value="mx">México</option>
+                                <option value="co">Colombia</option>
+                                <option value="cl">Chile</option>
+                                <option value="ar">Argentina</option>
+                                <option value="pe">Perú</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="necesidad">¿CUÁL ES TU PRINCIPAL DESAFÍO? *</label>
+                        <select id="necesidad" name="necesidad" required>
+                            <option value="" disabled selected>Selecciona lo que mejor describe tu situación</option>
+                            <option value="politica">Revisión de política de privacidad</option>
+                            <option value="evaluacion">Evaluación general de cumplimiento</option>
+                            <option value="nube">Riesgos de privacidad en nube (AWS/Azure)</option>
+                            <option value="transferencias">Transferencias internacionales de datos</option>
+                            <option value="gdpr">Expansión a Europa (GDPR)</option>
+                            <option value="cookies">Rastreo web y gestión de consentimiento</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">MENSAJE</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos un poco más sobre tu contexto o dudas (opcional)"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        ENVIAR MENSAJE →
+                    </button>
+                    <p class="form-disclaimer">
+                        Tus datos se usarán exclusivamente para responder tu solicitud. Sin listas de correo, sin spam.
+                    </p>
+                </form>
+            </article>
+
+        </div>
+    </main>
+
+    <div class="status-bar" role="contentinfo">
+        <div class="status-content">
+            <div class="status-left">
+                <span>🌎 LATAM · 🇪🇺 GDPR · ☁️ CLOUD PRIVACY</span>
+                <span>ASESORÍA: EDUCATIVA & TÉCNICA</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys |
+                <a href="/privacy" style="color:rgba(167,255,158,0.7);text-decoration:none;">Política de Privacidad</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const count = window.innerWidth < 768 ? 6 : 12;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = 2 + Math.random() * 4;
+                p.style.width = `${size}px`;
+                p.style.height = `${size}px`;
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.top = `${Math.random() * 100}%`;
+                p.style.animationDelay = `${Math.random() * 4}s`;
+                p.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(p);
+            }
+        }
+
+        let ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const grid = document.querySelector('.bg-grid');
+                    if (grid) grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            createParticles();
+            if (!prefersReducedMotion) window.addEventListener('scroll', onScroll, { passive: true });
+            setTimeout(() => {
+                const bar = document.querySelector('.loading-bar');
+                if (bar) bar.style.display = 'none';
+            }, 2000);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
