@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte para Encarregados (DPOs) sob a LGPD | BiyteLüm</title>
+    <meta name="description" content="Apoio técnico, estratégico e operacional para Encarregados de Dados (DPOs) no Brasil. Especialista internacional com experiência em LGPD e GDPR.">
+    <meta name="keywords" content="suporte encarregado LGPD, apoio DPO Brasil, consultoria LGPD internacional, suporte técnico privacidade dados, LGPD compliance suporte">
+    <link rel="canonical" href="https://biytelum.com/pt-br/dpo-suporte">
+
+    <!-- hreflang for language targeting -->
+    <link rel="alternate" hreflang="pt-BR" href="https://biytelum.com/pt-br/dpo-suporte">
+    <link rel="alternate" hreflang="en" href="https://biytelum.com/services">
+    <link rel="alternate" hreflang="x-default" href="https://biytelum.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Suporte para Encarregados (DPOs) sob a LGPD | BiyteLüm">
+    <meta property="og:description" content="Apoio técnico, estratégico e operacional para profissionais responsáveis pela proteção de dados no Brasil.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biytelum.com/pt-br/dpo-suporte">
+    <meta property="og:locale" content="pt_BR">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .skip-link {
+            position: absolute; top: -40px; left: 6px;
+            background: var(--primary-green); color: var(--dark-bg);
+            padding: 8px; text-decoration: none; z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .skip-link:focus { top: 6px; }
+
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.1;
+            background-image:
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+
+        .particle {
+            position: fixed; border-radius: 50%;
+            background: var(--primary-green); opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none; z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .particle, .bg-grid { animation: none; transform: none !important; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100; padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;
+            color: var(--primary-green); text-decoration: none;
+        }
+
+        .nav-lang {
+            display: flex; gap: 1rem; align-items: center;
+        }
+
+        .nav-lang a {
+            color: var(--text-secondary); text-decoration: none;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            transition: color 0.3s ease; letter-spacing: 0.05em;
+        }
+
+        .nav-lang a:hover, .nav-lang a.active { color: var(--primary-green); }
+        .nav-lang a.active { border-bottom: 1px solid var(--primary-green); }
+
+        .nav-back {
+            display: flex; align-items: center; gap: 0.5rem;
+            color: var(--text-secondary); text-decoration: none;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .nav-back:hover { color: var(--primary-green); }
+
+        /* Main */
+        main {
+            position: relative; z-index: 10;
+            padding-top: 6rem; padding-bottom: 2.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center; padding: 2rem 2rem 1rem;
+            max-width: 900px; margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem; color: var(--accent-green);
+            letter-spacing: 0.2em; margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.6rem, 5vw, 3.5rem);
+            font-weight: 900; margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent-green);
+        }
+
+        .hero-sub {
+            font-size: clamp(0.9rem, 2vw, 1.15rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            max-width: 650px;
+            margin-left: auto; margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-green);
+            background: transparent; color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace; font-weight: bold;
+            text-decoration: none; transition: all 0.5s ease;
+            position: relative; overflow: hidden; border-radius: 4px;
+        }
+
+        .cta-button:hover, .cta-button:focus {
+            color: #000; outline: none; transform: translateY(-2px);
+        }
+
+        .cta-button::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--primary-green);
+            transition: left 0.5s ease; z-index: -1;
+        }
+
+        .cta-button:hover::before, .cta-button:focus::before { left: 0; }
+
+        .cta-button.secondary {
+            border-color: var(--border-color); color: var(--text-secondary);
+        }
+
+        .cta-button.secondary:hover { color: #000; }
+        .cta-button.secondary::before { background: var(--text-secondary); }
+
+        /* Content layout */
+        .content-grid {
+            display: flex; flex-direction: column; gap: 2rem;
+            padding: 1rem 2rem 3rem;
+            max-width: 800px; margin: 0 auto;
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0,0,0,0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative; overflow: hidden;
+        }
+
+        .content-card:hover, .content-card:focus-within {
+            transform: translateY(-5px);
+            border-color: rgba(167, 255, 158, 0.6);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+
+        .content-card::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .content-card:hover::before { left: 100%; }
+
+        .card-header {
+            display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;
+        }
+
+        .card-icon {
+            width: 3rem; height: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; flex-shrink: 0;
+        }
+
+        .card-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem; font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .card-subtitle {
+            font-size: 0.7rem;
+            color: rgba(167, 255, 158, 0.6);
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .card-description {
+            line-height: 1.7; color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif; font-size: 0.95rem;
+        }
+
+        .card-description strong { color: var(--primary-green); font-weight: 600; }
+
+        .pull-quote {
+            background: rgba(167, 255, 158, 0.05);
+            border-left: 3px solid var(--accent-green);
+            padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.95rem; color: var(--accent-green);
+            font-style: italic; line-height: 1.6;
+        }
+
+        .section-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+            margin: 1rem 0;
+        }
+
+        /* Pain points list */
+        .pain-list {
+            list-style: none; padding: 0; margin: 1rem 0;
+        }
+
+        .pain-list li {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.07);
+            font-family: 'Inter', sans-serif; font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .pain-list li:last-child { border-bottom: none; }
+
+        .pain-list li::before {
+            content: '▸';
+            color: var(--accent-green);
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem; margin-top: 1.5rem;
+        }
+
+        .service-item {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: var(--accent-green);
+            background: rgba(167, 255, 158, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .service-item-icon {
+            font-size: 1.5rem; margin-bottom: 0.75rem;
+        }
+
+        .service-item h3 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem; color: var(--primary-green);
+            margin-bottom: 0.4rem;
+        }
+
+        .service-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem; color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem; margin-top: 1.5rem;
+        }
+
+        .pricing-card {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 1.75rem;
+            text-align: center; transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-green);
+            background: rgba(0, 255, 153, 0.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MAIS POPULAR';
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--accent-green); color: #000;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+            font-weight: bold; padding: 3px 12px; border-radius: 20px;
+            letter-spacing: 0.1em;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
+        }
+
+        .pricing-name {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem; color: var(--text-secondary);
+            letter-spacing: 0.1em; margin-bottom: 0.75rem;
+        }
+
+        .pricing-price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem; font-weight: 700;
+            color: var(--accent-green); line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-period {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem; color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-features {
+            list-style: none; padding: 0; margin-bottom: 1.5rem; text-align: left;
+        }
+
+        .pricing-features li {
+            font-family: 'Inter', sans-serif; font-size: 0.8rem;
+            color: var(--text-secondary); padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.07);
+            display: flex; align-items: flex-start; gap: 0.5rem;
+        }
+
+        .pricing-features li:last-child { border-bottom: none; }
+
+        .pricing-features li::before {
+            content: '✓'; color: var(--accent-green);
+            font-size: 0.75rem; flex-shrink: 0; margin-top: 0.1rem;
+        }
+
+        .pricing-cta {
+            display: block; width: 100%;
+            padding: 0.75rem; text-align: center;
+            border: 1px solid var(--border-color);
+            background: transparent; color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            text-decoration: none; border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-cta:hover {
+            background: rgba(167, 255, 158, 0.1);
+            border-color: var(--primary-green);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            border-color: var(--accent-green); color: var(--accent-green);
+            background: rgba(0, 255, 153, 0.08);
+        }
+
+        .pricing-note {
+            font-family: 'Inter', sans-serif; font-size: 0.8rem;
+            color: rgba(167, 255, 158, 0.5); text-align: center;
+            margin-top: 1.25rem; font-style: italic;
+        }
+
+        /* Contact form */
+        .contact-form {
+            display: flex; flex-direction: column; gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-group {
+            display: flex; flex-direction: column; gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem; color: var(--text-secondary);
+            letter-spacing: 0.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--primary-green);
+            font-family: 'Inter', sans-serif; font-size: 0.9rem;
+            padding: 0.75rem 1rem; border-radius: 5px;
+            transition: border-color 0.3s ease;
+            width: 100%;
+        }
+
+        .form-group select option {
+            background: #0a0a0a; color: var(--primary-green);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 2px rgba(0, 255, 153, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(167, 255, 158, 0.3);
+        }
+
+        .form-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+        }
+
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+        .form-submit {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--accent-green);
+            background: rgba(0, 255, 153, 0.08);
+            color: var(--accent-green);
+            font-family: 'Share Tech Mono', monospace; font-weight: bold;
+            font-size: 0.85rem; cursor: pointer;
+            border-radius: 4px; transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .form-submit:hover {
+            background: var(--accent-green); color: #000;
+            transform: translateY(-2px);
+        }
+
+        .form-disclaimer {
+            font-family: 'Inter', sans-serif; font-size: 0.75rem;
+            color: rgba(167, 255, 158, 0.4); margin-top: 0.5rem;
+        }
+
+        /* Status bar */
+        .status-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 0.25rem 2rem; z-index: 100;
+        }
+
+        .status-content {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+        }
+
+        .status-left { display: flex; gap: 2rem; color: var(--text-secondary); }
+        .status-right { color: rgba(167, 255, 158, 0.5); }
+
+        .loading-bar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--primary-green); transform: scaleX(0);
+            transform-origin: left; animation: loadingComplete 2s ease-out forwards;
+            z-index: 1000;
+        }
+
+        @keyframes loadingComplete {
+            0% { transform: scaleX(0); }
+            50% { transform: scaleX(0.7); }
+            100% { transform: scaleX(1); opacity: 0; }
+        }
+
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        *:focus { outline: 2px solid var(--primary-green); outline-offset: 2px; }
+
+        @media (max-width: 768px) {
+            .status-content { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .status-left { flex-direction: column; gap: 0.5rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            .bg-grid, .particle, .status-bar, nav { display: none; }
+            body { background: white; color: black; }
+            main { padding-top: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <div class="loading-bar" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="particles" aria-hidden="true"></div>
+
+    <nav role="navigation" aria-label="Navegação principal">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm página inicial">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
+            </a>
+            <div class="nav-lang">
+                <a href="/" class="nav-back">← SITE PRINCIPAL</a>
+                <a href="/pt-br/dpo-suporte" class="active">PT-BR</a>
+                <a href="/privacy-officer-support">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="hero">
+            <p class="hero-eyebrow">🇧🇷 Suporte Internacional · LGPD & GDPR</p>
+            <h1>Suporte Internacional para <span>Encarregados (DPOs)</span> sob a LGPD</h1>
+            <p class="hero-sub">
+                Apoio técnico, estratégico e operacional para profissionais responsáveis pela proteção de dados no Brasil. Você continua como Encarregado — nós te apoiamos para você ter mais sucesso.
+            </p>
+            <div class="cta-group">
+                <a href="#contato" class="cta-button">AGENDAR CONVERSA GRATUITA →</a>
+                <a href="#servicos" class="cta-button secondary">VER SERVIÇOS ↓</a>
+            </div>
+        </section>
+
+        <div class="content-grid">
+
+            <!-- Positioning -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🤝</div>
+                    <div>
+                        <h2 class="card-title">NÃO SOMOS SEU ENCARREGADO</h2>
+                        <div class="card-subtitle">Somos o suporte que o seu Encarregado precisa</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Muitos Encarregados no Brasil são <strong>advogados sem experiência técnica em nuvem</strong>, ou profissionais de compliance sem conhecimento profundo de infraestrutura de dados. Essa lacuna cria riscos reais.
+                </p>
+                <p class="card-description">
+                    Nossa posição é clara: <strong>você mantém a autoridade e a responsabilidade formal.</strong> Nós entramos como suporte técnico e estratégico — para que você tome decisões mais fundamentadas, com mais segurança.
+                </p>
+                <div class="pull-quote">
+                    "A maioria dos consultores de privacidade não entende infraestrutura em nuvem. Viemos do caminho inverso — técnico primeiro, privacidade depois."
+                </div>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Pain points -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">⚠️</div>
+                    <div>
+                        <h2 class="card-title">O QUE VOCÊ ENFRENTA</h2>
+                        <div class="card-subtitle">Desafios reais de Encarregados no Brasil</div>
+                    </div>
+                </div>
+                <p class="card-description">Reconhece algum destes cenários?</p>
+                <ul class="pain-list" role="list">
+                    <li>Documentação LGPD desatualizada ou incompleta para auditorias da ANPD</li>
+                    <li>Fornecedores SaaS internacionais sem contratos de proteção de dados adequados</li>
+                    <li>Transferências internacionais de dados sem base legal clara</li>
+                    <li>Ambientes AWS ou Azure com configurações que criam riscos de privacidade</li>
+                    <li>Pressão para responder a solicitações de titulares sem processo definido</li>
+                    <li>Relatório de Impacto (RIPD) nunca feito — ou feito de forma superficial</li>
+                    <li>Empresa em expansão para Europa que precisa entender o GDPR também</li>
+                    <li>Rastreamento no site (GTM, cookies) sem consentimento adequado</li>
+                </ul>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Services -->
+            <article class="content-card" id="servicos">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🛠️</div>
+                    <div>
+                        <h2 class="card-title">COMO PODEMOS AJUDAR</h2>
+                        <div class="card-subtitle">Serviços práticos para Encarregados e empresas</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Todos os nossos serviços são <strong>educacionais e de assessoria técnica</strong> — entregamos avaliações, revisões e recomendações práticas. Não atuamos como escritório jurídico.
+                </p>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-item-icon">📋</div>
+                        <h3>REVISÃO DE POLÍTICAS</h3>
+                        <p>Análise da sua política de privacidade linha por linha com base nos requisitos da LGPD e, se necessário, do GDPR.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">🔍</div>
+                        <h3>AVALIAÇÃO DE RISCOS LGPD/GDPR</h3>
+                        <p>Mapeamento de lacunas no programa de privacidade com plano de ação priorizado e linguagem clara.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">☁️</div>
+                        <h3>REVISÃO DE NUVEM</h3>
+                        <p>Auditoria de configurações AWS e Azure — residência de dados, criptografia e controles de acesso com impacto em privacidade.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">🌐</div>
+                        <h3>TRANSFERÊNCIAS INTERNACIONAIS</h3>
+                        <p>Revisão de fornecedores e contratos para transferências de dados entre Brasil e exterior, com foco em adequação e cláusulas padrão.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">📊</div>
+                        <h3>AUDITORIA GTM & COOKIES</h3>
+                        <p>Revisão técnica do rastreamento no site para garantir que o consentimento do usuário está sendo respeitado na prática.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item-icon">🤝</div>
+                        <h3>SUPORTE AO ENCARREGADO</h3>
+                        <p>Apoio operacional contínuo — resposta a titulares, revisão de contratos com fornecedores, treinamento interno de equipes.</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- About -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">👤</div>
+                    <div>
+                        <h2 class="card-title">QUEM ESTÁ POR TRÁS DA BIYTELÜM</h2>
+                        <div class="card-subtitle">Especialista internacional com raízes técnicas</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    A BiyteLüm é conduzida por um <strong>especialista internacional em privacidade</strong> com certificações CIPP/E, CIPM e formação aprofundada em LGPD. Mas o diferencial não está só nas certificações — está na trajetória técnica.
+                </p>
+                <p class="card-description">
+                    Antes de trabalhar com privacidade, trabalhamos com infraestrutura: configuramos ambientes AWS, depuramos implementações de GTM, arquitetamos pipelines de dados. Isso significa que conseguimos identificar riscos que a maioria dos consultores simplesmente não vê — porque nunca abriram um console de nuvem.
+                </p>
+                <div class="pull-quote">
+                    "Especialista internacional em privacidade com experiência operacional em LGPD e GDPR — e fluência técnica para implementar o que recomendamos."
+                </div>
+                <p class="card-description">
+                    Nosso foco não é criar dependência de consultoria. É <strong>construir competência interna</strong> na sua equipe — para que você precise cada vez menos de suporte externo.
+                </p>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Pricing -->
+            <article class="content-card">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">💰</div>
+                    <div>
+                        <h2 class="card-title">INVESTIMENTO</h2>
+                        <div class="card-subtitle">Preços flexíveis para diferentes necessidades</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Entendemos as realidades do mercado brasileiro. Trabalhamos com preços flexíveis para startups, consultores independentes e equipes internas — sem a estrutura de honorários de grandes escritórios.
+                </p>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-name">REVISÃO PONTUAL</div>
+                        <div class="pricing-price">USD 297</div>
+                        <div class="pricing-period">por entrega</div>
+                        <ul class="pricing-features">
+                            <li>Revisão de política de privacidade</li>
+                            <li>Relatório com lacunas identificadas</li>
+                            <li>Recomendações prioritizadas</li>
+                            <li>1 sessão de revisão (60 min)</li>
+                        </ul>
+                        <a href="#contato" class="pricing-cta">SOLICITAR →</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="pricing-name">SUPORTE MENSAL</div>
+                        <div class="pricing-price">USD 597</div>
+                        <div class="pricing-period">por mês</div>
+                        <ul class="pricing-features">
+                            <li>Até 8h de suporte operacional</li>
+                            <li>Revisão de contratos com fornecedores</li>
+                            <li>Suporte a solicitações de titulares</li>
+                            <li>Avaliações de risco ad hoc</li>
+                            <li>Acesso por e-mail e mensagem</li>
+                        </ul>
+                        <a href="#contato" class="pricing-cta">SOLICITAR →</a>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="pricing-name">AVALIAÇÃO COMPLETA</div>
+                        <div class="pricing-price">USD 997</div>
+                        <div class="pricing-period">entrega única</div>
+                        <ul class="pricing-features">
+                            <li>Diagnóstico completo do programa LGPD</li>
+                            <li>Revisão de nuvem (AWS/Azure)</li>
+                            <li>Análise de fornecedores críticos</li>
+                            <li>Roadmap de 90 dias</li>
+                            <li>2 sessões de acompanhamento</li>
+                        </ul>
+                        <a href="#contato" class="pricing-cta">SOLICITAR →</a>
+                    </div>
+                </div>
+                <p class="pricing-note">
+                    Preços em USD. Condições especiais disponíveis para consultores independentes e startups early-stage. Consulte-nos.
+                </p>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- Contact form -->
+            <article class="content-card" id="contato">
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">✉️</div>
+                    <div>
+                        <h2 class="card-title">VAMOS CONVERSAR</h2>
+                        <div class="card-subtitle">Consulta gratuita de 30 minutos — sem compromisso</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Sem pressão de venda. Uma conversa honesta sobre os seus desafios de privacidade e se faz sentido trabalharmos juntos. Se não formos a escolha certa, diremos isso claramente.
+                </p>
+                <form class="contact-form" name="dpo-suporte-pt" method="POST" action="/contato-confirmado" netlify>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">NOME *</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-MAIL *</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="empresa">EMPRESA</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="cargo">CARGO / FUNÇÃO</label>
+                            <input type="text" id="cargo" name="cargo" placeholder="Ex: Encarregado de Dados">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="necessidade">QUAL É O SEU PRINCIPAL DESAFIO? *</label>
+                        <select id="necessidade" name="necessidade" required>
+                            <option value="" disabled selected>Selecione o que melhor descreve sua situação</option>
+                            <option value="politica">Revisão de política de privacidade</option>
+                            <option value="avaliacao">Avaliação geral do programa LGPD</option>
+                            <option value="nuvem">Riscos de privacidade em nuvem (AWS/Azure)</option>
+                            <option value="transferencias">Transferências internacionais de dados</option>
+                            <option value="suporte-mensal">Suporte operacional contínuo ao Encarregado</option>
+                            <option value="gdpr">Expansão para Europa (GDPR)</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">MENSAGEM</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco mais sobre o contexto ou suas dúvidas (opcional)"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        ENVIAR MENSAGEM →
+                    </button>
+                    <p class="form-disclaimer">
+                        Seus dados serão usados exclusivamente para responder à sua solicitação. Nenhuma lista de e-mail, nenhum spam.
+                    </p>
+                </form>
+            </article>
+
+        </div>
+    </main>
+
+    <div class="status-bar" role="contentinfo">
+        <div class="status-content">
+            <div class="status-left">
+                <span>🇧🇷 LGPD · 🇪🇺 GDPR · ☁️ CLOUD PRIVACY</span>
+                <span>SUPORTE: EDUCACIONAL & TÉCNICO</span>
+            </div>
+            <div class="status-right">
+                © 2025 BiyteLüm.sys |
+                <a href="/privacy" style="color:rgba(167,255,158,0.7);text-decoration:none;">Política de Privacidade</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const count = window.innerWidth < 768 ? 6 : 12;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = 2 + Math.random() * 4;
+                p.style.width = `${size}px`;
+                p.style.height = `${size}px`;
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.top = `${Math.random() * 100}%`;
+                p.style.animationDelay = `${Math.random() * 4}s`;
+                p.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(p);
+            }
+        }
+
+        let ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const grid = document.querySelector('.bg-grid');
+                    if (grid) grid.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.05}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            createParticles();
+            if (!prefersReducedMotion) window.addEventListener('scroll', onScroll, { passive: true });
+            setTimeout(() => {
+                const bar = document.querySelector('.loading-bar');
+                if (bar) bar.style.display = 'none';
+            }, 2000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
