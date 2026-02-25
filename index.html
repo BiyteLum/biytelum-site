@@ -614,6 +614,158 @@
             letter-spacing: 0.05em;
         }
         
+        /* Gap Analysis Offer Styles */
+        .gap-analysis-card {
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.06) 0%, rgba(0, 0, 0, 0.85) 100%);
+            border: 2px solid var(--accent-green);
+            border-radius: 10px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gap-analysis-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 153, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .gap-offer-badge {
+            display: inline-block;
+            background: rgba(0, 255, 153, 0.15);
+            border: 1px solid var(--accent-green);
+            border-radius: 4px;
+            padding: 0.3rem 0.8rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--accent-green);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .gap-frameworks {
+            display: flex;
+            gap: 1rem;
+            margin: 1.25rem 0;
+            flex-wrap: wrap;
+        }
+
+        .gap-framework-tag {
+            background: rgba(167, 255, 158, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 0.4rem 0.8rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--primary-green);
+        }
+
+        .gap-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .gap-checklist li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .gap-checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .gap-checklist li strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .gap-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .gap-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gap-step {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .gap-step-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .gap-step-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--primary-green);
+            margin-bottom: 0.4rem;
+        }
+
+        .gap-step-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .gap-deliverables {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .gap-deliverable {
+            flex: 1;
+            min-width: 200px;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .gap-deliverable-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--primary-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .gap-deliverable-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
         /* Status Bar */
         .status-bar {
             position: fixed;
@@ -1044,6 +1196,87 @@
                 <div class="pull-quote">
                     "Privacy law is globalizing fast. Our goal is to grow with the markets our clients are entering — not just the ones they're already in."
                 </div>
+            </article>
+
+            <div class="section-divider" aria-hidden="true"></div>
+
+            <!-- FREE GAP ANALYSIS OFFER -->
+            <article class="content-card gap-analysis-card" id="gap-analysis">
+                <div class="gap-offer-badge">FREE OFFER · LIMITED AVAILABILITY</div>
+                <div class="card-header">
+                    <div class="card-icon" aria-hidden="true">🎯</div>
+                    <div>
+                        <h2 class="card-title">PRIVACY COMPLIANCE GAP ANALYSIS</h2>
+                        <div class="card-subtitle">Know Where You Stand — At Zero Cost</div>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Expanding into Brazil, the EU, or the UAE? Our complimentary gap analysis maps your current compliance posture against LGPD, GDPR, and PDPL — and gives you a prioritized action plan before you face regulatory exposure.
+                </p>
+
+                <div class="gap-frameworks">
+                    <span class="gap-framework-tag">🇧🇷 LGPD — Brazil</span>
+                    <span class="gap-framework-tag">🇪🇺 GDPR — European Union</span>
+                    <span class="gap-framework-tag">🇦🇪 PDPL — UAE</span>
+                </div>
+
+                <ul class="gap-checklist">
+                    <li><strong>Data Inventory Snapshot</strong> — We map what personal data you collect, store, and share — and with whom.</li>
+                    <li><strong>Framework Applicability Check</strong> — We confirm which of LGPD, GDPR, and PDPL apply to your specific operations.</li>
+                    <li><strong>Gap Identification Across Key Areas</strong> — Consent &amp; legal basis, data subject rights, retention policies, cross-border transfers, DPO/DPR requirements, breach notification, and vendor contracts.</li>
+                    <li><strong>Risk Scoring by Severity</strong> — Every gap is rated High / Medium / Low so your team knows where to focus first.</li>
+                    <li><strong>Priority Action Roadmap</strong> — Your top 5 remediation steps — practical, sequenced, and scoped to your business size.</li>
+                    <li><strong>30-Minute Readout Call</strong> — A compliance specialist walks you through the findings and answers your questions live.</li>
+                </ul>
+
+                <p class="card-description" style="margin-top: 1.5rem;"><strong>Who this is for:</strong> Companies preparing to launch or expand in Brazil, the EU, or the UAE. SaaS platforms onboarding users in regulated jurisdictions. Businesses that process personal data but haven't formalized compliance. Teams that want a credible starting point before hiring a full-time DPO.</p>
+
+                <div class="gap-deliverables">
+                    <div class="gap-deliverable">
+                        <div class="gap-deliverable-title">> Gap Report (PDF)</div>
+                        <div class="gap-deliverable-desc">A documented view of your compliance posture across all applicable frameworks.</div>
+                    </div>
+                    <div class="gap-deliverable">
+                        <div class="gap-deliverable-title">> Prioritized Action List</div>
+                        <div class="gap-deliverable-desc">Ranked remediation steps — not just problems, but a path forward.</div>
+                    </div>
+                    <div class="gap-deliverable">
+                        <div class="gap-deliverable-title">> Market Entry Confidence</div>
+                        <div class="gap-deliverable-desc">Enter Brazil, the EU, or the UAE knowing your risks before regulators do.</div>
+                    </div>
+                </div>
+
+                <div class="gap-steps">
+                    <div class="gap-step">
+                        <div class="gap-step-number">1</div>
+                        <div class="gap-step-title">BOOK A DISCOVERY CALL</div>
+                        <div class="gap-step-desc">15 minutes. Tell us about your product, your target markets, and current data practices.</div>
+                    </div>
+                    <div class="gap-step">
+                        <div class="gap-step-number">2</div>
+                        <div class="gap-step-title">WE RUN THE ANALYSIS</div>
+                        <div class="gap-step-desc">Our team reviews your data flows against LGPD, GDPR, and PDPL requirements — no lengthy questionnaires.</div>
+                    </div>
+                    <div class="gap-step">
+                        <div class="gap-step-number">3</div>
+                        <div class="gap-step-title">RECEIVE YOUR GAP REPORT</div>
+                        <div class="gap-step-desc">Within 5 business days you get a full PDF report plus a live 30-min readout call with a specialist.</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <a href="/contact" class="card-button primary">
+                        CLAIM YOUR FREE ANALYSIS
+                        <span aria-hidden="true">→</span>
+                    </a>
+                    <a href="mailto:contact@biytelum.com" class="card-button">
+                        EMAIL US DIRECTLY
+                        <span aria-hidden="true">✉️</span>
+                    </a>
+                </div>
+                <p style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: rgba(167, 255, 158, 0.4); margin-top: 1rem;">
+                    This analysis is complimentary and does not constitute legal advice. Results are based on information provided during discovery. Offer subject to availability.
+                </p>
             </article>
 
             <div class="section-divider" aria-hidden="true"></div>
