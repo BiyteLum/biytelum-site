@@ -110,19 +110,59 @@
             font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;
             color: var(--primary-green); text-decoration: none;
         }
-
-        .nav-lang {
-            display: flex; gap: 1rem; align-items: center;
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
         }
-
-        .nav-lang a {
-            color: var(--text-secondary); text-decoration: none;
-            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
-            transition: color 0.3s ease; letter-spacing: 0.05em;
+        .nav-links a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
         }
-
-        .nav-lang a:hover, .nav-lang a.active { color: var(--primary-green); }
-        .nav-lang a.active { border-bottom: 1px solid var(--primary-green); }
+        .nav-links a:hover { color: #A7FF9E; letter-spacing: 0.1em; }
+        .nav-links a.active { color: #A7FF9E; border-bottom: 1px solid #A7FF9E; }
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            color: #A7FF9E;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            padding: 1rem 2rem;
+        }
+        .mobile-nav.show { display: block; }
+        .mobile-nav a {
+            display: block;
+            color: #A7FF9E;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        .mobile-nav a:hover { color: #00FF99; padding-left: 1rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            nav { position: relative; }
+        }
 
         main {
             position: relative; z-index: 10;
