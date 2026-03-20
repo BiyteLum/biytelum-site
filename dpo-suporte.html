@@ -111,26 +111,59 @@
             color: var(--primary-green); text-decoration: none;
         }
 
-        .nav-lang {
-            display: flex; gap: 1rem; align-items: center;
+                .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
         }
-
-        .nav-lang a {
-            color: var(--text-secondary); text-decoration: none;
-            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
-            transition: color 0.3s ease; letter-spacing: 0.05em;
+        .nav-links a {
+            color: rgba(167, 255, 158, 0.7);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
         }
-
-        .nav-lang a:hover, .nav-lang a.active { color: var(--primary-green); }
-        .nav-lang a.active { border-bottom: 1px solid var(--primary-green); }
-
-        .nav-back {
-            display: flex; align-items: center; gap: 0.5rem;
-            color: var(--text-secondary); text-decoration: none;
-            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+        .nav-links a:hover { color: #A7FF9E; letter-spacing: 0.1em; }
+        .nav-links a.active { color: #A7FF9E; border-bottom: 1px solid #A7FF9E; }
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(167, 255, 158, 0.3);
+            color: #A7FF9E;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
             transition: all 0.3s ease;
         }
-        .nav-back:hover { color: var(--primary-green); }
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(167, 255, 158, 0.3);
+            padding: 1rem 2rem;
+        }
+        .mobile-nav.show { display: block; }
+        .mobile-nav a {
+            display: block;
+            color: #A7FF9E;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+        .mobile-nav a:hover { color: #00FF99; padding-left: 1rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            nav { position: relative; }
+        }
 
         /* Main */
         main {
@@ -571,17 +604,43 @@
     <div class="bg-grid" aria-hidden="true"></div>
     <div id="particles" aria-hidden="true"></div>
 
-    <nav role="navigation" aria-label="Navegação principal">
+        <nav role="navigation" aria-label="Navegação principal">
         <div class="nav-container">
             <a href="/" class="logo" aria-label="BiyteLüm página inicial">
                 <span aria-hidden="true">▶</span>
                 <span>BiyteLüm.sys</span>
             </a>
-            <div class="nav-lang">
-                <a href="/" class="nav-back">← SITE PRINCIPAL</a>
-                <a href="/pt-br/dpo-suporte" class="active">PT-BR</a>
-                <a href="/privacy-officer-support">EN</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services">SERVICES</a></li>
+                <li><a href="/privacy-officer-support">DPO SUPPORT</a></li>
+                <li><a href="/privacy-policy-review">POLICY</a></li>
+                <li><a href="/compliance-check">COMPLIANCE</a></li>
+                <li><a href="/cloud-privacy-review">CLOUD</a></li>
+                <li><a href="/shopify-gtm-audit">GTM</a></li>
+                <li><a href="/pricing">PRICING</a></li>
+                <li><a href="/resources">RESOURCES</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+                <li><a href="/dpo-suporte.html" class="active" style="white-space: nowrap;">&#127463;&#127479; PT-BR</a></li>
+                <li><a href="/privacidad-latam.html" style="color: rgba(167, 255, 158, 0.5); white-space: nowrap;">&#127758; ES</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/">01. HOME</a>
+            <a href="/services">02. SERVICES</a>
+            <a href="/privacy-officer-support">03. DPO SUPPORT</a>
+            <a href="/privacy-policy-review">04. POLICY</a>
+            <a href="/compliance-check">05. COMPLIANCE</a>
+            <a href="/cloud-privacy-review">06. CLOUD</a>
+            <a href="/shopify-gtm-audit">07. GTM</a>
+            <a href="/pricing">08. PRICING</a>
+            <a href="/resources">09. RESOURCES</a>
+            <a href="/contact">10. CONTACT</a>
+            <a href="/blog">11. BLOG</a>
+            <a href="/dpo-suporte.html" style="color: #A7FF9E;">&#127463;&#127479; 12. VERSÃO EM PORTUGUÊS</a>
+            <a href="/privacidad-latam.html">&#127758; 13. VERSIÓN EN ESPAÑOL</a>
         </div>
     </nav>
 
