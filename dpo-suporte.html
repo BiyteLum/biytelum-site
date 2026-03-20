@@ -103,12 +103,14 @@
         .nav-container {
             max-width: 1200px; margin: 0 auto;
             display: flex; justify-content: space-between; align-items: center;
+        gap: 2rem;
         }
 
         .logo {
             display: flex; align-items: center; gap: 0.5rem;
             font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;
             color: var(--primary-green); text-decoration: none;
+        flex-shrink: 0;
         }
 
         .nav-links {
@@ -338,7 +340,7 @@
             color: var(--accent-green);
             font-size: 0.8rem;
             margin-top: 0.1rem;
-            flex-shrink: 0;
+        flex-shrink: 0;
         }
 
         /* Services grid */
