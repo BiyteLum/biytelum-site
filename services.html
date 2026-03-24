@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <!-- Google Tag Manager -->
@@ -10,920 +9,871 @@
     })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
     <!-- End Google Tag Manager -->
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Safe-scope privacy services including Privacy Officer Support, Privacy Policy Review, Basic Compliance Check, Cloud Privacy Review, and Shopify GTM Audit. CIPP/E, CIPM & LGPD background.">
-<title>Services | BiyteLüm - Safe-Scope Privacy Compliance Solutions</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        min-height: 100vh;
-        background: #0a0a0a;
-        background-image: 
-            radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
-            linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
-        color: #A7FF9E;
-        font-family: 'Orbitron', 'Arial', sans-serif;
-        overflow-x: hidden;
-    }
-    
-    /* Background Grid */
-    .bg-grid {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        background-image: 
-            linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-        z-index: 1;
-    }
-    
-    /* Floating Particles */
-    .particle {
-        position: fixed;
-        border-radius: 50%;
-        background: #A7FF9E;
-        opacity: 0.3;
-        box-shadow: 0 0 10px #A7FF9E;
-        animation: float 4s ease-in-out infinite;
-        pointer-events: none;
-        z-index: 2;
-    }
-    
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(180deg); }
-    }
-    
-    /* Navigation */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(10, 10, 10, 0.9);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(167, 255, 158, 0.2);
-        z-index: 100;
-        padding: 1rem 2rem;
-    }
-    
-    .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-        }
-    
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.9rem;
-        color: #A7FF9E;
-        text-decoration: none;
-        flex-shrink: 0;
-        }
-    
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-    }
-    
-    .nav-links a {
-        color: rgba(167, 255, 158, 0.7);
-        text-decoration: none;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.75rem;
-        transition: all 0.3s ease;
-        letter-spacing: 0.05em;
-    }
-    
-    .nav-links a:hover {
-        color: #A7FF9E;
-        letter-spacing: 0.1em;
-    }
-    
-    .nav-links a.active {
-        color: #A7FF9E;
-        border-bottom: 1px solid #A7FF9E;
-    }
-    
-    /* Mobile Menu */
-    .mobile-menu {
-        display: none;
-        background: transparent;
-        border: 1px solid rgba(167, 255, 158, 0.3);
-        color: #A7FF9E;
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-    }
-    
-    .mobile-menu:hover {
-        border-color: rgba(167, 255, 158, 0.6);
-    }
-    
-    .mobile-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid rgba(167, 255, 158, 0.3);
-        padding: 1rem 2rem;
-    }
-    
-    .mobile-nav.show {
-        display: block;
-    }
-    
-    .mobile-nav a {
-        display: block;
-        color: #A7FF9E;
-        text-decoration: none;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.9rem;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid rgba(167, 255, 158, 0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .mobile-nav a:hover {
-        color: #00FF99;
-        padding-left: 1rem;
-    }
-    
-    @media (max-width: 768px) {
-        .nav-links { display: none; }
-        .mobile-menu { display: block; }
-        nav { position: relative; }
-    }
-    
-    /* Main Content */
-    main {
-        position: relative;
-        z-index: 10;
-        padding-top: 6rem;
-        min-height: calc(100vh - 2.5rem);
-        padding-bottom: 2.5rem;
-    }
-    
-    /* Page Header */
-    .page-header {
-        text-align: center;
-        padding: 2rem;
-        max-width: 1200px;
-        margin: 0 auto 3rem;
-    }
-    
-    .page-header h1 {
-        font-size: clamp(2rem, 6vw, 4rem);
-        font-weight: 900;
-        margin-bottom: 1rem;
-        color: #A7FF9E;
-        text-shadow: 
-            0 0 20px #A7FF9E,
-            0 0 40px #00FF99,
-            0 0 60px #A7FF9E;
-        font-family: 'Orbitron', sans-serif;
-        text-transform: uppercase;
-    }
-    
-    .page-subtitle {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
-        color: rgba(167, 255, 158, 0.8);
-        font-weight: 300;
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.6;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    
-    .page-subtitle strong {
-        color: #A7FF9E;
-        text-shadow: 0 0 5px #A7FF9E;
-    }
-    
-    /* Services Container */
-    .services-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-    
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
-    
-    /* Service Cards */
-    .service-card {
-        background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
-        border: 1px solid rgba(167, 255, 158, 0.2);
-        border-radius: 15px;
-        padding: 2.5rem;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .service-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(167, 255, 158, 0.6);
-        box-shadow: 0 10px 30px rgba(167, 255, 158, 0.1);
-    }
-    
-    .service-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(167, 255, 158, 0.1), transparent);
-        transition: left 0.5s ease;
-    }
-    
-    .service-card:hover::before {
-        left: 100%;
-    }
-    
-    .service-header {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .service-icon {
-        font-size: 2.5rem;
-        color: #A7FF9E;
-        text-shadow: 0 0 15px #A7FF9E;
-        flex-shrink: 0;
-        display: block;
-    }
-    
-    .service-info {
-        flex: 1;
-    }
-    
-    .service-title {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.1rem;
-        color: #A7FF9E;
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-    }
-    
-    .service-price {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.3rem;
-        color: #00FF99;
-        margin-bottom: 1rem;
-        font-weight: bold;
-    }
-    
-    .service-description {
-        color: rgba(167, 255, 158, 0.8);
-        line-height: 1.6;
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    
-    .service-description strong {
-        color: #A7FF9E;
-        font-weight: 600;
-    }
-    
-    .service-features {
-        margin-bottom: 1.5rem;
-    }
-    
-    .service-features ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .service-features li {
-        color: rgba(167, 255, 158, 0.7);
-        font-size: 0.9rem;
-        font-family: 'Inter', sans-serif;
-        padding: 0.3rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-    }
-    
-    .service-features li::before {
-        content: '▶';
-        position: absolute;
-        left: 0;
-        color: #00FF99;
-        font-size: 0.7rem;
-    }
-    
-    .service-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border: 1px solid rgba(167, 255, 158, 0.6);
-        background: transparent;
-        color: #A7FF9E;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.8rem;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .service-button:hover {
-        background: rgba(167, 255, 158, 0.1);
-        transform: translateY(-2px);
-    }
-    
-    .service-button.primary {
-        background: rgba(167, 255, 158, 0.1);
-        border-color: #00FF99;
-        color: #00FF99;
-        font-weight: bold;
-    }
-    
-    .service-button.primary:hover {
-        background: rgba(0, 255, 153, 0.2);
-    }
-    
-    /* Featured Service */
-    .service-card.featured {
-        border: 2px solid #00FF99;
-        position: relative;
-    }
-    
-    /* CTA Section */
-    .cta-section {
-        background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
-        border: 2px solid rgba(167, 255, 158, 0.3);
-        border-radius: 15px;
-        padding: 2.5rem;
-        text-align: center;
-        margin: 3rem auto;
-        max-width: 700px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .cta-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, transparent, rgba(167, 255, 158, 0.1), transparent);
-        animation: shimmer 3s ease-in-out infinite;
-    }
-    
-    @keyframes shimmer {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-    }
-    
-    .cta-title {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 1.2rem;
-        color: #A7FF9E;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-    }
-    
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .cta-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem 2rem;
-        border: 2px solid #A7FF9E;
-        background: transparent;
-        color: #A7FF9E;
-        font-family: 'Share Tech Mono', monospace;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.5s ease;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        text-transform: uppercase;
-        z-index: 1;
-    }
-    
-    .cta-button:hover {
-        color: #000;
-    }
-    
-    .cta-button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: #A7FF9E;
-        transition: left 0.5s ease;
-        z-index: -1;
-    }
-    
-    .cta-button:hover::before {
-        left: 0;
-    }
-    
-    /* Back Button */
-    .back-section {
-        text-align: center;
-        margin-top: 3rem;
-    }
-    
-    .back-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem 2rem;
-        border: 1px solid rgba(167, 255, 158, 0.6);
-        background: transparent;
-        color: #A7FF9E;
-        font-family: 'Share Tech Mono', monospace;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border-radius: 8px;
-        text-transform: uppercase;
-    }
-    
-    .back-button:hover {
-        background: rgba(167, 255, 158, 0.1);
-        transform: translateX(-5px);
-    }
-    
-    /* Status Bar */
-    .status-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid rgba(167, 255, 158, 0.3);
-        padding: 0.25rem 2rem;
-        z-index: 100;
-    }
-    
-    .status-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 0.6rem;
-    }
-    
-    .status-left {
-        display: flex;
-        gap: 2rem;
-        color: rgba(167, 255, 158, 0.7);
-    }
-    
-    .status-right {
-        color: rgba(167, 255, 158, 0.5);
-    }
-    
-    .status-right a {
-        color: rgba(167, 255, 158, 0.7);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .status-right a:hover {
-        color: #A7FF9E;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .service-card {
-            padding: 2rem;
-        }
-        
-        .cta-section {
-            padding: 2rem;
-            margin: 2rem 1rem;
-        }
-        
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .cta-button {
-            width: 100%;
-            max-width: 280px;
-            justify-content: center;
-        }
-        
-        .status-content {
-            flex-direction: column;
-            gap: 0.5rem;
-            text-align: center;
-        }
-        
-        .status-left {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .services-container {
-            padding: 0 1rem;
-        }
-        
-        .service-card {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-        }
-    }
-</style>
-```
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | BiyteLüm — Privacy, AI Compliance & Expert Witness</title>
+    <meta name="description" content="BiyteLüm provides privacy policy review, GDPR gap assessment, AI agent risk advisory, cross-border privacy consulting, expert witness declarations, and legal advisory for immigration attorneys. CIPP/E, CIPM. Bilingual EN/ES.">
+    <meta name="keywords" content="GDPR gap assessment, privacy policy review, AI governance consulting, expert witness asylum, USCIS expert witness, cross-border privacy, bilingual privacy consultant">
+    <link rel="canonical" href="https://biytelum.com/services">
 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-green: #A7FF9E;
+            --accent-green: #00FF99;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(167, 255, 158, 0.03);
+            --border-color: rgba(167, 255, 158, 0.2);
+            --text-secondary: rgba(167, 255, 158, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
+            color: var(--primary-green);
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .skip-link {
+            position: absolute; top: -40px; left: 6px;
+            background: var(--primary-green); color: var(--dark-bg);
+            padding: 8px; text-decoration: none; z-index: 1000;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .skip-link:focus { top: 6px; }
+
+        .bg-grid {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.1;
+            background-image:
+                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100; padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between;
+            align-items: center; gap: 2rem;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 0.5rem;
+            flex-shrink: 0;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem; color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            transition: all 0.3s ease; letter-spacing: 0.05em;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-green); }
+        .nav-links a.active { border-bottom: 1px solid var(--primary-green); }
+
+        .mobile-menu {
+            display: none; background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-green); padding: 0.5rem;
+            cursor: pointer; border-radius: 4px; font-size: 1rem;
+        }
+
+        .mobile-nav {
+            display: none; position: absolute; top: 100%;
+            left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+
+        .mobile-nav.show { display: block; }
+
+        .mobile-nav a {
+            display: block; color: var(--primary-green);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem; padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav a:hover { color: var(--accent-green); padding-left: 1rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+        }
+
+        main {
+            position: relative; z-index: 10;
+            padding-top: 5rem;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--accent-green);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(1.4rem, 4vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .page-header p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            color: rgba(167, 255, 158, 0.65);
+            line-height: 1.7;
+        }
+
+        /* Tab nav */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
+        }
+
+        .tab-nav a {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: rgba(167, 255, 158, 0.5);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .tab-nav a:hover { color: var(--primary-green); }
+        .tab-nav a.active { color: var(--primary-green); border-bottom-color: var(--primary-green); }
+
+        /* Disclaimer */
+        .disclaimer-box {
+            background: rgba(167, 255, 158, 0.03);
+            border: 1px solid rgba(167, 255, 158, 0.15);
+            border-left: 3px solid rgba(167, 255, 158, 0.4);
+            border-radius: 4px;
+            padding: 1rem 1.5rem;
+            max-width: 860px;
+            margin: 0 auto 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: rgba(167, 255, 158, 0.55);
+            line-height: 1.6;
+        }
+
+        /* Section header */
+        .section-header {
+            max-width: 860px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .section-header .section-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--accent-green);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: rgba(167, 255, 158, 0.6);
+            line-height: 1.7;
+        }
+
+        /* Service card */
+        .service-card {
+            background: linear-gradient(135deg, rgba(167, 255, 158, 0.03) 0%, rgba(0,0,0,0.8) 100%);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: border-color 0.3s ease;
+        }
+
+        .service-card:hover { border-color: rgba(167, 255, 158, 0.4); }
+
+        .service-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .service-card-title {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--primary-green);
+        }
+
+        .service-card-tagline {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: rgba(167, 255, 158, 0.5);
+            font-style: italic;
+        }
+
+        .service-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: rgba(167, 255, 158, 0.65);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .service-body strong { color: rgba(167, 255, 158, 0.85); font-weight: 500; }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .service-detail-grid { grid-template-columns: 1fr; }
+        }
+
+        .service-detail-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(167, 255, 158, 0.12);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .service-detail-box h4 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent-green);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .service-detail-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-detail-box ul li {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: rgba(167, 255, 158, 0.6);
+            padding: 0.2rem 0;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .service-detail-box ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: rgba(167, 255, 158, 0.4);
+        }
+
+        .pricing-box {
+            background: rgba(167, 255, 158, 0.04);
+            border: 1px solid rgba(167, 255, 158, 0.2);
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pricing-main {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+        }
+
+        .pricing-detail {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.8rem;
+            color: rgba(167, 255, 158, 0.5);
+        }
+
+        .timeline-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(167, 255, 158, 0.5);
+            background: rgba(167, 255, 158, 0.05);
+            border: 1px solid rgba(167, 255, 158, 0.15);
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        /* Section divider */
+        .section-sep {
+            max-width: 860px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            border-top: 1px solid rgba(167, 255, 158, 0.12);
+        }
+
+        /* CTA block */
+        .cta-block {
+            text-align: center;
+            padding: 3rem 2rem 4rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-block h3 {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-block p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: rgba(167, 255, 158, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem; letter-spacing: 0.05em;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+            position: relative; overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: ''; position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: var(--primary-green);
+            transition: left 0.4s ease; z-index: -1;
+        }
+
+        .btn-primary:hover { color: #000; }
+        .btn-primary:hover::before { left: 0; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(167, 255, 158, 0.12);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(167, 255, 158, 0.35);
+        }
+
+        footer p { margin-bottom: 0.6rem; }
+        footer a { color: rgba(167, 255, 158, 0.5); text-decoration: none; }
+        footer a:hover { color: var(--primary-green); }
+
+        .footer-disclaimer {
+            max-width: 680px;
+            margin: 1rem auto 0;
+            color: rgba(167, 255, 158, 0.25);
+            font-size: 0.65rem;
+            line-height: 1.6;
+        }
+
+        @media print {
+            .bg-grid, nav { display: none; }
+            body { background: white; color: black; }
+            main { padding-top: 0; }
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-```
-<!-- Background Grid -->
-<div class="bg-grid"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
 
-<!-- Floating Particles -->
-<div id="particles"></div>
-
-<!-- Navigation -->
-<nav>
-    <div class="nav-container">
-        <a href="/" class="logo">
-            <span>▶</span>
-            <span>BiyteLüm.sys</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="/">HOME</a></li>
-            <li><a href="/services" class="active">SERVICES</a></li>
-            <li><a href="/privacy-officer-support">DPO</a></li>
-            <li><a href="/privacy-policy-review">POLICY</a></li>
-            <li><a href="/compliance-check">COMPLIANCE</a></li>
-            <li><a href="/cloud-privacy-review">CLOUD</a></li>
-            <li><a href="/shopify-gtm-audit">GTM</a></li>
-            <li><a href="/pricing">PRICING</a></li>
-            <li><a href="/resources">RESOURCES</a></li>
-            <li><a href="/contact">CONTACT</a></li>
-            <li><a href="/blog">BLOG</a></li>
-                                <li><a href="/platform">PLATFORM</a></li>
-                <li><a href="/dpo-suporte.html" style="color: rgba(167, 255, 158, 0.5); white-space: nowrap;">&#127463;&#127479; PT-BR</a></li>
-                <li><a href="/privacidad-latam.html" style="color: rgba(167, 255, 158, 0.5); white-space: nowrap;">&#127758; ES</a></li>
-                <li><a href="https://app.biytelum.com" class="nav-app-btn" target="_blank" rel="noopener">LAUNCH APP &#8599;</a></li>
-        </ul>
-        <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
-    </div>
-    <!-- Mobile Menu Dropdown -->
-    <div class="mobile-nav" id="mobileNav">
-        <a href="/">01. HOME</a>
-        <a href="/services">02. SERVICES</a>
-        <a href="/privacy-officer-support">03. DPO</a>
-        <a href="/privacy-policy-review">04. POLICY</a>
-        <a href="/compliance-check">05. COMPLIANCE</a>
-        <a href="/cloud-privacy-review">06. CLOUD</a>
-        <a href="/shopify-gtm-audit">07. GTM</a>
-        <a href="/pricing">08. PRICING</a>
-        <a href="/resources">09. RESOURCES</a>
-        <a href="/contact">10. CONTACT</a>
-        <a href="/blog">11. BLOG</a>
-            <a href="/dpo-suporte.html">&#127463;&#127479; 12. VERSÃO EM PORTUGUÊS</a>
-            <a href="/privacidad-latam.html">&#127758; 13. VERSIÓN EN ESPAÑOL</a>
-            <a href="/platform" style="color: #A7FF9E;">14. PLATFORM</a>
-            <a href="https://app.biytelum.com" target="_blank" rel="noopener" style="color: #00FF99;">&#8599; LAUNCH APP</a>
-    </div>
-</nav>
-
-<!-- Main Content -->
-<main>
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1>Safe-Scope Privacy Services</h1>
-        <p class="page-subtitle">BiyteLüm delivers <strong>practical privacy compliance solutions with educational focus.</strong> Our services provide operational support, reviews, assessments, and technical recommendations without complex legal strategy development.</p>
-    </section>
-    
-    <div class="services-container">
-        <div class="services-grid">
-            <!-- Privacy Officer Support - NEW -->
-            <div class="service-card featured">
-                <div class="service-header">
-                    <div class="service-icon">👤</div>
-                    <div class="service-info">
-                        <h2 class="service-title">Privacy Officer Support</h2>
-                        <div class="service-price">$750 - $4,000/mo</div>
-                    </div>
-                </div>
-                <p class="service-description">
-                    <strong>Operational privacy leadership without statutory DPO appointment.</strong> We help you build, operate, and maintain privacy programs while preserving proper legal accountability structures. Perfect for startups, scale-ups, and SMEs in multi-jurisdictional environments.
-                </p>
-                <div class="service-features">
-                    <ul>
-                        <li>Privacy program operations & governance</li>
-                        <li>DSAR workflows & data rights support</li>
-                        <li>DPIA preparation & risk mapping</li>
-                        <li>Vendor privacy assessments & DPAs</li>
-                        <li>Policy development & documentation</li>
-                        <li>Staff training & awareness programs</li>
-                    </ul>
-                </div>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <a href="/privacy-officer-support" class="service-button primary">
-                        LEARN MORE
-                        <span>👤</span>
-                    </a>
-                    <a href="/consultation" class="service-button">
-                        DISCUSS YOUR NEEDS
-                        <span>📞</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Privacy Policy Review -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">📋</div>
-                    <div class="service-info">
-                        <h2 class="service-title">Privacy Policy Review</h2>
-                        <div class="service-price">$800 - $1,500</div>
-                    </div>
-                </div>
-                <p class="service-description">
-                    <strong>Compare your existing policy against GDPR or LGPD disclosure requirements.</strong> We review your current privacy policy to identify missing elements and unclear language, providing specific improvement recommendations for European (GDPR) or Brazilian (LGPD) compliance.
-                </p>
-                <div class="service-features">
-                    <ul>
-                        <li>Line-by-line policy analysis</li>
-                        <li>GDPR/LGPD requirement mapping</li>
-                        <li>Clarity and language assessment</li>
-                        <li>Actionable improvement recommendations</li>
-                        <li>Compliance gap identification</li>
-                    </ul>
-                </div>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <a href="/privacy-policy-review" class="service-button primary">
-                        START POLICY
-                        <span>📝</span>
-                    </a>
-                    <a href="/consultation" class="service-button">
-                        FREE CONSULTATION
-                        <span>📞</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Basic Privacy Compliance Check -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">✅</div>
-                    <div class="service-info">
-                        <h2 class="service-title">Basic Privacy Compliance Check</h2>
-                        <div class="service-price">$1,200 - $2,000</div>
-                    </div>
-                </div>
-                <p class="service-description">
-                    <strong>Structured assessment of your current privacy practices against GDPR or LGPD basics.</strong> Our comprehensive questionnaire-based evaluation scores your compliance posture and generates prioritized action items for European (GDPR) or Brazilian (LGPD) requirements.
-                </p>
-                <div class="service-features">
-                    <ul>
-                        <li>Detailed assessment questionnaire</li>
-                        <li>Current practice evaluation</li>
-                        <li>GDPR/LGPD basics scoring system</li>
-                        <li>Prioritized improvement roadmap</li>
-                        <li>90-day action plan</li>
-                    </ul>
-                </div>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <a href="/compliance-check" class="service-button primary">
-                        START COMPLIANCE
-                        <span>🔍</span>
-                    </a>
-                    <a href="/assessment-sample" class="service-button">
-                        VIEW SAMPLE REPORT
-                        <span>👁️</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Cloud Privacy Configuration Review -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">☁️</div>
-                    <div class="service-info">
-                        <h2 class="service-title">Cloud Privacy Configuration Review</h2>
-                        <div class="service-price">$600 - $1,200</div>
-                    </div>
-                </div>
-                <p class="service-description">
-                    <strong>Leverage our unique AWS and Azure expertise for privacy-focused infrastructure review.</strong> We review your cloud privacy settings, check data residency configurations, and provide simple technical recommendations for AWS or Azure environments.
-                </p>
-                <div class="service-features">
-                    <ul>
-                        <li>Data residency settings review</li>
-                        <li>Basic encryption configuration check</li>
-                        <li>Access logging setup assessment</li>
-                        <li>Privacy-relevant cloud service review</li>
-                        <li>Technical improvement recommendations</li>
-                    </ul>
-                </div>
-                <a href="/cloud-privacy-review" class="service-button primary">
-                    START CLOUD
-                    <span>⚡</span>
-                </a>
-            </div>
-            
-            <!-- Shopify + GTM Privacy Audit -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">📊</div>
-                    <div class="service-info">
-                        <h2 class="service-title">Shopify + GTM Privacy Audit</h2>
-                        <div class="service-price">$1,200</div>
-                    </div>
-                </div>
-                <p class="service-description">
-                    <strong>Review your Shopify and Google Tag Manager setup for consent compliance and tracking accuracy issues.</strong> We identify duplicate events, broken attribution, improper consent behavior, and configuration problems that undermine compliance and data quality.
-                </p>
-                <div class="service-features">
-                    <ul>
-                        <li>Consent implementation review</li>
-                        <li>Duplicate event detection</li>
-                        <li>Tag firing logic analysis</li>
-                        <li>Data layer configuration check</li>
-                        <li>Cookie categorization assessment</li>
-                        <li>8-10 page audit report</li>
-                    </ul>
-                </div>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <a href="/shopify-gtm-audit" class="service-button primary">
-                        LEARN MORE
-                        <span>🛒</span>
-                    </a>
-                    <a href="/consultation" class="service-button">
-                        DISCUSS YOUR SETUP
-                        <span>📞</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Why These Services Section -->
-        <div class="service-card" style="margin-bottom: 2rem;">
-            <div class="service-header">
-                <div class="service-icon">🎯</div>
-                <div class="service-info">
-                    <h2 class="service-title">Why These Services?</h2>
-                </div>
-            </div>
-            <p class="service-description">
-                <strong>Safe Scope:</strong> All services focus on review, assessment, and recommendations rather than complex legal strategy development. This keeps risk low while providing maximum value.<br><br>
-                <strong>Operational Support:</strong> Privacy Officer Support provides hands-on privacy governance without statutory DPO appointment, perfect for organizations needing ongoing privacy leadership.<br><br>
-                <strong>Educational Focus:</strong> Our compliance check provides educational assessment and practical guidance, not legal advice. Perfect for businesses who want to understand their current state.<br><br>
-                <strong>Technical Differentiator:</strong> Our AWS, Azure, and e-commerce analytics expertise is unique in the privacy consulting space. Most consultants don't understand cloud infrastructure or GTM privacy implications.<br><br>
-                <strong>Practical Outcomes:</strong> Every engagement delivers actionable recommendations you can implement immediately to improve your privacy posture.
-            </p>
-        </div>
-        
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h3 class="cta-title">Ready to Improve Your Privacy Compliance?</h3>
-            <div class="cta-buttons">
-                <a href="/consultation" class="cta-button">
-                    Schedule Free Consultation
-                    <span>→</span>
-                </a>
-                <a href="/contact" class="cta-button">
-                    Ask Questions
-                    <span>💬</span>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Back Button -->
-        <div class="back-section">
-            <a href="/" class="back-button">
-                ← Back to Home
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="BiyteLüm homepage">
+                <span aria-hidden="true">▶</span>
+                <span>BiyteLüm.sys</span>
             </a>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/services" class="active" aria-current="page">SERVICES</a></li>
+                <li><a href="/expert-witness">EXPERT WITNESS</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/privacidad-latam.html" style="color: rgba(167, 255, 158, 0.5); white-space: nowrap;">&#127758; ES</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
         </div>
-    </div>
-</main>
+        <div class="mobile-nav" id="mobileNav" role="menu">
+            <a href="/" role="menuitem">01. HOME</a>
+            <a href="/services" role="menuitem">02. SERVICES</a>
+            <a href="/expert-witness" role="menuitem">03. EXPERT WITNESS</a>
+            <a href="/about" role="menuitem">04. ABOUT</a>
+            <a href="/contact" role="menuitem">05. CONTACT</a>
+            <a href="/privacidad-latam.html" role="menuitem" style="color: rgba(167, 255, 158, 0.5);">&#127758; VERSIÓN EN ESPAÑOL</a>
+        </div>
+    </nav>
 
-<!-- Status Bar -->
-<div class="status-bar">
-    <div class="status-content">
-        <div class="status-left">
-            <span>🏢 STATUS: SAFE SCOPE SERVICES</span>
-            <span>FOCUS: OPERATIONAL | EDUCATIONAL | REVIEWS | TECHNICAL</span>
-            <span>CERTIFIED: CIPP/E | CIPM | LGPD BACKGROUND</span>
-        </div>
-        <div class="status-right">
-            © 2025 BiyteLüm.sys | <a href="/">RETURN HOME</a>
-        </div>
-    </div>
-</div>
+    <main id="main-content">
 
-<script>
-    // Create floating particles
-    function createParticles() {
-        const container = document.getElementById('particles');
-        for (let i = 0; i < 15; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.width = `${2 + Math.random() * 4}px`;
-            particle.style.height = particle.style.width;
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.animationDelay = `${Math.random() * 4}s`;
-            particle.style.animationDuration = `${3 + Math.random() * 2}s`;
-            container.appendChild(particle);
+        <div class="page-header">
+            <p class="page-label">⬡ BiyteLüm Services</p>
+            <h1>Two Distinct Service Lines</h1>
+            <p>BiyteLüm provides two distinct service lines. Select the one relevant to your needs.</p>
+        </div>
+
+        <!-- Tab nav -->
+        <nav class="tab-nav" aria-label="Service line navigation">
+            <a href="#privacy" class="active">Privacy &amp; AI Compliance</a>
+            <a href="#expert-witness">Expert Witness &amp; Legal Advisory</a>
+        </nav>
+
+        <!-- ==============================
+             SECTION 1: PRIVACY & AI
+             ============================== -->
+        <section id="privacy" style="padding: 0 2rem 2rem;">
+
+            <div class="section-header">
+                <p class="section-label">⬡ Practice Area One</p>
+                <h2>Privacy &amp; AI Compliance Services</h2>
+                <p>
+                    Practical, safe-scope privacy and AI compliance guidance for organizations navigating GDPR, cross-border data regulations, and the emerging requirements of AI governance. All services delivered remotely in English or Spanish.<br><br>
+                    <strong style="color: rgba(167, 255, 158, 0.8);">Powered by BiyteLüm LLC (US) and BiyteLüm OÜ (EU).</strong>
+                </p>
+            </div>
+
+            <div class="disclaimer-box" style="margin: 0 2rem 2rem;">
+                <strong style="color: rgba(167, 255, 158, 0.7);">Safe Scope Notice:</strong> BiyteLüm's services provide practical compliance guidance and educational assessment. They do not constitute legal advice. Organizations requiring legal counsel should consult a licensed attorney.
+            </div>
+
+            <!-- Service 1 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">📋</span>
+                    <div>
+                        <h3 class="service-card-title">Privacy Policy Review &amp; Drafting</h3>
+                        <div class="service-card-tagline">"A privacy policy that actually reflects how you handle data."</div>
+                    </div>
+                </div>
+
+                <div class="service-detail-grid">
+                    <div class="service-detail-box">
+                        <h4>Who It's For</h4>
+                        <ul>
+                            <li>SMBs and startups needing GDPR-compliant privacy policies</li>
+                            <li>Spanish-speaking companies entering EU markets</li>
+                            <li>Organizations with outdated or incomplete privacy policies</li>
+                            <li>Companies that have never had a policy reviewed</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-box">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>Line-by-line gap analysis against GDPR Articles 13 and 14</li>
+                            <li>Assessment of current disclosures for clarity and completeness</li>
+                            <li>Written recommendations for each identified gap</li>
+                            <li>Optional: full policy rewrite</li>
+                            <li>30-day follow-up support for implementation questions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">Review only: $800–$1,000 &nbsp;|&nbsp; Review + rewrite: $1,200–$1,800</div>
+                        <div class="pricing-detail">Delivered in English or Spanish</div>
+                    </div>
+                    <span class="timeline-tag">⏱ 1–2 weeks</span>
+                </div>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">🔍</span>
+                    <div>
+                        <h3 class="service-card-title">GDPR Gap Assessment</h3>
+                        <div class="service-card-tagline">"Understand exactly where you stand with EU data protection law."</div>
+                    </div>
+                </div>
+
+                <p class="service-body">
+                    GDPR fines reached €2.3 billion in 2025 alone — up 38% year over year. 144 countries now have data privacy laws. Non-EU companies processing EU resident data are legally obligated to comply regardless of where they are headquartered. If you have EU customers or users, GDPR applies to you.
+                </p>
+
+                <div class="service-detail-grid">
+                    <div class="service-detail-box">
+                        <h4>Who It's For</h4>
+                        <ul>
+                            <li>US and Latin American companies with EU customers</li>
+                            <li>Spanish-speaking companies entering EU or European markets</li>
+                            <li>SaaS companies with EU user data</li>
+                            <li>E-commerce businesses selling to European customers</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-box">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>Review of current privacy policy and disclosures</li>
+                            <li>Data inventory and processing activities review</li>
+                            <li>Assessment of lawful basis for data processing</li>
+                            <li>Review of data subject rights procedures</li>
+                            <li>Third-party and vendor data sharing review</li>
+                            <li>Gap analysis with prioritized findings</li>
+                            <li>Written compliance report and 60-day improvement roadmap</li>
+                            <li>30-day follow-up support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">Under 20 staff: $1,500–$2,000 &nbsp;|&nbsp; 20–75 staff: $2,000–$3,000</div>
+                        <div class="pricing-detail">50% due at engagement start, 50% upon delivery. Delivered in English or Spanish.</div>
+                    </div>
+                    <span class="timeline-tag">⏱ 2–3 weeks</span>
+                </div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">🤖</span>
+                    <div>
+                        <h3 class="service-card-title">AI Agent Risk Advisory</h3>
+                        <div class="service-card-tagline">"AI agents introduce risks most compliance teams haven't planned for yet."</div>
+                    </div>
+                </div>
+
+                <p class="service-body">
+                    One third of organizations have already deployed AI agents. By 2027, this grows to 93%. AI agents interact with sensitive data, are targeted by adversaries, and introduce significant governance challenges — yet most organizations have no compliance framework for agent behavior. The EU AI Act imposes direct obligations on high-risk AI system operators beginning August 2026.
+                </p>
+
+                <div class="service-detail-grid">
+                    <div class="service-detail-box">
+                        <h4>Who It's For</h4>
+                        <ul>
+                            <li>Organizations deploying AI agents in regulated environments</li>
+                            <li>Compliance teams seeking visibility into AI agent behavior</li>
+                            <li>Companies subject to EU AI Act requirements (Aug 2026)</li>
+                            <li>Legal, financial, or healthcare orgs adopting agentic AI</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-box">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>Assessment of AI agent deployment and data access patterns</li>
+                            <li>Review against EU AI Act, NIST AI RMF, ISO 42001</li>
+                            <li>Identification of high-risk agent behaviors and data exposure</li>
+                            <li>Recommendations for governance policies and monitoring</li>
+                            <li>Written advisory report with prioritized action items</li>
+                            <li>30-day follow-up support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="service-body" style="margin-top: 1rem;">
+                    <strong>Credentials backing this service:</strong> Certified AI Agent Security Specialist (Proofpoint) · CIPP/E · CIPM · AWS CLF-C02 · Azure AZ-900
+                </p>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">Consultation (2 hrs): $300–$400 &nbsp;|&nbsp; Full assessment: $1,500–$2,500 &nbsp;|&nbsp; Retainer: $500–$1,000/mo</div>
+                        <div class="pricing-detail">Delivered in English or Spanish.</div>
+                    </div>
+                    <span class="timeline-tag">⏱ 1–3 weeks</span>
+                </div>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">🌎</span>
+                    <div>
+                        <h3 class="service-card-title">Cross-Border Privacy Consulting (EN/ES)</h3>
+                        <div class="service-card-tagline">"Privacy compliance across borders, in your language."</div>
+                    </div>
+                </div>
+
+                <p class="service-body">
+                    Hourly advisory consulting for cross-border privacy questions that don't fit neatly into a single jurisdiction. Common engagements include vendor contract privacy reviews, data transfer mechanism assessments, privacy program gap questions, and regulatory interpretation for cross-border operations.
+                </p>
+
+                <div class="service-detail-grid">
+                    <div class="service-detail-box">
+                        <h4>Who It's For</h4>
+                        <ul>
+                            <li>Spanish-speaking companies expanding into the US or EU</li>
+                            <li>US companies with operations or customers in Latin America</li>
+                            <li>Organizations needing bilingual privacy guidance</li>
+                            <li>Companies navigating USMCA digital trade obligations</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-box">
+                        <h4>Entity Structure</h4>
+                        <ul>
+                            <li>BiyteLüm OÜ (EU entity) for EU-facing work</li>
+                            <li>BiyteLüm LLC (US entity) for US-facing work</li>
+                            <li>Vendor contract privacy reviews</li>
+                            <li>Data transfer mechanism assessments</li>
+                            <li>Regulatory interpretation for cross-border operations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">$150–$200/hour</div>
+                        <div class="pricing-detail">Minimum engagement: 2 hours. Delivered in English or Spanish.</div>
+                    </div>
+                    <span class="timeline-tag">⏱ Flexible</span>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="section-sep"></div>
+
+        <!-- ==============================
+             SECTION 2: EXPERT WITNESS
+             ============================== -->
+        <section id="expert-witness" style="padding: 0 2rem 2rem;">
+
+            <div class="section-header">
+                <p class="section-label">⬡ Practice Area Two</p>
+                <h2>Expert Witness &amp; Legal Advisory Services</h2>
+                <p>
+                    BiyteLüm provides expert witness services and legal advisory support to immigration attorneys handling asylum, refugee, and humanitarian protection cases. Our founder spent over six years as a USCIS Asylum Officer and Senior Refugee Officer — adjudicating I-589 applications, I-131 travel documents, and I-730 derivative petitions.<br><br>
+                    <strong style="color: rgba(167, 255, 158, 0.8);">We offer what no other expert can: direct insider knowledge of how federal adjudicators actually think, assess credibility, and make decisions.</strong><br><br>
+                    All services available remotely. Written declarations accepted in immigration proceedings nationwide. Telephonic and video testimony available upon motion. Bilingual EN/ES.
+                </p>
+            </div>
+
+            <!-- Service 5 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">⚖️</span>
+                    <div>
+                        <h3 class="service-card-title">Expert Witness Declaration</h3>
+                        <div class="service-card-tagline">"Written expert opinions from someone who actually sat in the adjudicator's chair."</div>
+                    </div>
+                </div>
+
+                <div class="service-detail-grid">
+                    <div class="service-detail-box">
+                        <h4>Case Types Covered</h4>
+                        <ul>
+                            <li>I-589 Asylum Applications (affirmative and defensive)</li>
+                            <li>I-131 Travel Document cases for asylees and refugees</li>
+                            <li>I-730 Derivative Refugee/Asylee Petitions</li>
+                            <li>Cases involving credibility assessment standards</li>
+                            <li>Cases involving USCIS adjudication procedures and policy</li>
+                            <li>Cases involving humanitarian protection eligibility</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-box">
+                        <h4>What a Declaration Covers</h4>
+                        <ul>
+                            <li>How USCIS officers are trained to assess credibility</li>
+                            <li>Procedural standards governing specific form types</li>
+                            <li>How particular evidence types are typically evaluated</li>
+                            <li>Policy frameworks applicable to specific case facts</li>
+                            <li>Where USCIS procedural errors or deviations may have occurred</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-detail-box" style="margin-top: 1rem;">
+                    <h4>Engagement Process</h4>
+                    <ul>
+                        <li>Attorney contacts BiyteLüm with case summary and materials</li>
+                        <li>Case materials reviewed (I-589, client declaration, country conditions, decision)</li>
+                        <li>Scope of declaration agreed upon in writing</li>
+                        <li>Declaration drafted in numbered paragraphs, signed under penalty of perjury</li>
+                        <li>Attorney reviews, requests revisions as needed</li>
+                        <li>Final declaration delivered — telephonic or video testimony available upon motion</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">Scope call: $200 (credited) &nbsp;|&nbsp; Declaration: $200–$300/hr (typically $1,600–$4,500) &nbsp;|&nbsp; Testimony: $250–$300/hr</div>
+                        <div class="pricing-detail">Rush (under 7 days): 25% surcharge. Remote. Bilingual EN/ES.</div>
+                    </div>
+                    <span class="timeline-tag">⏱ 10–14 business days (rush available)</span>
+                </div>
+            </article>
+
+            <!-- Service 6 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">💬</span>
+                    <div>
+                        <h3 class="service-card-title">Expert Consultation for Attorneys</h3>
+                        <div class="service-card-tagline">"Not every case needs a full declaration. Sometimes you just need to understand how USCIS thinks."</div>
+                    </div>
+                </div>
+
+                <p class="service-body">
+                    A focused 60–90 minute consultation covering USCIS adjudication procedures, credibility assessment standards, policy frameworks, and case-specific strategy. No formal declaration produced — this is advisory only. Ideal for attorneys preparing for asylum hearings, developing case strategy, or evaluating whether expert testimony would strengthen a case.
+                </p>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">60 minutes: $250 &nbsp;|&nbsp; 90 minutes: $350 &nbsp;|&nbsp; Written follow-up summary: +$150</div>
+                    </div>
+                    <span class="timeline-tag">⏱ Scheduled within 1 week</span>
+                </div>
+            </article>
+
+            <!-- Service 7 -->
+            <article class="service-card">
+                <div class="service-card-header">
+                    <span class="service-card-icon" aria-hidden="true">🏛️</span>
+                    <div>
+                        <h3 class="service-card-title">Training for Immigration Legal Teams</h3>
+                        <div class="service-card-tagline">"Understand USCIS from the inside."</div>
+                    </div>
+                </div>
+
+                <div class="service-detail-grid">
+                    <div class="service-detail-box">
+                        <h4>Who It's For</h4>
+                        <ul>
+                            <li>Nonprofit legal aid organizations with immigration practices</li>
+                            <li>Law school immigration clinics</li>
+                            <li>Immigration attorney CLE programming</li>
+                            <li>Legal team professional development</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-box">
+                        <h4>Topics Covered</h4>
+                        <ul>
+                            <li>How asylum officers are trained and what they look for</li>
+                            <li>Credibility assessment standards in I-589 adjudication</li>
+                            <li>Common procedural issues in humanitarian case types</li>
+                            <li>How to prepare clients for USCIS interviews</li>
+                            <li>USCIS policy memoranda and their practical impact</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    <div>
+                        <div class="pricing-main">Single session: $500–$800 &nbsp;|&nbsp; Half-day workshop: $1,000–$1,500 &nbsp;|&nbsp; Custom curriculum: quoted separately</div>
+                        <div class="pricing-detail">60–90 minute virtual presentation or workshop. Available in English or Spanish.</div>
+                    </div>
+                    <span class="timeline-tag">⏱ Flexible scheduling</span>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="cta-block">
+            <h3>Ready to get started?</h3>
+            <p>Contact BiyteLüm to discuss your needs. All services delivered remotely. Bilingual English/Spanish.</p>
+            <a href="/contact" class="btn-primary">Contact Us →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>BiyteLüm LLC (United States) &nbsp;|&nbsp; BiyteLüm OÜ (Estonia, EU)</p>
+        <p>Languages: <a href="/">English</a> &nbsp;|&nbsp; <a href="/privacidad-latam.html">Español</a></p>
+        <p>CIPP/E &nbsp;|&nbsp; CIPM &nbsp;|&nbsp; Proofpoint AI Agent Security &nbsp;|&nbsp; AWS &nbsp;|&nbsp; Azure</p>
+        <p class="footer-disclaimer">
+            BiyteLüm's privacy and compliance services provide practical guidance and educational assessment. They do not constitute legal advice. Clients requiring legal counsel should consult a licensed attorney.
+        </p>
+        <p style="margin-top: 1rem;">&copy; 2025 BiyteLüm LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileNav');
+            const btn = document.querySelector('.mobile-menu');
+            menu.classList.toggle('show');
+            btn.setAttribute('aria-expanded', menu.classList.contains('show'));
         }
-    }
-    
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-        const mobileNav = document.getElementById('mobileNav');
-        mobileNav.classList.toggle('show');
-    }
-    
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-        createParticles();
-    });
-    
-    // Parallax effect for background
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const grid = document.querySelector('.bg-grid');
-        grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileNav.classList.remove('show');
-        }
-    });
-</script>
-```
-
+    </script>
 </body>
 </html>
