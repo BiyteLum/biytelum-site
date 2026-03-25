@@ -1,510 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
-    <!-- End Google Tag Manager -->
-
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | BiyteLüm — Privacy, AI Compliance & Expert Legal Advisory</title>
     <meta name="description" content="BiyteLüm was founded by a former USCIS Asylum Officer, Humanitarian Parole Officer, and Senior Refugee Officer. CIPP/E, CIPM certified. US and EU registered entities. Privacy consulting and expert witness services. Bilingual EN/ES.">
     <link rel="canonical" href="https://biytelum.com/about">
-
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
-
+    <link rel="stylesheet" href="/style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
-
-        :root {
-            --primary-green: #A7FF9E;
-            --accent-green: #00FF99;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(167, 255, 158, 0.03);
-            --border-color: rgba(167, 255, 158, 0.2);
-            --text-secondary: rgba(167, 255, 158, 0.7);
+        .about-hero {
+            padding:5.5rem 2rem 4rem;
+            max-width:760px; margin:0 auto;
+            text-align:center;
+        }
+        .about-hero h1 {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            font-size:clamp(1.8rem,4.5vw,3rem);
+            font-weight:800; line-height:1.15;
+            letter-spacing:-0.025em;
+            color:var(--green); margin-bottom:1.25rem;
+        }
+        .about-hero .sub {
+            font-family:'Inter',sans-serif;
+            font-size:clamp(0.9rem,1.8vw,1.05rem);
+            color:rgba(167,255,158,0.5);
+            line-height:1.8; max-width:620px;
+            margin:0 auto;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            min-height: 100vh;
-            background: var(--dark-bg);
-            background-image:
-                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
-            color: var(--primary-green);
-            font-family: 'Orbitron', 'Arial', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
+        /* Story section */
+        .story-section {
+            padding:0 2rem 5rem;
+            max-width:720px; margin:0 auto;
         }
-
-        .skip-link {
-            position: absolute; top: -40px; left: 6px;
-            background: var(--primary-green); color: var(--dark-bg);
-            padding: 8px; text-decoration: none; z-index: 1000;
-            font-family: 'Share Tech Mono', monospace;
+        .story-section p {
+            font-family:'Inter',sans-serif;
+            font-size:1rem; color:rgba(167,255,158,0.55);
+            line-height:1.9; margin-bottom:1.5rem;
         }
-        .skip-link:focus { top: 6px; }
+        .story-section p strong { color:rgba(167,255,158,0.85); font-weight:500; }
 
-        .bg-grid {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.1;
-            background-image:
-                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 1;
-        }
+        /* Two-column credentials */
+        .creds-section { padding:0 2rem 5rem; }
+        .creds-section-inner { max-width:900px; margin:0 auto; }
 
-        nav {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100; padding: 1rem 2rem;
-        }
-
-        .nav-container {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; justify-content: space-between;
-            align-items: center; gap: 2rem;
-        }
-
-        .logo {
-            display: flex; align-items: center; gap: 0.5rem;
-            flex-shrink: 0;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem; color: var(--primary-green);
-            text-decoration: none;
-        }
-
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-
-        .nav-links a {
-            color: var(--text-secondary); text-decoration: none;
-            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
-            transition: all 0.3s ease; letter-spacing: 0.05em;
-        }
-
-        .nav-links a:hover, .nav-links a.active { color: var(--primary-green); }
-        .nav-links a.active { border-bottom: 1px solid var(--primary-green); }
-
-        .mobile-menu {
-            display: none; background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--primary-green); padding: 0.5rem;
-            cursor: pointer; border-radius: 4px; font-size: 1rem;
-        }
-
-        .mobile-nav {
-            display: none; position: absolute; top: 100%;
-            left: 0; right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-        }
-
-        .mobile-nav.show { display: block; }
-
-        .mobile-nav a {
-            display: block; color: var(--primary-green);
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem; padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-nav a:hover { color: var(--accent-green); padding-left: 1rem; }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: block; }
-        }
-
-        main {
-            position: relative; z-index: 10;
-            padding-top: 5rem;
-        }
-
-        .content-wrap {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
-
-        .page-header {
-            padding: 3.5rem 0 2.5rem;
-            border-bottom: 1px solid rgba(167, 255, 158, 0.12);
-        }
-
-        .page-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.65rem;
-            color: var(--accent-green);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-
-        h1 {
-            font-size: clamp(1.4rem, 4vw, 2.2rem);
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-            color: var(--primary-green);
-            line-height: 1.2;
-        }
-
-        .about-section {
-            padding: 2.5rem 0;
-            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
-        }
-
-        .about-section h2 {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--primary-green);
-        }
-
-        .body-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 1rem;
-            color: rgba(167, 255, 158, 0.65);
-            line-height: 1.85;
-            margin-bottom: 1.25rem;
-        }
-
-        .body-text strong { color: rgba(167, 255, 158, 0.85); font-weight: 500; }
-
-        .pull-quote {
-            border-left: 3px solid rgba(167, 255, 158, 0.3);
-            padding: 0.75rem 0 0.75rem 1.5rem;
-            margin: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-style: italic;
-            font-size: 1rem;
-            color: rgba(167, 255, 158, 0.55);
-            line-height: 1.7;
-        }
-
-        /* Credentials grid */
         .creds-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1.25rem;
+            display:grid; grid-template-columns:1fr 1fr;
+            gap:1.25rem; margin-top:2.5rem;
         }
+        @media (max-width:640px) { .creds-grid { grid-template-columns:1fr; } }
 
-        .cred-item {
-            background: rgba(167, 255, 158, 0.03);
-            border: 1px solid rgba(167, 255, 158, 0.15);
-            border-radius: 6px;
-            padding: 0.75rem 1rem;
+        .cred-block {
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:16px; padding:1.75rem 2rem;
+            position:relative; overflow:hidden;
         }
-
-        .cred-item-title {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--primary-green);
-            letter-spacing: 0.03em;
-            margin-bottom: 0.2rem;
+        .cred-block::before {
+            content:''; position:absolute;
+            top:0; left:0; right:0; height:1px;
+            background:linear-gradient(90deg,transparent,rgba(167,255,158,0.18),transparent);
         }
-
-        .cred-item-sub {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 0.78rem;
-            color: rgba(167, 255, 158, 0.45);
+        .cred-block h3 {
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.67rem; font-weight:600;
+            letter-spacing:0.14em; text-transform:uppercase;
+            color:var(--green-bright); margin-bottom:1rem;
         }
-
-        /* Entity cards */
-        .entity-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1rem;
+        .cred-block ul { list-style:none; }
+        .cred-block li {
+            font-family:'Inter',sans-serif;
+            font-size:0.875rem; color:rgba(167,255,158,0.55);
+            padding:0.4rem 0 0.4rem 1.1rem;
+            position:relative; line-height:1.5;
+            border-bottom:1px solid var(--border);
         }
+        .cred-block li:last-child { border-bottom:none; }
+        .cred-block li::before { content:'›'; position:absolute; left:0; color:rgba(167,255,158,0.35); }
+        .cred-block li strong { color:rgba(167,255,158,0.8); font-weight:500; }
 
-        @media (max-width: 500px) {
-            .entity-grid { grid-template-columns: 1fr; }
+        /* Stat chips */
+        .stat-row {
+            display:flex; flex-wrap:wrap;
+            gap:1rem; margin:3rem auto 0;
+            max-width:720px; justify-content:center;
         }
-
-        .entity-card {
-            background: rgba(167, 255, 158, 0.03);
-            border: 1px solid rgba(167, 255, 158, 0.2);
-            border-radius: 8px;
-            padding: 1.25rem;
+        .stat-chip {
+            text-align:center;
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:12px; padding:1.25rem 1.75rem;
+            flex:1; min-width:160px;
         }
-
-        .entity-name {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--primary-green);
-            margin-bottom: 0.4rem;
+        .stat-chip .stat-num {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            font-size:1.9rem; font-weight:800;
+            letter-spacing:-0.03em; color:var(--green);
+            margin-bottom:0.25rem;
         }
-
-        .entity-detail {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 0.82rem;
-            color: rgba(167, 255, 158, 0.5);
-            line-height: 1.6;
+        .stat-chip .stat-label {
+            font-family:'Inter',sans-serif;
+            font-size:0.78rem; color:rgba(167,255,158,0.45);
+            line-height:1.4;
         }
 
         /* CTA */
-        .cta-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+        .about-cta {
+            text-align:center;
+            padding:4rem 2rem 5rem;
+            max-width:560px; margin:0 auto;
         }
-
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            padding: 0.9rem 1.8rem;
-            border: 2px solid var(--primary-green);
-            background: transparent;
-            color: var(--primary-green);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem; letter-spacing: 0.05em;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.4s ease;
-            position: relative; overflow: hidden;
+        .about-cta h3 {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            font-size:clamp(1.2rem,2.5vw,1.6rem);
+            font-weight:700; letter-spacing:-0.02em;
+            color:var(--green); margin-bottom:0.75rem;
         }
-
-        .btn-primary::before {
-            content: ''; position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: var(--primary-green);
-            transition: left 0.4s ease; z-index: -1;
+        .about-cta p {
+            font-family:'Inter',sans-serif;
+            font-size:0.9rem; color:rgba(167,255,158,0.5);
+            margin-bottom:1.75rem; line-height:1.7;
         }
-
-        .btn-primary:hover { color: #000; }
-        .btn-primary:hover::before { left: 0; }
-
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            padding: 0.9rem 1.8rem;
-            border: 2px solid rgba(167, 255, 158, 0.4);
-            background: transparent;
-            color: rgba(167, 255, 158, 0.8);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem; letter-spacing: 0.05em;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary-green);
-            color: var(--primary-green);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(167, 255, 158, 0.12);
-            padding: 2.5rem 2rem;
-            text-align: center;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: rgba(167, 255, 158, 0.35);
-        }
-
-        footer p { margin-bottom: 0.6rem; }
-        footer a { color: rgba(167, 255, 158, 0.5); text-decoration: none; }
-        footer a:hover { color: var(--primary-green); }
-
-        .footer-disclaimer {
-            max-width: 680px;
-            margin: 1rem auto 0;
-            color: rgba(167, 255, 158, 0.25);
-            font-size: 0.65rem;
-            line-height: 1.6;
-        }
+        .cta-btns { display:flex; gap:0.875rem; justify-content:center; flex-wrap:wrap; }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
 
     <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo" aria-label="BiyteLüm homepage">
-                <span aria-hidden="true">▶</span>
-                <span>BiyteLüm.sys</span>
-            </a>
+            <a href="/" class="logo" aria-label="BiyteLüm homepage"><span class="logo-dot" aria-hidden="true"></span>BiyteLüm</a>
             <ul class="nav-links">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/services">SERVICES</a></li>
-                <li><a href="/expert-witness">EXPERT WITNESS</a></li>
-                <li><a href="/about" class="active" aria-current="page">ABOUT</a></li>
-                <li><a href="/contact">CONTACT</a></li>
-                <li><a href="/privacidad-latam.html" style="color: rgba(167, 255, 158, 0.5); white-space: nowrap;">&#127758; ES</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/expert-witness">Expert Witness</a></li>
+                <li><a href="/about" class="active" aria-current="page">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/privacidad-latam.html" class="nav-lang">&#127758; ES</a></li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle mobile menu">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">☰</button>
         </div>
-        <div class="mobile-nav" id="mobileNav" role="menu">
-            <a href="/" role="menuitem">01. HOME</a>
-            <a href="/services" role="menuitem">02. SERVICES</a>
-            <a href="/expert-witness" role="menuitem">03. EXPERT WITNESS</a>
-            <a href="/about" role="menuitem">04. ABOUT</a>
-            <a href="/contact" role="menuitem">05. CONTACT</a>
-            <a href="/privacidad-latam.html" role="menuitem" style="color: rgba(167, 255, 158, 0.5);">&#127758; VERSIÓN EN ESPAÑOL</a>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/">Home</a><a href="/services">Services</a><a href="/expert-witness">Expert Witness</a><a href="/about">About</a><a href="/contact">Contact</a>
+            <a href="/privacidad-latam.html" style="color:rgba(167,255,158,0.35);">&#127758; Versión en Español</a>
         </div>
     </nav>
 
     <main id="main-content">
-        <div class="content-wrap">
 
-            <header class="page-header">
-                <p class="page-label">⬡ About BiyteLüm</p>
-                <h1>Sensitive Data. High Stakes. Real Experience.</h1>
-            </header>
+        <section class="about-hero">
+            <p class="section-eyebrow">About BiyteLüm</p>
+            <h1>Sensitive Data. High Stakes. Real Experience.</h1>
+            <p class="sub">
+                BiyteLüm sits at an unusual intersection: privacy and AI compliance consulting, and expert legal advisory for immigration cases. To understand why these two service lines exist under one roof, you need to understand what connects them.
+            </p>
+        </section>
 
-            <!-- Main story -->
-            <section class="about-section">
-                <h2>The Story Behind BiyteLüm</h2>
-                <p class="body-text">
-                    BiyteLüm sits at an unusual intersection: privacy and AI compliance consulting, and expert legal advisory for immigration cases. To understand why these two service lines exist under one roof, you need to understand what connects them.
-                </p>
-                <p class="body-text">
-                    Our founder spent over six years as a federal adjudications officer at US Citizenship and Immigration Services — processing asylum applications, refugee petitions, and humanitarian protection cases. Every case involved some of the most sensitive personal data that exists: persecution histories, medical records, family separation details, biometric information, criminal background data. That data, if mishandled, could expose individuals to deportation, persecution, or worse.
-                </p>
-                <div class="pull-quote">
-                    "Asylum adjudication and privacy compliance share the same core: protecting vulnerable people's data from misuse with serious real-world consequences."
+        <div class="divider"></div>
+
+        <!-- Story -->
+        <section class="story-section" style="padding-top:4rem;" aria-labelledby="story-heading">
+            <h2 id="story-heading" class="section-heading" style="text-align:left;margin-bottom:1.75rem;">The Through-Line</h2>
+
+            <p>
+                Our founder spent over six years as a federal adjudications officer at US Citizenship and Immigration Services — processing asylum applications, humanitarian parole cases, and refugee petitions. Every case involved some of the most sensitive personal data that exists: persecution histories, medical records, family separation details, biometric information, criminal background data.
+            </p>
+            <p>
+                That data, if mishandled, could expose individuals to deportation, persecution, or worse. <strong>This was not abstract compliance. This was life and death data governance under strict federal regulatory frameworks</strong> — including 8 U.S.C. 1367, the Privacy Act of 1974, and DHS Privacy Impact Assessment requirements.
+            </p>
+            <p>
+                That experience created something no certification program can replicate: a deep, practical understanding of what it means to handle sensitive human data under high-stakes conditions with serious regulatory accountability. The same precision that governed asylum adjudications now drives BiyteLüm's approach to privacy compliance and AI governance.
+            </p>
+            <p>
+                Today, BiyteLüm serves two audiences. <strong>Organizations navigating cross-border data privacy and AI governance obligations</strong> — particularly those operating between the US, EU, and Latin America — benefit from our CIPP/E, CIPM, and AI Agent Security credentials and our registered US and EU entities. <strong>Immigration attorneys handling asylum and humanitarian cases</strong> benefit from direct insider knowledge of USCIS adjudication standards that no academic or policy expert can offer.
+            </p>
+
+            <div class="stat-row">
+                <div class="stat-chip">
+                    <div class="stat-num">6+</div>
+                    <div class="stat-label">Years of federal adjudications experience</div>
                 </div>
-                <p class="body-text">
-                    That experience created something no certification program can replicate: a deep, practical understanding of what it means to handle sensitive human data under high-stakes conditions with serious regulatory accountability. The same precision that governed asylum adjudications now drives BiyteLüm's approach to privacy compliance and AI governance.
-                </p>
-                <p class="body-text">
-                    Today, BiyteLüm serves two audiences. Organizations navigating cross-border data privacy and AI governance obligations — particularly those operating between the US, EU, and Latin America — benefit from our CIPP/E, CIPM, and AI Agent Security credentials and our registered US and EU entities. Immigration attorneys handling asylum and humanitarian cases benefit from direct insider knowledge of USCIS adjudication standards that no academic or policy expert can offer.
-                </p>
-            </section>
+                <div class="stat-chip">
+                    <div class="stat-num">2</div>
+                    <div class="stat-label">Registered entities: US &amp; EU</div>
+                </div>
+                <div class="stat-chip">
+                    <div class="stat-num">EN/ES</div>
+                    <div class="stat-label">Bilingual services, English &amp; Spanish</div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Founder -->
-            <section class="about-section">
-                <h2>Founder — Joshua Perez Garcia</h2>
-                <p class="body-text">
-                    Former USCIS Asylum Officer, Humanitarian Parole Officer, and Senior Refugee Officer. Six years adjudicating I-589 asylum applications, I-131 travel documents (including humanitarian parole cases), and I-730 derivative refugee/asylee petitions. Conducted high-stakes credibility interviews, fraud detection, and national security vetting. Coordinated with FDNS, law enforcement, and Intelligence Community partners.
-                </p>
-                <p class="body-text">
-                    Managed sensitive PII under strict federal regulatory frameworks including 8 U.S.C. §1367, the Privacy Act of 1974, and DHS Privacy Impact Assessment requirements. CIPP/E and CIPM certified. Certified AI Agent Security Specialist. AWS and Azure certified.
-                </p>
-                <p class="body-text">
-                    <strong>Languages:</strong> English (Native) · Spanish (Native)<br>
-                    <strong>Location:</strong> Mérida, Mexico — remote services delivered globally
-                </p>
-            </section>
+        <div class="divider"></div>
 
-            <!-- Credentials -->
-            <section class="about-section">
-                <h2>Credentials &amp; Certifications</h2>
+        <!-- Credentials -->
+        <section class="creds-section" aria-labelledby="creds-heading">
+            <div class="creds-section-inner">
+                <div style="text-align:center; padding:4rem 0 0;">
+                    <p class="section-eyebrow">Qualifications</p>
+                    <h2 class="section-heading" id="creds-heading">Credentials &amp; Background</h2>
+                </div>
                 <div class="creds-grid">
-                    <div class="cred-item">
-                        <div class="cred-item-title">CIPP/E</div>
-                        <div class="cred-item-sub">Certified Information Privacy Professional/Europe · IAPP</div>
+                    <div class="cred-block">
+                        <h3>Federal Experience</h3>
+                        <ul>
+                            <li><strong>USCIS Asylum Officer</strong> — I-589 adjudications, credibility interviews, fraud detection</li>
+                            <li><strong>USCIS Humanitarian Parole Officer</strong> — humanitarian parole case adjudications</li>
+                            <li><strong>USCIS Senior Refugee Officer</strong> — I-730 derivative petitions, I-131 travel documents</li>
+                            <li>Coordinated with FDNS, law enforcement &amp; Intelligence Community</li>
+                            <li>National security vetting on sensitive cases</li>
+                            <li>Managed sensitive PII under 8 U.S.C. 1367, Privacy Act 1974, DHS PIA requirements</li>
+                        </ul>
                     </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">CIPM</div>
-                        <div class="cred-item-sub">Certified Information Privacy Manager · IAPP</div>
+                    <div class="cred-block">
+                        <h3>Privacy &amp; AI Certifications</h3>
+                        <ul>
+                            <li><strong>CIPP/E</strong> — Certified Information Privacy Professional/Europe (IAPP)</li>
+                            <li><strong>CIPM</strong> — Certified Information Privacy Manager (IAPP)</li>
+                            <li><strong>Certified AI Agent Security Specialist</strong> (Proofpoint)</li>
+                            <li><strong>AWS Certified Cloud Practitioner</strong> (CLF-C02)</li>
+                            <li><strong>Microsoft Azure Fundamentals</strong> (AZ-900)</li>
+                            <li><strong>EXIN Privacy &amp; Data Protection Essentials</strong> based on LGPD</li>
+                        </ul>
                     </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">AI Agent Security Specialist</div>
-                        <div class="cred-item-sub">Certified · Proofpoint</div>
+                    <div class="cred-block">
+                        <h3>Entities &amp; Jurisdiction</h3>
+                        <ul>
+                            <li><strong>BiyteLüm LLC</strong> — United States entity</li>
+                            <li><strong>BiyteLüm OÜ</strong> — Estonia, European Union</li>
+                            <li>US clients &amp; expert witness work via BiyteLüm LLC</li>
+                            <li>EU-facing clients &amp; GDPR services via BiyteLüm OÜ</li>
+                        </ul>
                     </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">AWS CLF-C02</div>
-                        <div class="cred-item-sub">Certified Cloud Practitioner · Amazon Web Services</div>
-                    </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">Azure AZ-900</div>
-                        <div class="cred-item-sub">Microsoft Azure Fundamentals</div>
-                    </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">EXIN LGPD</div>
-                        <div class="cred-item-sub">Privacy &amp; Data Protection Essentials based on LGPD · EXIN</div>
-                    </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">Former USCIS Asylum Officer</div>
-                        <div class="cred-item-sub">I-589 asylum applications · affirmative &amp; defensive</div>
-                    </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">Humanitarian Parole Officer</div>
-                        <div class="cred-item-sub">I-131 humanitarian parole · US Citizenship and Immigration Services</div>
-                    </div>
-                    <div class="cred-item">
-                        <div class="cred-item-title">Senior Refugee Officer</div>
-                        <div class="cred-item-sub">I-730 derivative petitions · US Citizenship and Immigration Services</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Entities -->
-            <section class="about-section">
-                <h2>Our Entities</h2>
-                <p class="body-text">
-                    BiyteLüm operates two registered entities — one in the United States and one in the European Union — allowing us to serve clients across jurisdictions and provide EU-entity representation for GDPR-related engagements.
-                </p>
-                <div class="entity-grid">
-                    <div class="entity-card">
-                        <div class="entity-name">BiyteLüm LLC</div>
-                        <div class="entity-detail">United States<br>Handles US clients, expert witness work, US privacy consulting, and cross-border engagements.</div>
-                    </div>
-                    <div class="entity-card">
-                        <div class="entity-name">BiyteLüm OÜ</div>
-                        <div class="entity-detail">Estonia, European Union<br>Handles EU-facing clients, GDPR services, and international compliance engagements requiring an EU entity.</div>
+                    <div class="cred-block">
+                        <h3>Languages &amp; Location</h3>
+                        <ul>
+                            <li><strong>English</strong> — Native</li>
+                            <li><strong>Spanish</strong> — Native</li>
+                            <li>Based in Mérida, Mexico — remote services globally</li>
+                            <li>Expert witness declarations accepted in US immigration proceedings nationwide</li>
+                            <li>Telephonic &amp; video testimony available upon motion</li>
+                        </ul>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- CTA -->
-            <section class="about-section" style="border-bottom: none;">
-                <h2>Work With Us</h2>
-                <p class="body-text">
-                    Whether you need privacy compliance guidance for your organization or expert advisory support for an immigration matter, we'd like to hear from you.
-                </p>
-                <div class="cta-row">
-                    <a href="/services" class="btn-primary">View Services →</a>
-                    <a href="/expert-witness" class="btn-secondary">Expert Witness →</a>
-                    <a href="/contact" class="btn-secondary">Contact Us →</a>
-                </div>
-            </section>
+        <div class="divider"></div>
 
+        <div class="about-cta">
+            <h3>Work with BiyteLüm</h3>
+            <p>Whether you need privacy compliance guidance or expert witness support for an immigration case, we respond within one business day.</p>
+            <div class="cta-btns">
+                <a href="/contact" class="btn-primary">Get in Touch →</a>
+                <a href="/services" class="btn-secondary">View Services →</a>
+            </div>
         </div>
+
     </main>
 
     <footer>
-        <p>BiyteLüm LLC (United States) &nbsp;|&nbsp; BiyteLüm OÜ (Estonia, EU)</p>
-        <p>Languages: <a href="/">English</a> &nbsp;|&nbsp; <a href="/privacidad-latam.html">Español</a></p>
-        <p>CIPP/E &nbsp;|&nbsp; CIPM &nbsp;|&nbsp; Proofpoint AI Agent Security &nbsp;|&nbsp; AWS &nbsp;|&nbsp; Azure</p>
-        <p class="footer-disclaimer">
-            BiyteLüm's privacy and compliance services provide practical guidance and educational assessment. They do not constitute legal advice. Clients requiring legal counsel should consult a licensed attorney.
-        </p>
-        <p style="margin-top: 1rem;">&copy; 2025 BiyteLüm LLC. All rights reserved.</p>
+        <div class="footer-inner">
+            <a href="/" class="footer-logo"><span class="logo-dot" aria-hidden="true"></span>BiyteLüm</a>
+            <p>BiyteLüm LLC (United States) &nbsp;·&nbsp; BiyteLüm OÜ (Estonia, EU)</p>
+            <p><a href="/">English</a> &nbsp;·&nbsp; <a href="/privacidad-latam.html">Español</a></p>
+            <p>CIPP/E &nbsp;·&nbsp; CIPM &nbsp;·&nbsp; Proofpoint AI Agent Security &nbsp;·&nbsp; AWS &nbsp;·&nbsp; Azure</p>
+            <p class="footer-disclaimer">BiyteLüm's privacy and compliance services provide practical guidance and educational assessment. They do not constitute legal advice. Clients requiring legal counsel should consult a licensed attorney.</p>
+            <p style="margin-top:0.25rem;">&copy; 2025 BiyteLüm LLC. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileNav');
             const btn = document.querySelector('.mobile-menu');
-            menu.classList.toggle('show');
-            btn.setAttribute('aria-expanded', menu.classList.contains('show'));
+            const isOpen = menu.classList.toggle('show');
+            btn.setAttribute('aria-expanded', isOpen);
+            btn.textContent = isOpen ? '✕' : '☰';
         }
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('mobileNav');
+            if (!nav.contains(e.target) && menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                document.querySelector('.mobile-menu').textContent = '☰';
+            }
+        });
     </script>
 </body>
 </html>

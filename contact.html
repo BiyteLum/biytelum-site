@@ -1,815 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
-    <!-- End Google Tag Manager -->
-    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MG8TH9XG');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact BiyteLüm - Secure digital privacy consultations for safe-scope privacy compliance services.">
-    <title>BiyteLüm | Secure Contact Protocol</title>
+    <title>Contact | BiyteLüm</title>
+    <meta name="description" content="Contact BiyteLüm for privacy consulting, GDPR assessment, AI governance advisory, or immigration expert witness services. Bilingual EN/ES. Response within one business day.">
+    <link rel="canonical" href="https://biytelum.com/contact">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <link rel="stylesheet" href="/style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            min-height: 100vh;
-            background: #0a0a0a;
-            background-image: 
-                radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0a 0%, #121212 100%);
-            color: #A7FF9E;
-            font-family: 'Orbitron', 'Arial', sans-serif;
-            overflow-x: hidden;
-        }
-        
-        /* Background Grid */
-        .bg-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            background-image: 
-                linear-gradient(rgba(167, 255, 158, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(167, 255, 158, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 1;
-        }
-        
-        /* Floating Particles */
-        .particle {
-            position: fixed;
-            border-radius: 50%;
-            background: #A7FF9E;
-            opacity: 0.3;
-            box-shadow: 0 0 10px #A7FF9E;
-            animation: float 4s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 2;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(167, 255, 158, 0.2);
-            z-index: 100;
-            padding: 1rem 2rem;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        gap: 2rem;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            color: #A7FF9E;
-            text-decoration: none;
-        flex-shrink: 0;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: rgba(167, 255, 158, 0.7);
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-        }
-        
-        .nav-links a:hover {
-            color: #A7FF9E;
-            letter-spacing: 0.1em;
-        }
-        
-        .nav-links a.active {
-            color: #A7FF9E;
-            border-bottom: 1px solid #A7FF9E;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            background: transparent;
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            color: #A7FF9E;
-            padding: 0.5rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        
-        .mobile-menu:hover {
-            border-color: rgba(167, 255, 158, 0.6);
-        }
-        
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(167, 255, 158, 0.3);
-            padding: 1rem 2rem;
-        }
-        
-        .mobile-nav.show {
-            display: block;
-        }
-        
-        .mobile-nav a {
-            display: block;
-            color: #A7FF9E;
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(167, 255, 158, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .mobile-nav a:hover {
-            color: #00FF99;
-            padding-left: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: block; }
-            nav { position: relative; }
-        }
-        
-        /* Main Content */
-        main {
-            position: relative;
-            z-index: 10;
-            padding-top: 6rem;
-            min-height: calc(100vh - 2.5rem);
-            max-width: 1000px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-bottom: 2.5rem;
-        }
-        
-        /* Header */
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .page-title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-            margin-bottom: 0.5rem;
-        }
-        
-        .title-line {
-            font-size: clamp(2rem, 8vw, 4rem);
-            font-weight: 900;
-            color: #A7FF9E;
-            text-shadow: 
-                0 0 20px #A7FF9E,
-                0 0 40px #00FF99,
-                0 0 60px #A7FF9E;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            line-height: 0.9;
-        }
-        
-        .page-subtitle {
-            font-family: 'Share Tech Mono', monospace;
-            color: rgba(167, 255, 158, 0.8);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .page-description {
-            color: rgba(167, 255, 158, 0.8);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        /* Contact Methods */
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .contact-method {
-            background: rgba(167, 255, 158, 0.05);
-            border: 1px solid rgba(167, 255, 158, 0.2);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-method:hover {
-            border-color: rgba(167, 255, 158, 0.4);
-            transform: translateY(-3px);
-        }
-        
-        .contact-method .icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-method h3 {
-            font-family: 'Share Tech Mono', monospace;
-            color: #A7FF9E;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-        
-        .contact-method p {
-            color: rgba(167, 255, 158, 0.8);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .contact-method a {
-            color: #A7FF9E;
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-method a:hover {
-            color: #00FF99;
-            text-shadow: 0 0 10px #00FF99;
-        }
-        
-        /* PGP Container */
-        .pgp-container {
-            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
-            border: 2px solid rgba(167, 255, 158, 0.3);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pgp-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(167, 255, 158, 0.1), transparent);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .pgp-container h2 {
-            font-family: 'Share Tech Mono', monospace;
-            color: #A7FF9E;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-shadow: 0 0 10px #A7FF9E;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .pgp-container p {
-            color: rgba(167, 255, 158, 0.8);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .pgp-container a {
-            color: #A7FF9E;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .pgp-container a:hover {
-            color: #00FF99;
-            text-shadow: 0 0 10px #00FF99;
-        }
-        
-        .pgp-key {
-            background: #000;
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            border-radius: 5px;
-            padding: 1rem;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: #A7FF9E;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow: auto;
-            max-height: 200px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(167, 255, 158, 0.1);
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            color: #A7FF9E;
-            padding: 0.3rem 0.6rem;
-            border-radius: 3px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 3;
-        }
-        
-        .copy-button:hover {
-            background: rgba(167, 255, 158, 0.2);
-            border-color: rgba(167, 255, 158, 0.6);
-        }
-        
-        /* Contact Form */
-        .contact-form {
-            background: linear-gradient(135deg, rgba(167, 255, 158, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
-            border: 1px solid rgba(167, 255, 158, 0.2);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .card-icon {
-            width: 3rem;
-            height: 3rem;
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            background: rgba(167, 255, 158, 0.1);
-        }
-        
-        .card-title {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #A7FF9E;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            color: #A7FF9E;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(167, 255, 158, 0.3);
-            border-radius: 5px;
-            padding: 0.75rem;
-            color: #A7FF9E;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: rgba(167, 255, 158, 0.6);
-            box-shadow: 0 0 10px rgba(167, 255, 158, 0.2);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        /* Buttons */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid rgba(167, 255, 158, 0.6);
-            background: transparent;
-            color: #A7FF9E;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .cta-button:hover {
-            background: rgba(167, 255, 158, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .cta-primary {
-            background: #A7FF9E;
-            color: #000;
-            border-color: #A7FF9E;
-            font-weight: bold;
-        }
-        
-        .cta-primary:hover {
-            background: #00FF99;
-            border-color: #00FF99;
-            box-shadow: 0 0 20px rgba(167, 255, 158, 0.3);
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid rgba(167, 255, 158, 0.6);
-            background: transparent;
-            color: #A7FF9E;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-        }
-        
-        .back-button:hover {
-            background: rgba(167, 255, 158, 0.1);
-            transform: translateX(-5px);
-        }
-        
-        /* Status Bar */
-        .status-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(167, 255, 158, 0.3);
-            padding: 0.25rem 2rem;
-            z-index: 100;
-        }
-        
-        .status-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.6rem;
-        }
-        
-        .status-left {
-            display: flex;
-            gap: 2rem;
-            color: rgba(167, 255, 158, 0.7);
-        }
-        
-        .status-right {
-            color: rgba(167, 255, 158, 0.5);
-        }
-        
-        .status-right a {
-            color: rgba(167, 255, 158, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .status-right a:hover {
-            color: #A7FF9E;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
-            
-            .pgp-container {
-                padding: 1.5rem;
-            }
-            
-            .status-content {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-            
-            .status-left {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            main {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .contact-form, .pgp-container {
-                padding: 1.5rem;
-            }
+        .contact-layout {
+            padding:4rem 2rem 6rem;
+            max-width:1000px; margin:0 auto;
+            display:grid;
+            grid-template-columns:1fr 1.6fr;
+            gap:3rem;
+            align-items:start;
+        }
+        @media (max-width:720px) {
+            .contact-layout { grid-template-columns:1fr; gap:2rem; }
+        }
+
+        /* Left: info panel */
+        .contact-info h2 {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            font-size:clamp(1.3rem,3vw,1.9rem);
+            font-weight:700; letter-spacing:-0.02em;
+            color:var(--green); margin-bottom:0.75rem;
+            line-height:1.2;
+        }
+        .contact-info .intro {
+            font-family:'Inter',sans-serif;
+            font-size:0.9rem; color:rgba(167,255,158,0.5);
+            line-height:1.75; margin-bottom:2rem;
+        }
+
+        .info-block {
+            margin-bottom:1.5rem;
+        }
+        .info-block-label {
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.67rem; font-weight:600;
+            letter-spacing:0.14em; text-transform:uppercase;
+            color:var(--green-bright); margin-bottom:0.5rem;
+        }
+        .info-block p {
+            font-family:'Inter',sans-serif;
+            font-size:0.875rem; color:rgba(167,255,158,0.55);
+            line-height:1.65;
+        }
+        .info-block a {
+            color:rgba(167,255,158,0.65);
+            text-decoration:none;
+            transition:color 0.18s;
+        }
+        .info-block a:hover { color:var(--green); }
+
+        .response-badge {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.72rem; font-weight:600;
+            color:var(--green-bright);
+            background:rgba(0,255,153,0.06);
+            border:1px solid rgba(0,255,153,0.18);
+            border-radius:100px; padding:0.35rem 0.9rem;
+            margin-top:1.5rem;
+        }
+        .response-badge::before {
+            content:''; width:6px; height:6px;
+            background:var(--green-bright); border-radius:50%;
+            box-shadow:0 0 6px rgba(0,255,153,0.8);
+        }
+
+        /* Right: form */
+        .contact-form-card {
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:16px; padding:2.25rem;
+            position:relative; overflow:hidden;
+        }
+        .contact-form-card::before {
+            content:''; position:absolute;
+            top:0; left:0; right:0; height:1px;
+            background:linear-gradient(90deg,transparent,rgba(167,255,158,0.2),transparent);
+        }
+        .contact-form-card h3 {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            font-size:1.1rem; font-weight:700;
+            letter-spacing:-0.01em; color:var(--green);
+            margin-bottom:1.5rem;
+        }
+
+        .form-row { margin-bottom:1rem; }
+        .form-row label {
+            display:block;
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.68rem; font-weight:600;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:rgba(167,255,158,0.45); margin-bottom:0.375rem;
+        }
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width:100%;
+            background:rgba(0,0,0,0.4);
+            border:1px solid var(--border);
+            border-radius:8px;
+            padding:0.7rem 0.9rem;
+            font-family:'Inter',sans-serif;
+            font-size:0.875rem; color:var(--green);
+            transition:border-color 0.18s; outline:none;
+        }
+        .form-row input::placeholder,
+        .form-row textarea::placeholder { color:rgba(167,255,158,0.22); }
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus { border-color:var(--border-mid); }
+        .form-row select { color:rgba(167,255,158,0.65); }
+        .form-row select option { background:#0f0f0f; color:var(--green); }
+        .form-row textarea { resize:vertical; min-height:120px; }
+
+        .form-two { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+        @media (max-width:480px) { .form-two { grid-template-columns:1fr; } }
+
+        .form-submit { margin-top:1.25rem; }
+        .form-submit button {
+            width:100%; padding:0.85rem;
+            background:var(--green); color:#000;
+            font-family:'Space Grotesk',sans-serif;
+            font-weight:600; font-size:0.9rem;
+            border:none; border-radius:8px;
+            cursor:pointer; letter-spacing:0.01em;
+            transition:background 0.18s, box-shadow 0.18s;
+        }
+        .form-submit button:hover {
+            background:var(--green-bright);
+            box-shadow:0 0 20px rgba(0,255,153,0.25);
+        }
+        .form-note {
+            text-align:center; margin-top:1rem;
+            font-family:'Inter',sans-serif;
+            font-size:0.76rem; color:rgba(167,255,158,0.3);
+            line-height:1.5;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- Background Grid -->
-    <div class="bg-grid"></div>
-    
-    <!-- Floating Particles -->
-    <div id="particles"></div>
-    
-    <!-- Navigation -->
-    <nav>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG8TH9XG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
+
+    <nav role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo">
-                <span>▶</span>
-                <span>BiyteLüm.sys</span>
-            </a>
-                        <ul class="nav-links">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/services">SERVICES</a></li>
-                <li><a href="/expert-witness">EXPERT WITNESS</a></li>
-                <li><a href="/about">ABOUT</a></li>
-                <li><a href="/contact">CONTACT</a></li>
-                <li><a href="/privacidad-latam.html" style="color: rgba(167, 255, 158, 0.5); white-space: nowrap;">&#127758; ES</a></li>
+            <a href="/" class="logo" aria-label="BiyteLüm homepage"><span class="logo-dot" aria-hidden="true"></span>BiyteLüm</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/expert-witness">Expert Witness</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="active" aria-current="page">Contact</a></li>
+                <li><a href="/privacidad-latam.html" class="nav-lang">&#127758; ES</a></li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">☰</button>
         </div>
-        <!-- Mobile Menu Dropdown -->
-                <div class="mobile-nav" id="mobileNav" role="menu">
-            <a href="/" role="menuitem">01. HOME</a>
-            <a href="/services" role="menuitem">02. SERVICES</a>
-            <a href="/expert-witness" role="menuitem">03. EXPERT WITNESS</a>
-            <a href="/about" role="menuitem">04. ABOUT</a>
-            <a href="/contact" role="menuitem">05. CONTACT</a>
-            <a href="/privacidad-latam.html" role="menuitem" style="color: rgba(167, 255, 158, 0.5);">&#127758; VERSIÓN EN ESPAÑOL</a>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/">Home</a><a href="/services">Services</a><a href="/expert-witness">Expert Witness</a><a href="/about">About</a><a href="/contact">Contact</a>
+            <a href="/privacidad-latam.html" style="color:rgba(167,255,158,0.35);">&#127758; Versión en Español</a>
         </div>
     </nav>
-    
-    <!-- Main Content -->
-    <main>
-        <!-- Header -->
-        <div class="page-header">
-            <h1 class="page-title">
-                <span class="title-line">CONTACT</span>
-                <span class="title-line">PROTOCOL</span>
-            </h1>
-            <div class="page-subtitle">SECURE_COMMUNICATION_CHANNEL</div>
-            <p class="page-description">Establish encrypted contact for safe-scope privacy consultations. All communications secured with end-to-end encryption protocols.</p>
+
+    <main id="main-content">
+
+        <div class="page-hero">
+            <p class="section-eyebrow">Get in Touch</p>
+            <h1>Contact BiyteLüm</h1>
+            <p class="sub">Privacy consulting inquiries and expert witness requests. We respond within one business day.</p>
         </div>
-        
-        <!-- Contact Methods -->
-        <div class="contact-methods">
-            <div class="contact-method">
-                <div class="icon">📧</div>
-                <h3>Secure Email</h3>
-                <p><a href="mailto:contact@biytelum.com">contact@biytelum.com</a></p>
+
+        <div class="divider"></div>
+
+        <div class="contact-layout">
+
+            <!-- Info -->
+            <div class="contact-info">
+                <h2>Let's talk about your needs.</h2>
+                <p class="intro">
+                    Whether you're navigating a GDPR gap assessment, need an expert witness declaration for an immigration case, or just want to understand which service fits your situation — reach out.
+                </p>
+
+                <div class="info-block">
+                    <div class="info-block-label">Email</div>
+                    <p><a href="mailto:hello@biytelum.com">hello@biytelum.com</a></p>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-block-label">Location</div>
+                    <p>Mérida, Mexico — remote services globally</p>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-block-label">Languages</div>
+                    <p>English (Native) &nbsp;·&nbsp; Spanish (Native)</p>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-block-label">Entities</div>
+                    <p>BiyteLüm LLC — United States<br>BiyteLüm OÜ — Estonia, EU</p>
+                </div>
+
+                <div class="info-block">
+                    <div class="info-block-label">Expert Witness</div>
+                    <p>Declarations accepted in US immigration proceedings nationwide. Telephonic &amp; video testimony available upon motion.</p>
+                </div>
+
+                <div class="response-badge">Responds within 1 business day</div>
             </div>
-            <div class="contact-method">
-                <div class="icon">🔐</div>
-                <h3>PGP Encrypted</h3>
-                <p>End-to-end encryption available for sensitive communications</p>
+
+            <!-- Form -->
+            <div class="contact-form-card">
+                <h3>Send a Message</h3>
+                <form action="https://formspree.io/f/biytelum" method="POST" novalidate>
+                    <div class="form-two">
+                        <div class="form-row">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-row">
+                            <label for="org">Organization</label>
+                            <input type="text" id="org" name="organization" placeholder="Company or firm">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-row">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="Privacy Policy Review">Privacy Policy Review &amp; Drafting</option>
+                            <option value="GDPR Gap Assessment">GDPR Gap Assessment</option>
+                            <option value="AI Agent Risk Advisory">AI Agent Risk Advisory</option>
+                            <option value="Cross-Border Privacy Consulting">Cross-Border Privacy Consulting</option>
+                            <option value="Expert Witness Declaration">Expert Witness Declaration</option>
+                            <option value="Attorney Consultation">Expert Witness — Attorney Consultation Only</option>
+                            <option value="Legal Team Training">Training for Immigration Legal Teams</option>
+                            <option value="Other">Other / Not sure yet</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Brief description of what you need. For expert witness requests, include case type (I-589, I-131, I-730) and any relevant timeline."></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit">Send Message →</button>
+                    </div>
+                </form>
+                <p class="form-note">All inquiries are confidential. No unsolicited marketing or sharing of contact information.</p>
             </div>
-            <div class="contact-method">
-                <div class="icon">⚡</div>
-                <h3>Response Time</h3>
-                <p>24-48 hour response for all inquiries</p>
-            </div>
+
         </div>
-        
-        <!-- PGP Key Section -->
-        <div class="pgp-container">
-            <h2>🔒 PGP_PUBLIC_KEY</h2>
-            <p>Copy the key below or <a href="publickey-biytelum.asc" download>download the PGP Key</a> for end-to-end encryption.</p>
-            <div class="pgp-key">
-                <button class="copy-button" onclick="copyPGPKey()">COPY</button>-----BEGIN PGP PUBLIC KEY BLOCK-----
-mQINBGfNDX4BEADHOrevSaQzdTnyTPiNd4d0wKHdRRmAKTCF3lxHw87xdS51BDr+
-hWIpDSZSXcrhKl8JPquJ1anB1WSA/3FaiPR572WtTK0q2SYfM6Km12IHG7Njvi2D
-ZmmD9t8rnEHjtWgYaU7H1RwuIWYoIzh4uHEbmiCMaQBJgqv4VMg4C8FcBIAD1Hdl
-td90u4Lhl2vAs5eVqcwR4dN4mQcUmtgtAea8q7DIiOGHHOC/aJbCr0e6p2MFV2ba
-yOOQhEq6TKyjKXdLtWC81qfZZQu6vatpFxsmbpjymkT5IStYtVvXInFCWJbns0Gu
-RBQPnL6mifWzYyq6XGJNq5FYrFqUV5bMv2tla31bqC9L09Xy1QDJP0g9OYbB2367
-hNLr4iDVDNBOzmvLhV8phNUbFVD527PuVjIG6v9cto3mBwhOzGjg6nHXZy3Nw7HA
-7nwXquCN5KxGZHz0cFzxUtNE/Jt5myC8jnT4fKqW8zFvBLli/pOehFpxsMfUEVYh
-UbkjivWPpG8A/Lve/A1tvepngelbjsJqpneebz/pv1rte7chLM9ZVjqkloq4QMQF
-FEK3ktWSqPwvpdlfzeire8KkKLba0crwsQUthcoNnZl5yW7fIC78kJMMqqLXWtUQ
-9FYxWFsPGH/JOTtpj27PhwNEM/At6OTxL1hrCpogA+xIP9JGTJC/XcXO7QARAQAB
------END PGP PUBLIC KEY BLOCK-----
-            </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <div class="card-header">
-                <div class="card-icon">📡</div>
-                <div class="card-title">SECURE_MESSAGE_TRANSMISSION</div>
-            </div>
-            <form action="https://formspree.io/f/manjakny" method="POST">
-                <div class="form-group">
-                    <label for="name">OPERATOR_DESIGNATION:</label>
-                    <input type="text" name="name" id="name" required placeholder="Enter your identifier">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">CONTACT_FREQUENCY:</label>
-                    <input type="email" name="email" id="email" required placeholder="your.email@domain.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">SERVICE_REQUEST:</label>
-                    <select name="service" id="service" style="width: 100%; background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(167, 255, 158, 0.3); border-radius: 5px; padding: 0.75rem; color: #A7FF9E; font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;">
-                        <option value="">Select Service Interest</option>
-                        <option value="Privacy Officer Support">Privacy Officer Support ($750-$4,000/month)</option>
-                        <option value="Privacy Policy Review">Privacy Policy Review ($800-$1,500)</option>
-                        <option value="Basic Privacy Compliance Check">Basic Privacy Compliance Check ($1,200-$2,000)</option>
-                        <option value="Cloud Privacy Configuration Review">Cloud Privacy Configuration Review ($600-$1,200)</option>
-                        <option value="Shopify + GTM Privacy Audit">Shopify + GTM Privacy Audit ($1,200)</option>
-                        <option value="Service Combination">Service Combination Package</option>
-                        <option value="General Consultation">General Consultation</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">MESSAGE_PAYLOAD:</label>
-                    <textarea name="message" id="message" required placeholder="Enter your secure message..."></textarea>
-                </div>
-                
-                <!-- Hidden fields for better email formatting -->
-                <input type="hidden" name="_subject" value="New BiyteLüm Contact - Privacy Consultation Request">
-                
-                <button type="submit" class="cta-button cta-primary">
-                    TRANSMIT_MESSAGE
-                    <span>→</span>
-                </button>
-            </form>
-        </div>
-        
-        <a href="/" class="back-button">
-            ← RETURN_TO_BASE
-        </a>
+
     </main>
-    
-    <!-- Status Bar -->
-    <div class="status-bar">
-        <div class="status-content">
-            <div class="status-left">
-                <span>🔐 ENCRYPTION_STATUS: ACTIVE</span>
-                <span>CHANNEL: SECURED</span>
-                <span>RESPONSE_TIME: 24-48H</span>
-            </div>
-            <div class="status-right">
-                © 2025 BiyteLüm.sys | <a href="/">RETURN_HOME</a>
-            </div>
+
+    <footer>
+        <div class="footer-inner">
+            <a href="/" class="footer-logo"><span class="logo-dot" aria-hidden="true"></span>BiyteLüm</a>
+            <p>BiyteLüm LLC (United States) &nbsp;·&nbsp; BiyteLüm OÜ (Estonia, EU)</p>
+            <p><a href="/">English</a> &nbsp;·&nbsp; <a href="/privacidad-latam.html">Español</a></p>
+            <p>CIPP/E &nbsp;·&nbsp; CIPM &nbsp;·&nbsp; Proofpoint AI Agent Security &nbsp;·&nbsp; AWS &nbsp;·&nbsp; Azure</p>
+            <p class="footer-disclaimer">BiyteLüm's privacy and compliance services provide practical guidance and educational assessment. They do not constitute legal advice. Clients requiring legal counsel should consult a licensed attorney.</p>
+            <p style="margin-top:0.25rem;">&copy; 2025 BiyteLüm LLC. All rights reserved.</p>
         </div>
-    </div>
-    
+    </footer>
+
     <script>
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for (let i = 0; i < 15; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.width = `${2 + Math.random() * 4}px`;
-                particle.style.height = particle.style.width;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 4}s`;
-                particle.style.animationDuration = `${3 + Math.random() * 2}s`;
-                container.appendChild(particle);
-            }
-        }
-        
-        // Copy PGP Key function
-        function copyPGPKey() {
-            const pgpKey = document.querySelector('.pgp-key').textContent;
-            navigator.clipboard.writeText(pgpKey.replace('COPY', '').trim()).then(() => {
-                const button = document.querySelector('.copy-button');
-                const originalText = button.textContent;
-                button.textContent = 'COPIED!';
-                button.style.background = 'rgba(167, 255, 158, 0.3)';
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'rgba(167, 255, 158, 0.1)';
-                }, 2000);
-            });
-        }
-        
-        // Mobile menu toggle
         function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('show');
+            const menu = document.getElementById('mobileNav');
+            const btn = document.querySelector('.mobile-menu');
+            const isOpen = menu.classList.toggle('show');
+            btn.setAttribute('aria-expanded', isOpen);
+            btn.textContent = isOpen ? '✕' : '☰';
         }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-        });
-        
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const grid = document.querySelector('.bg-grid');
-            grid.style.transform = `translate(${scrolled * 0.3}px, ${scrolled * 0.2}px)`;
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const mobileNav = document.getElementById('mobileNav');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            if (!mobileNav.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileNav.classList.remove('show');
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('mobileNav');
+            if (!nav.contains(e.target) && menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                document.querySelector('.mobile-menu').textContent = '☰';
             }
         });
     </script>
