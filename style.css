@@ -1,19 +1,21 @@
 /* ============================================================
-   BiyteLüm — Shared Design System
+   BiyteLüm — Shared Design System (Light Theme)
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap');
 
 :root {
-    --green:        #B2C4AB;
-    --green-bright: #82B875;
-    --green-dim:    rgba(178,196,171,0.55);
-    --green-faint:  rgba(178,196,171,0.18);
-    --green-ghost:  rgba(178,196,171,0.07);
-    --bg:           #080808;
-    --bg-card:      #0f0f0f;
-    --border:       rgba(178,196,171,0.11);
-    --border-mid:   rgba(178,196,171,0.22);
+    --green:        #4E7A45;
+    --green-bright: #3A6532;
+    --green-dim:    rgba(78,122,69,0.7);
+    --green-faint:  rgba(78,122,69,0.1);
+    --green-ghost:  rgba(78,122,69,0.05);
+    --bg:           #F7F5F1;
+    --bg-card:      #FFFFFF;
+    --text:         #1C1917;
+    --text-muted:   rgba(28,25,23,0.5);
+    --border:       rgba(28,25,23,0.09);
+    --border-mid:   rgba(28,25,23,0.18);
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -21,7 +23,7 @@ html { scroll-behavior: smooth; }
 
 body {
     background: var(--bg);
-    color: var(--green);
+    color: var(--text);
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     line-height: 1.6;
@@ -36,17 +38,17 @@ body {
 .glow-orb-1 {
     top: -150px; right: -100px;
     width: 550px; height: 550px;
-    background: radial-gradient(circle, rgba(130,184,117,0.055) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(78,122,69,0.06) 0%, transparent 70%);
 }
 .glow-orb-2 {
     bottom: -200px; left: -100px;
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(178,196,171,0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(78,122,69,0.04) 0%, transparent 70%);
 }
 
 .skip-link {
     position:absolute; top:-40px; left:6px;
-    background:var(--green); color:#000;
+    background:var(--green); color:#fff;
     padding:8px 12px; text-decoration:none; z-index:1000;
     font-family:'Space Grotesk',sans-serif; font-size:0.8rem;
     border-radius:4px;
@@ -56,7 +58,7 @@ body {
 /* ── NAV ───────────────────────────────────────── */
 nav {
     position:fixed; top:0; left:0; width:100%;
-    background:rgba(8,8,8,0.82);
+    background:rgba(247,245,241,0.92);
     backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
     border-bottom:1px solid var(--border);
     z-index:100; padding:0 2rem;
@@ -76,16 +78,16 @@ nav {
 }
 .logo-dot {
     width:7px; height:7px;
-    background:var(--green-bright);
+    background:var(--green);
     border-radius:50%; flex-shrink:0;
-    box-shadow:0 0 8px rgba(130,184,117,0.7);
+    box-shadow:0 0 8px rgba(78,122,69,0.5);
 }
 .nav-links {
     display:flex; align-items:center;
     gap:0.15rem; list-style:none;
 }
 .nav-links a {
-    color:var(--green-dim); text-decoration:none;
+    color:var(--text-muted); text-decoration:none;
     font-family:'Inter',sans-serif;
     font-size:0.84rem; font-weight:500;
     padding:0.4rem 0.8rem; border-radius:6px;
@@ -94,27 +96,27 @@ nav {
 }
 .nav-links a:hover { color:var(--green); background:var(--green-ghost); }
 .nav-links a.active { color:var(--green); }
-.nav-lang { color:rgba(178,196,171,0.3) !important; font-size:0.8rem !important; }
-.nav-lang:hover { color:var(--green-dim) !important; }
+.nav-lang { color:rgba(28,25,23,0.3) !important; font-size:0.8rem !important; }
+.nav-lang:hover { color:var(--text-muted) !important; }
 
 .mobile-menu {
     display:none; background:transparent;
     border:1px solid var(--border);
-    color:var(--green); padding:0.4rem 0.6rem;
+    color:var(--text); padding:0.4rem 0.6rem;
     cursor:pointer; border-radius:6px;
     font-size:1rem; line-height:1;
 }
 .mobile-nav {
     display:none; position:absolute;
     top:100%; left:0; right:0;
-    background:rgba(8,8,8,0.97);
+    background:rgba(247,245,241,0.99);
     backdrop-filter:blur(24px);
     border-bottom:1px solid var(--border);
     padding:0.75rem 2rem 1.25rem;
 }
 .mobile-nav.show { display:block; }
 .mobile-nav a {
-    display:block; color:var(--green-dim);
+    display:block; color:var(--text-muted);
     text-decoration:none;
     font-family:'Inter',sans-serif;
     font-size:0.9rem; font-weight:500;
@@ -145,12 +147,12 @@ h1, h2, h3 { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.02em;
 .page-hero h1 {
     font-size:clamp(1.8rem,4.5vw,3rem);
     font-weight:800; line-height:1.15;
-    color:var(--green); margin-bottom:1rem;
+    color:var(--text); margin-bottom:1rem;
 }
 .page-hero .sub {
     font-family:'Inter',sans-serif;
     font-size:clamp(0.9rem,1.8vw,1.05rem);
-    color:rgba(178,196,171,0.5);
+    color:var(--text-muted);
     line-height:1.8; max-width:600px;
     margin:0 auto;
 }
@@ -159,19 +161,19 @@ h1, h2, h3 { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.02em;
     font-family:'Space Grotesk',sans-serif;
     font-size:0.7rem; font-weight:600;
     letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--green-bright);
+    color:var(--green);
     text-align:center; margin-bottom:0.75rem;
 }
 .section-heading {
     font-family:'Plus Jakarta Sans',sans-serif;
     font-size:clamp(1.4rem,3vw,2.1rem);
     font-weight:700; letter-spacing:-0.02em;
-    color:var(--green);
+    color:var(--text);
     text-align:center; margin-bottom:0.75rem;
 }
 .section-sub {
     font-family:'Inter',sans-serif;
-    font-size:0.95rem; color:rgba(178,196,171,0.45);
+    font-size:0.95rem; color:var(--text-muted);
     text-align:center; max-width:520px;
     margin:0 auto 3rem; line-height:1.7;
 }
@@ -180,7 +182,7 @@ h1, h2, h3 { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.02em;
 .btn-primary {
     display:inline-flex; align-items:center; gap:0.4rem;
     padding:0.75rem 1.65rem;
-    background:var(--green); color:#000;
+    background:var(--green); color:#fff;
     font-family:'Space Grotesk',sans-serif;
     font-weight:600; font-size:0.86rem;
     text-decoration:none; border-radius:8px;
@@ -190,7 +192,7 @@ h1, h2, h3 { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.02em;
 }
 .btn-primary:hover {
     background:var(--green-bright);
-    box-shadow:0 0 22px rgba(130,184,117,0.28);
+    box-shadow:0 4px 18px rgba(78,122,69,0.25);
     transform:translateY(-1px);
 }
 .btn-secondary {
@@ -228,27 +230,27 @@ h1, h2, h3 { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.02em;
 .card::before {
     content:'';
     position:absolute; top:0; left:0; right:0; height:1px;
-    background:linear-gradient(90deg, transparent, rgba(178,196,171,0.2), transparent);
+    background:linear-gradient(90deg, transparent, rgba(78,122,69,0.15), transparent);
 }
 .card:hover {
     border-color:var(--border-mid);
-    box-shadow:0 12px 48px rgba(0,0,0,0.5);
+    box-shadow:0 12px 40px rgba(0,0,0,0.07);
     transform:translateY(-2px);
 }
 
 /* ── DISCLAIMER ──────────────────────────────────── */
 .disclaimer {
-    background:rgba(178,196,171,0.03);
-    border:1px solid rgba(178,196,171,0.13);
-    border-left:3px solid rgba(178,196,171,0.3);
+    background:rgba(78,122,69,0.04);
+    border:1px solid rgba(78,122,69,0.15);
+    border-left:3px solid rgba(78,122,69,0.35);
     border-radius:8px;
     padding:1rem 1.25rem;
     font-family:'Inter',sans-serif;
     font-size:0.84rem;
-    color:rgba(178,196,171,0.5);
+    color:var(--text-muted);
     line-height:1.65;
 }
-.disclaimer strong { color:rgba(178,196,171,0.75); }
+.disclaimer strong { color:var(--text); }
 
 /* ── FOOTER ──────────────────────────────────────── */
 footer {
@@ -271,15 +273,15 @@ footer {
 }
 footer p {
     font-family:'Inter',sans-serif;
-    font-size:0.77rem; color:rgba(178,196,171,0.28);
+    font-size:0.77rem; color:rgba(28,25,23,0.35);
     line-height:1.6;
 }
-footer a { color:rgba(178,196,171,0.42); text-decoration:none; transition:color 0.18s; }
+footer a { color:rgba(28,25,23,0.4); text-decoration:none; transition:color 0.18s; }
 footer a:hover { color:var(--green); }
 .footer-disclaimer {
     max-width:580px;
     font-size:0.7rem !important;
-    color:rgba(178,196,171,0.18) !important;
+    color:rgba(28,25,23,0.25) !important;
     line-height:1.75 !important;
 }
 
