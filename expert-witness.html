@@ -133,34 +133,79 @@
 
         /* Rates */
         .rates-section { padding:0 2rem 4rem; }
-        .rates-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:1rem; max-width:820px; margin:0 auto;
+
+        .tier-block { max-width:860px; margin:0 auto 3rem; }
+        .tier-header {
+            display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;
+            padding:0.6rem 1.25rem;
+            background:var(--green); border-radius:10px 10px 0 0;
         }
-        .rate-card {
-            background:var(--bg-card);
+        .tier-header h3 {
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.78rem; font-weight:600;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:#fff; margin:0;
+        }
+        .tier-header .tier-badge {
+            font-family:'Inter',sans-serif;
+            font-size:0.72rem; color:rgba(255,255,255,0.75);
+        }
+        .tier-header-2 { background:#5A8A50; }
+        .tier-header-3 { background:#6B7D65; }
+        .tier-eligibility {
+            font-family:'Inter',sans-serif;
+            font-size:0.78rem; color:rgba(28,25,23,0.5);
+            padding:0.6rem 1.25rem;
+            background:rgba(78,122,69,0.05);
             border:1px solid var(--border);
-            border-radius:12px; padding:1.5rem;
-            text-align:center;
-            transition:border-color 0.18s, box-shadow 0.18s;
+            border-top:none; border-bottom:none;
+            line-height:1.6;
         }
-        .rate-card:hover { border-color:var(--border-mid); box-shadow:0 8px 32px rgba(0,0,0,0.4); }
-        .rate-card .rate-label {
+        .rate-table {
+            width:100%; border-collapse:collapse;
+            border:1px solid var(--border);
+            border-radius:0 0 10px 10px;
+            overflow:hidden;
+            font-family:'Inter',sans-serif;
+        }
+        .rate-table thead th {
             font-family:'Space Grotesk',sans-serif;
             font-size:0.67rem; font-weight:600;
-            letter-spacing:0.12em; text-transform:uppercase;
-            color:rgba(28,25,23,0.45); margin-bottom:0.75rem;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:rgba(28,25,23,0.5);
+            background:rgba(28,25,23,0.03);
+            padding:0.65rem 1rem;
+            text-align:left; border-bottom:1px solid var(--border);
         }
-        .rate-card .rate-amount {
-            font-family:'Plus Jakarta Sans',sans-serif;
-            font-size:1.4rem; font-weight:800;
-            color:var(--green); letter-spacing:-0.02em;
-            margin-bottom:0.5rem;
+        .rate-table thead th:not(:first-child) { text-align:right; }
+        .rate-table tbody td {
+            padding:0.75rem 1rem;
+            font-size:0.85rem; color:var(--text);
+            border-bottom:1px solid var(--border);
+            vertical-align:middle;
         }
-        .rate-card .rate-note {
+        .rate-table tbody tr:last-child td { border-bottom:none; }
+        .rate-table tbody td:not(:first-child) {
+            text-align:right; font-weight:500;
+            color:var(--green); white-space:nowrap;
+        }
+        .rate-table tbody td.timeline {
+            color:rgba(28,25,23,0.45); font-weight:400;
+            font-size:0.78rem;
+        }
+        .rate-table tbody tr:hover td { background:rgba(78,122,69,0.03); }
+        .tier-footnote {
             font-family:'Inter',sans-serif;
-            font-size:0.78rem; color:rgba(28,25,23,0.4);
-            line-height:1.6;
+            font-size:0.75rem; color:rgba(28,25,23,0.45);
+            padding:0.6rem 1.25rem;
+            border:1px solid var(--border); border-top:none;
+            border-radius:0 0 10px 10px;
+            background:rgba(28,25,23,0.02);
+            line-height:1.65;
+        }
+        @media(max-width:600px){
+            .rate-table thead th:nth-child(3),
+            .rate-table tbody td:nth-child(3) { display:none; }
         }
 
         /* FAQ */
@@ -437,37 +482,145 @@
             <div style="padding:4rem 0 2.5rem; text-align:center;">
                 <p class="section-eyebrow">Transparent Pricing</p>
                 <h2 class="section-heading" id="rates-heading">Rates</h2>
+                <p class="section-sub" style="margin-bottom:0;">Three tiers based on organization type. Rush surcharge (+25%) applies to declarations needed in under 7 business days.</p>
             </div>
-            <div class="rates-grid">
-                <div class="rate-card">
-                    <div class="rate-label">Case Review &amp; Scope Call</div>
-                    <div class="rate-amount">$200</div>
-                    <div class="rate-note">Credited toward engagement if you proceed</div>
+
+            <!-- Tier 1 -->
+            <div class="tier-block">
+                <div class="tier-header">
+                    <h3>Tier 1 — Standard</h3>
+                    <span class="tier-badge">Full rate · Private firms &amp; individual attorneys</span>
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Written Declaration</div>
-                    <div class="rate-amount">$200–$300<span style="font-size:0.9rem;font-weight:400;">/hr</span></div>
-                    <div class="rate-note">Typical engagement: 8–15 hours ($1,600–$4,500)</div>
+                <table class="rate-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Fee</th>
+                            <th>Timeline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Case Review + Scope Call</td>
+                            <td>$200 <span style="font-size:0.75rem;font-weight:400;color:rgba(28,25,23,0.45);">(credited)</span></td>
+                            <td class="timeline">Within 48 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Expert Witness Declaration</td>
+                            <td>$200–$300/hr · 8–15 hrs typical</td>
+                            <td class="timeline">10–14 business days</td>
+                        </tr>
+                        <tr>
+                            <td>Telephonic / Video Testimony</td>
+                            <td>$250–$300/hr · 2-hr min</td>
+                            <td class="timeline">Upon motion</td>
+                        </tr>
+                        <tr>
+                            <td>Attorney Consultation — 60 min</td>
+                            <td>$250</td>
+                            <td class="timeline">Within 48 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Attorney Consultation — 90 min</td>
+                            <td>$350 + $150 written summary</td>
+                            <td class="timeline">Within 48 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Legal Team Training</td>
+                            <td>$500–$800 half-day · $1,000–$1,500 full-day</td>
+                            <td class="timeline">By arrangement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="tier-block">
+                <div class="tier-header tier-header-2">
+                    <h3>Tier 2 — Nonprofit / Legal Aid</h3>
+                    <span class="tier-badge">30% reduced</span>
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Telephonic / Video Testimony</div>
-                    <div class="rate-amount">$250–$300<span style="font-size:0.9rem;font-weight:400;">/hr</span></div>
-                    <div class="rate-note">2-hour minimum. Available upon motion.</div>
+                <div class="tier-eligibility">
+                    501(c)(3) organizations · AILA pro bono panels · BIA accredited representatives · Supervised student clinics · University immigration programs
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Attorney Consultation</div>
-                    <div class="rate-amount">$250–$350</div>
-                    <div class="rate-note">60–90 min. Strategy &amp; procedure advisory. No declaration.</div>
+                <table class="rate-table" style="border-top:none;">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Standard</th>
+                            <th>Nonprofit Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Case Review + Scope Call</td>
+                            <td>$200</td>
+                            <td>$140 <span style="font-size:0.75rem;font-weight:400;color:rgba(28,25,23,0.45);">(credited)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Expert Witness Declaration</td>
+                            <td>$200–$300/hr</td>
+                            <td>$140–$210/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Telephonic / Video Testimony</td>
+                            <td>$250–$300/hr</td>
+                            <td>$175–$210/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Attorney Consultation</td>
+                            <td>$250–$350</td>
+                            <td>$175–$245</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tier-footnote">
+                    Requires: proof of 501(c)(3) status or BIA accreditation
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Rush Declaration</div>
-                    <div class="rate-amount">+25%</div>
-                    <div class="rate-note">Turnaround under 7 business days</div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="tier-block">
+                <div class="tier-header tier-header-3">
+                    <h3>Tier 3 — Law School Clinics</h3>
+                    <span class="tier-badge">50% reduced</span>
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Standard Timeline</div>
-                    <div class="rate-amount">10–14</div>
-                    <div class="rate-note">Business days. Rush available.</div>
+                <div class="tier-eligibility">
+                    Detained clients · No-fee representation · Extreme hardship cases
+                </div>
+                <table class="rate-table" style="border-top:none;">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Standard</th>
+                            <th>Clinic Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Case Review + Scope Call</td>
+                            <td>$200</td>
+                            <td>$100 <span style="font-size:0.75rem;font-weight:400;color:rgba(28,25,23,0.45);">(credited)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Expert Witness Declaration</td>
+                            <td>$200–$300/hr</td>
+                            <td>$100–$150/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Telephonic / Video Testimony</td>
+                            <td>$250–$300/hr</td>
+                            <td>$125–$150/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Attorney Consultation</td>
+                            <td>$250–$350</td>
+                            <td>$125–$175</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tier-footnote">
+                    Requires: supervising attorney on file · university affiliation letter
                 </div>
             </div>
         </section>
