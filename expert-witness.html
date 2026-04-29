@@ -313,6 +313,80 @@
         }
         .form-alt a { color:rgba(28,25,23,0.5); }
         .form-alt a:hover { color:var(--green); }
+
+        /* Hero personal paragraph */
+        .ew-personal {
+            font-family:'Inter',sans-serif;
+            font-size:clamp(0.82rem,1.5vw,0.92rem);
+            color:rgba(28,25,23,0.45);
+            line-height:1.8; max-width:640px;
+            margin:0.75rem auto 2.5rem;
+        }
+
+        /* Urgency callout */
+        .urgency-callout {
+            max-width:820px; margin:2.5rem auto;
+            padding:1rem 1.5rem;
+            background:rgba(78,122,69,0.04);
+            border:1px solid rgba(78,122,69,0.12);
+            border-left:3px solid rgba(78,122,69,0.45);
+            border-radius:8px;
+            font-family:'Inter',sans-serif;
+            font-size:0.92rem; color:var(--text);
+            line-height:1.75;
+        }
+
+        /* Two-column contact layout */
+        .contact-two-col {
+            display:grid;
+            grid-template-columns:1fr 2fr;
+            gap:2rem;
+            max-width:920px; margin:0 auto;
+            align-items:start;
+        }
+        @media(max-width:700px){ .contact-two-col { grid-template-columns:1fr; } }
+        .contact-quick {
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:16px; padding:2rem;
+            position:relative; overflow:hidden;
+        }
+        .contact-quick::before {
+            content:''; position:absolute;
+            top:0; left:0; right:0; height:1px;
+            background:linear-gradient(90deg,transparent,rgba(78,122,69,0.2),transparent);
+        }
+        .contact-option-label {
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.65rem; font-weight:600;
+            letter-spacing:0.14em; text-transform:uppercase;
+            color:var(--green); margin-bottom:0.6rem;
+        }
+        .contact-quick h3 {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            font-size:1rem; font-weight:700;
+            color:var(--text); margin-bottom:0.5rem;
+        }
+        .contact-quick p {
+            font-family:'Inter',sans-serif;
+            font-size:0.855rem; color:rgba(28,25,23,0.5);
+            line-height:1.65; margin-bottom:1.25rem;
+        }
+        .contact-quick .email-link {
+            display:inline-flex; align-items:center; gap:0.35rem;
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.84rem; font-weight:600;
+            color:var(--green); text-decoration:none;
+            padding:0.6rem 1.1rem;
+            border:1px solid var(--border-mid);
+            border-radius:8px;
+            transition:border-color 0.18s, background 0.18s;
+        }
+        .contact-quick .email-link:hover {
+            border-color:var(--green);
+            background:var(--green-ghost);
+        }
+        .contact-card { max-width:none; }
     </style>
 </head>
 <body>
@@ -350,12 +424,15 @@
         <!-- Hero -->
         <section class="ew-hero">
             <p class="section-eyebrow">Expert Witness Services</p>
-            <h1>Former USCIS Adjudicator</h1>
+            <h1>When the case turns on credibility, you need someone who actually made these decisions.</h1>
             <p class="credential-line">
                 Asylum Officer &nbsp;·&nbsp; Humanitarian Parole Officer &nbsp;·&nbsp; Senior Refugee Officer &nbsp;·&nbsp; <strong>6+ Years USCIS</strong> &nbsp;·&nbsp; Bilingual EN/ES
             </p>
             <p class="sub">
-                BiyteLüm provides expert witness services to immigration attorneys. Our founder spent over six years at USCIS adjudicating asylum, refugee, and humanitarian protection cases. We offer what no academic expert can: direct insider knowledge of how federal adjudicators actually think, assess credibility, and make decisions.
+                Not an academic. Not a country conditions expert. A former USCIS officer who conducted these interviews, applied these standards, and wrote these decisions — for six years.
+            </p>
+            <p class="ew-personal">
+                I spent six years inside USCIS as an Asylum Officer, Humanitarian Parole Officer, and Senior Refugee Officer. I know how credibility is evaluated, how procedural errors occur, and how adjudicators actually think — because I was one.
             </p>
             <div class="hero-btns">
                 <a href="#contact-form" class="btn-primary">Request a Consultation →</a>
@@ -364,6 +441,11 @@
         </section>
 
         <div class="divider"></div>
+
+        <!-- Urgency callout -->
+        <div class="urgency-callout">
+            In the current climate, credibility findings are everything. Declarations that explain USCIS adjudication standards from the inside carry weight that academic opinions cannot.
+        </div>
 
         <!-- Expertise Areas -->
         <section class="expertise-section" aria-labelledby="expertise-heading">
@@ -483,6 +565,7 @@
                         <li>RAIO Combined Training Program — RAIO CTP #2002A</li>
                         <li>Asylum Division Officer Training Program — ADOTP-2002A</li>
                         <li>RAIO Global Excellence Resilience Award — FY2020, New Orleans Asylum Office</li>
+                        <li>Bilingual English / Spanish — consultations and written declarations available in both languages</li>
                     </ul>
                 </div>
             </div>
@@ -721,45 +804,58 @@
             <div style="padding:4rem 0 2.5rem; text-align:center;">
                 <p class="section-eyebrow">Get Started</p>
                 <h2 class="section-heading" id="form-heading">Contact BiyteLüm</h2>
-                <p class="section-sub">Tell us about your case. We respond within one business day.</p>
+                <p class="section-sub">Two ways to reach us — pick whichever feels right.</p>
             </div>
-            <div class="contact-card">
-                <h3>Request a Consultation</h3>
-                <p class="form-note">For immigration attorneys seeking expert witness services. All information is kept strictly confidential.</p>
-                <form action="https://formspree.io/f/manjakny" method="POST" novalidate>
-                    <div class="form-row">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Attorney name">
-                    </div>
-                    <div class="form-row">
-                        <label for="firm">Law Firm / Organization *</label>
-                        <input type="text" id="firm" name="firm" required placeholder="Firm name or organization">
-                    </div>
-                    <div class="form-row">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="you@lawfirm.com">
-                    </div>
-                    <div class="form-row">
-                        <label for="case_type">Case Type</label>
-                        <select id="case_type" name="case_type">
-                            <option value="">Select case type...</option>
-                            <option value="I-589 Asylum">I-589 Asylum Application</option>
-                            <option value="I-590 Refugee">I-590 Overseas Refugee</option>
-                            <option value="I-131 Humanitarian Parole">I-131 Humanitarian Parole</option>
-                            <option value="I-730 Derivative">I-730 Derivative Petition</option>
-                            <option value="Consultation only">Consultation only (no declaration needed yet)</option>
-                            <option value="Other">Other / Not sure</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <label for="message">Brief Case Description *</label>
-                        <textarea id="message" name="message" required placeholder="Brief summary of the case, what you're looking for in an expert declaration, and any relevant timeline constraints."></textarea>
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit">Send Request →</button>
-                    </div>
-                </form>
-                <p class="form-alt">Prefer email? <a href="mailto:hello@biytelum.com">hello@biytelum.com</a></p>
+            <div class="contact-two-col">
+
+                <!-- Option A: Quick question -->
+                <div class="contact-quick">
+                    <p class="contact-option-label">Have a quick question?</p>
+                    <h3>Email directly</h3>
+                    <p>Reach out and I'll respond within one business day. No form needed.</p>
+                    <a href="mailto:hello@biytelum.com" class="email-link">hello@biytelum.com →</a>
+                </div>
+
+                <!-- Option B: Full form -->
+                <div class="contact-card">
+                    <p class="contact-option-label">Ready to discuss a case?</p>
+                    <h3>Request a Consultation</h3>
+                    <p class="form-note">Fill out the form and I'll follow up within 24 hours. All information is kept strictly confidential.</p>
+                    <form action="https://formspree.io/f/manjakny" method="POST" novalidate>
+                        <div class="form-row">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Attorney name">
+                        </div>
+                        <div class="form-row">
+                            <label for="firm">Law Firm / Organization *</label>
+                            <input type="text" id="firm" name="firm" required placeholder="Firm name or organization">
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="you@lawfirm.com">
+                        </div>
+                        <div class="form-row">
+                            <label for="case_type">Case Type</label>
+                            <select id="case_type" name="case_type">
+                                <option value="">Select case type...</option>
+                                <option value="I-589 Asylum">I-589 Asylum Application</option>
+                                <option value="I-590 Refugee">I-590 Overseas Refugee</option>
+                                <option value="I-131 Humanitarian Parole">I-131 Humanitarian Parole</option>
+                                <option value="I-730 Derivative">I-730 Derivative Petition</option>
+                                <option value="Consultation only">Consultation only (no declaration needed yet)</option>
+                                <option value="Other">Other / Not sure</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="message">Brief Case Description <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+                            <textarea id="message" name="message" placeholder="Brief summary of the case, what you're looking for in an expert declaration, and any relevant timeline constraints."></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit">Send Request →</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </section>
 
