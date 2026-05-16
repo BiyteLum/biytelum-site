@@ -187,6 +187,86 @@
             color:rgba(28,25,23,0.4); line-height:1.6;
         }
 
+        /* Tiered pricing tables (mirrors English /expert-witness) */
+        .tier-block { max-width:860px; margin:0 auto 3rem; }
+        .tier-header {
+            display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;
+            padding:0.6rem 1.25rem;
+            background:var(--green); border-radius:10px 10px 0 0;
+        }
+        .tier-header h3 {
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.78rem; font-weight:600;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:#fff; margin:0;
+        }
+        .tier-header .tier-badge {
+            font-family:'Inter',sans-serif;
+            font-size:0.72rem; color:rgba(255,255,255,0.75);
+        }
+        .tier-header-2 { background:#5A8A50; }
+        .tier-header-3 { background:#6B7D65; }
+        .tier-header-4 { background:#7A6E5F; }
+        .tier-eligibility {
+            font-family:'Inter',sans-serif;
+            font-size:0.78rem; color:rgba(28,25,23,0.5);
+            padding:0.6rem 1.25rem;
+            background:rgba(78,122,69,0.05);
+            border:1px solid var(--border);
+            border-top:none; border-bottom:none;
+            line-height:1.6;
+        }
+        .rate-table {
+            width:100%; border-collapse:collapse;
+            border:1px solid var(--border);
+            border-radius:0 0 10px 10px;
+            overflow:hidden;
+            font-family:'Inter',sans-serif;
+        }
+        .rate-table thead th {
+            font-family:'Space Grotesk',sans-serif;
+            font-size:0.67rem; font-weight:600;
+            letter-spacing:0.1em; text-transform:uppercase;
+            color:rgba(28,25,23,0.5);
+            background:rgba(28,25,23,0.03);
+            padding:0.65rem 1rem;
+            text-align:left; border-bottom:1px solid var(--border);
+        }
+        .rate-table thead th:not(:first-child) { text-align:right; }
+        .rate-table tbody td {
+            padding:0.75rem 1rem;
+            font-size:0.85rem; color:var(--text);
+            border-bottom:1px solid var(--border);
+            vertical-align:middle;
+        }
+        .rate-table tbody tr:last-child td { border-bottom:none; }
+        .rate-table tbody td:not(:first-child) {
+            text-align:right; font-weight:500;
+            color:var(--green); white-space:nowrap;
+        }
+        .rate-table tbody td.timeline {
+            color:rgba(28,25,23,0.45); font-weight:400;
+            font-size:0.78rem;
+        }
+        .rate-table tbody tr:hover td { background:rgba(78,122,69,0.03); }
+        .tier-footnote {
+            font-family:'Inter',sans-serif;
+            font-size:0.75rem; color:rgba(28,25,23,0.45);
+            padding:0.6rem 1.25rem;
+            border:1px solid var(--border); border-top:none;
+            border-radius:0 0 10px 10px;
+            background:rgba(28,25,23,0.02);
+            line-height:1.65;
+        }
+        @media(max-width:600px){
+            .rate-table-t1 thead th:nth-child(3),
+            .rate-table-t1 tbody td:nth-child(3) { display:none; }
+            .rate-table:not(.rate-table-t1) thead th:nth-child(2),
+            .rate-table:not(.rate-table-t1) tbody td:nth-child(2) { display:none; }
+            .rate-table tbody td:not(:first-child) { white-space:normal; font-size:0.8rem; }
+            .rate-table { font-size:0.82rem; }
+        }
+
         /* FAQ */
         .faq-list { max-width:700px; margin:0 auto; }
         .faq-item { border-bottom:1px solid var(--border); padding:1.25rem 0; }
@@ -351,6 +431,11 @@
                 <div class="case-card">
                     <div class="cc-label">Protección Humanitaria</div>
                     <p>Estándares de elegibilidad para protección humanitaria, suspensión de deportación y reclamaciones bajo la Convención Contra la Tortura.</p>
+                </div>
+                <div class="case-card">
+                    <div class="cc-label">Preparación para Entrevista de Asilo</div>
+                    <p>Un simulacro de entrevista de asilo realizado por un ex Oficial de Asilo de USCIS que condujo estas entrevistas durante tres años. Diseñado para preparar a los clientes para el entorno real de USCIS — las preguntas que hacen los oficiales, cómo se examina la credibilidad, qué inconsistencias generan seguimiento, y cómo se siente realmente la sala. Esta preparación viene desde adentro, no de un libro de texto. Disponible de forma remota en inglés o español.</p>
+                    <a href="/asylum-interview-prep" style="display:inline-block; margin-top:0.75rem; font-family:'Space Grotesk',sans-serif; font-size:0.78rem; font-weight:600; color:#4E7A45; text-decoration:none; border-bottom:1px solid rgba(78,122,69,0.35); padding-bottom:1px; transition:color 0.18s, border-color 0.18s;" onmouseover="this.style.color='#3A6532'; this.style.borderColor='#3A6532';" onmouseout="this.style.color='#4E7A45'; this.style.borderColor='rgba(78,122,69,0.35)';">Detalles y reservas → <span style="font-weight:400; opacity:0.7;">(en inglés)</span></a>
                 </div>
             </div>
         </section>
@@ -560,37 +645,200 @@
             <div style="text-align:center; margin-bottom:2.5rem;">
                 <p class="section-eyebrow">Precios Transparentes</p>
                 <h2 class="section-heading" id="tarifas-heading">Tarifas</h2>
+                <p class="section-sub" style="margin-bottom:0;">Tres niveles según el tipo de organización. Recargo urgente (+25%) aplica a declaraciones requeridas en menos de 7 días hábiles.</p>
             </div>
-            <div class="rates-grid">
-                <div class="rate-card">
-                    <div class="rate-label">Llamada de Evaluación de Caso</div>
-                    <div class="rate-amount">Gratis</div>
-                    <div class="rate-note">15 minutos. Sin cargo, sin obligación.</div>
+
+            <!-- Nivel 1 -->
+            <div class="tier-block">
+                <div class="tier-header">
+                    <h3>Nivel 1 — Estándar</h3>
+                    <span class="tier-badge">Tarifa completa · Firmas privadas y abogados individuales</span>
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Declaración Escrita</div>
-                    <div class="rate-amount">$200–$300<span style="font-size:0.9rem;font-weight:400;">/hr</span></div>
-                    <div class="rate-note">Caso típico: 8–15 horas ($1,600–$4,500)</div>
+                <table class="rate-table rate-table-t1">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Tarifa</th>
+                            <th>Plazo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Llamada de Evaluación de Caso (15 min)</td>
+                            <td>Gratis</td>
+                            <td class="timeline">Dentro de 48 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Declaración de Testigo Experto</td>
+                            <td>$200–$300/hr · 8–15 hrs típico</td>
+                            <td class="timeline">10–14 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonio Telefónico / por Video</td>
+                            <td>$250–$300/hr · mín. 2 hrs</td>
+                            <td class="timeline">Mediante moción</td>
+                        </tr>
+                        <tr>
+                            <td>Consulta para Abogados — 60 min</td>
+                            <td>$250</td>
+                            <td class="timeline">Dentro de 48 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Consulta para Abogados — 90 min</td>
+                            <td>$350 + $150 resumen escrito</td>
+                            <td class="timeline">Dentro de 48 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Preparación para Entrevista de Asilo</td>
+                            <td>$350 tarifa fija</td>
+                            <td class="timeline">Por arreglo</td>
+                        </tr>
+                        <tr>
+                            <td>Capacitación para Equipos Legales</td>
+                            <td>$500–$800 medio día · $1,000–$1,500 día completo</td>
+                            <td class="timeline">Por arreglo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Nivel 2 -->
+            <div class="tier-block">
+                <div class="tier-header tier-header-2">
+                    <h3>Nivel 2 — Sin Fines de Lucro / Asistencia Legal</h3>
+                    <span class="tier-badge">30% reducido</span>
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Testimonio Telefónico / Video</div>
-                    <div class="rate-amount">$250–$300<span style="font-size:0.9rem;font-weight:400;">/hr</span></div>
-                    <div class="rate-note">Mínimo 2 horas. Disponible mediante moción.</div>
+                <div class="tier-eligibility">
+                    Organizaciones 501(c)(3) · Paneles pro bono de AILA · Representantes acreditados por BIA
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Consulta para Abogados</div>
-                    <div class="rate-amount">$250–$350</div>
-                    <div class="rate-note">60–90 min. Estrategia y procedimiento. Sin declaración.</div>
+                <table class="rate-table" style="border-top:none;">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Estándar</th>
+                            <th>Tarifa Sin Fines de Lucro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Llamada de Evaluación de Caso (15 min)</td>
+                            <td>Gratis</td>
+                            <td>Gratis</td>
+                        </tr>
+                        <tr>
+                            <td>Declaración de Testigo Experto</td>
+                            <td>$200–$300/hr</td>
+                            <td>$140–$210/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonio Telefónico / por Video</td>
+                            <td>$250–$300/hr</td>
+                            <td>$175–$210/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Consulta para Abogados</td>
+                            <td>$250–$350</td>
+                            <td>$175–$245</td>
+                        </tr>
+                        <tr>
+                            <td>Preparación para Entrevista de Asilo</td>
+                            <td>$350</td>
+                            <td>$250 tarifa fija</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tier-footnote">
+                    Requiere: prueba de estado 501(c)(3) o acreditación BIA
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Declaración Urgente</div>
-                    <div class="rate-amount">+25%</div>
-                    <div class="rate-note">Entrega en menos de 7 días hábiles</div>
+            </div>
+
+            <!-- Nivel 3 -->
+            <div class="tier-block">
+                <div class="tier-header tier-header-3">
+                    <h3>Nivel 3 — Clínicas de Facultades de Derecho</h3>
+                    <span class="tier-badge">50% reducido</span>
                 </div>
-                <div class="rate-card">
-                    <div class="rate-label">Plazo Estándar</div>
-                    <div class="rate-amount">10–14</div>
-                    <div class="rate-note">Días hábiles. Urgente disponible.</div>
+                <div class="tier-eligibility">
+                    Clínicas estudiantiles supervisadas · Programas universitarios de inmigración
+                </div>
+                <table class="rate-table" style="border-top:none;">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Estándar</th>
+                            <th>Tarifa Clínica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Llamada de Evaluación de Caso (15 min)</td>
+                            <td>Gratis</td>
+                            <td>Gratis</td>
+                        </tr>
+                        <tr>
+                            <td>Declaración de Testigo Experto</td>
+                            <td>$200–$300/hr</td>
+                            <td>$100–$150/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonio Telefónico / por Video</td>
+                            <td>$250–$300/hr</td>
+                            <td>$125–$150/hr</td>
+                        </tr>
+                        <tr>
+                            <td>Consulta para Abogados</td>
+                            <td>$250–$350</td>
+                            <td>$125–$175</td>
+                        </tr>
+                        <tr>
+                            <td>Preparación para Entrevista de Asilo</td>
+                            <td>$350</td>
+                            <td>$175 tarifa fija</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tier-footnote">
+                    Requiere: abogado supervisor registrado · carta de afiliación universitaria
+                </div>
+            </div>
+
+            <!-- Nivel 4 -->
+            <div class="tier-block">
+                <div class="tier-header tier-header-4">
+                    <h3>Nivel 4 — Reserva Pro Bono</h3>
+                    <span class="tier-badge">Sin costo</span>
+                </div>
+                <div class="tier-eligibility">
+                    Clientes detenidos · Representación sin honorarios · Casos de dificultad extrema
+                </div>
+                <table class="rate-table" style="border-top:none;">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Estándar</th>
+                            <th>Pro Bono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Declaración de Testigo Experto</td>
+                            <td>$200–$300/hr</td>
+                            <td style="color:var(--green);">Exento</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonio Telefónico / por Video</td>
+                            <td>$250–$300/hr</td>
+                            <td style="color:var(--green);">Exento</td>
+                        </tr>
+                        <tr>
+                            <td>Testimonio en Persona</td>
+                            <td>$250–$300/hr</td>
+                            <td style="color:var(--green);">Solo costos de viaje</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tier-footnote" style="border-left:3px solid rgba(78,122,69,0.35); background:rgba(78,122,69,0.04);">
+                    El compromiso pro bono se reserva para clientes detenidos, representación sin honorarios, y casos de dificultad extrema. La disponibilidad es limitada; por favor contáctenos para discutir si un caso califica.
                 </div>
             </div>
         </section>
@@ -627,6 +875,11 @@
                 <div class="faq-item">
                     <h4>¿Cómo sé si mi caso necesita un testigo experto?</h4>
                     <p>Comience con una consulta de $250–$350 para abogados. Discutiremos su caso, los estándares de adjudicación de USCIS relevantes y si una declaración formal es probable que agregue valor para los hechos específicos de su caso.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué incluye la sesión de Preparación para Entrevista de Asilo?</h4>
+                    <p>La sesión incluye una revisión del expediente del cliente, un simulacro completo de entrevista realizado en el estilo de una entrevista real de asilo de USCIS, y un breve informe escrito para el abogado señalando problemas de credibilidad que surgieron y áreas a abordar antes de la entrevista real. Las sesiones duran de 60 a 90 minutos y se realizan de forma remota por video. Disponible en inglés o español. La tarifa estándar es $350 fija. Tarifas reducidas aplican para organizaciones sin fines de lucro y clínicas de facultades de derecho.</p>
+                    <a href="/asylum-interview-prep" style="display:inline-block; margin-top:0.5rem; font-family:'Space Grotesk',sans-serif; font-size:0.82rem; font-weight:600; color:#4E7A45; text-decoration:none; border-bottom:1px solid rgba(78,122,69,0.35); padding-bottom:1px; transition:color 0.18s, border-color 0.18s;" onmouseover="this.style.color='#3A6532'; this.style.borderColor='#3A6532';" onmouseout="this.style.color='#4E7A45'; this.style.borderColor='rgba(78,122,69,0.35)';">Detalles completos, preguntas frecuentes y reservas → <span style="font-weight:400; opacity:0.7;">(en inglés)</span></a>
                 </div>
             </div>
         </section>
