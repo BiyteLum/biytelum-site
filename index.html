@@ -171,23 +171,12 @@
             text-align:center;
         }
         .hero-eyebrow {
-            display:inline-flex; align-items:center; gap:0.5rem;
             font-family:'Space Grotesk',sans-serif;
-            font-size:0.7rem; font-weight:600;
-            letter-spacing:0.13em; text-transform:uppercase;
-            color:var(--green);
-            background:rgba(78,122,69,0.07);
-            border:1px solid rgba(78,122,69,0.2);
-            border-radius:100px;
-            padding:0.35rem 1.1rem;
-            margin-bottom:2rem;
-        }
-        .hero-eyebrow::before {
-            content:'';
-            width:5px; height:5px;
-            background:var(--green);
-            border-radius:50%; flex-shrink:0;
-            box-shadow:0 0 6px rgba(78,122,69,0.5);
+            font-size:0.72rem; font-weight:600;
+            letter-spacing:0.16em; text-transform:uppercase;
+            color:rgba(28,25,23,0.55);
+            text-align:center;
+            margin-bottom:1.5rem;
         }
         .hero h1 {
             font-family:'Plus Jakarta Sans',sans-serif;
@@ -349,24 +338,25 @@
             color:rgba(28,25,23,0.35);
             text-align:center; margin-bottom:1.5rem;
         }
-        .creds-bar {
-            display:flex; flex-wrap:wrap;
-            justify-content:center; gap:0.6rem;
-            max-width:920px; margin:0 auto;
+        .creds-list {
+            max-width:760px; margin:0 auto;
+            display:flex; flex-direction:column; gap:1.5rem;
         }
-        .cred-badge {
+        .creds-group { text-align:center; }
+        .creds-group-label {
             font-family:'Space Grotesk',sans-serif;
-            font-size:0.72rem; font-weight:500;
-            color:rgba(28,25,23,0.5);
-            letter-spacing:0.03em;
-            padding:0.33rem 0.9rem;
-            border:1px solid var(--border);
-            border-radius:100px;
-            background:rgba(28,25,23,0.03);
-            white-space:nowrap;
-            transition:border-color 0.18s, color 0.18s;
+            font-size:0.62rem; font-weight:600;
+            letter-spacing:0.18em; text-transform:uppercase;
+            color:rgba(28,25,23,0.45);
+            margin-bottom:0.5rem;
         }
-        .cred-badge:hover { border-color:var(--border-mid); color:var(--green); }
+        .creds-group p {
+            font-family:'Inter',sans-serif;
+            font-size:0.88rem;
+            color:rgba(28,25,23,0.65);
+            line-height:1.75;
+            letter-spacing:0.01em;
+        }
 
         /* ABOUT */
         .about-section {
@@ -534,18 +524,19 @@
         <!-- Credentials -->
         <section class="creds-section" aria-label="Credentials and entities">
             <p class="creds-label">Credentials &amp; Entities</p>
-            <div class="creds-bar">
-                <span class="cred-badge">CIPP/E</span>
-                <span class="cred-badge">CIPM</span>
-                <span class="cred-badge">AWS CLF-C02</span>
-                <span class="cred-badge">Azure AZ-900</span>
-                <span class="cred-badge">Proofpoint AI Agent Security</span>
-                <span class="cred-badge">EXIN LGPD</span>
-                <span class="cred-badge">Former USCIS Asylum Officer</span>
-                <span class="cred-badge">Former USCIS Humanitarian Parole Officer</span>
-                <span class="cred-badge">Former USCIS Senior Refugee Officer</span>
-                <span class="cred-badge">BiyteLüm LLC — United States</span>
-                <span class="cred-badge">BiyteLüm OÜ — Estonia, EU</span>
+            <div class="creds-list">
+                <div class="creds-group">
+                    <div class="creds-group-label">Certifications</div>
+                    <p>CIPP/E · CIPM · AWS CLF-C02 · Azure AZ-900 · Proofpoint AI Agent Security · EXIN LGPD</p>
+                </div>
+                <div class="creds-group">
+                    <div class="creds-group-label">Federal Service</div>
+                    <p>Former USCIS Asylum Officer · Former USCIS Humanitarian Parole Officer · Former USCIS Senior Refugee Officer</p>
+                </div>
+                <div class="creds-group">
+                    <div class="creds-group-label">Entities</div>
+                    <p>BiyteLüm LLC — United States · BiyteLüm OÜ — Estonia, EU</p>
+                </div>
             </div>
         </section>
 
